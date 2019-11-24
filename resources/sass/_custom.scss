@@ -1,12 +1,19 @@
-.background{
-    background :#000 url("/images/background3.jpg") no-repeat center center / cover;
+@import'variables';
+body{
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+/****Home page***/
+.background-image{//setting background image
+    background :#000 url("/images/bg_1.jpg");
+    background-size: cover;
     height:100vh;
     color:#fff;
     z-index: 1000;
     position: relative;
-    // opacity:0.95;
 
-    &::before{
+    &::before{//home overlay
         content:'';
         position:absolute;
         top:0;
@@ -16,4 +23,68 @@
         width:100%;
         background: rgba(0, 0, 0, 0.5)
     }
+    .txt-type{//color for type writer text
+        color:$primary-color;
+    }
+
+    .txt-type > .txt {//type writer Cursor 
+        border-right: 0.2rem solid $primary-color;
+    }
+    .showcase{
+        &-heading{//showcase heading
+            font-size: 10px;
+            color: $primary-color;
+            font-weight: 900;
+            display: block;
+            word-spacing:2px;
+        }
+        &-text h1{//show case display text
+            font-size: 55px;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+        &-para{//showcase paaragraph
+            font-size: 18px; 
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+    .btn-1{//get started btn
+        background:$primary-color;
+        color:#fff;
+        font-size:18px;
+        font-weight: 400;
+    }
+    .wrapper{
+        position: absolute;
+        margin-top:80px;
+    }
+    .navbar-home{//home navbar
+        position: relative;
+        top:3%;
+        padding-left:3rem;
+
+        .navbar-brand{
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1;
+
+        }
+        
+        & a{//home nav link
+            color:#fff;
+            font-size:15px;
+        
+            &:hover{//link hover
+                color:$primary-color;
+            }
+
+            &:active{//active link
+                color:$primary-color;
+            }
+        }
+    }
+
 }
+
+/******end of home***/

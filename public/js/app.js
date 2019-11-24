@@ -49348,6 +49348,77 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+
+/*******type writter effect */
+var TypeWriter = function TypeWriter(txtElement, words) {
+  var wait = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 3000;
+  this.txtElement = txtElement;
+  this.words = words;
+  this.txt = '';
+  this.wordIndex = 0;
+  this.wait = parseInt(wait, 10);
+  this.type();
+  this.isDeleting = false;
+}; // Type Method
+
+
+TypeWriter.prototype.type = function () {
+  var _this = this;
+
+  // Current index of word
+  var current = this.wordIndex % this.words.length; // Get full text of current word
+
+  var fullTxt = this.words[current]; // Check if deleting
+
+  if (this.isDeleting) {
+    // Remove char
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    // Add char
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  } // Insert txt into element
+
+
+  this.txtElement.innerHTML = "<span class=\"txt\">".concat(this.txt, "</span>"); // Initial Type Speed
+
+  var typeSpeed = 300;
+
+  if (this.isDeleting) {
+    typeSpeed /= 2;
+  } // If word is complete
+
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    // Make pause at end
+    typeSpeed = this.wait; // Set delete to true
+
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false; // Move to next word
+
+    this.wordIndex++; // Pause before start typing
+
+    typeSpeed = 500;
+  }
+
+  setTimeout(function () {
+    return _this.type();
+  }, typeSpeed);
+}; // Init On DOM Load
+
+
+document.addEventListener('DOMContentLoaded', init); // Init App
+
+function init() {
+  var txtElement = document.querySelector('.txt-type');
+  var words = JSON.parse(txtElement.getAttribute('data-words'));
+  var wait = txtElement.getAttribute('data-wait'); // Init TypeWriter
+
+  new TypeWriter(txtElement, words, wait);
+}
+/*******type writter effect */
+
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -49495,7 +49566,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\r\n@import \"~node_modules/font-awesome/scss/font-awesome.scss\";\r\n       ^\r\n      Can't find stylesheet to import.\n   ╷\n14 │ @import \"~node_modules/font-awesome/scss/font-awesome.scss\";\n   │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n   ╵\n  stdin 14:9  root stylesheet\r\n      in C:\\xampp\\htdocs\\lawke\\resources\\sass\\app.scss (line 14, column 9)\n    at C:\\xampp\\htdocs\\lawke\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\xampp\\htdocs\\lawke\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\xampp\\htdocs\\lawke\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\xampp\\htdocs\\lawke\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\xampp\\htdocs\\lawke\\node_modules\\sass-loader\\dist\\index.js:89:7\n    at Function.call$2 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:54311:16)\n    at _render_closure1.call$2 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:33509:12)\n    at _RootZone.runBinary$3$3 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:19817:18)\n    at _RootZone.runBinary$3 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:19821:19)\n    at _FutureListener.handleError$1 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:18286:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:18574:40)\n    at Object._Future__propagateToListeners (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:3484:88)\n    at _Future._completeError$2 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:18410:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:17809:12)\n    at Object._asyncRethrow (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:3240:17)\n    at C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:10538:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:3263:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:17830:12)\n    at _awaitOnObject_closure0.call$2 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:17822:25)\n    at _RootZone.runBinary$3$3 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:19817:18)\n    at _RootZone.runBinary$3 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:19821:19)\n    at _FutureListener.handleError$1 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:18286:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:18574:40)\n    at Object._Future__propagateToListeners (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:3484:88)\n    at _Future._completeError$2 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:18410:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:17809:12)\n    at Object._asyncRethrow (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:3240:17)\n    at C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:12239:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:3263:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:17830:12)\n    at _awaitOnObject_closure0.call$2 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:17822:25)\n    at _RootZone.runBinary$3$3 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:19817:18)\n    at _RootZone.runBinary$3 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:19821:19)\n    at _FutureListener.handleError$1 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:18286:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:18574:40)\n    at Object._Future__propagateToListeners (C:\\xampp\\htdocs\\lawke\\node_modules\\sass\\sass.dart.js:3484:88)");
 
 /***/ }),
 

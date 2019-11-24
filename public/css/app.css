@@ -11100,15 +11100,24 @@ a.text-dark:focus {
   }
 }
 
-.background {
-  background: #000 url("/images/background3.jpg") no-repeat center center/cover;
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/****Home page***/
+
+.background-image {
+  background: #000 url("/images/bg_1.jpg");
+  background-size: cover;
   height: 100vh;
   color: #fff;
   z-index: 1000;
   position: relative;
 }
 
-.background::before {
+.background-image::before {
   content: "";
   position: absolute;
   top: 0;
@@ -11118,4 +11127,70 @@ a.text-dark:focus {
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
+
+.background-image .txt-type {
+  color: #afa939;
+}
+
+.background-image .txt-type > .txt {
+  border-right: 0.2rem solid #afa939;
+}
+
+.background-image .showcase-heading {
+  font-size: 10px;
+  color: #afa939;
+  font-weight: 900;
+  display: block;
+  word-spacing: 2px;
+}
+
+.background-image .showcase-text h1 {
+  font-size: 55px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.background-image .showcase-para {
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.background-image .btn-1 {
+  background: #afa939;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.background-image .wrapper {
+  position: absolute;
+  margin-top: 80px;
+}
+
+.background-image .navbar-home {
+  position: relative;
+  top: 3%;
+  padding-left: 3rem;
+}
+
+.background-image .navbar-home .navbar-brand {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.background-image .navbar-home a {
+  color: #fff;
+}
+
+.background-image .navbar-home a:hover {
+  color: #afa939;
+}
+
+.background-image .navbar-home a:active {
+  color: #afa939;
+}
+
+/******end of home***/
 
