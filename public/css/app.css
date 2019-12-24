@@ -11104,6 +11104,21 @@ body {
   font-family: "Poppins", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.8;
+  background: #fff;
+}
+
+.element-background {
+  background: #afa939;
+  color: #fff;
+}
+
+.text-color {
+  color: #afa939;
+}
+
+.bg-color {
+  background-color: #afa939;
+  color: #fff;
 }
 
 /****Home page***/
@@ -11137,11 +11152,11 @@ body {
 }
 
 .background-image .showcase-heading {
-  font-size: 10px;
+  font-size: 15px;
   color: #afa939;
-  font-weight: 900;
+  font-weight: 800;
   display: block;
-  word-spacing: 2px;
+  line-height: 1.5;
 }
 
 .background-image .showcase-text h1 {
@@ -11176,12 +11191,18 @@ body {
 
 .background-image .navbar-home .navbar-brand {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1;
+}
+
+.background-image .navbar-home .navbar-brand-logotxt {
+  font-size: 11px;
+  font-weight: 100;
 }
 
 .background-image .navbar-home a {
   color: #fff;
+  font-size: 15px;
 }
 
 .background-image .navbar-home a:hover {
@@ -11192,5 +11213,92 @@ body {
   color: #afa939;
 }
 
+.nav-tabs .nav-link {
+  color: #afa939;
+  font-weight: 600;
+  border-radius: 0;
+  border: none;
+}
+
+.nav-tabs .nav-link.active {
+  border-top: 3px solid #afa939;
+  background-color: #fff;
+  color: #333;
+}
+
 /******end of home***/
+
+footer {
+  font-family: "Poppins", Arial, sans-serif !important;
+  height: 90vh;
+  line-height: 1.8;
+  color: #f4f4f4;
+  font-size: 16px;
+  background: #222831;
+  padding: 5em 0 3em 0;
+}
+
+footer a {
+  color: #f4f4f4;
+}
+
+footer a:hover {
+  color: #afa939;
+  text-decoration: none;
+}
+
+footer .logo {
+  font-size: 34px;
+  text-transform: uppercase;
+  font-weight: 800 !important;
+  line-height: 1;
+}
+
+footer .logo a span {
+  color: #afa939;
+  font-size: 16px !important;
+  display: block;
+}
+
+footer .logo a:hover {
+  color: #f4f4f4;
+}
+
+footer .heading-2 {
+  font-weight: 400;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+footer-widget p {
+  margin-top: 20px;
+}
+
+.mission {
+  background: url(/images/mission.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+}
+
+.mission-text {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.mission-nav .nav-tabs .nav-link {
+  background: #fff;
+  color: #000000;
+  font-weight: 600;
+  border-radius: 0;
+  border: none;
+}
+
+.mission-nav .nav-tabs .nav-link.active {
+  color: #fff;
+  background-color: #afa939;
+  border: 2px solid #afa939;
+}
 

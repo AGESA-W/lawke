@@ -71,10 +71,18 @@ function init() {
   new TypeWriter(txtElement, words, wait);
 }
 
-
-
 /*******type writter effect */
-
+//scroll nav
+// const nav =document.querySelector('.navbar-home');
+// window.onscroll=function(){
+//   var top=window.scrollY;
+//   console.log(top);
+//   if(top>=100){
+//     nav.classList.add('.navbar-home-active');
+//   }else{
+//     nav.classList.remove('.navbar-home-active');
+//   }
+// }
 
 require('./bootstrap');
 
