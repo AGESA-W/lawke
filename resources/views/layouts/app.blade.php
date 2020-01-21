@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -22,8 +22,11 @@
 <body>
     <div id="app">
          @include('partials.navbar')
+         @include('partials.messages')
         <main>
-            @yield('content')
+            <div class="container mt-3">
+                @yield('content')
+            </div>
         </main>
         @include('partials.footer')
     </div>

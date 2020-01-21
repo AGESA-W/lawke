@@ -84,6 +84,10 @@ function init() {
 //   }
 // }
 
+window.Jquery = require('jquery');
+
+
+
 require('./bootstrap');
 
 window.Vue = require('vue');

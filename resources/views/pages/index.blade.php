@@ -75,6 +75,7 @@
                                     <li class="nav-item dropdown">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }} <span class="caret"></span>
+                                            {{ Auth::user()->firstname }} <span class="caret"></span>
                                         </a>
                 
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -110,7 +111,7 @@
                         </div>
                         <p class="showcase-para">We have help thousands of people to get relief from national wide fights wrongfull denials. Now they trust lawke attorneys</p>
                         <div class="showcase-btns">
-                            <button class="btn btn-1 d-inline-block px-4 py-2 text-capitalize">get started</button>
+                            <button class="btn btn-1 d-inline-block px-4 py-2 text-capitalize">get started <span class="fa fa-angle-right"></span></button>
                         </div>
                     </div>
                 </div>
@@ -118,7 +119,7 @@
         </main>
         <div class="container">
             <div class="col-12 col-md-12">
-                <h2 class="text-center mt-3 mb-3"> <b>Top-rated lawyers near you</b></h2>
+                <h2 class="text-center mt-3 mb-3"> <b> Top-rated lawyers near you</b></h2>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -335,7 +336,7 @@
                 <div class="card-header p-0">
                   <ul class="nav nav-tabs nav-fill ml-auto pt-0">
                     <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab">Practice Area</a></li>
-                    <li class="nav-item border"><a class="nav-link" href="#tab_2" data-toggle="tab">County</a></li>
+                    <li class="nav-item border-0"><a class="nav-link" href="#tab_2" data-toggle="tab">County</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tab_3" data-toggle="tab">Name</a></li>
                   </ul>
                 </div><!-- /.card-header -->
@@ -356,13 +357,9 @@
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="tab_3">
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                      when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                      It has survived not only five centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                      sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                      like Aldus PageMaker including versions of Lorem Ipsum.
+                      <a href="#">A</a>
+                      <a href="#">B</a>
+                      
                     </div>
                     <!-- /.tab-pane -->
                   </div>

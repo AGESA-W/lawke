@@ -20,6 +20,12 @@ body{
 .bg-color{
     background-color:$primary-color;
     color:#fff;
+    font-weight: 400;
+
+    &:hover{
+        background-color:darken($primary-color,10);
+        color:#fff;  
+    }
 }
 /****Home page***/
 .background-image{//setting background image
@@ -126,9 +132,9 @@ body{
 
 /******end of home***/
 
-footer{
+footer{//footer
     font-family: "Poppins", Arial, sans-serif !important;
-    height: 90vh;
+    // height: 90vh;
     line-height: 1.8;
     color:#f4f4f4;
     font-size: 16px;
@@ -175,13 +181,13 @@ footer{
     }
     
 }
-.mission{
+.mission{//image
     background: url(/images/mission.jpg);
     background-size: cover;
     background-position: center;
-    height:450px;
+    height:430px;
 
-    &-text{
+    &-text{//text section
         font-size: 30px;
         font-weight: 700;
         line-height: 1.5;
@@ -203,3 +209,24 @@ footer{
     }
     
 }
+
+
+///////Attorney register page
+.register-para{
+    border-bottom: 2px solid $primary-color;
+    display: inline-block;
+    padding-right: 15px;
+}
+
+
+
+
+
+
+
+.form-right{
+    color:#fff;
+    background:rgba(0, 0, 0, 0.8);
+    padding:20px;
+}
+

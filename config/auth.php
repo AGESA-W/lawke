@@ -46,6 +46,14 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'attorney' => [
+            'driver' => 'session',
+            'provider' => 'attorneys',
+        ],
+        'attorney-api' => [
+            'driver' => 'token',
+            'provider' => 'attorneys',
+        ],
     ],
 
     /*
@@ -69,6 +77,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'attorneys' => [
+            'driver' => 'eloquent',
+            'model' => App\Attorney::class,
         ],
 
         // 'users' => [
@@ -95,6 +107,11 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'attorneys' => [
+            'provider' => 'attorneys',
             'table' => 'password_resets',
             'expire' => 60,
         ],
