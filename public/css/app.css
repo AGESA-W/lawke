@@ -11100,8 +11100,11 @@ a.text-dark:focus {
   }
 }
 
-body {
+* {
   font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
   font-size: 16px;
   line-height: 1.8;
   background: #fff;
@@ -11313,11 +11316,236 @@ footer-widget p {
   padding-right: 15px;
 }
 
-.form-right {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 20px;
+.register {
+  background: -webkit-linear-gradient(left, #8b872b, #afa939);
+  margin-top: 3%;
+  padding: 3%;
 }
+
+.register-left {
+  text-align: center;
+  color: #fff;
+  margin-top: 4%;
+}
+
+.register-left input {
+  border: none;
+  border-radius: 1.5rem;
+  padding: 2%;
+  width: 60%;
+  background: #f8f9fa;
+  font-weight: bold;
+  color: #383d41;
+  margin-top: 30%;
+  margin-bottom: 3%;
+  cursor: pointer;
+}
+
+.register-right {
+  background: #f8f9fa;
+  border-top-left-radius: 10% 50%;
+  border-bottom-left-radius: 10% 50%;
+}
+
+.register-left img {
+  margin-top: 15%;
+  margin-bottom: 5%;
+  width: 25%;
+  -webkit-animation: mover 2s infinite alternate;
+  animation: mover 1s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+@keyframes mover {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+.register-left p {
+  font-weight: lighter;
+  padding: 12%;
+  margin-top: -9%;
+}
+
+.register .register-form {
+  padding: 10%;
+  margin-top: 10%;
+}
+
+.btnRegister {
+  float: right;
+  margin-top: 10%;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 2%;
+  background: #afa939;
+  color: #fff;
+  font-weight: 600;
+  width: 50%;
+  cursor: pointer;
+}
+
+.register .nav-tabs {
+  margin-top: 3%;
+  border: none;
+  background: #afa939;
+  border-radius: 1.5rem;
+  width: 28%;
+  float: right;
+}
+
+.register .nav-tabs .nav-link {
+  padding: 2%;
+  height: 34px;
+  font-weight: 600;
+  color: #fff;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+.register .nav-tabs .nav-link:hover {
+  border: none;
+}
+
+.register .nav-tabs .nav-link.active {
+  width: 100px;
+  color: #afa939;
+  border: 2px solid #afa939;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+
+.register-heading {
+  text-align: center;
+  margin-top: 8%;
+  margin-bottom: -15%;
+  color: #495057;
+}
+
+/*****Practice Area Page*****/
+
+.practice-area {
+  display: block;
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+@media (max-width: 767.98px) {
+  .practice-area {
+    border-left: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+
+.practice-area .icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+  margin-bottom: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .practice-area .icon {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+.practice-area .icon span {
+  color: #b7b03c;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .practice-area .icon span {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+.practice-area h3 {
+  font-size: 20px;
+}
+
+.practice-area h3 a {
+  color: black;
+  text-decoration: none;
+}
+
+.practice-area .btn-custom {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #afa939;
+  margin: 0 auto;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .practice-area .btn-custom {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+.practice-area .btn-custom span {
+  color: #fff;
+}
+
+.practice-area:hover .icon,
+.practice-area:focus .icon {
+  background: #afa939;
+}
+
+.practice-area:hover .icon span,
+.practice-area:focus .icon span {
+  color: #fff;
+}
+
+.practice-area:hover .btn-custom,
+.practice-area:focus .btn-custom {
+  opacity: 1;
+  bottom: -25px;
+}
+
+.practice-area p {
+  color: #808080;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/*****End Practice Area Page*****/
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome

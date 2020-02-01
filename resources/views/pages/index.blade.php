@@ -10,7 +10,8 @@
     <title>{{ config('app.name', 'LAWKE') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/typewriter.js') }}"></script>
     {{-- <script src="{{ asset('js/constituency.js') }}"></script> --}}
 
     <!-- Fonts -->
@@ -46,7 +47,7 @@
                                     <a href="#" class="nav-link px-4">Attorneys</a>
                                 </li>   
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link px-4">Practice Areas</a>
+                                    <a href="/practice-areas" class="nav-link px-4">Practice Areas</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link px-4">Case studies</a>

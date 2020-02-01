@@ -49350,73 +49350,6 @@ module.exports = function(module) {
  */
 
 /*******type writter effect */
-var TypeWriter = function TypeWriter(txtElement, words) {
-  var wait = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 3000;
-  this.txtElement = txtElement;
-  this.words = words;
-  this.txt = '';
-  this.wordIndex = 0;
-  this.wait = parseInt(wait, 10);
-  this.type();
-  this.isDeleting = false;
-}; // Type Method
-
-
-TypeWriter.prototype.type = function () {
-  var _this = this;
-
-  // Current index of word
-  var current = this.wordIndex % this.words.length; // Get full text of current word
-
-  var fullTxt = this.words[current]; // Check if deleting
-
-  if (this.isDeleting) {
-    // Remove char
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    // Add char
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  } // Insert txt into element
-
-
-  this.txtElement.innerHTML = "<span class=\"txt\">".concat(this.txt, "</span>"); // Initial Type Speed
-
-  var typeSpeed = 300;
-
-  if (this.isDeleting) {
-    typeSpeed /= 2;
-  } // If word is complete
-
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-    // Make pause at end
-    typeSpeed = this.wait; // Set delete to true
-
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false; // Move to next word
-
-    this.wordIndex++; // Pause before start typing
-
-    typeSpeed = 500;
-  }
-
-  setTimeout(function () {
-    return _this.type();
-  }, typeSpeed);
-}; // Init On DOM Load
-
-
-document.addEventListener('DOMContentLoaded', init); // Init App
-
-function init() {
-  var txtElement = document.querySelector('.txt-type');
-  var words = JSON.parse(txtElement.getAttribute('data-words'));
-  var wait = txtElement.getAttribute('data-wait'); // Init TypeWriter
-
-  new TypeWriter(txtElement, words, wait);
-}
-/*******type writter effect */
 //scroll nav
 // const nav =document.querySelector('.navbar-home');
 // window.onscroll=function(){
@@ -49428,8 +49361,6 @@ function init() {
 //     nav.classList.remove('.navbar-home-active');
 //   }
 // }
-
-
 window.Jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");

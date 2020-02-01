@@ -14,7 +14,11 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+/*********Main Pages**********/
 Route::get('/','PagesController@index');
+Route::get('/practice-areas','PagesController@practiceAreas')->name('practice.areas');
+/*********End Main Pages**********/
 
 Auth::routes();
 
@@ -31,7 +35,9 @@ Route::post('/attorneys',"Auth\AttorneysRegisterController@store")->name('attorn
 Route::post('/attorney_login',"Auth\AttorneysLoginController@Login")->name('attorney.login.submit');
 Route::get('/logout', 'Auth\AttorneysLoginController@logout')->name('attorney.logout');
 
-//password reset password routes
+Route::get('get-attorneys',"AttorneysController@getattorneys")->name('get.attorneys');
+
+//reset password routes for attorneys
 Route::prefix('attorney')->group(function(){
     Route::post('password/email','Auth\AttorneysForgotPasswordController@sendResetLinkEmail' )->name('attorney.password.email');    
     Route::get('password/reset','Auth\AttorneysForgotPasswordController@showLinkRequestForm')->name('attorney.password.request');

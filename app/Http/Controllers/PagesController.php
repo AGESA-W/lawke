@@ -9,4 +9,8 @@ class PagesController extends Controller
     public function index(){
         return view('pages.index');
     }
+    public function practiceAreas(){
+        return view('pages.practice-areas');
+    }
+
 }
