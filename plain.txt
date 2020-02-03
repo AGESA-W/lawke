@@ -1,0 +1,234 @@
+1,Wajir Law Courts,wajir town,42825,images/map-sample.png
+2,Kevin Nyenyire & Co. Advocates,Archers Post-samburu,66276,images/map-sample.png
+3,Wajir Law Courts,wajir town,36101,images/map-sample.png
+4,Nyanga &Co. Advocates," Maragoli Next to Jupiter electronics . North end, Maragoli",85728,images/map-sample.png
+5,D. C. Chitwah & Co. Advocates,Kakamega/Kisumu Rd,8129,images/map-sample.png
+6,Osabwa Sandys Advocates,"Majengo Maragoli Plaza, 1st Flr, Kakamega Rd",93782,images/map-sample.png
+7,Nyanga &Co. Advocates," Maragoli Next to Jupiter electronics . North end, Maragoli",85728,images/map-sample.png
+8,Osabwa Sandys Advocates,"Majengo Maragoli Plaza, 1st Flr, Kakamega Rd",17890,images/map-sample.png
+9,Mburu Maina & Co Advocates,"Barngetuny Plaza Ronald Ngala St, Eldoret",23872,images/map-sample.png
+10,Nyairo & Co Advocates,"KVDA Plaza, 5th Flr Oloo St, Eldoret",14576,images/map-sample.png
+11,D.K Korir & Associates Advocates,"Barngetuny Plaza, 2nd Flr, Ronald Ngala St,  Eldoret",74812,images/map-sample.png
+12,Tom Mutei Advocates,"Sakong Hse, 3rd Flr Kenyatta St South, Eldoret",74430,images/map-sample.png
+13,Chemoiyai & Company Advocates,"Taiban Plaza, 2nd Flr, Ronald Ngala St, Eldoret",29771,images/map-sample.png
+14,Morgan musindi Law Firm And Advocates,"Next To DC's Office and Police Station, Lodwar",61625,images/map-sample.png
+15,Koech & Co. Advocates,"Next To DC's Office and Police Station, Lodwar",22649,images/map-sample.png
+16,cheptum & Company Advocates,"Next To DC's Office and Police Station, Lodwar",82572,images/map-sample.png
+17,Maurice Owuor and Co Advocates,"Next To DC's Office and Police Station, Lodwar",38141,images/map-sample.png
+18,"Mbugua,Atudo & Macharia Advocates","Mega Center, 1st Floor, Mak Asembo Road, Kitale",59733,images/map-sample.png
+19,Tum & Co Advocates,"Soet Hse, 1st Flr Kitale - Eldoret Rd, Kitale",84104,images/map-sample.png
+20,C T ONDITI & CO ADVOCATES,"Kenya Seed Rd, KFA Bldg, Kitale",29243,images/map-sample.png
+21,D B KAPTEN & CO ADVOCATES,"Kenyatta St, K F A Hse, 1st, Chemiron, Kitale",99372,images/map-sample.png
+22,Onyancha & Co Advocates,"T D Meisuria Bldg, 2nd Flr Kenyatta Ave, Kitale",79944,images/map-sample.png
+23,NYARERU & ASSOCIATE ADVOCATES,"Chuka town,Main road",90897,images/map-sample.png
+24,Gikera & Vadgama Advocates-chuka branch," Chuka town,Main road",95487,images/map-sample.png
+25,NYARERU & ASSOCIATE ADVOCATES,"Chuka town,Main road",67251,images/map-sample.png
+26,Gikera & Vadgama Advocates-chuka branch," Chuka town,Main road",5578,images/map-sample.png
+27,"Changorok, Sabulei Company Advocates","Next To DC's Office and Police Station, Lodwar",37631,images/map-sample.png
+28,Gikera & Vadgama Advocates-chuka branch," Chuka town,Main road",26229,images/map-sample.png
+29,Hola Law Courts,Bura-Tana,16713,images/map-sample.png
+30,Hola Law Courts,Bura-Tana,16713,images/map-sample.png
+31,Hola Law Courts,Bura-Tana,16713,images/map-sample.png
+32,Hola Law Courts,Bura-Tana,16713,images/map-sample.png
+33,Hola Law Courts,Bura-Tana,16713,images/map-sample.png
+34,"Charles Kioko, Munyithya & Co","Waweru Bldg, Voi",2033,images/map-sample.png
+35,Stephen Oddiaga & Co Advocates,"Solomon Hse opp Posta Taveta, Taveta Rd",39418,images/map-sample.png
+36,Mwinzi & Associates Advocates,"Jumbo Bldg, 1st Flr, Voi",17829,images/map-sample.png
+37,Nyakoni Ratemo & Co. Advocates,"Vawug Plaza,Ground Floor(G1),Off Hospital Road",49746,images/map-sample.png
+38,Gichana Bw''omwando & Co Advocates,"Qamar Plaza, 2nd Flr, Suite No.8, Taita St",73120,images/map-sample.png
+39,Mugoye & Associates Advocates,"Mwalimu Plaza, Gr Flr Off Kisumu/Siaya Rd",98102,images/map-sample.png
+40,R A Okumu & Associates,"New Bldg,Junction CDF Office,Opp Safaricom Booster",78812,images/map-sample.png
+41,"Oyombra and Associates, Advocates",Ugunja-Kisumu/Siaya Rd,14493,images/map-sample.png
+42,Mugoye & Associates Advocates,"Mwalimu Plaza, Gr Flr Off Kisumu/Siaya Rd",15873,images/map-sample.png
+43,R A Okumu & Associates,"New Bldg,Junction CDF Office,Opp Safaricom Booster",83125,images/map-sample.png
+44,Kevin Nyenyire & Co. Advocates,Archers Post-samburu,47474,images/map-sample.png
+45,Kevin Nyenyire & Co. Advocates,Archers Post-samburu,47474,images/map-sample.png
+46,Kevin Nyenyire & Co. Advocates,Archers Post-samburu,47474,images/map-sample.png
+47,Kevin Nyenyire & Co. Advocates,Archers Post-samburu,47474,images/map-sample.png
+48,H K Ndirangu Advocate,"Batian Cinema Bldg Kimathi Way, Nyeri",61739,images/map-sample.png
+49,Kebuka Wachira & Co Advocates,"Kangaru Corner Hse, Mezz Flr Gakere Rd, Nyeri",74595,images/map-sample.png
+50,Wahome Gikonyo & Co Advocates,"Kona Hauthi Hse, 2nd Flr Kanisa Rd, Nyeri",26432,images/map-sample.png
+51,G K Kibira & Co Advocates,"Central Plaza, 1st Flr, Kimathi Way,  Nyeri",4951,images/map-sample.png
+52,A J KARIUKI & CO ADVOCATES,"Wang'ombe Waihura Rd, Vera Tws, 3rd, Nyeri",77916,images/map-sample.png
+53,Njoki Mureithi Advocate,"Mima Center, 1st Flr, Nyeri/Nyahururu Rd",54384,images/map-sample.png
+54,D.W. Mbugua & Co Advocates,"Mbaria Complex, 2nd Flr, Suite 43-, Kenyatta Rd",20866,images/map-sample.png
+55,Kariuki Mwangi & Co Advocates,"Kimwa Centre, 1st Flr, Kenyatta Ave",17707,images/map-sample.png
+56,Lawrence Mwangi & Mwangi Co. Advocates,"Mwanjo Arcade, 1st Flr, Rm 18/19, Kenyatta Ave",30974,images/map-sample.png
+57,Njeri Wamithi & Co Advocates,"KCB Bldg - Nyahururu, 1st Flr, Subukia Rd",54445,images/map-sample.png
+58,Rm Onyancha And CO Advocates,Nyamira-Main road,3678,images/map-sample.png
+59,Rm Onyancha And CO Advocates,Nyamira-Main road,3678,images/map-sample.png
+60,Rm Onyancha And CO Advocates,Nyamira-Main road,3678,images/map-sample.png
+61,Rm Onyancha And CO Advocates,Nyamira-Main road,3678,images/map-sample.png
+62,Rm Onyancha And CO Advocates,Nyamira-Main road,3678,images/map-sample.png
+63,Ochego Onduso & Co Advocates,"Nenkai Plaza, Nairobi/Narok Rd, Narok",21031,images/map-sample.png
+64,Saina Sena & Company Advocates,"Maa Towers, Gr Flr, Narok/Nairobi Rd, Narok",87060,images/map-sample.png
+65,Ochego Onduso & Co Advocates,"Nenkai Plaza, Nairobi/Narok Rd, Narok",92890,images/map-sample.png
+66,Saina Sena & Company Advocates,"Maa Towers, Gr Flr, Narok/Nairobi Rd, Narok",10163,images/map-sample.png
+67,Ochego Onduso & Co Advocates,"Nenkai Plaza, Nairobi/Narok Rd, Narok",93786,images/map-sample.png
+68,K C Chumo Advocate,"Kapsabet/Kisumu Rd, Kapsabet, Kapsabet",82352,images/map-sample.png
+69,K C Chumo Advocate,"Kapsabet/Kisumu Rd, Kapsabet, Kapsabet",82352,images/map-sample.png
+70,K C Chumo Advocate,"Kapsabet/Kisumu Rd, Kapsabet, Kapsabet",82352,images/map-sample.png
+71,K C Chumo Advocate,"Kapsabet/Kisumu Rd, Kapsabet, Kapsabet",82352,images/map-sample.png
+72,K C Chumo Advocate,"Kapsabet/Kisumu Rd, Kapsabet, Kapsabet",82352,images/map-sample.png
+73,Ikua & co advocates,Inder Singh BLDG Kenyatta ave Mariashoni Molo ,76670,images/map-sample.png
+74,Mahida & Maina Company Advocates ,"ú Vickmark Plaza, Government Rd",33350,images/map-sample.png
+75,Mukiri Global Advocates LLP,"Assumption Centre, 3rd Floor, Off Moi Road, Nakuru ",40612,images/map-sample.png
+76,Kiplenge & Kurgat Advocates,"CDN Plaza, 1st Floor, Southern Wing, Moi Rd",19740,images/map-sample.png
+77,Wambua & maseno advocates,"Town East, Prestige Mall, Kenyatta Ave",32552,images/map-sample.png
+78,Chege Kibathi & Company Advocates LLP,"Hughes Building, Banda St",29461,images/map-sample.png
+79,Katwa & Kemboy Advocates,"5th Floor, Transnational plaza, Mama Ngina St",57432,images/map-sample.png
+80,Paul Anderson Advocates,"5th Floor Gatkim Complex, Ronald Ngala ",89002,images/map-sample.png
+81,Robson Harris & Co. Advocates,Corporate office ú City-Hall Way,11337,images/map-sample.png
+82,Ameli Inyangu & Partners Advocates - AIP Nairobi,"2nd Floor, K.C.S House, Mama Ngina Street",81544,images/map-sample.png
+83,J. N. MBUTHIA & CO. ADVOCATES,Murang'a,30015,images/map-sample.png
+84,Kiriba & Co. Advocates,"Kangema Police Station, Kangema",13981,images/map-sample.png
+85,J. N. MBUTHIA & CO. ADVOCATES,Murang'a,23562,images/map-sample.png
+86,Kiriba & Co. Advocates,"Kangema Police Station, Kangema",10189,images/map-sample.png
+87,J. N. MBUTHIA & CO. ADVOCATES,Murang'a,20677,images/map-sample.png
+88,Wajir Law Courts,wajir town,46438,images/map-sample.png
+89,Balala & Abed Advocates,"Mikindani Street, Off Nkrumah Road",27329,images/map-sample.png
+90,Philip Magal & Co. Advocates,"Paves Plaza, ground Flr, 3, Makutano/Kapenguria Rd",97762,images/map-sample.png
+91,Daniel Orenge & Co Advocates,"Room B5, 1st Floor, Ivory Building, Moi Ave",75185,images/map-sample.png
+92,Sherman Nyongesa & Company Advocates,"Ambalal House,  5th Floor, Mombasa Trading Centre",79361,images/map-sample.png
+93,A B Patel & Patel Advocates,"1ST FLOOR, ORIENTAL BUILDING Nkrumah Rd",94451,images/map-sample.png
+94,Swaleh And Co. Advocates,"7th Floor, NSSF Building, Nkurumah Road",48152,images/map-sample.png
+95,Abisai & Co. Advocates,"Amicus Plaza, 3rd Floor, Migori-Kisii rd Nyamira",41808,images/map-sample.png
+96,"Okong''o, Wandago & Co Advocates","Okongo Wandago & Co. Advocates Bldg Opp KCB Bank, Court Rd",95809,images/map-sample.png
+97,Owade & Co Advocates,"Cosade Bldg Opp Stadium, Law Courts Rd",11884,images/map-sample.png
+98,Simani & Associates,Suna Rd,46549,images/map-sample.png
+99,Philip Magal & Co. Advocates,"Paves Plaza, ground Flr, 3, Makutano/Kapenguria Rd",32516,images/map-sample.png
+100,"Amicus Plaza, 3rd Floor, Migori-Kisii rd Nyamira","Amicus Plaza, 3rd Floor, Migori-Kisii rd Nyamira",94830,images/map-sample.png
+101,Wilson P Mburugu Advocates,"Ntugi Hse, 1st Flr, Meru",99224,images/map-sample.png
+102,B G Kariuki & Co Advocates,"Maccu Bldg, 3rd Flr Kenyatta Hwy, Meru",11443,images/map-sample.png
+103,MEENYE & KIRIMI ADVOCATES,"Njuri Njeke Rd, KCB Bldg, 1st Gaitu, Meru",41383,images/map-sample.png
+104,DAVID JOHN MBAYA & CO ADVOCATES,"Kenyatta Hwy, Maccu Bldg Dr 213, 2nd, Meru",77578,images/map-sample.png
+105,Haron Gitonga & Basilio Gitonga Advocates,"Doris Hse, 2nd Flr Tom Mboya St, Meru",72334,images/map-sample.png
+106,Manyonge Nassoro & Associates Advocates,"Marsabit Plaza, 1st ",8461,images/map-sample.png
+107,ABDI  WAKO & Co. Advocates,"Marsabit Plaza, 4th",78505,images/map-sample.png
+108,SARAH & FAKIM ADVOCATES,"Marsabit TOWERS, 4th",63168,images/map-sample.png
+109,Okweh mohammed & Co. Advocates,"Marsabit Plaza, 2nd Flr, 206, ",5058,images/map-sample.png
+110,Osimbo malim & Co. Advocates,"Marsabit Plaza, 1st Flr, Rm 105, ",2924,images/map-sample.png
+111,Machuka Gonzi Matini & Co Advocates,Elwak plaza-Mandera,17699,images/map-sample.png
+112,Adan Mukiri & Onyango Advocates,lafay centre 4th floor,85331,images/map-sample.png
+113, Galala & Co Advocates,Duse centre near post office,84387,images/map-sample.png
+114,Godana & Wanjau Advocates,Malkamaria Area,25911,images/map-sample.png
+115,Wajir Law Courts,wajir town,6467,images/map-sample.png
+116,R. Salama Ahmed & Co Advocates,Mandera town,25143,images/map-sample.png
+117,J W Wambua & Co Advocates - Makueni,"Nesa Plaza, 1st Flr, Kathonzweni/Wote Rd",74364,images/map-sample.png
+118,J W Wambua & Co Advocates - Makueni,"Nesa Plaza, 1st Flr, Kathonzweni/Wote Rd",74364,images/map-sample.png
+119,J W Wambua & Co Advocates - Makueni,"Nesa Plaza, 1st Flr, Kathonzweni/Wote Rd",74364,images/map-sample.png
+120,J W Wambua & Co Advocates - Makueni,"Nesa Plaza, 1st Flr, Kathonzweni/Wote Rd",74364,images/map-sample.png
+121,J W Wambua & Co Advocates - Makueni,"Nesa Plaza, 1st Flr, Kathonzweni/Wote Rd",74364,images/map-sample.png
+122,A M Mbidyo & Co Advocates,"Kamba Wholesalers Bldg, 2nd Flr, Machakos",78288,images/map-sample.png
+123,B M Musau & Co,"Kamba Wholesalers Bldg Rm 204, 2nd Flr, Machakos",74484,images/map-sample.png
+124,L M WAMBUA & CO ADVOCATE,"Mbolu Malu Rd, Mbitini Hse, 2nd, Ekalakala, Machakos",69308,images/map-sample.png
+125,Manthi Masika & Co Advocates,"Utisi Hse, 1st Flr Konza Rd, Machakos",74076,images/map-sample.png
+126,Mulwa & Mulwa Advocates,"K C B Bldg, 2nd Flr Syokimau Rd, Machakos",74038,images/map-sample.png
+127,Khaminwa & Khaminwa Advocates,"Galana Centre, Lamu Rd",56763,images/map-sample.png
+128,Kilonzo & Aziz Co Advocates,"Stanchart Arcade, 1st Flr, Lamu Rd",86022,images/map-sample.png
+129,Machuka Aluku Matini & Co Advocates,"F N Centre, Gr Flr, Lamu Rd",85986,images/map-sample.png
+130,Omwancha Mukiri & Onyango Advocates,"Pine Court Bldg Opp Nakumatt Mall, Gr Flr, Lamu Rd",61078,images/map-sample.png
+131,Kadima & Co Advocates,"Malindi Complex, 1st Flr, Lamu Rd",84569,images/map-sample.png
+132,J M Mwangi & Co Advocates,"Butsons Complex, 1st Flr, Laikipia Rd, Nanyuki, ",67669,images/map-sample.png
+133,G M Wanjohi & Co Advocates,"K C B Bldg, 1st Flr Kenyatta Hwy, Nanyuki",2135,images/map-sample.png
+134,Kiget & Co Advocates,"Sogra Hse Kimathi Rd, 1st Flr, Nanyuki",42803,images/map-sample.png
+135,Mwangi Kariuki & Co Advocates,"Mathai Hse, 1st Flr Kenyatta Hwy, Nanyuki",45372,images/map-sample.png
+136,OLE KAPARO & MAILANYI ADVOCATES,"Laikipia Rd, Buttsons Complex,  Nanyuki",17695,images/map-sample.png
+137,John Thongori & Company,"Baharini Plaza, 1st Flr, 3rd, Beach Rd ?only",71594,images/map-sample.png
+138,Mwende waweru & associates advocates,Ukunda-kwale,53051,images/map-sample.png
+139,Birir and Company Advocates,kwale,23962,images/map-sample.png
+140,John Thongori & Company,"Baharini Plaza, 1st Flr, 3rd, Beach Rd ?only",30123,images/map-sample.png
+141,Mwende waweru & associates advocates,Ukunda-kwale,31466,images/map-sample.png
+142,Mulu & Company Advocates,"Winlo Bldg, 2nd Flr, Kitui/Nairobi Rd, Kitui",43606,images/map-sample.png
+143,DAUTI KIBANGA & CO ADVOCATES,"Tom Mboya St,  Chuluni, Kitui",12045,images/map-sample.png
+144,J M MUINDE & CO ADVOCATES,"Munguti Rd, Ilako Bldg, 2nd, Chuluni, Kitui",11615,images/map-sample.png
+145,NDUNDA & CO ADVOCATES,"Munguti Rd,Kitui/Nairobi Rd, Kitui",61658,images/map-sample.png
+146,J M MUINDE & CO ADVOCATES,"Munguti Rd, Ilako Bldg, 2nd, Chuluni, Kitui",58046,images/map-sample.png
+147,Ameli Inyangu & Partners Advocates - AIP Kisumu,"Alpha House, 4th Floor, Kisumu CBD, Oginga Odinga Street",59840,images/map-sample.png
+148,"Ogejo, Omboto And Kijala Advocates","Reinsurance, Next To Eshikhoni Agency, Kisumu C. B. D",41087,images/map-sample.png
+149,Wasuna & Company Advocates,"Block A, Reinsurance Plaza, Joo Kenyatta Highway",79389,images/map-sample.png
+150,"Owiti, Otieno and Ragot Advocates","Al-imran plaza, Oginga Odinga Road 4th floor",72563,images/map-sample.png
+151,Aboge & Company Advocates,"Ground Floor, Aboge House, Kisumu - Kakamega Road",79503,images/map-sample.png
+152,GILBERT J MAINYE & CO ADVOCATES,"Main St, Co-Op Bank Bldg Etago, Kisii",11145,images/map-sample.png
+153,NYAIRO ORORA & CO ADVOCATES,"Hospital Rd, Hema Plaza Etago, Kisii",85009,images/map-sample.png
+154,Nyamurongi & Company Advocates,"New Sansora Complex, 2nd Flr, -Suite 4, General Rd, Kisii",89138,images/map-sample.png
+155,Khan & Katiku Advocates,"Silver Hse, 1st Flr Hospital Rd, Kisii",75702,images/map-sample.png
+156,NYARIKI & CO ADVOCATES,"Nyanchwa Rd, Golf Hse, 3rd, Kisii",38634,images/map-sample.png
+157,Wanjao & Wanjau Advocates,"Bemuda Plaza Wanjao House Near Grand Oak Hotel,Kerugoya",31065,images/map-sample.png
+158,R. Muthike Makworo & Co Advocates,"Njuwa Hse, 2nd Flr, Rm 13, Kerugoya/Kagumo Rd",20299,images/map-sample.png
+159,PM Muchira & Co Advocates,Kerugoya/Kutus Rd,62529,images/map-sample.png
+160,Magee Wa Magee Advocates,"Bingwa Sacco Society Bldg, 2nd Flr, Kerugoya/Karatina Rd",19831,images/map-sample.png
+161,I W Muchiri Advocate,"Kirinyaga Ushirika Bank Hse, 3rd Flr",61410,images/map-sample.png
+162,Mutisya Bosire & Co Advocates,"Mula Plaza, 1st Flr Lamu Rd, Malindi",12287,images/map-sample.png
+163,Fadhil & Kilonzo Associates,"Malindi Complex, 2nd Flr Lamu Rd, Malindi",80594,images/map-sample.png
+164,Omagwa Angima & Co Advocates,"Mijikenda Bldg Tourist Rd, Malindi",97905,images/map-sample.png
+165,Philip Magal & Co. Advocates,"Paves Plaza, ground Flr, 3, Makutano/Kapenguria Rd",78327,images/map-sample.png
+166,Ben Ochieng' & Co Advocates,"The Bay Point Sea Front Rd, Malindi",17742,images/map-sample.png
+167,Machuka & Co Advocates,"Mulla Plaza, 1st Flr Lamu Rd, Malindi",57539,images/map-sample.png
+168,Osoro Chege Kibathi & Advocates,"Ground Floor, 2417 Building, Kiambu Rd",17861,images/map-sample.png
+169,Munene Warutere & Company Advocates,"Kikinga House, Next to KCB, Kiambu Rd",73030,images/map-sample.png
+170,G. W Wainaina Advocates,"Ann's Arcade, Along Kiambu Road, Biashara Street",84830,images/map-sample.png
+171,Katina & Co. Advocates,Woyet Bldg,96962,images/map-sample.png
+172,Mwangi Mwaura & Partners Advocates,"2nd Floor, Professional House, Law Court, Biashara Road",54089,images/map-sample.png
+173,The Law Office of Charles M. Kinini Advocates,Law firm ú Behind KCB ruiru branch Ruiru Town KE,83623,images/map-sample.png
+174,Wajir Law Courts,wajir town,22805,images/map-sample.png
+175,Sila Munyao & Co Advocates,"Koin-Eei Plaza, 3rd Flr Temple Rd, Kericho",82203,images/map-sample.png
+176,CHELULE & CO ADVOCATES,"Moi Rd, KERICHO",11271,images/map-sample.png
+177,JOEL K KOSKEI,"Temple Rd, Koin-ei Plaza, 2nd, Cheborge, Kericho",56547,images/map-sample.png
+178,Motanya & Co Advocates,"Mwalimu Bldg, 3rd Flr Moi Rd, Kericho",85195,images/map-sample.png
+179,Wheldon Ngetich & Co Advocates,"Mwalimu Hse, 2nd Flr Moi Rd, Kericho",25888,images/map-sample.png
+180,E K Owinyi Advocates,"Kholera Plaza Cannon Awori St, Kakamega",30858,images/map-sample.png
+181,Akwala & Co Advocates,"Opp KCB Kenyatta Ave, Kakamega",84549,images/map-sample.png
+182,Katina & Co. Advocates,Woyet Bldg,7627,images/map-sample.png
+183,Amasakha & Co Advocates,"Kateco Plaza, Gr Flr, 008 Muruli Rd, Kakamega",93548,images/map-sample.png
+184,AZANGALALA & CO ADVOCATES,"Kenyatta Ave, Bukura, Kakamega",6394,images/map-sample.png
+185,C O SAMBA & CO ADVOCATES,"Muruli Rd, Mwalimu Centre, 2nd, Bukura, Kakamega",1844,images/map-sample.png
+186,Itaya & Co. Advocates,"Magadi Rd,Kajiado",81470,images/map-sample.png
+187,Mwiti & Company Advocates numbers,"Shop 16, 1st Floor, Rongai, Ongata Mall Complex, Magadi Rd",18038,images/map-sample.png
+188,Maguta Kimemia And Associates Advocates,"Ground Floor, Ebenzer House, Magadi Rd",14894,images/map-sample.png
+189,"Edwin Maina, Mugo & Assocites","2nd Floor, Tyme Arcade, Magadi Rd",74988,images/map-sample.png
+190,Naikuni Ngaah And Miencha Company Advocates,"Mutal Building, Near Post Office, Magadi Rd",29037,images/map-sample.png
+191,Isiolo Law Courts, Isiolo,38903,images/map-sample.png
+192,Isiolo Law Courts, Isiolo,38903,images/map-sample.png
+193,Isiolo Law Courts, Isiolo,38903,images/map-sample.png
+194,Isiolo Law Courts, Isiolo,38903,images/map-sample.png
+195,G S Okoth & Co Advocates,"Main St, Homa Bay",81665,images/map-sample.png
+196,Nyauke & Co Advocates,"Main St, Homa Bay",81665,images/map-sample.png
+197,G S Okoth & Co Advocates,"Main St, Homa Bay",81665,images/map-sample.png
+198,Nyauke & Co Advocates,"Main St, Homa Bay",81665,images/map-sample.png
+199,G S Okoth & Co Advocates,"Main St, Homa Bay",81665,images/map-sample.png
+200,Mbalukadvocates-Garissa,Garissa,28906,images/map-sample.png
+201,KAMAU KARIUKI & CO,"Bura Tana, Garissa",44726,images/map-sample.png
+202,Mbalukadvocates-Garissa,Garissa,28906,images/map-sample.png
+203,Mbalukadvocates-Garissa,Garissa,28906,images/map-sample.png
+204,KAMAU KARIUKI & CO,"Bura Tana, Garissa",81709,images/map-sample.png
+205,H M J Utuku Advocates,"Thagamu Hse, 1st Flr Mama Ngina St, Embu",56994,images/map-sample.png
+206,Muraguri Macharia Advocates,"Rurima Bldg, 3rd Flr Mama Ngina St, Embu",92470,images/map-sample.png
+207,Morris Njage & Co Advocates Notaries Public,"Emco Hse, 1st Flr Kenyatta Hwy, Embu",9061,images/map-sample.png
+208,GACHORA & CO ADVOCATES,"Kenyatta Hwy, Kenya Commercial Bank Bldg, 1st, Embu",26819,images/map-sample.png
+209,Joe Kathungu & Co Advocates,"KCB Bldg, 2nd Flr Kenyatta Hwy, Embu",72185,images/map-sample.png
+210,Munyasya And Co -Advocates,"Iten, Kenya, Next To DC's Office",99602,images/map-sample.png
+211,Munyasya And Co -Advocates,"Iten, Kenya, Next To DC's Office",99602,images/map-sample.png
+212,Munyasya And Co -Advocates,"Iten, Kenya, Next To DC's Office",99602,images/map-sample.png
+213,Munyasya And Co -Advocates,"Iten, Kenya, Next To DC's Office",99602,images/map-sample.png
+214,Munyasya And Co -Advocates,"Iten, Kenya, Next To DC's Office",99602,images/map-sample.png
+215,ETYANG ORONI & CO ADVOCATES,"Amukura Hse, Gr, Busia",59161,images/map-sample.png
+216,ANYARA EMUKULE & CO ADVOCATES,"Busia/Kisumu Rd, Amukura Hse, Gr, Busia",62936,images/map-sample.png
+217,M NYARONJONGA & CO ADVOCATES," Busia/Kisumu Rd, Busia",87040,images/map-sample.png
+218,OKUBO & CO ADVOCATES," Busia/Kisumu Rd, Busia",76920,images/map-sample.png
+219,Balongo & Co Advocates,"Reuben Hse opp Busia Police Station Busia/Kisumu Rd, Busia",78753,images/map-sample.png
+220,J O Makali & Co Advocates,"Town Hall, 1st Flr Moi Ave, Bungoma",57167,images/map-sample.png
+221,J S Khakula & Co Advocates,"Maumu Bldg Off Moi Ave, Bungoma",91246,images/map-sample.png
+222,Masinde & Co Advocates,"NSSF Bldg, 3rd Flr Moi Ave, Bungoma",95431,images/map-sample.png
+223,MUTAKHA ONDUSO & LUTTA ADVOCATES,"Moi Ave, NSSF Bldg,  Bungoma",76078,images/map-sample.png
+224,Roselyne Aburili & Co Advocates,"Asikwana Hse, 2nd Flr, Bungoma",95931,images/map-sample.png
+225,Bomet Law Courts,Bomet Town,17426,images/map-sample.png
+226,Bomet Law Courts,Bomet Town,17426,images/map-sample.png
+227,Bomet Law Courts,Bomet Town,17426,images/map-sample.png
+228,Bomet Law Courts,Bomet Town,17426,images/map-sample.png
+229,Bomet Law Courts,Bomet Town,17426,images/map-sample.png
+230,Onkoba & Co Advocates & Commissioner Of Oath,"Jakana Bldg, 1st Flr",49974,images/map-sample.png
+231,Kapila Taibjee & Bhalla Advocates,"Hevea Court, 4th Flr, Eldama Ravine Rd",8506,images/map-sample.png
+232,Kipsang Langat & Co. Advocates,"KFA Godown, 4th Flr, Rm4, Kabarnet Rd",14438,images/map-sample.png
+233,Onkoba & Co Advocates & Commissioner Of Oath,"Jakana Bldg, 1st Flr",70828,images/map-sample.png
+234,Kapila Taibjee & Bhalla Advocates,"Hevea Court, 4th Flr, Eldama Ravine Rd",69193,images/map-sample.png

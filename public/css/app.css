@@ -11212,10 +11212,13 @@ body {
 .background-image .navbar-home a {
   color: #fff;
   font-size: 15px;
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+  border-bottom: 2px solid transparent;
 }
 
 .background-image .navbar-home a:hover {
-  color: #afa939;
+  border-bottom: 2px solid #afa939;
 }
 
 .background-image .navbar-home a:active {
@@ -11317,7 +11320,7 @@ footer-widget p {
 }
 
 .register {
-  background: -webkit-linear-gradient(left, #8b872b, #afa939);
+  background: -webkit-linear-gradient(left, #66630b, #a59e18);
   margin-top: 3%;
   padding: 3%;
 }
@@ -11326,19 +11329,6 @@ footer-widget p {
   text-align: center;
   color: #fff;
   margin-top: 4%;
-}
-
-.register-left input {
-  border: none;
-  border-radius: 1.5rem;
-  padding: 2%;
-  width: 60%;
-  background: #f8f9fa;
-  font-weight: bold;
-  color: #383d41;
-  margin-top: 30%;
-  margin-bottom: 3%;
-  cursor: pointer;
 }
 
 .register-right {
@@ -11391,46 +11381,16 @@ footer-widget p {
 }
 
 .btnRegister {
-  float: right;
-  margin-top: 10%;
+  margin: auto;
+  margin-top: 7%;
   border: none;
   border-radius: 1.5rem;
-  padding: 2%;
-  background: #afa939;
+  padding: 5px 10px 5px 10px;
+  background: #9c9633;
   color: #fff;
-  font-weight: 600;
-  width: 50%;
+  font-weight: 500;
+  width: 20%;
   cursor: pointer;
-}
-
-.register .nav-tabs {
-  margin-top: 3%;
-  border: none;
-  background: #afa939;
-  border-radius: 1.5rem;
-  width: 28%;
-  float: right;
-}
-
-.register .nav-tabs .nav-link {
-  padding: 2%;
-  height: 34px;
-  font-weight: 600;
-  color: #fff;
-  border-top-right-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
-}
-
-.register .nav-tabs .nav-link:hover {
-  border: none;
-}
-
-.register .nav-tabs .nav-link.active {
-  width: 100px;
-  color: #afa939;
-  border: 2px solid #afa939;
-  border-top-left-radius: 1.5rem;
-  border-bottom-left-radius: 1.5rem;
 }
 
 .register-heading {

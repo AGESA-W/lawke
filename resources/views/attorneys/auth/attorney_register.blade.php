@@ -240,76 +240,166 @@
 
 </head>
 <body>
-    <div class="container register">
-        <div class="row">
-            <div class="col-md-3 register-left">
-                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                <h3>Welcome</h3>
-                <p>You are 30 seconds away from earning your own money!</p>
-                <input type="submit" name="" value="Login"/><br/>
-            </div>
-            <div class="col-md-9 register-right">
-                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <h3 class="register-heading">Apply as a Employee</h3>
+    <div id="app">
+        @include('partials.navbar')
+            <div class="container register">
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="images/logo_white.png" alt=""/>
+                    <h3>Welcome</h3>
+                    <p>You are 30 seconds away from creating an account as an Attorney!</p>
+                </div>
+                <div class="col-md-9 register-right">
+                    <h3 class="register-heading">Register as an Attorney</h3>
+                    <form method="POST" action="{{ route('attorneys.store') }}">
+                        @csrf
                         <div class="row register-form">
                             <div class="col-md-6">
+                                <p class="register-para">Personal Details</p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                    <label for="national_id" class="col-form-label ">{{ ('National ID') }}</label>
+                                    <input id="national_id" type="text" data-type="national_id" placeholder="34019449" class="autocomplete_txt form-control @error('national_id') is-invalid @enderror" name="national_id" value="{{ old('national_id') }}" required autocomplete="national_id" autofocus>
+
+                                    @error('national_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                    <label for="firstname" class="col-form-label ">{{ __('FirstName') }}</label>
+                                    <input id="firstname" type="text" data-type="firstname" class="form-control autocomplete_txt @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" readonly="readonly" required autocomplete="firstname" autofocus>
+        
+                                        @error('firstname')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password *" value="" />
+                                    <label for="lastname" class="col-form-label ">{{ __('LastName:') }}</label>
+                                    <input id="lastname" type="text" data-type="lastname" class="autocomplete_txt form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" readonly="readonly" required autocomplete="lastname" autofocus>
+        
+                                        @error('lastname')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
+                                    <label for="mobile" class="col-form-label ">{{ ('Phone Number') }}</label>
+                                    <input id="mobile" type="text" placeholder="0792685127" class="mb-3 form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}"readonly="readonly" required autocomplete="mobile" autofocus>
+
+                                    @error('mobile')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <div class="maxl">
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="male" checked>
-                                            <span> Male </span> 
-                                        </label>
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="female">
-                                            <span>Female </span> 
-                                        </label>
+                                    <label for="gender" class="col-form-label ">{{ __('Gender:') }}</label>
+                                    <div class="d-flex form-check">
+                                        <input class="form-check-input" type="radio"  name="gender" id="male" value="male" required autocomplete="gender" >
+                                        <label class="form-check-label" for="male">Male</label>
+
+                                        <div class="option2 pl-5">
+                                            <input class="form-check-input " type="radio" name="gender" id="female" value="female"required autocomplete="gender">
+                                            <label  for="female">Female</label>
+                                        </div>
                                     </div>
+                                    @error('gender')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" value="" />
+                                    <label for="license_no" class="col-form-label ">{{ ('License No:') }}</label>
+                                    <input id="license_no" type="text" data-type="license_no" placeholder="P.105/1234/56" class="mb-3 autocomplete_txt form-control @error('license_no') is-invalid @enderror" name="license_no" value="{{ old('license_no') }}"  readonly="readonly" required autocomplete="license_no" autofocus>
+
+                                    @error('license_no')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <p class="register-para">Account Details</p>
+                                <div class="form-group">
+                                    <label for="email" class="col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" readonly="readonly" required autocomplete="email">
+        
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
+                                    <label for="password" class="col-form-label text-md-right">{{ __('Password') }}</label>
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+        
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control">
-                                        <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                        <option>What is your Birthdate?</option>
-                                        <option>What is Your old Phone Number</option>
-                                        <option>What is your Pet Name?</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
-                                </div>
+                                    <label for="password-confirm" class="col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                    </div>
+                                </div> 
                                 <input type="submit" class="btnRegister"  value="Register"/>
+                                {{-- <button type="reset" class="btn btn-danger" >cancel</button> --}}
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-
+        @include('partials.footer')
+        <script>
+            $(document).on('focus','.autocomplete_txt',function(){
+            type = $(this).data('type');
+            
+            if(type =='national_id' )autoType='national_id'; 
+        
+            $(this).autocomplete({
+                minLength: 0,
+                source: function( request, response ) {
+                        $.ajax({
+                            url: "{{ route('get.attorneys') }}",
+                            dataType: "json",
+                            data: {
+                                term : request.term,
+                                type : type,
+                            },
+                            success: function(data) {
+                                var array = $.map(data, function (item) {
+                                return {
+                                    label: item[autoType],
+                                    value: item[autoType],
+                                    data : item
+                                }
+                            });
+                                response(array)
+                            }
+                        });
+                },
+                select: function( event, ui ) {
+                    var data = ui.item.data;           
+                    $('#firstname').val(data.firstname);
+                    $('#lastname').val(data.lastname);
+                    $('#email').val(data.email);
+                    $('#mobile').val(data.mobile);
+                    $('#national_id').val(data.national_id);
+                    $('#license_no').val(data.license_no);
+                }
+            }); 
+            });
+        </script>
     </div>
 </body>
 </html>

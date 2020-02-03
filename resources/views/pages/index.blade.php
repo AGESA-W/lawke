@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'LAWKE') }}</title>
 
     <!-- Scripts -->
+
     <script src="{{ asset('js/app.js') }}" ></script>
     <script src="{{ asset('js/typewriter.js') }}"></script>
     {{-- <script src="{{ asset('js/constituency.js') }}"></script> --}}

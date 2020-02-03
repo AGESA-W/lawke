@@ -63,3 +63,13 @@ const TypeWriter = function(txtElement, words, wait = 3000) {
     //Init TypeWriter
     new TypeWriter(txtElement, words, wait);
   }
+
+
+
+
+  
+  
+  
+
+
+

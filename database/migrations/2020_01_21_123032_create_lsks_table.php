@@ -14,14 +14,14 @@ class CreateLsksTable extends Migration
     public function up()
     {
         Schema::create('lsks', function (Blueprint $table) {
-            $table->integer('attorney_id');
+            $table->increments('attorney_id');
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('gender');
              $table->string('mobile');
              $table->mediumText('county');
-             $table->integer('national_id');
+             $table->integer('national_id')->unsigned();;
             $table->string('license_no');
         });
     }
