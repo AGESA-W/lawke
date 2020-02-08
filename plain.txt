@@ -1,234 +1,506 @@
-1,Wajir Law Courts,wajir town,42825,images/map-sample.png
-2,Kevin Nyenyire & Co. Advocates,Archers Post-samburu,66276,images/map-sample.png
-3,Wajir Law Courts,wajir town,36101,images/map-sample.png
-4,Nyanga &Co. Advocates," Maragoli Next to Jupiter electronics . North end, Maragoli",85728,images/map-sample.png
-5,D. C. Chitwah & Co. Advocates,Kakamega/Kisumu Rd,8129,images/map-sample.png
-6,Osabwa Sandys Advocates,"Majengo Maragoli Plaza, 1st Flr, Kakamega Rd",93782,images/map-sample.png
-7,Nyanga &Co. Advocates," Maragoli Next to Jupiter electronics . North end, Maragoli",85728,images/map-sample.png
-8,Osabwa Sandys Advocates,"Majengo Maragoli Plaza, 1st Flr, Kakamega Rd",17890,images/map-sample.png
-9,Mburu Maina & Co Advocates,"Barngetuny Plaza Ronald Ngala St, Eldoret",23872,images/map-sample.png
-10,Nyairo & Co Advocates,"KVDA Plaza, 5th Flr Oloo St, Eldoret",14576,images/map-sample.png
-11,D.K Korir & Associates Advocates,"Barngetuny Plaza, 2nd Flr, Ronald Ngala St,  Eldoret",74812,images/map-sample.png
-12,Tom Mutei Advocates,"Sakong Hse, 3rd Flr Kenyatta St South, Eldoret",74430,images/map-sample.png
-13,Chemoiyai & Company Advocates,"Taiban Plaza, 2nd Flr, Ronald Ngala St, Eldoret",29771,images/map-sample.png
-14,Morgan musindi Law Firm And Advocates,"Next To DC's Office and Police Station, Lodwar",61625,images/map-sample.png
-15,Koech & Co. Advocates,"Next To DC's Office and Police Station, Lodwar",22649,images/map-sample.png
-16,cheptum & Company Advocates,"Next To DC's Office and Police Station, Lodwar",82572,images/map-sample.png
-17,Maurice Owuor and Co Advocates,"Next To DC's Office and Police Station, Lodwar",38141,images/map-sample.png
-18,"Mbugua,Atudo & Macharia Advocates","Mega Center, 1st Floor, Mak Asembo Road, Kitale",59733,images/map-sample.png
-19,Tum & Co Advocates,"Soet Hse, 1st Flr Kitale - Eldoret Rd, Kitale",84104,images/map-sample.png
-20,C T ONDITI & CO ADVOCATES,"Kenya Seed Rd, KFA Bldg, Kitale",29243,images/map-sample.png
-21,D B KAPTEN & CO ADVOCATES,"Kenyatta St, K F A Hse, 1st, Chemiron, Kitale",99372,images/map-sample.png
-22,Onyancha & Co Advocates,"T D Meisuria Bldg, 2nd Flr Kenyatta Ave, Kitale",79944,images/map-sample.png
-23,NYARERU & ASSOCIATE ADVOCATES,"Chuka town,Main road",90897,images/map-sample.png
-24,Gikera & Vadgama Advocates-chuka branch," Chuka town,Main road",95487,images/map-sample.png
-25,NYARERU & ASSOCIATE ADVOCATES,"Chuka town,Main road",67251,images/map-sample.png
-26,Gikera & Vadgama Advocates-chuka branch," Chuka town,Main road",5578,images/map-sample.png
-27,"Changorok, Sabulei Company Advocates","Next To DC's Office and Police Station, Lodwar",37631,images/map-sample.png
-28,Gikera & Vadgama Advocates-chuka branch," Chuka town,Main road",26229,images/map-sample.png
-29,Hola Law Courts,Bura-Tana,16713,images/map-sample.png
-30,Hola Law Courts,Bura-Tana,16713,images/map-sample.png
-31,Hola Law Courts,Bura-Tana,16713,images/map-sample.png
-32,Hola Law Courts,Bura-Tana,16713,images/map-sample.png
-33,Hola Law Courts,Bura-Tana,16713,images/map-sample.png
-34,"Charles Kioko, Munyithya & Co","Waweru Bldg, Voi",2033,images/map-sample.png
-35,Stephen Oddiaga & Co Advocates,"Solomon Hse opp Posta Taveta, Taveta Rd",39418,images/map-sample.png
-36,Mwinzi & Associates Advocates,"Jumbo Bldg, 1st Flr, Voi",17829,images/map-sample.png
-37,Nyakoni Ratemo & Co. Advocates,"Vawug Plaza,Ground Floor(G1),Off Hospital Road",49746,images/map-sample.png
-38,Gichana Bw''omwando & Co Advocates,"Qamar Plaza, 2nd Flr, Suite No.8, Taita St",73120,images/map-sample.png
-39,Mugoye & Associates Advocates,"Mwalimu Plaza, Gr Flr Off Kisumu/Siaya Rd",98102,images/map-sample.png
-40,R A Okumu & Associates,"New Bldg,Junction CDF Office,Opp Safaricom Booster",78812,images/map-sample.png
-41,"Oyombra and Associates, Advocates",Ugunja-Kisumu/Siaya Rd,14493,images/map-sample.png
-42,Mugoye & Associates Advocates,"Mwalimu Plaza, Gr Flr Off Kisumu/Siaya Rd",15873,images/map-sample.png
-43,R A Okumu & Associates,"New Bldg,Junction CDF Office,Opp Safaricom Booster",83125,images/map-sample.png
-44,Kevin Nyenyire & Co. Advocates,Archers Post-samburu,47474,images/map-sample.png
-45,Kevin Nyenyire & Co. Advocates,Archers Post-samburu,47474,images/map-sample.png
-46,Kevin Nyenyire & Co. Advocates,Archers Post-samburu,47474,images/map-sample.png
-47,Kevin Nyenyire & Co. Advocates,Archers Post-samburu,47474,images/map-sample.png
-48,H K Ndirangu Advocate,"Batian Cinema Bldg Kimathi Way, Nyeri",61739,images/map-sample.png
-49,Kebuka Wachira & Co Advocates,"Kangaru Corner Hse, Mezz Flr Gakere Rd, Nyeri",74595,images/map-sample.png
-50,Wahome Gikonyo & Co Advocates,"Kona Hauthi Hse, 2nd Flr Kanisa Rd, Nyeri",26432,images/map-sample.png
-51,G K Kibira & Co Advocates,"Central Plaza, 1st Flr, Kimathi Way,  Nyeri",4951,images/map-sample.png
-52,A J KARIUKI & CO ADVOCATES,"Wang'ombe Waihura Rd, Vera Tws, 3rd, Nyeri",77916,images/map-sample.png
-53,Njoki Mureithi Advocate,"Mima Center, 1st Flr, Nyeri/Nyahururu Rd",54384,images/map-sample.png
-54,D.W. Mbugua & Co Advocates,"Mbaria Complex, 2nd Flr, Suite 43-, Kenyatta Rd",20866,images/map-sample.png
-55,Kariuki Mwangi & Co Advocates,"Kimwa Centre, 1st Flr, Kenyatta Ave",17707,images/map-sample.png
-56,Lawrence Mwangi & Mwangi Co. Advocates,"Mwanjo Arcade, 1st Flr, Rm 18/19, Kenyatta Ave",30974,images/map-sample.png
-57,Njeri Wamithi & Co Advocates,"KCB Bldg - Nyahururu, 1st Flr, Subukia Rd",54445,images/map-sample.png
-58,Rm Onyancha And CO Advocates,Nyamira-Main road,3678,images/map-sample.png
-59,Rm Onyancha And CO Advocates,Nyamira-Main road,3678,images/map-sample.png
-60,Rm Onyancha And CO Advocates,Nyamira-Main road,3678,images/map-sample.png
-61,Rm Onyancha And CO Advocates,Nyamira-Main road,3678,images/map-sample.png
-62,Rm Onyancha And CO Advocates,Nyamira-Main road,3678,images/map-sample.png
-63,Ochego Onduso & Co Advocates,"Nenkai Plaza, Nairobi/Narok Rd, Narok",21031,images/map-sample.png
-64,Saina Sena & Company Advocates,"Maa Towers, Gr Flr, Narok/Nairobi Rd, Narok",87060,images/map-sample.png
-65,Ochego Onduso & Co Advocates,"Nenkai Plaza, Nairobi/Narok Rd, Narok",92890,images/map-sample.png
-66,Saina Sena & Company Advocates,"Maa Towers, Gr Flr, Narok/Nairobi Rd, Narok",10163,images/map-sample.png
-67,Ochego Onduso & Co Advocates,"Nenkai Plaza, Nairobi/Narok Rd, Narok",93786,images/map-sample.png
-68,K C Chumo Advocate,"Kapsabet/Kisumu Rd, Kapsabet, Kapsabet",82352,images/map-sample.png
-69,K C Chumo Advocate,"Kapsabet/Kisumu Rd, Kapsabet, Kapsabet",82352,images/map-sample.png
-70,K C Chumo Advocate,"Kapsabet/Kisumu Rd, Kapsabet, Kapsabet",82352,images/map-sample.png
-71,K C Chumo Advocate,"Kapsabet/Kisumu Rd, Kapsabet, Kapsabet",82352,images/map-sample.png
-72,K C Chumo Advocate,"Kapsabet/Kisumu Rd, Kapsabet, Kapsabet",82352,images/map-sample.png
-73,Ikua & co advocates,Inder Singh BLDG Kenyatta ave Mariashoni Molo ,76670,images/map-sample.png
-74,Mahida & Maina Company Advocates ,"ú Vickmark Plaza, Government Rd",33350,images/map-sample.png
-75,Mukiri Global Advocates LLP,"Assumption Centre, 3rd Floor, Off Moi Road, Nakuru ",40612,images/map-sample.png
-76,Kiplenge & Kurgat Advocates,"CDN Plaza, 1st Floor, Southern Wing, Moi Rd",19740,images/map-sample.png
-77,Wambua & maseno advocates,"Town East, Prestige Mall, Kenyatta Ave",32552,images/map-sample.png
-78,Chege Kibathi & Company Advocates LLP,"Hughes Building, Banda St",29461,images/map-sample.png
-79,Katwa & Kemboy Advocates,"5th Floor, Transnational plaza, Mama Ngina St",57432,images/map-sample.png
-80,Paul Anderson Advocates,"5th Floor Gatkim Complex, Ronald Ngala ",89002,images/map-sample.png
-81,Robson Harris & Co. Advocates,Corporate office ú City-Hall Way,11337,images/map-sample.png
-82,Ameli Inyangu & Partners Advocates - AIP Nairobi,"2nd Floor, K.C.S House, Mama Ngina Street",81544,images/map-sample.png
-83,J. N. MBUTHIA & CO. ADVOCATES,Murang'a,30015,images/map-sample.png
-84,Kiriba & Co. Advocates,"Kangema Police Station, Kangema",13981,images/map-sample.png
-85,J. N. MBUTHIA & CO. ADVOCATES,Murang'a,23562,images/map-sample.png
-86,Kiriba & Co. Advocates,"Kangema Police Station, Kangema",10189,images/map-sample.png
-87,J. N. MBUTHIA & CO. ADVOCATES,Murang'a,20677,images/map-sample.png
-88,Wajir Law Courts,wajir town,46438,images/map-sample.png
-89,Balala & Abed Advocates,"Mikindani Street, Off Nkrumah Road",27329,images/map-sample.png
-90,Philip Magal & Co. Advocates,"Paves Plaza, ground Flr, 3, Makutano/Kapenguria Rd",97762,images/map-sample.png
-91,Daniel Orenge & Co Advocates,"Room B5, 1st Floor, Ivory Building, Moi Ave",75185,images/map-sample.png
-92,Sherman Nyongesa & Company Advocates,"Ambalal House,  5th Floor, Mombasa Trading Centre",79361,images/map-sample.png
-93,A B Patel & Patel Advocates,"1ST FLOOR, ORIENTAL BUILDING Nkrumah Rd",94451,images/map-sample.png
-94,Swaleh And Co. Advocates,"7th Floor, NSSF Building, Nkurumah Road",48152,images/map-sample.png
-95,Abisai & Co. Advocates,"Amicus Plaza, 3rd Floor, Migori-Kisii rd Nyamira",41808,images/map-sample.png
-96,"Okong''o, Wandago & Co Advocates","Okongo Wandago & Co. Advocates Bldg Opp KCB Bank, Court Rd",95809,images/map-sample.png
-97,Owade & Co Advocates,"Cosade Bldg Opp Stadium, Law Courts Rd",11884,images/map-sample.png
-98,Simani & Associates,Suna Rd,46549,images/map-sample.png
-99,Philip Magal & Co. Advocates,"Paves Plaza, ground Flr, 3, Makutano/Kapenguria Rd",32516,images/map-sample.png
-100,"Amicus Plaza, 3rd Floor, Migori-Kisii rd Nyamira","Amicus Plaza, 3rd Floor, Migori-Kisii rd Nyamira",94830,images/map-sample.png
-101,Wilson P Mburugu Advocates,"Ntugi Hse, 1st Flr, Meru",99224,images/map-sample.png
-102,B G Kariuki & Co Advocates,"Maccu Bldg, 3rd Flr Kenyatta Hwy, Meru",11443,images/map-sample.png
-103,MEENYE & KIRIMI ADVOCATES,"Njuri Njeke Rd, KCB Bldg, 1st Gaitu, Meru",41383,images/map-sample.png
-104,DAVID JOHN MBAYA & CO ADVOCATES,"Kenyatta Hwy, Maccu Bldg Dr 213, 2nd, Meru",77578,images/map-sample.png
-105,Haron Gitonga & Basilio Gitonga Advocates,"Doris Hse, 2nd Flr Tom Mboya St, Meru",72334,images/map-sample.png
-106,Manyonge Nassoro & Associates Advocates,"Marsabit Plaza, 1st ",8461,images/map-sample.png
-107,ABDI  WAKO & Co. Advocates,"Marsabit Plaza, 4th",78505,images/map-sample.png
-108,SARAH & FAKIM ADVOCATES,"Marsabit TOWERS, 4th",63168,images/map-sample.png
-109,Okweh mohammed & Co. Advocates,"Marsabit Plaza, 2nd Flr, 206, ",5058,images/map-sample.png
-110,Osimbo malim & Co. Advocates,"Marsabit Plaza, 1st Flr, Rm 105, ",2924,images/map-sample.png
-111,Machuka Gonzi Matini & Co Advocates,Elwak plaza-Mandera,17699,images/map-sample.png
-112,Adan Mukiri & Onyango Advocates,lafay centre 4th floor,85331,images/map-sample.png
-113, Galala & Co Advocates,Duse centre near post office,84387,images/map-sample.png
-114,Godana & Wanjau Advocates,Malkamaria Area,25911,images/map-sample.png
-115,Wajir Law Courts,wajir town,6467,images/map-sample.png
-116,R. Salama Ahmed & Co Advocates,Mandera town,25143,images/map-sample.png
-117,J W Wambua & Co Advocates - Makueni,"Nesa Plaza, 1st Flr, Kathonzweni/Wote Rd",74364,images/map-sample.png
-118,J W Wambua & Co Advocates - Makueni,"Nesa Plaza, 1st Flr, Kathonzweni/Wote Rd",74364,images/map-sample.png
-119,J W Wambua & Co Advocates - Makueni,"Nesa Plaza, 1st Flr, Kathonzweni/Wote Rd",74364,images/map-sample.png
-120,J W Wambua & Co Advocates - Makueni,"Nesa Plaza, 1st Flr, Kathonzweni/Wote Rd",74364,images/map-sample.png
-121,J W Wambua & Co Advocates - Makueni,"Nesa Plaza, 1st Flr, Kathonzweni/Wote Rd",74364,images/map-sample.png
-122,A M Mbidyo & Co Advocates,"Kamba Wholesalers Bldg, 2nd Flr, Machakos",78288,images/map-sample.png
-123,B M Musau & Co,"Kamba Wholesalers Bldg Rm 204, 2nd Flr, Machakos",74484,images/map-sample.png
-124,L M WAMBUA & CO ADVOCATE,"Mbolu Malu Rd, Mbitini Hse, 2nd, Ekalakala, Machakos",69308,images/map-sample.png
-125,Manthi Masika & Co Advocates,"Utisi Hse, 1st Flr Konza Rd, Machakos",74076,images/map-sample.png
-126,Mulwa & Mulwa Advocates,"K C B Bldg, 2nd Flr Syokimau Rd, Machakos",74038,images/map-sample.png
-127,Khaminwa & Khaminwa Advocates,"Galana Centre, Lamu Rd",56763,images/map-sample.png
-128,Kilonzo & Aziz Co Advocates,"Stanchart Arcade, 1st Flr, Lamu Rd",86022,images/map-sample.png
-129,Machuka Aluku Matini & Co Advocates,"F N Centre, Gr Flr, Lamu Rd",85986,images/map-sample.png
-130,Omwancha Mukiri & Onyango Advocates,"Pine Court Bldg Opp Nakumatt Mall, Gr Flr, Lamu Rd",61078,images/map-sample.png
-131,Kadima & Co Advocates,"Malindi Complex, 1st Flr, Lamu Rd",84569,images/map-sample.png
-132,J M Mwangi & Co Advocates,"Butsons Complex, 1st Flr, Laikipia Rd, Nanyuki, ",67669,images/map-sample.png
-133,G M Wanjohi & Co Advocates,"K C B Bldg, 1st Flr Kenyatta Hwy, Nanyuki",2135,images/map-sample.png
-134,Kiget & Co Advocates,"Sogra Hse Kimathi Rd, 1st Flr, Nanyuki",42803,images/map-sample.png
-135,Mwangi Kariuki & Co Advocates,"Mathai Hse, 1st Flr Kenyatta Hwy, Nanyuki",45372,images/map-sample.png
-136,OLE KAPARO & MAILANYI ADVOCATES,"Laikipia Rd, Buttsons Complex,  Nanyuki",17695,images/map-sample.png
-137,John Thongori & Company,"Baharini Plaza, 1st Flr, 3rd, Beach Rd ?only",71594,images/map-sample.png
-138,Mwende waweru & associates advocates,Ukunda-kwale,53051,images/map-sample.png
-139,Birir and Company Advocates,kwale,23962,images/map-sample.png
-140,John Thongori & Company,"Baharini Plaza, 1st Flr, 3rd, Beach Rd ?only",30123,images/map-sample.png
-141,Mwende waweru & associates advocates,Ukunda-kwale,31466,images/map-sample.png
-142,Mulu & Company Advocates,"Winlo Bldg, 2nd Flr, Kitui/Nairobi Rd, Kitui",43606,images/map-sample.png
-143,DAUTI KIBANGA & CO ADVOCATES,"Tom Mboya St,  Chuluni, Kitui",12045,images/map-sample.png
-144,J M MUINDE & CO ADVOCATES,"Munguti Rd, Ilako Bldg, 2nd, Chuluni, Kitui",11615,images/map-sample.png
-145,NDUNDA & CO ADVOCATES,"Munguti Rd,Kitui/Nairobi Rd, Kitui",61658,images/map-sample.png
-146,J M MUINDE & CO ADVOCATES,"Munguti Rd, Ilako Bldg, 2nd, Chuluni, Kitui",58046,images/map-sample.png
-147,Ameli Inyangu & Partners Advocates - AIP Kisumu,"Alpha House, 4th Floor, Kisumu CBD, Oginga Odinga Street",59840,images/map-sample.png
-148,"Ogejo, Omboto And Kijala Advocates","Reinsurance, Next To Eshikhoni Agency, Kisumu C. B. D",41087,images/map-sample.png
-149,Wasuna & Company Advocates,"Block A, Reinsurance Plaza, Joo Kenyatta Highway",79389,images/map-sample.png
-150,"Owiti, Otieno and Ragot Advocates","Al-imran plaza, Oginga Odinga Road 4th floor",72563,images/map-sample.png
-151,Aboge & Company Advocates,"Ground Floor, Aboge House, Kisumu - Kakamega Road",79503,images/map-sample.png
-152,GILBERT J MAINYE & CO ADVOCATES,"Main St, Co-Op Bank Bldg Etago, Kisii",11145,images/map-sample.png
-153,NYAIRO ORORA & CO ADVOCATES,"Hospital Rd, Hema Plaza Etago, Kisii",85009,images/map-sample.png
-154,Nyamurongi & Company Advocates,"New Sansora Complex, 2nd Flr, -Suite 4, General Rd, Kisii",89138,images/map-sample.png
-155,Khan & Katiku Advocates,"Silver Hse, 1st Flr Hospital Rd, Kisii",75702,images/map-sample.png
-156,NYARIKI & CO ADVOCATES,"Nyanchwa Rd, Golf Hse, 3rd, Kisii",38634,images/map-sample.png
-157,Wanjao & Wanjau Advocates,"Bemuda Plaza Wanjao House Near Grand Oak Hotel,Kerugoya",31065,images/map-sample.png
-158,R. Muthike Makworo & Co Advocates,"Njuwa Hse, 2nd Flr, Rm 13, Kerugoya/Kagumo Rd",20299,images/map-sample.png
-159,PM Muchira & Co Advocates,Kerugoya/Kutus Rd,62529,images/map-sample.png
-160,Magee Wa Magee Advocates,"Bingwa Sacco Society Bldg, 2nd Flr, Kerugoya/Karatina Rd",19831,images/map-sample.png
-161,I W Muchiri Advocate,"Kirinyaga Ushirika Bank Hse, 3rd Flr",61410,images/map-sample.png
-162,Mutisya Bosire & Co Advocates,"Mula Plaza, 1st Flr Lamu Rd, Malindi",12287,images/map-sample.png
-163,Fadhil & Kilonzo Associates,"Malindi Complex, 2nd Flr Lamu Rd, Malindi",80594,images/map-sample.png
-164,Omagwa Angima & Co Advocates,"Mijikenda Bldg Tourist Rd, Malindi",97905,images/map-sample.png
-165,Philip Magal & Co. Advocates,"Paves Plaza, ground Flr, 3, Makutano/Kapenguria Rd",78327,images/map-sample.png
-166,Ben Ochieng' & Co Advocates,"The Bay Point Sea Front Rd, Malindi",17742,images/map-sample.png
-167,Machuka & Co Advocates,"Mulla Plaza, 1st Flr Lamu Rd, Malindi",57539,images/map-sample.png
-168,Osoro Chege Kibathi & Advocates,"Ground Floor, 2417 Building, Kiambu Rd",17861,images/map-sample.png
-169,Munene Warutere & Company Advocates,"Kikinga House, Next to KCB, Kiambu Rd",73030,images/map-sample.png
-170,G. W Wainaina Advocates,"Ann's Arcade, Along Kiambu Road, Biashara Street",84830,images/map-sample.png
-171,Katina & Co. Advocates,Woyet Bldg,96962,images/map-sample.png
-172,Mwangi Mwaura & Partners Advocates,"2nd Floor, Professional House, Law Court, Biashara Road",54089,images/map-sample.png
-173,The Law Office of Charles M. Kinini Advocates,Law firm ú Behind KCB ruiru branch Ruiru Town KE,83623,images/map-sample.png
-174,Wajir Law Courts,wajir town,22805,images/map-sample.png
-175,Sila Munyao & Co Advocates,"Koin-Eei Plaza, 3rd Flr Temple Rd, Kericho",82203,images/map-sample.png
-176,CHELULE & CO ADVOCATES,"Moi Rd, KERICHO",11271,images/map-sample.png
-177,JOEL K KOSKEI,"Temple Rd, Koin-ei Plaza, 2nd, Cheborge, Kericho",56547,images/map-sample.png
-178,Motanya & Co Advocates,"Mwalimu Bldg, 3rd Flr Moi Rd, Kericho",85195,images/map-sample.png
-179,Wheldon Ngetich & Co Advocates,"Mwalimu Hse, 2nd Flr Moi Rd, Kericho",25888,images/map-sample.png
-180,E K Owinyi Advocates,"Kholera Plaza Cannon Awori St, Kakamega",30858,images/map-sample.png
-181,Akwala & Co Advocates,"Opp KCB Kenyatta Ave, Kakamega",84549,images/map-sample.png
-182,Katina & Co. Advocates,Woyet Bldg,7627,images/map-sample.png
-183,Amasakha & Co Advocates,"Kateco Plaza, Gr Flr, 008 Muruli Rd, Kakamega",93548,images/map-sample.png
-184,AZANGALALA & CO ADVOCATES,"Kenyatta Ave, Bukura, Kakamega",6394,images/map-sample.png
-185,C O SAMBA & CO ADVOCATES,"Muruli Rd, Mwalimu Centre, 2nd, Bukura, Kakamega",1844,images/map-sample.png
-186,Itaya & Co. Advocates,"Magadi Rd,Kajiado",81470,images/map-sample.png
-187,Mwiti & Company Advocates numbers,"Shop 16, 1st Floor, Rongai, Ongata Mall Complex, Magadi Rd",18038,images/map-sample.png
-188,Maguta Kimemia And Associates Advocates,"Ground Floor, Ebenzer House, Magadi Rd",14894,images/map-sample.png
-189,"Edwin Maina, Mugo & Assocites","2nd Floor, Tyme Arcade, Magadi Rd",74988,images/map-sample.png
-190,Naikuni Ngaah And Miencha Company Advocates,"Mutal Building, Near Post Office, Magadi Rd",29037,images/map-sample.png
-191,Isiolo Law Courts, Isiolo,38903,images/map-sample.png
-192,Isiolo Law Courts, Isiolo,38903,images/map-sample.png
-193,Isiolo Law Courts, Isiolo,38903,images/map-sample.png
-194,Isiolo Law Courts, Isiolo,38903,images/map-sample.png
-195,G S Okoth & Co Advocates,"Main St, Homa Bay",81665,images/map-sample.png
-196,Nyauke & Co Advocates,"Main St, Homa Bay",81665,images/map-sample.png
-197,G S Okoth & Co Advocates,"Main St, Homa Bay",81665,images/map-sample.png
-198,Nyauke & Co Advocates,"Main St, Homa Bay",81665,images/map-sample.png
-199,G S Okoth & Co Advocates,"Main St, Homa Bay",81665,images/map-sample.png
-200,Mbalukadvocates-Garissa,Garissa,28906,images/map-sample.png
-201,KAMAU KARIUKI & CO,"Bura Tana, Garissa",44726,images/map-sample.png
-202,Mbalukadvocates-Garissa,Garissa,28906,images/map-sample.png
-203,Mbalukadvocates-Garissa,Garissa,28906,images/map-sample.png
-204,KAMAU KARIUKI & CO,"Bura Tana, Garissa",81709,images/map-sample.png
-205,H M J Utuku Advocates,"Thagamu Hse, 1st Flr Mama Ngina St, Embu",56994,images/map-sample.png
-206,Muraguri Macharia Advocates,"Rurima Bldg, 3rd Flr Mama Ngina St, Embu",92470,images/map-sample.png
-207,Morris Njage & Co Advocates Notaries Public,"Emco Hse, 1st Flr Kenyatta Hwy, Embu",9061,images/map-sample.png
-208,GACHORA & CO ADVOCATES,"Kenyatta Hwy, Kenya Commercial Bank Bldg, 1st, Embu",26819,images/map-sample.png
-209,Joe Kathungu & Co Advocates,"KCB Bldg, 2nd Flr Kenyatta Hwy, Embu",72185,images/map-sample.png
-210,Munyasya And Co -Advocates,"Iten, Kenya, Next To DC's Office",99602,images/map-sample.png
-211,Munyasya And Co -Advocates,"Iten, Kenya, Next To DC's Office",99602,images/map-sample.png
-212,Munyasya And Co -Advocates,"Iten, Kenya, Next To DC's Office",99602,images/map-sample.png
-213,Munyasya And Co -Advocates,"Iten, Kenya, Next To DC's Office",99602,images/map-sample.png
-214,Munyasya And Co -Advocates,"Iten, Kenya, Next To DC's Office",99602,images/map-sample.png
-215,ETYANG ORONI & CO ADVOCATES,"Amukura Hse, Gr, Busia",59161,images/map-sample.png
-216,ANYARA EMUKULE & CO ADVOCATES,"Busia/Kisumu Rd, Amukura Hse, Gr, Busia",62936,images/map-sample.png
-217,M NYARONJONGA & CO ADVOCATES," Busia/Kisumu Rd, Busia",87040,images/map-sample.png
-218,OKUBO & CO ADVOCATES," Busia/Kisumu Rd, Busia",76920,images/map-sample.png
-219,Balongo & Co Advocates,"Reuben Hse opp Busia Police Station Busia/Kisumu Rd, Busia",78753,images/map-sample.png
-220,J O Makali & Co Advocates,"Town Hall, 1st Flr Moi Ave, Bungoma",57167,images/map-sample.png
-221,J S Khakula & Co Advocates,"Maumu Bldg Off Moi Ave, Bungoma",91246,images/map-sample.png
-222,Masinde & Co Advocates,"NSSF Bldg, 3rd Flr Moi Ave, Bungoma",95431,images/map-sample.png
-223,MUTAKHA ONDUSO & LUTTA ADVOCATES,"Moi Ave, NSSF Bldg,  Bungoma",76078,images/map-sample.png
-224,Roselyne Aburili & Co Advocates,"Asikwana Hse, 2nd Flr, Bungoma",95931,images/map-sample.png
-225,Bomet Law Courts,Bomet Town,17426,images/map-sample.png
-226,Bomet Law Courts,Bomet Town,17426,images/map-sample.png
-227,Bomet Law Courts,Bomet Town,17426,images/map-sample.png
-228,Bomet Law Courts,Bomet Town,17426,images/map-sample.png
-229,Bomet Law Courts,Bomet Town,17426,images/map-sample.png
-230,Onkoba & Co Advocates & Commissioner Of Oath,"Jakana Bldg, 1st Flr",49974,images/map-sample.png
-231,Kapila Taibjee & Bhalla Advocates,"Hevea Court, 4th Flr, Eldama Ravine Rd",8506,images/map-sample.png
-232,Kipsang Langat & Co. Advocates,"KFA Godown, 4th Flr, Rm4, Kabarnet Rd",14438,images/map-sample.png
-233,Onkoba & Co Advocates & Commissioner Of Oath,"Jakana Bldg, 1st Flr",70828,images/map-sample.png
-234,Kapila Taibjee & Bhalla Advocates,"Hevea Court, 4th Flr, Eldama Ravine Rd",69193,images/map-sample.png
+1,1,University of Nairobi(Parklands Campus),LL.B-Bachelor of Laws ,2014
+2,1,Kenya School of Law,ATP-Bar Exams,2015
+3,2,University of Nairobi(Parklands Campus),LL.B-Bachelor of Laws ,2013
+4,2,Kenya School of Law,ATP-Bar Exams,2014
+5,3,University of Nairobi(Parklands Campus),LL.B-Bachelor of Laws ,2013
+6,3,Kenya School of Law,ATP-Bar Exams,2014
+7,4,University of Nairobi(Parklands Campus),LL.B-Bachelor of Laws ,2012
+8,4,Kenya School of Law,ATP-Bar Exams,2013
+9,5,Inoorero University,Parallegal Studies-Diploma in Law,2008
+10,5,Jomo Kenyatta University of Agriculture and Technology(Karen Campus),LL.B-Bachelor of Laws ,2012
+11,5,Kenya School of Law,ATP-Bar Exams,2013
+12,5,University of Nairobi(Parklands Campus),LL.M-Masters of Law,2019
+13,6,University of Nairobi(Parklands Campus),LL.B-Bachelor of Laws ,2012
+14,6,Kenya School of Law,ATP-Bar Exams,2013
+15,7,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2012
+16,7,Kenya School of Law,ATP-Bar Exams,2013
+17,8,University of Nairobi(Parklands Campus),LL.B-Bachelor of Laws ,2012
+18,8,Kenya School of Law,ATP-Bar Exams,2013
+19,9,University of Nairobi(Parklands Campus),LL.B-Bachelor of Laws ,2012
+20,9,Kenya School of Law,ATP-Bar Exams,2013
+21,10,Jomo Kenyatta University of Agriculture and Technology(Karen Campus),LL.B-Bachelor of Laws ,2011
+22,10,Kenya School of Law,ATP-Bar Exams,2012
+23,10,University of Nairobi(Parklands Campus),LL.M-Masters of Law,2017
+24,11,University of Nairobi(Parklands Campus),LL.B-Bachelor of Laws ,2011
+25,11,Kenya School of Law,ATP-Bar Exams,2012
+26,12,University of Nairobi(Parklands Campus),LL.B-Bachelor of Laws ,2011
+27,12,Kenya School of Law,ATP-Bar Exams,2012
+28,13,University of Nairobi(Parklands Campus),LL.B-Bachelor of Laws ,2011
+29,13,Kenya School of Law,ATP-Bar Exams,2012
+30,14,University of Nairobi(Parklands Campus),LL.B-Bachelor of Laws ,2011
+31,14,Kenya School of Law,ATP-Bar Exams,2012
+32,15,Inoorero University,Parallegal Studies-Diploma in Law,2009
+33,15,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2011
+34,15,Kenya School of Law,ATP-Bar Exams,2012
+35,15,University of Nairobi(Parklands Campus),LL.M-Masters of Law,2018
+36,16,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2010
+37,16,Kenya School of Law,ATP-Bar Exams,2011
+38,17,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2010
+39,17,Kenya School of Law,ATP-Bar Exams,2011
+40,18,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2010
+41,18,Kenya School of Law,ATP-Bar Exams,2011
+42,19,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2010
+43,19,Kenya School of Law,ATP-Bar Exams,2011
+44,20,Jomo Kenyatta University of Agriculture and Technology(Karen Campus),LL.B-Bachelor of Laws ,2010
+45,20,Kenya School of Law,ATP-Bar Exams,2011
+46,20,University of Nairobi(Parklands Campus),LL.M-Masters of Law,2018
+47,21,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2010
+48,21,Kenya School of Law,ATP-Bar Exams,2011
+49,22,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2010
+50,22,Kenya School of Law,ATP-Bar Exams,2011
+51,23,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2009
+52,23,Kenya School of Law,ATP-Bar Exams,2010
+53,24,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2009
+54,24,Kenya School of Law,ATP-Bar Exams,2010
+55,25,Inoorero University,Parallegal Studies-Diploma in Law,2005
+56,25,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2009
+57,25,Kenya School of Law,ATP-Bar Exams,2010
+58,25,University of Nairobi(Parklands Campus),LL.M-Masters of Law,2019
+59,26,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2009
+60,26,Kenya School of Law,ATP-Bar Exams,2010
+61,27,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2009
+62,27,Kenya School of Law,ATP-Bar Exams,2010
+63,28,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2009
+64,28,Kenya School of Law,ATP-Bar Exams,2010
+65,29,Mount Kenya University(Nairobi Campus),LL.B-Bachelor of Laws ,2008
+66,29,Kenya School of Law,ATP-Bar Exams,2009
+67,30,Jomo Kenyatta University of Agriculture and Technology(Karen Campus),LL.B-Bachelor of Laws ,2008
+68,30,Kenya School of Law,ATP-Bar Exams,2009
+69,30,University of Nairobi(Parklands Campus),LL.M-Masters of Law,2016
+70,31,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2008
+71,31,Kenya School of Law,ATP-Bar Exams,2009
+72,32,Riara University,LL.B-Bachelor of Laws ,2008
+73,32,Kenya School of Law,ATP-Bar Exams,2009
+74,33,Riara University,LL.B-Bachelor of Laws ,2008
+75,33,Kenya School of Law,ATP-Bar Exams,2009
+76,34,Riara University,LL.B-Bachelor of Laws ,2008
+77,34,Kenya School of Law,ATP-Bar Exams,2009
+78,35,Inoorero University,Parallegal Studies-Diploma in Law,2003
+79,35,Jomo Kenyatta University of Agriculture and Technology(Karen Campus),LL.B-Bachelor of Laws ,2007
+80,35,Kenya School of Law,ATP-Bar Exams,2008
+81,35,University of Nairobi(Parklands Campus),LL.M-Masters of Law,2012
+82,36,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2007
+83,36,Kenya School of Law,ATP-Bar Exams,2008
+84,37,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2007
+85,37,Kenya School of Law,ATP-Bar Exams,2008
+86,38,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2007
+87,38,Kenya School of Law,ATP-Bar Exams,2008
+88,39,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2007
+89,39,Kenya School of Law,ATP-Bar Exams,2008
+90,40,Jomo Kenyatta University of Agriculture and Technology(Karen Campus),LL.B-Bachelor of Laws ,2007
+91,40,Kenya School of Law,ATP-Bar Exams,2008
+92,40,University of Nairobi(Parklands Campus),LL.M-Masters of Law,2015
+93,41,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2007
+94,41,Kenya School of Law,ATP-Bar Exams,2008
+95,42,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2006
+96,42,Kenya School of Law,ATP-Bar Exams,2007
+97,43,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2006
+98,43,Kenya School of Law,ATP-Bar Exams,2007
+99,44,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2006
+100,44,Kenya School of Law,ATP-Bar Exams,2007
+101,45,Jomo Kenyatta University of Agriculture and Technology(Karen Campus),LL.B-Bachelor of Laws ,2006
+102,45,Kenya School of Law,ATP-Bar Exams,2007
+103,45,"FacultyÿofÿLaw, UniversityÿofÿDelhi",LL.M-Masters of Law,2012
+104,46,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2006
+105,46,Kenya School of Law,ATP-Bar Exams,2007
+106,47,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2006
+107,47,Kenya School of Law,ATP-Bar Exams,2007
+108,48,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2006
+109,48,Kenya School of Law,ATP-Bar Exams,2007
+110,49,Catholic University of East Africa(Karen Campus),LL.B-Bachelor of Laws ,2006
+111,49,Kenya School of Law,ATP-Bar Exams,2007
+112,50,Jomo Kenyatta University of Agriculture and Technology(Karen Campus),LL.B-Bachelor of Laws ,2006
+113,50,Kenya School of Law,ATP-Bar Exams,2007
+114,50,"FacultyÿofÿLaw, UniversityÿofÿDelhi",LL.M-Masters of Law,2011
+115,51,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2006
+116,51,Kenya School of Law,ATP-Bar Exams,2007
+117,52,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2005
+118,52,Kenya School of Law,ATP-Bar Exams,2006
+119,53,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2005
+120,53,Kenya School of Law,ATP-Bar Exams,2006
+121,54,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2005
+122,54,Kenya School of Law,ATP-Bar Exams,2006
+123,55,Kenya School of Law,Parallegal Studies-Diploma in Law,2002
+124,55,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2005
+125,55,Kenya School of Law,ATP-Bar Exams,2006
+126,55,"FacultyÿofÿLaw, UniversityÿofÿDelhi",LL.M-Masters of Law,2018
+127,56,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2005
+128,56,Kenya School of Law,ATP-Bar Exams,2006
+129,57,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2005
+130,57,Kenya School of Law,ATP-Bar Exams,2006
+131,58,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2005
+132,58,Kenya School of Law,ATP-Bar Exams,2006
+133,59,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2005
+134,59,Kenya School of Law,ATP-Bar Exams,2006
+135,60,Jomo Kenyatta University of Agriculture and Technology(Karen Campus),LL.B-Bachelor of Laws ,2005
+136,60,Kenya School of Law,ATP-Bar Exams,2006
+137,60,The University of Manchester,LL.M-Masters of Law,2014
+138,61,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2005
+139,61,Kenya School of Law,ATP-Bar Exams,2006
+140,62,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2005
+141,62,Kenya School of Law,ATP-Bar Exams,2006
+142,63,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2005
+143,63,Kenya School of Law,ATP-Bar Exams,2006
+144,64,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2004
+145,64,Kenya School of Law,ATP-Bar Exams,2005
+146,65,Kenya School of Law,Parallegal Studies-Diploma in Law,2000
+147,65,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2004
+148,65,Kenya School of Law,ATP-Bar Exams,2005
+149,65,The University of Manchester,LL.M-Masters of Law,2006
+150,66,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2004
+151,66,Kenya School of Law,ATP-Bar Exams,2005
+152,67,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2004
+153,67,Kenya School of Law,ATP-Bar Exams,2005
+154,68,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2004
+155,68,Kenya School of Law,ATP-Bar Exams,2005
+156,69,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2004
+157,69,Kenya School of Law,ATP-Bar Exams,2005
+158,70,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2004
+159,70,Kenya School of Law,ATP-Bar Exams,2005
+160,70,King's College London,LL.M-Masters of Law,2013
+161,71,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2004
+162,71,Kenya School of Law,ATP-Bar Exams,2005
+163,72,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2004
+164,72,Kenya School of Law,ATP-Bar Exams,2005
+165,73,African Nazarene University(Ngong Campus),LL.B-Bachelor of Laws ,2004
+166,73,Kenya School of Law,ATP-Bar Exams,2005
+167,74,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2004
+168,74,Kenya School of Law,ATP-Bar Exams,2005
+169,75,Kenya School of Law,Parallegal Studies-Diploma in Law,2001
+170,75,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2004
+171,75,Kenya School of Law,ATP-Bar Exams,2005
+172,75,King's College London,LL.M-Masters of Law,2010
+173,76,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2004
+174,76,Kenya School of Law,ATP-Bar Exams,2005
+175,77,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2004
+176,77,Kenya School of Law,ATP-Bar Exams,2005
+177,78,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2004
+178,78,Kenya School of Law,ATP-Bar Exams,2005
+179,79,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2003
+180,79,Kenya School of Law,ATP-Bar Exams,2004
+181,80,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2003
+182,80,Kenya School of Law,ATP-Bar Exams,2004
+183,80,King's College London,LL.M-Masters of Law,2013
+184,81,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2003
+185,81,Kenya School of Law,ATP-Bar Exams,2004
+186,82,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2003
+187,82,Kenya School of Law,ATP-Bar Exams,2004
+188,83,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2003
+189,83,Kenya School of Law,ATP-Bar Exams,2004
+190,84,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2003
+191,84,Kenya School of Law,ATP-Bar Exams,2004
+192,85,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2003
+193,85,Kenya School of Law,ATP-Bar Exams,2004
+194,86,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2002
+195,86,Kenya School of Law,ATP-Bar Exams,2003
+196,87,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2002
+197,87,Kenya School of Law,ATP-Bar Exams,2003
+198,88,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2002
+199,88,Kenya School of Law,ATP-Bar Exams,2003
+200,89,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2002
+201,89,Kenya School of Law,ATP-Bar Exams,2003
+202,90,Kabarak University(Nazarene Campus),LL.B-Bachelor of Laws ,2002
+203,90,Kenya School of Law,ATP-Bar Exams,2003
+204,90,Moi University,LL.M-Masters of Law,2015
+205,91,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2002
+206,91,Kenya School of Law,ATP-Bar Exams,2003
+207,92,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2002
+208,92,Kenya School of Law,ATP-Bar Exams,2003
+209,93,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2002
+210,93,Kenya School of Law,ATP-Bar Exams,2003
+211,94,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2002
+212,94,Kenya School of Law,ATP-Bar Exams,2003
+213,95,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,2002
+214,95,Kenya School of Law,ATP-Bar Exams,2003
+215,96,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,2002
+216,96,Kenya School of Law,ATP-Bar Exams,2003
+217,97,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,2001
+218,97,Kenya School of Law,ATP-Bar Exams,2002
+219,98,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,2001
+220,98,Kenya School of Law,ATP-Bar Exams,2002
+221,99,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,2001
+222,99,Kenya School of Law,ATP-Bar Exams,2002
+223,100,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,2001
+224,100,Kenya School of Law,ATP-Bar Exams,2002
+225,100,Moi University,LL.M-Masters of Law,2009
+226,101,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,2001
+227,101,Kenya School of Law,ATP-Bar Exams,2002
+228,102,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2001
+229,102,Kenya School of Law,ATP-Bar Exams,2002
+230,103,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2001
+231,103,Kenya School of Law,ATP-Bar Exams,2002
+232,104,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2001
+233,104,Kenya School of Law,ATP-Bar Exams,2002
+234,105,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2000
+235,105,Kenya School of Law,ATP-Bar Exams,2001
+236,106,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2000
+237,106,Kenya School of Law,ATP-Bar Exams,2001
+238,107,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2000
+239,107,Kenya School of Law,ATP-Bar Exams,2001
+240,108,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2000
+241,108,Kenya School of Law,ATP-Bar Exams,2001
+242,109,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2000
+243,109,Kenya School of Law,ATP-Bar Exams,2001
+244,110,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,2000
+245,110,Kenya School of Law,ATP-Bar Exams,2001
+246,110,Moi University,LL.M-Masters of Law,2008
+247,111,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1998
+248,111,Kenya School of Law,ATP-Bar Exams,1999
+249,112,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,1998
+250,112,Kenya School of Law,ATP-Bar Exams,1999
+251,113,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,1998
+252,113,Kenya School of Law,ATP-Bar Exams,1999
+253,114,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,1998
+254,114,Kenya School of Law,ATP-Bar Exams,1999
+255,115,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,1998
+256,115,Kenya School of Law,ATP-Bar Exams,1999
+257,116,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,1997
+258,116,Kenya School of Law,ATP-Bar Exams,1998
+259,117,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,1997
+260,117,Kenya School of Law,ATP-Bar Exams,1998
+261,118,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,1997
+262,118,Kenya School of Law,ATP-Bar Exams,1998
+263,119,University of Nairobi(Mombasa Campus),LL.B-Bachelor of Laws ,1997
+264,119,Kenya School of Law,ATP-Bar Exams,1998
+265,120,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1997
+266,120,Kenya School of Law,ATP-Bar Exams,1998
+267,120,Moi University,LL.M-Masters of Law,2006
+268,121,Mount Kenya University school of Law(Thika Campus),LL.B-Bachelor of Laws ,1997
+269,121,Kenya School of Law,ATP-Bar Exams,1998
+270,122,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1997
+271,122,Kenya School of Law,ATP-Bar Exams,1998
+272,123,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1996
+273,123,Kenya School of Law,ATP-Bar Exams,1997
+274,124,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1996
+275,124,Kenya School of Law,ATP-Bar Exams,1997
+276,125,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1996
+277,125,Kenya School of Law,ATP-Bar Exams,1997
+278,126,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1996
+279,126,Kenya School of Law,ATP-Bar Exams,1997
+280,127,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1996
+281,127,Kenya School of Law,ATP-Bar Exams,1997
+282,128,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1996
+283,128,Kenya School of Law,ATP-Bar Exams,1997
+284,129,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1995
+285,129,Kenya School of Law,ATP-Bar Exams,1996
+286,130,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1995
+287,130,Kenya School of Law,ATP-Bar Exams,1996
+288,130,UC Irvine School of Law?,LL.M-Masters of Law,2003
+289,131,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1995
+290,131,Kenya School of Law,ATP-Bar Exams,1996
+291,132,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1995
+292,132,Kenya School of Law,ATP-Bar Exams,1996
+293,133,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1995
+294,133,Kenya School of Law,ATP-Bar Exams,1996
+295,134,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1995
+296,134,Kenya School of Law,ATP-Bar Exams,1996
+297,135,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1995
+298,135,Kenya School of Law,ATP-Bar Exams,1996
+299,136,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1995
+300,136,Kenya School of Law,ATP-Bar Exams,1996
+301,137,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1994
+302,137,Kenya School of Law,ATP-Bar Exams,1995
+303,138,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1994
+304,138,Kenya School of Law,ATP-Bar Exams,1995
+305,139,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1994
+306,139,Kenya School of Law,ATP-Bar Exams,1995
+307,140,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1994
+308,140,Kenya School of Law,ATP-Bar Exams,1995
+309,140,Strathmore University,LL.M-Masters of Law,1999
+310,141,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1994
+311,141,Kenya School of Law,ATP-Bar Exams,1995
+312,142,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1993
+313,142,Kenya School of Law,ATP-Bar Exams,1994
+314,143,Kenyatta University School of Law(Parklands Campus),LL.B-Bachelor of Laws ,1993
+315,143,Kenya School of Law,ATP-Bar Exams,1994
+316,144,Strathmore University,LL.B-Bachelor of Laws ,1993
+317,144,Kenya School of Law,ATP-Bar Exams,1994
+318,145,Strathmore University,LL.B-Bachelor of Laws ,1993
+319,145,Kenya School of Law,ATP-Bar Exams,1994
+320,146,Strathmore University,LL.B-Bachelor of Laws ,1993
+321,146,Kenya School of Law,ATP-Bar Exams,1994
+322,147,University of Nairobi(Kisumu Campus),LL.B-Bachelor of Laws ,1993
+323,147,Kenya School of Law,ATP-Bar Exams,1994
+324,148,University of Nairobi(Kisumu Campus),LL.B-Bachelor of Laws ,1993
+325,148,Kenya School of Law,ATP-Bar Exams,1994
+326,149,University of Nairobi(Kisumu Campus),LL.B-Bachelor of Laws ,1992
+327,149,Kenya School of Law,ATP-Bar Exams,1993
+328,150,University of Nairobi(Kisumu Campus),LL.B-Bachelor of Laws ,1992
+329,150,Kenya School of Law,ATP-Bar Exams,1993
+330,150,Strathmore University,LL.M-Masters of Law,1997
+331,151,University of Nairobi(Kisumu Campus),LL.B-Bachelor of Laws ,1992
+332,151,Kenya School of Law,ATP-Bar Exams,1993
+333,152,Strathmore University,LL.B-Bachelor of Laws ,1992
+334,152,Kenya School of Law,ATP-Bar Exams,1993
+335,153,University of Nairobi(Kisumu Campus),LL.B-Bachelor of Laws ,1992
+336,153,Kenya School of Law,ATP-Bar Exams,1993
+337,154,University of Nairobi(Kisumu Campus),LL.B-Bachelor of Laws ,1992
+338,154,Kenya School of Law,ATP-Bar Exams,1993
+339,155,University of Nairobi(Kisumu Campus),LL.B-Bachelor of Laws ,1992
+340,155,Kenya School of Law,ATP-Bar Exams,1993
+341,156,University of Nairobi(Kisumu Campus),LL.B-Bachelor of Laws ,1991
+342,156,Kenya School of Law,ATP-Bar Exams,1992
+343,157,University of Nairobi(Kisumu Campus),LL.B-Bachelor of Laws ,1991
+344,157,Kenya School of Law,ATP-Bar Exams,1992
+345,158,University of Nairobi(Kisumu Campus),LL.B-Bachelor of Laws ,1991
+346,158,Kenya School of Law,ATP-Bar Exams,1992
+347,159,University of Nairobi(Kisumu Campus),LL.B-Bachelor of Laws ,1991
+348,159,Kenya School of Law,ATP-Bar Exams,1992
+349,160,Strathmore University,LL.B-Bachelor of Laws ,1991
+350,160,Kenya School of Law,ATP-Bar Exams,1992
+351,160,University of Maryland,LL.M-Masters of Law,1996
+352,161,Strathmore University,LL.B-Bachelor of Laws ,1991
+353,161,Kenya School of Law,ATP-Bar Exams,1992
+354,162,Strathmore University,LL.B-Bachelor of Laws ,1991
+355,162,Kenya School of Law,ATP-Bar Exams,1992
+356,163,Strathmore University,LL.B-Bachelor of Laws ,1990
+357,163,Kenya School of Law,ATP-Bar Exams,1991
+358,164,Strathmore University,LL.B-Bachelor of Laws ,1990
+359,164,Kenya School of Law,ATP-Bar Exams,1991
+360,165,Strathmore University,LL.B-Bachelor of Laws ,1990
+361,165,Kenya School of Law,ATP-Bar Exams,1991
+362,166,Strathmore University,LL.B-Bachelor of Laws ,1990
+363,166,Kenya School of Law,ATP-Bar Exams,1991
+364,167,Strathmore University,LL.B-Bachelor of Laws ,1990
+365,167,Kenya School of Law,ATP-Bar Exams,1991
+366,168,Mount Kenya University school of Law(Thika Campus),LL.B-Bachelor of Laws ,1990
+367,168,Kenya School of Law,ATP-Bar Exams,1991
+368,169,Mount Kenya University school of Law(Thika Campus),LL.B-Bachelor of Laws ,1990
+369,169,Kenya School of Law,ATP-Bar Exams,1991
+370,170,Mount Kenya University school of Law(Thika Campus),LL.B-Bachelor of Laws ,1989
+371,170,Kenya School of Law,ATP-Bar Exams,1990
+372,170,Strathmore University,LL.M-Masters of Law,1994
+373,171,Mount Kenya University school of Law(Thika Campus),LL.B-Bachelor of Laws ,1989
+374,171,Kenya School of Law,ATP-Bar Exams,1990
+375,172,Mount Kenya University school of Law(Thika Campus),LL.B-Bachelor of Laws ,1989
+376,172,Kenya School of Law,ATP-Bar Exams,1990
+377,173,Mount Kenya University school of Law(Thika Campus),LL.B-Bachelor of Laws ,1989
+378,173,Kenya School of Law,ATP-Bar Exams,1990
+379,174,Mount Kenya University school of Law(Thika Campus),LL.B-Bachelor of Laws ,1989
+380,174,Kenya School of Law,ATP-Bar Exams,1990
+381,175,Mount Kenya University school of Law(Thika Campus),LL.B-Bachelor of Laws ,1989
+382,175,Kenya School of Law,ATP-Bar Exams,1990
+383,176,Moi University,LL.B-Bachelor of Laws ,1989
+384,176,Kenya School of Law,ATP-Bar Exams,1990
+385,177,Moi University,LL.B-Bachelor of Laws ,1989
+386,177,Kenya School of Law,ATP-Bar Exams,1990
+387,178,Moi University,LL.B-Bachelor of Laws ,1989
+388,178,Kenya School of Law,ATP-Bar Exams,1990
+389,179,Strathmore University,LL.B-Bachelor of Laws ,1989
+390,179,Kenya School of Law,ATP-Bar Exams,1990
+391,180,Strathmore University,LL.B-Bachelor of Laws ,1988
+392,180,Kenya School of Law,ATP-Bar Exams,1989
+393,180,Strathmore University,LL.M-Masters of Law,1993
+394,181,Mount Kenya University school of Law(Thika Campus),LL.B-Bachelor of Laws ,1988
+395,181,Kenya School of Law,ATP-Bar Exams,1989
+396,182,Mount Kenya University school of Law(Thika Campus),LL.B-Bachelor of Laws ,1988
+397,182,Kenya School of Law,ATP-Bar Exams,1989
+398,183,Strathmore University,LL.B-Bachelor of Laws ,1987
+399,183,Kenya School of Law,ATP-Bar Exams,1988
+400,184,Strathmore University,LL.B-Bachelor of Laws ,1987
+401,184,Kenya School of Law,ATP-Bar Exams,1988
+402,185,Strathmore University,LL.B-Bachelor of Laws ,1987
+403,185,Kenya School of Law,ATP-Bar Exams,1988
+404,186,Strathmore University,LL.B-Bachelor of Laws ,1987
+405,186,Kenya School of Law,ATP-Bar Exams,1988
+406,187,Strathmore University,LL.B-Bachelor of Laws ,1986
+407,187,Kenya School of Law,ATP-Bar Exams,1987
+408,188,Strathmore University,LL.B-Bachelor of Laws ,1986
+409,188,Kenya School of Law,ATP-Bar Exams,1987
+410,189,Strathmore University,LL.B-Bachelor of Laws ,1986
+411,189,Kenya School of Law,ATP-Bar Exams,1987
+412,190,Strathmore University,LL.B-Bachelor of Laws ,1986
+413,190,Kenya School of Law,ATP-Bar Exams,1987
+414,190,Moi University,LL.M-Masters of Law,1991
+415,191,Strathmore University,LL.B-Bachelor of Laws ,1987
+416,191,Kenya School of Law,ATP-Bar Exams,1986
+417,192,Strathmore University,LL.B-Bachelor of Laws ,1987
+418,192,Kenya School of Law,ATP-Bar Exams,1986
+419,193,Strathmore University,LL.B-Bachelor of Laws ,1987
+420,193,Kenya School of Law,ATP-Bar Exams,1986
+421,194,Strathmore University,LL.B-Bachelor of Laws ,1984
+422,194,Kenya School of Law,ATP-Bar Exams,1985
+423,195,Strathmore University,LL.B-Bachelor of Laws ,1984
+424,195,Kenya School of Law,ATP-Bar Exams,1985
+425,196,Strathmore University,LL.B-Bachelor of Laws ,1984
+426,196,Kenya School of Law,ATP-Bar Exams,1985
+427,197,Strathmore University,LL.B-Bachelor of Laws ,1984
+428,197,Kenya School of Law,ATP-Bar Exams,1985
+429,198,Strathmore University,LL.B-Bachelor of Laws ,1983
+430,198,Kenya School of Law,ATP-Bar Exams,1984
+431,199,Moi University,LL.B-Bachelor of Laws ,1982
+432,199,Kenya School of Law,ATP-Bar Exams,1983
+433,200,Moi University,LL.B-Bachelor of Laws ,1982
+434,200,Kenya School of Law,ATP-Bar Exams,1983
+435,200,UniversityÿofÿToronto (UofT),LL.M-Masters of Law,1988
+436,201,Daystar University,LL.B-Bachelor of Laws ,1963
+437,201,Kenya School of Law,ATP-Bar Exams,1964
+438,202,Daystar University,LL.B-Bachelor of Laws ,1979
+439,202,Kenya School of Law,ATP-Bar Exams,1980
+440,203,Daystar University,LL.B-Bachelor of Laws ,1990
+441,203,Kenya School of Law,ATP-Bar Exams,1991
+442,204,Daystar University,LL.B-Bachelor of Laws ,2000
+443,204,Kenya School of Law,ATP-Bar Exams,2001
+444,205,Daystar University,LL.B-Bachelor of Laws ,2003
+445,205,Kenya School of Law,ATP-Bar Exams,2004
+446,206,Moi University,LL.B-Bachelor of Laws ,1993
+447,206,Kenya School of Law,ATP-Bar Exams,1994
+448,207,Moi University,LL.B-Bachelor of Laws ,1998
+449,207,Kenya School of Law,ATP-Bar Exams,1999
+450,208,Moi University,LL.B-Bachelor of Laws ,1984
+451,208,Kenya School of Law,ATP-Bar Exams,1985
+452,209,Moi University,LL.B-Bachelor of Laws ,2001
+453,209,Kenya School of Law,ATP-Bar Exams,2002
+454,210,Moi University,LL.B-Bachelor of Laws ,1990
+455,210,Kenya School of Law,ATP-Bar Exams,1991
+456,210,UniversityÿofÿToronto (UofT),LL.M-Masters of Law,1995
+457,211,Moi University,LL.B-Bachelor of Laws ,1984
+458,211,Kenya School of Law,ATP-Bar Exams,1985
+459,212,Moi University,LL.B-Bachelor of Laws ,1983
+460,212,Kenya School of Law,ATP-Bar Exams,1984
+461,213,Moi University,LL.B-Bachelor of Laws ,1989
+462,213,Kenya School of Law,ATP-Bar Exams,1990
+463,214,Moi University,LL.B-Bachelor of Laws ,1967
+464,214,Kenya School of Law,ATP-Bar Exams,1968
+465,215,Moi University,LL.B-Bachelor of Laws ,1984
+466,215,Kenya School of Law,ATP-Bar Exams,1985
+467,216,Moi University,LL.B-Bachelor of Laws ,1982
+468,216,Kenya School of Law,ATP-Bar Exams,1983
+469,217,Moi University,LL.B-Bachelor of Laws ,1979
+470,217,Kenya School of Law,ATP-Bar Exams,1980
+471,218,Moi University,LL.B-Bachelor of Laws ,1975
+472,218,Kenya School of Law,ATP-Bar Exams,1976
+473,219,Moi University,LL.B-Bachelor of Laws ,1976
+474,219,Kenya School of Law,ATP-Bar Exams,1977
+475,220,Moi University,LL.B-Bachelor of Laws ,1975
+476,220,Kenya School of Law,ATP-Bar Exams,1976
+477,220,"University of Florida, Fredric G. Levin College of Law",LL.M-Masters of Law,1982
+478,221,Moi University,LL.B-Bachelor of Laws ,1946
+479,221,Kenya School of Law,ATP-Bar Exams,1947
+480,222,Riara University,LL.B-Bachelor of Laws ,1955
+481,222,Kenya School of Law,ATP-Bar Exams,1956
+482,223,Riara University,LL.B-Bachelor of Laws ,1994
+483,223,Kenya School of Law,ATP-Bar Exams,1995
+484,224,Riara University,LL.B-Bachelor of Laws ,1972
+485,224,Kenya School of Law,ATP-Bar Exams,1973
+486,225,Riara University,LL.B-Bachelor of Laws ,1977
+487,225,Kenya School of Law,ATP-Bar Exams,1978
+488,226,Egerton University School of Law,LL.B-Bachelor of Laws ,1974
+489,226,Kenya School of Law,ATP-Bar Exams,1975
+490,227,Egerton University School of Law,LL.B-Bachelor of Laws ,1976
+491,227,Kenya School of Law,ATP-Bar Exams,1977
+492,228,Egerton University School of Law,LL.B-Bachelor of Laws ,1971
+493,228,Kenya School of Law,ATP-Bar Exams,1972
+494,229,Egerton University School of Law,LL.B-Bachelor of Laws ,1971
+495,229,Kenya School of Law,ATP-Bar Exams,1972
+496,230,Egerton University School of Law,LL.B-Bachelor of Laws ,1969
+497,230,Kenya School of Law,ATP-Bar Exams,1970
+498,230,"University of Florida, Fredric G. Levin College of Law",LL.M-Masters of Law,1979
+499,231,Egerton University School of Law,LL.B-Bachelor of Laws ,1968
+500,231,Kenya School of Law,ATP-Bar Exams,1969
+501,232,Egerton University School of Law,LL.B-Bachelor of Laws ,1967
+502,232,Kenya School of Law,ATP-Bar Exams,1968
+503,233,Egerton University School of Law,LL.B-Bachelor of Laws ,1966
+504,233,Kenya School of Law,ATP-Bar Exams,1967
+505,234,Egerton University School of Law,LL.B-Bachelor of Laws ,1964
+506,234,Kenya School of Law,ATP-Bar Exams,1965

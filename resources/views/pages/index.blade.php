@@ -25,7 +25,7 @@
     <div id="app">
         <main>
             <div class="background-image">
-                <nav class="navbar navbar-home navbar-expand-md ">
+                <nav class="navbar navbar-home navbar-expand-md">
                     <div class="container">
                         <span class="navbar-brand" href="{{ url('/') }}">
                             {{ config('app.name', 'LAWKE') }}

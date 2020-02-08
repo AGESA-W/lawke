@@ -14,7 +14,8 @@ class CreateAttorneysTable extends Migration
     public function up()
     {
         Schema::create('attorneys', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('attorney_id')->unsigned();
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email')->unique();
@@ -26,6 +27,9 @@ class CreateAttorneysTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+
+            // $table->foreign('attorney_id')->references('id')->on('lsks');
         });
     }
 

@@ -19,7 +19,7 @@ class CreatePracticeAreasTable extends Migration
             $table->string('area_practice');
             
 
-            $table->foreign('attorney_id')->references('attorney_id')->on('lsks');
+            $table->foreign('attorney_id')->references('id')->on('lsks');
         });
     }
 

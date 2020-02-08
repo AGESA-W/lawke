@@ -29,6 +29,7 @@ class AttorneysRegisterController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'attorney_id' => ['required'],
             'firstname' => ['required','string','max:255'],
             'lastname' => ['required','string','max:255'],
             'national_id' => ['required','string','min:8','max:8'],
@@ -41,6 +42,7 @@ class AttorneysRegisterController extends Controller
 
         //create new Attorney
         $attorney= new Attorney;
+        $attorney->attorney_id = $request->input('attorney_id');
         $attorney->firstname = $request->input('firstname');
         $attorney->lastname = $request->input('lastname');
         $attorney->national_id = $request->input('national_id');

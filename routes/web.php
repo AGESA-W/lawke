@@ -27,7 +27,7 @@ Route::get('/users/logout', 'Auth\LoginController@UserLogout')->name('users.logo
 
 
 // Attorneys pages
-Route::get('/profile/{id}/{firstname}',"AttorneysController@profile")->name('profile');
+Route::get('/profile/{id}',"AttorneysController@profile")->name('profile');
 Route::get('/attorney_dashboard',"AttorneysController@dashboard")->name('attorney_dashboard');
 Route::get('/attorney_register',"Auth\AttorneysRegisterController@showRegistrationForm")->name('attorney.register');
 Route::get('/attorney_login',"Auth\AttorneysLoginController@showLoginForm")->name('attorney.login');

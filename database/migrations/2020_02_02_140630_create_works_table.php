@@ -21,7 +21,7 @@ class CreateWorksTable extends Migration
             $table->string('duration');
             
 
-            $table->foreign('attorney_id')->references('attorney_id')->on('lsks');
+            $table->foreign('attorney_id')->references('id')->on('lsks');
         });
     }
 
