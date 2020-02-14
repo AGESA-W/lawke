@@ -46,4 +46,14 @@ Route::prefix('attorney')->group(function(){
 });
 
 
+//messaging
+Route::get('/message/{id}',"HomeController@getMessage")->name('message');
+Route::post('message',"HomeController@sendMessage");
 
+// attorney messaging routes
+Route::get('/attorney-message/{id}',"AttorneyMessageController@getMessageForm")->name('attorney-message.form');
+Route::post('/attorney-message',"AttorneyMessageController@store")->name('send.message');
+
+//attorney review
+Route::resource('review',"AttorneyReviewController");
+Route::get('review/{id}/write-review',"AttorneyReviewController@create_form")->name('write.review');

@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 use App\Lsk;
 use App\Attorney;
 use App\Education;
+use App\AttorneyReview;
+use App\User;
 use DB;
+
+
+use Auth;
 
 class AttorneysController extends Controller
 {
@@ -16,9 +21,9 @@ class AttorneysController extends Controller
      * @return void
      */
     // public function __construct()
-    // {
-    //     $this->middleware('auth:attorney');
-    // }
+    // // {
+    // //     $this->middleware('auth:attorney');
+    // // }
 
     /**
      * Show the application dashboard.
@@ -26,36 +31,39 @@ class AttorneysController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable 
      */
     public function profile($id){
-        // $attorneys=DB::table('lsks')
-        // ->join('education','lsks.id','=','education.attorney_id')
-        // ->join('locations','locations.attorney_id','=','lsks.id')
-        // ->join('practice_areas','practice_areas.attorney_id','=','lsks.id')
-        // ->join('works','works.attorney_id','=','lsks.id')
-        //  ->select('lsks.*','locations.*','practice_areas.*','education.*','works.*')
-        //  ->where('lsks.id',$id )
-        //  ->get();
-        // return view('attorneys.profile')->with('attorneys',$attorneys);
+       
+        // get id of the authenticated user
+        //  $user_id=auth()->user()->id;
+        // $user=User::find($user_id);
 
-
-        $lsk=Lsk::find($id);
-        return view('attorneys.profile')->with('lsk',$lsk)
-        ->with('attorneys',$lsk->educations)
-        ->with('works',$lsk->works)
-        ->with('areas',$lsk->practiceareas)
-        ->with('locations',$lsk->locations);
-
-    //     $attorney=Attorney::find($id);
-    //     return view('attorneys.profile')->with('lsk',$attorney)
-    //     ->with('attorneys',$attorney->educations)
-    //     ->with('works',$attorney->works)
-    //     ->with('areas',$attorney->practiceareas)
-    //     ->with('locations',$attorney->locations);
-    // 
+         $user=Auth::user();
+     
+        // $lsk=Lsk::find($id);
+        // return view('attorneys.profile')
+        // ->with('lsk',$lsk)
+        // ->with('attorneys',$lsk->educations)
+        // ->with('works',$lsk->works)
+        // ->with('areas',$lsk->practiceareas)
+        // ->with('locations',$lsk->locations)
+        //  ->with('reviews',$lsk->reviews)
+        //  ->with('reviews',$user->reviews);
+       
+ 
+        $attorney=Attorney::find($id);
+        return view('attorneys.profile')->with('attorney',$attorney)
+        ->with('educations',$attorney->educations)
+        ->with('works',$attorney->works)
+        ->with('areas',$attorney->practiceareas)
+        ->with('locations',$attorney->locations)
+        ->with('reviews',$attorney->reviews)
+        ->with('reviews',$user->reviews);
+    
     }
 
 
     public function dashboard()
     {
+        
         return view('attorneys.attorney_dashboard');
     }
 
@@ -79,7 +87,9 @@ class AttorneysController extends Controller
                 'email'=>$attorney->email,
                 'mobile'=>$attorney->mobile,
                 'license_no'=>$attorney->license_no,
-                'attorney_id'=>$attorney->id
+                'attorney_id'=>$attorney->id,
+                'image'=>$attorney->image,
+                'county'=>$attorney->county
             );
         }
         if(count($data))
@@ -87,5 +97,6 @@ class AttorneysController extends Controller
         else
             return ['firstname'=>'','lastname'=>''];
         }
+
 }
 

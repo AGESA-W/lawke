@@ -36,6 +36,8 @@ class AttorneysRegisterController extends Controller
             'license_no' => ['required','string','min:12','max:13'],
             'mobile' => ['required','string','max:255'],
             'gender' => ['required','string','max:255'],
+            'image' => ['required','string'],
+            'county' => ['required','string'],
             'email' => ['required','string','email','max:255','unique:attorneys'],
             'password' => ['required','string','min:8','confirmed'],
         ]);
@@ -50,6 +52,8 @@ class AttorneysRegisterController extends Controller
         $attorney->mobile = $request->input('mobile');
         $attorney->gender = $request->input('gender');
         $attorney->email = $request->input('email');
+        $attorney->image = $request->input('image');
+        $attorney->county = $request->input('county');
         $attorney->password = Hash::make($request->input('password'));
         $attorney->save();
  

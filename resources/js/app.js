@@ -4,18 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-/*******type writter effect */
-//scroll nav
-// const nav =document.querySelector('.navbar-home');
-// window.onscroll=function(){
-//   var top=window.scrollY;
-//   console.log(top);
-//   if(top>=100){
-//     nav.classList.add('.navbar-home-active');
-//   }else{
-//     nav.classList.remove('.navbar-home-active');
-//   }
-// }
+import VueStarRating  from 'vue-star-rating';
 
  window.Jquery = require('jquery');
 
@@ -37,13 +26,15 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('review-form', require('./components/ReviewComponent.vue').default);
 
+Vue.component('star-rating', VueStarRating);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// const app = new Vue({
-//     el: '#app',
-// });
+const app = new Vue({
+    el: '#app',
+});

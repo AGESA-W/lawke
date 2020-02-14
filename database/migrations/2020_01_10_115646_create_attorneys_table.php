@@ -23,13 +23,15 @@ class CreateAttorneysTable extends Migration
             $table->string('license_no');
             $table->string('mobile');
             $table->string('gender');
+            $table->string('image');
+            $table->string('county');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
 
 
-            // $table->foreign('attorney_id')->references('id')->on('lsks');
+            $table->foreign('attorney_id')->references('id')->on('lsks');
         });
     }
 

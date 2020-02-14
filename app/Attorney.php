@@ -18,7 +18,7 @@ class Attorney extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstname','lastname', 'license_no','national_id','mobile','about','gender','status','email', 'password',
+        'firstname','lastname', 'license_no','national_id','mobile','about','gender','email','image','county','password',
     ];
 
     /**
@@ -47,24 +47,53 @@ class Attorney extends Authenticatable
 
 
     public function lsk(){
-        return $this->belongsTo('App\Lsk');
-     }
+        return $this->belongs('App\Lsk');
+    }
+
+    
+    public function reviews(){
+        // return $this->hasMany('App\AttorneyReview','attorney_id','attorney_id');
+        return $this->hasMany('App\AttorneyReview');
+        
+    }
 
 
-
-     public function educations(){
-        return $this->hasMany('App\Education','attorney_id','id');
-     }
+    public function educations(){
+        return $this->hasMany('App\Education');
+    }
  
-     public function works(){
-         return $this->hasMany('App\Work','attorney_id','id');
-     }
+    public function works(){
+        return $this->hasMany('App\Work');
+    }
  
-     public function practiceareas(){
-         return $this->hasMany('App\PracticeArea','attorney_id','id');
-     }
+    public function practiceareas(){
+        return $this->hasMany('App\PracticeArea');
+    }
  
      public function locations(){
-         return $this->hasMany('App\Location','attorney_id','id');
-     }
+        return $this->hasMany('App\Location');
+    }
+
+
+
+    public function getStarRating(){
+        $count = $this->reviews()->count();
+        if(empty($count)){
+            return 0;
+        }
+        $starCountSum = $this->reviews()->sum('rating');
+        $average = $starCountSum/$count;
+
+        return $average;
+
+    }
+
+    //get the num of reviews
+    public function reviewCount(){
+        $count = $this->reviews()->count();
+        if(empty($count)){
+            return 0;
+        }
+        return $count;
+    }
 }

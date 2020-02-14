@@ -11,7 +11,7 @@ class Location extends Model
      }
 
 
-     public function attorney(){
-        return $this->belongsTo('App\Attorney');
-     }
+   //   public function attorney(){
+   //      return $this->belongsTo('App\Attorney');
+   //   }
 }

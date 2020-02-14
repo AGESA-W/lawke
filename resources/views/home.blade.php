@@ -6,286 +6,33 @@
             <div class="col-md-4">
                 <div class="user-wrapper">
                     <ul class="users">
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
+                        @foreach ($users as $user)
+                            <li class="user" id="{{$user->id}}">
+                                {{-- will show unread messages count notification --}}
+                                @if ($user->unread)
+                                    <span class="pending">{{$user->unread}}</span>
+                                @endif
+                                <div class="media">
+                                    <div class="media-left">
+                                    <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="name">{{$user->name}}</p>
+                                        <p class="email">{{$user->email}}</p>
+                                    </div>
                                 </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="user">
-                            <span class="pending">1</span>
-                            <div class="media">
-                                <div class="media-left">
-                                   <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
-                                </div>
-                                <div class="media-body">
-                                    <p class="name">John Doe</p>
-                                    <p class="email">john@gmail.com</p>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
 
             <div class="col-md-8" id="messages">
-                <div class="messages-wrapper">
-                    <ul class="messages">
-                        <li class="message clearfix">
-                            <div class="sent">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <p class="date">1 sep, 2019</p>
-                            </div>
-                        </li>
-                        <li class="message clearfix">
-                            <div class="received">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <p class="date">1 sep, 2019</p>
-                            </div>
-                        </li>
-                        <li class="message clearfix">
-                            <div class="sent">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <p class="date">1 sep, 2019</p>
-                            </div>
-                        </li>
-                        <li class="message clearfix">
-                            <div class="received">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <p class="date">1 sep, 2019</p>
-                            </div>
-                        </li>
-                        <li class="message clearfix">
-                            <div class="sent">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <p class="date">1 sep, 2019</p>
-                            </div>
-                        </li>
-                        <li class="message clearfix">
-                            <div class="received">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <p class="date">1 sep, 2019</p>
-                            </div>
-                        </li>
-                        <li class="message clearfix">
-                            <div class="sent">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <p class="date">1 sep, 2019</p>
-                            </div>
-                        </li>
-                        <li class="message clearfix">
-                            <div class="received">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <p class="date">1 sep, 2019</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="input-text">
-                    <input type="text" name="message" class="submit">
-                </div>
+               
             </div>
         </div>
     </div>
-    <style>
+    {{-- <style>
         ul{
             margin: 0;
             padding:0;
@@ -294,7 +41,7 @@
             list-style: none;
         }
         .user-wrapper, .message-wrapper{
-            border:1px solid #787878;
+            border: 1px solid #dddddd;
             overflow-y: auto;
         }
         .user-wrapper{
@@ -307,7 +54,8 @@
         }
 
         .user:hover{
-            background: blue;
+            background: #eeeeee;
+            color:#333;
         }
         .user:last-child{
             margin-bottom:0;
@@ -316,7 +64,7 @@
             position:absolute;
             left:13px;
             top:5px;
-            background:chartreuse;
+            background:#b600ff;
             margin:0;
             border-radius:50%;
             width:20px;
@@ -350,7 +98,7 @@
              border-radius:10px;
          }
          .received{
-             background:cornflowerblue;
+             background:#ffffff;
          }
          .sent{
              background: #3bebff;
@@ -361,12 +109,13 @@
              margin:5px 0;
          }
          .date{
-             background: #eeeeee;
+             color: #777777;
              font-size:12px;
          }
 
          .active{
-             background: #eeeeee;
+             background: #38c172;
+             color:#ffffff;
          }
 
          input[type=text]{
@@ -382,5 +131,98 @@
          input[type=text]:focus{
              border:1px solid #aaaaaa;
          }
-    </style>
+    </style> --}}
+
+  
+
+    {{-- <script>
+        var receiver_id = '';
+        var my_id = "{{ Auth::id() }}";
+        $(document).ready(function(){
+            // ajax setup form csrf token
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            // Enable pusher logging - don't include this in production
+            Pusher.logToConsole = true;
+
+            var pusher = new Pusher('f2dc213d12fc52e61e51', {
+            cluster: 'mt1',
+            forceTLS: true
+            });
+
+            var channel = pusher.subscribe('my-channel');
+            channel.bind('my-event', function(data) {
+            // alert(JSON.stringify(data));
+            if (my_id == data.from) {
+                $('#' + data.to).click();
+            } 
+            else if (my_id == data.to) {
+                if (receiver_id == data.from) {
+                    // if receiver is selected, reload the selected user ...
+                    $('#' + data.from).click();
+                } 
+                else {
+                    // if receiver is not seleted, add notification for that user
+                    var pending = parseInt($('#' + data.from).find('.pending').html());
+                    if (pending) {
+                        $('#' + data.from).find('.pending').html(pending + 1);
+                    } 
+                    else {
+                        $('#' + data.from).append('<span class="pending">1</span>');
+                    }
+                }
+            }
+            }); 
+
+            $('.user').click(function(){
+                $('.user').removeClass('active');
+                $(this).addClass('active');
+                $(this).find('.pending').remove();
+              
+                receiver_id = $(this).attr('id');
+                $.ajax({
+                    type: "get",
+                    url: "message/" + receiver_id, // need to create this route
+                    data: "",
+                    cache: false,
+                    success: function (data) {
+                        $('#messages').html(data);
+                        scrollToBottomFunc();
+                    }
+                });
+            });
+
+            $(document).on('keyup', '.input-text input', function (e) {
+                var message = $(this).val();
+                // check if enter key is pressed and message is not null also receiver is selected
+                if (e.keyCode == 13 && message != '' && receiver_id != '') {
+                    $(this).val(''); // while pressed enter text box will be empty
+                    var datastr = "receiver_id=" + receiver_id + "&message=" + message;
+                    $.ajax({
+                        type: "post",
+                        url: "message", // need to create this post route
+                        data: datastr,
+                        cache: false,
+                        success: function (data) {
+                        },
+                        error: function (jqXHR, status, err) {
+                        },
+                        complete: function () {
+                            scrollToBottomFunc();
+                        }
+                    })
+                }
+            });
+        });
+
+        // make a function to scroll down auto
+        function scrollToBottomFunc() {
+            $('.message-wrapper').animate({
+                scrollTop: $('.message-wrapper').get(0).scrollHeight
+            }, 50);
+        }
+    </script> --}}
 @endsection

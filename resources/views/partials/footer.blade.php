@@ -62,7 +62,7 @@
       <div class="col-md-12 text-center">
 
         <p>
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+Copyright &copy;2020 All rights reserved 
       </div>
     </div>
   </div>

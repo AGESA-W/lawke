@@ -298,6 +298,14 @@
                                 <div class="form-group">
                                     <input id="attorney_id" type="hidden" class="mb-3 form-control" name="attorney_id" value="{{ old('attorney_id') }}">
                                 </div>
+
+                                <div class="form-group">
+                                    <input id="image" type="hidden" class="mb-3 form-control" name="image" value="{{ old('image') }}" required>
+                                </div>
+                                <div class="form-group">
+                                    <input id="county" type="hidden" class="mb-3 form-control" name="county" value="{{ old('county') }}" required>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="gender" class="col-form-label ">{{ __('Gender:') }}</label>
                                     <div class="d-flex form-check">
@@ -316,7 +324,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 mt-4">
                                 <div class="form-group">
                                     <label for="license_no" class="col-form-label ">{{ ('License No:') }}</label>
                                     <input id="license_no" type="text" data-type="license_no" placeholder="P.105/1234/56" class="mb-3 autocomplete_txt form-control @error('license_no') is-invalid @enderror" name="license_no" value="{{ old('license_no') }}"  readonly="readonly" required autocomplete="license_no" autofocus>
@@ -399,6 +407,8 @@
                     $('#national_id').val(data.national_id);
                     $('#license_no').val(data.license_no);
                     $('#attorney_id').val(data.attorney_id);
+                    $('#image').val(data.image); 
+                    $('#county').val(data.county);
                 }
             }); 
             });
