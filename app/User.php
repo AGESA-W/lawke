@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','lastname','mobile',
     ];
 
     /**
@@ -47,6 +47,18 @@ class User extends Authenticatable
         // return $this->hasmany('App\AttorneyReview','user_id','id');
         return $this->hasmany('App\AttorneyReview');
 
-     }
+    }
+
+    //relationship with attorney message
+    public function messages(){
+    return $this->hasmany('App\AttorneyMessage');
+
+    }
+
+    //relationship with user message
+    public function usermessages(){
+        return $this->hasmany('App\UserMessage');
+    
+        }
      
 }

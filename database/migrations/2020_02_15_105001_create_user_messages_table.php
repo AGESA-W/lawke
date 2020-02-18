@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAttorneyMessagesTable extends Migration
+class CreateUserMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateAttorneyMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('attorney_messages', function (Blueprint $table) {
+        Schema::create('user_messages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('attoreny_id');
             $table->integer('user_id');
-            // $table->integer('message_id');
+            $table->integer('attorney_id');
+            $table->integer('message_id');
             $table->mediumText('description');
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
@@ -31,6 +31,6 @@ class CreateAttorneyMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attorney_messages');
+        Schema::dropIfExists('user_messages');
     }
 }

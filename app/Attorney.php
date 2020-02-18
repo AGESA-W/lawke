@@ -74,6 +74,15 @@ class Attorney extends Authenticatable
         return $this->hasMany('App\Location');
     }
 
+    //relationship with attorney messages
+    public function messages(){
+        return $this->hasMany('App\AttorneyMessage');
+    }
+
+    //relationship with user messages
+    public function usermessages(){
+        return $this->hasMany('App\UserMessage');
+    }
 
 
     public function getStarRating(){

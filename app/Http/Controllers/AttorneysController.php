@@ -7,11 +7,13 @@ use App\Lsk;
 use App\Attorney;
 use App\Education;
 use App\AttorneyReview;
+use App\AttorneyMessage;
 use App\User;
+use Auth;
 use DB;
 
 
-use Auth;
+
 
 class AttorneysController extends Controller
 {
@@ -20,10 +22,11 @@ class AttorneysController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // // {
-    // //     $this->middleware('auth:attorney');
-    // // }
+    public function __construct()
+    {
+        $this->middleware('auth:attorney',['except'=>['profile']]);
+
+    }
 
     /**
      * Show the application dashboard.
@@ -33,9 +36,6 @@ class AttorneysController extends Controller
     public function profile($id){
        
         // get id of the authenticated user
-        //  $user_id=auth()->user()->id;
-        // $user=User::find($user_id);
-
          $user=Auth::user();
      
         // $lsk=Lsk::find($id);
@@ -55,16 +55,29 @@ class AttorneysController extends Controller
         ->with('works',$attorney->works)
         ->with('areas',$attorney->practiceareas)
         ->with('locations',$attorney->locations)
-        ->with('reviews',$attorney->reviews)
-        ->with('reviews',$user->reviews);
+        ->with('reviews',$attorney->reviews);
+        //  ->with('reviews',$user->reviews);
     
     }
 
 
     public function dashboard()
     {
+
+        $users = DB::select("select users.id, users.name,users.email 
+        from users JOIN  attorney_messages ON users.id=attorney_messages.user_id and attorney_id = " . Auth::id() . " 
+        where attorney_id = " . Auth::id() . " 
+         group by users.id, users.name, users.email,attorney_id");
+
+
+        $attorney_id=Auth::id();
+        $attorney=Attorney::find($attorney_id);
         
-        return view('attorneys.attorney_dashboard');
+        return view('attorneys.attorney_dashboard')
+        ->with('messages',$attorney->messages)
+        ->with('usermessages',$attorney->usermessages)
+        ->with('users',$users);
+        
     }
 
 

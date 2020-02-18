@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AttorneyMessage extends Model
+class UserMessage extends Model
 {
     protected $fillable = [
-        'attorney_id','user_id','message_id','status', 'description',
+        'attorney_id','user_id','status', 'description','message_id',
     ];
 
     public function attorney(){
@@ -17,5 +17,4 @@ class AttorneyMessage extends Model
     public function user(){
         return $this->belongsTo('App\User');
      }
-
 }

@@ -1,228 +1,186 @@
 @extends('layouts.app')
-
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="user-wrapper">
-                    <ul class="users">
-                        @foreach ($users as $user)
-                            <li class="user" id="{{$user->id}}">
-                                {{-- will show unread messages count notification --}}
-                                @if ($user->unread)
-                                    <span class="pending">{{$user->unread}}</span>
-                                @endif
-                                <div class="media">
-                                    <div class="media-left">
-                                    <img src="/images/attorneys/man78.jpg" alt="" class="media-object" style="width:100px;height:100px;border-radius:50%;">
+    <div class="row user-dashboard">
+      <div class="col-12 col-md-3">
+        <div class="user-nav">
+            <h4>Your Profile</h4>
+            <hr>
+            <div class="p-0">
+              <ul class="nav user-nav-tabs nav-fill ml-auto pt-0" style="flex-direction:column;">
+                <li class="nav-item user-nav-item"><a class="nav-link user-nav-link active" href="#tab1" data-toggle="tab"><span class="fa fa-user"></span> Account</a></li>
+                <li class="nav-item user-nav-item"><a class="nav-link user-nav-link " href="#tab2" data-toggle="tab"><span class="fa fa-envelope"></span> Inbox</a></li>
+                <li class="nav-item user-nav-item"><a class="nav-link user-nav-link " href="#tab3" data-toggle="tab"><span class="fa fa-pencil"></span> Reviews</a></li>
+              </ul>
+            </div><!-- /.card-header -->
+        </div>
+      </div>
+      <div class="col-12 col-md-9">
+        <div class="user-text-wrapper">
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                  <h5 class="mb-2 pb-3" style="border-bottom: #afa939 solid 2px;">Personal information</h5>
+                    <div class="tab-item">
+                        <div class="sectionDetails">
+                            <div class="sectionWrapper">
+                                <div class="sectionTitle">Name</div>
+                                <div class="sectionContent">
+                                    <ul class="list-unstyled" style="margin:0">
+                                        <li>{{$user->name}} {{$user->lastname}}</li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="sectionDetails">
+                            <div class="sectionWrapper">
+                                <div class="sectionTitle">Email</div>
+                                <div class="sectionContent">
+                                    <ul class="list-unstyled" style="margin:0">
+                                        <li>{{$user->email}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="sectionDetails">
+                            <div class="sectionWrapper">
+                                <div class="sectionTitle">Phone Number</div>
+                                <div class="sectionContent">
+                                    <ul class="list-unstyled" style="margin:0">
+                                        <li>0{{$user->mobile}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="sectionDetails">
+                            <div class="sectionWrapper">
+                                <div class="sectionTitle">Registered On</div>
+                                <div class="sectionContent">
+                                    <ul class="list-unstyled" style="margin:0">
+                                        <li>{{ date('d M, h:i a', strtotime($user->created_at)) }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab2">
+                    @if(count($usermessages)>0)
+                        @foreach ($usermessages as $usermess)
+                            <input type="hidden" value="{{$usermess->id}}" id="mId{{$usermess->id}}">
+                            @if($usermess->status==0)
+                                <div class="inbox" id="msg{{$usermess->id}}" style="background:#ccc;">
+                                    <ul class="list-unstyled px-3" style="font-size:15px">
+                                        <a  class="text-decoration-none " href="#" data-toggle="collapse" data-target="#d{{$usermess->id}}">
+                                            <li class="list-item">Message from:<b>{{$usermess->user->name}}</b></li>
+                                            <small class="text-secondary">Sent on:{{ date('d M, h:i a', strtotime($usermess->created_at)) }}</small>
+                                        </a>
+                                        <div class="collapse" id="d{{$usermess->id}}">{{$usermess->description}}</div>
+                                        <hr>
+                                    </ul>
+                                </div>
+                                @else
+                                <div class="inbox">
+                                    <ul class="list-unstyled">
+                                        <a  class="text-decoration-none" href="#" data-toggle="collapse" data-target="#d{{$usermess->id}}">
+                                            <li class="list-item">Message from:<b>{{$usermess->attorney->firstname}} {{$usermess->attorney->lastname}}</b> </li>           
+                                        </a>
+                                        <hr>
+                                        <div class="collapse" id="d{{$usermess->id}}">
+                                            <div class="received">
+                                                @foreach ($messages as $message)
+                                                    @if ( $usermess->message_id == $message->id)
+                                                        <ul class="list-unstyled">
+                                                            <li class="list-item received-item mt-2">{{$message->description}}
+                                                                <br>
+                                                                <small class="text-secondary">sent on:{{ date('d M, h:i a', strtotime($message->created_a)) }}</small>
+                                                            </li>
+                                                            <div class="clearfix"></div>
+                                                        </ul>
+                                                    @endif
+                                                @endforeach
+                                                <ul class="list-unstyled">
+                                                    <li class="list-item sent-item"> <p>{{$usermess->description}}</p>
+                                                        <small class="text-secondary mt-0">Received on:{{ date('d M, h:i a', strtotime($usermess->created_at)) }}</small>
+                                                    </li>
+                                                    <div class="clearfix"></div>
+                                                </ul>
+                                            </div>
+                                            <form action="{{route('send.message')}}" method="post">
+                                                {{ csrf_field() }}
+                                                <div class="form-group">
+                                                    <input class="form-control mt-2" type="text" name="description" placeholder="Type message....">
+                                                </div>
+                                                <input type="hidden" name="attorney_id" value="{{$usermess->attorney->id}}">
+                                                    <input type="hidden" name="user_id" value="{{$usermess->user->id}}"> 
+                                                {{-- <input type="hidden" name="message_id" value="{{$message->id}}">  --}}
+                                                <button type="submit" class="btn btn-success mt-1 px-4">Send</button>
+                                            </form>
+                
+                                        </div>
+                                    </ul>
+                                </div>
+                            @endif
+                        @endforeach
+                        @else
+                        <p class="lead text-center text-primary"> <b>No Messages Yet</b> </p>
+                    @endif
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab3">
+                <h5 class="mb-2 pb-3" style="border-bottom: #afa939 solid 2px;">My Reviews</h5>
+                @if(count($reviews)>0)
+                    @foreach ($reviews as $review)
+                        <ul class="list-unstyled">
+                           <li> 
+                                <div class="row">
+                                    <div class="float-left col-md-3">
+                                        <small class="mb-0"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$review->rating}}"></star-rating></small>
+                                        <small class="text-secondary"><span class="text-dark">Posted On:</span> {{ date('d M, h:i a', strtotime($review->created_at)) }}</small>
                                     </div>
-                                    <div class="media-body">
-                                        <p class="name">{{$user->name}}</p>
-                                        <p class="email">{{$user->email}}</p>
+                                    <div class="float-right col-md-9">
+                                        <b>{{$review->headline}}</b>
+                                        <p>{{$review->description}}</p>
+                                        {{-- <button  class="btn btn-success px-4">Edit</button>
+                                        <button  class="float-right btn btn-danger px-4">Delete</button> --}}
+                                        {{-- <a href="">See Actions</a> --}}
                                     </div>
                                 </div>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
+                                <div class="clearfix"></div>
+                            </li> 
+                        </ul>
+                        
+                    @endforeach
+                    @else
+                    <p class="lead text-center text-primary"> <b>There are no reviews in your account.</b> </p>
+                @endif
+              </div>
+              <!-- /.tab-pane -->
             </div>
-
-            <div class="col-md-8" id="messages">
-               
-            </div>
-        </div>
+            <!-- /.tab-content -->
+        </div><!-- /.card-body -->
+      </div>
+        
     </div>
-    {{-- <style>
-        ul{
-            margin: 0;
-            padding:0;
-        }
-        li{
-            list-style: none;
-        }
-        .user-wrapper, .message-wrapper{
-            border: 1px solid #dddddd;
-            overflow-y: auto;
-        }
-        .user-wrapper{
-            height:600px;
-        }
-        .user{
-            cursor: pointer;
-            padding: 5px 0;
-            position: relative;
-        }
-
-        .user:hover{
-            background: #eeeeee;
-            color:#333;
-        }
-        .user:last-child{
-            margin-bottom:0;
-        }
-        .pending{
-            position:absolute;
-            left:13px;
-            top:5px;
-            background:#b600ff;
-            margin:0;
-            border-radius:50%;
-            width:20px;
-            height:20px;
-            line-height: 16px;
-            padding-left: 5px;
-            color:#ffffff;
-            font-size:12px;
-        }
-        .media-left{
-            margin-left:0 10px;
-        }
-
-        .media-body p{
-            padding:6px 0;
-        }
-         .message-wrapper{
-             padding:10px;
-             height:536px;
-             background:#eeeeee;
-         }
-         .messages .message{
-             margin-bottom:15px;
-         }
-         .messages .message:last-child{
-             margin-bottom:0;
-         }
-         .received, .sent{
-             width:45%;
-             padding:3px 10px;
-             border-radius:10px;
-         }
-         .received{
-             background:#ffffff;
-         }
-         .sent{
-             background: #3bebff;
-             float:right;
-             text-align:right;
-         }
-         .message p{
-             margin:5px 0;
-         }
-         .date{
-             color: #777777;
-             font-size:12px;
-         }
-
-         .active{
-             background: #38c172;
-             color:#ffffff;
-         }
-
-         input[type=text]{
-             width:100%;
-             padding:12px 20px;
-             margin:15px 0 0 0;
-             display:inline-block;
-             border-radius:4px;
-             box-sizing: border-box;
-             outline: none;
-             border: 1px solid #cccccc;
-         }
-         input[type=text]:focus{
-             border:1px solid #aaaaaa;
-         }
-    </style> --}}
-
-  
-
-    {{-- <script>
-        var receiver_id = '';
-        var my_id = "{{ Auth::id() }}";
-        $(document).ready(function(){
-            // ajax setup form csrf token
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            // Enable pusher logging - don't include this in production
-            Pusher.logToConsole = true;
-
-            var pusher = new Pusher('f2dc213d12fc52e61e51', {
-            cluster: 'mt1',
-            forceTLS: true
-            });
-
-            var channel = pusher.subscribe('my-channel');
-            channel.bind('my-event', function(data) {
-            // alert(JSON.stringify(data));
-            if (my_id == data.from) {
-                $('#' + data.to).click();
-            } 
-            else if (my_id == data.to) {
-                if (receiver_id == data.from) {
-                    // if receiver is selected, reload the selected user ...
-                    $('#' + data.from).click();
-                } 
-                else {
-                    // if receiver is not seleted, add notification for that user
-                    var pending = parseInt($('#' + data.from).find('.pending').html());
-                    if (pending) {
-                        $('#' + data.from).find('.pending').html(pending + 1);
-                    } 
-                    else {
-                        $('#' + data.from).append('<span class="pending">1</span>');
-                    }
-                }
-            }
-            }); 
-
-            $('.user').click(function(){
-                $('.user').removeClass('active');
-                $(this).addClass('active');
-                $(this).find('.pending').remove();
-              
-                receiver_id = $(this).attr('id');
-                $.ajax({
-                    type: "get",
-                    url: "message/" + receiver_id, // need to create this route
-                    data: "",
-                    cache: false,
-                    success: function (data) {
-                        $('#messages').html(data);
-                        scrollToBottomFunc();
-                    }
-                });
-            });
-
-            $(document).on('keyup', '.input-text input', function (e) {
-                var message = $(this).val();
-                // check if enter key is pressed and message is not null also receiver is selected
-                if (e.keyCode == 13 && message != '' && receiver_id != '') {
-                    $(this).val(''); // while pressed enter text box will be empty
-                    var datastr = "receiver_id=" + receiver_id + "&message=" + message;
+    <script>
+        $(document).ready(function (){
+            @foreach($usermessages as $usermess)
+                $('#msg{{$usermess->id}}').click(function(){
+                    var mId=$('#mId{{$usermess->id}}').val();
                     $.ajax({
-                        type: "post",
-                        url: "message", // need to create this post route
-                        data: datastr,
-                        cache: false,
-                        success: function (data) {
-                        },
-                        error: function (jqXHR, status, err) {
-                        },
-                        complete: function () {
-                            scrollToBottomFunc();
+                        type:'get',
+                        data:'msgId='+mId,
+                        url:'{{url('/updateUserInbox')}}',
+                        success:function(response){
+                            window.location.reload();
+                            // console.log(response);
                         }
-                    })
-                }
-            });
+                    });
+                });
+            @endforeach  
         });
-
-        // make a function to scroll down auto
-        function scrollToBottomFunc() {
-            $('.message-wrapper').animate({
-                scrollTop: $('.message-wrapper').get(0).scrollHeight
-            }, 50);
-        }
-    </script> --}}
+    </script>  
 @endsection

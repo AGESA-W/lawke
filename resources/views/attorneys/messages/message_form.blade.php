@@ -32,9 +32,8 @@
                         </span>
                     @enderror
                 </div>
-                <input type="hidden" name="to" value="{{$attorney->id}}">
-                <input type="hidden" name="from" value="{{Auth::id()}}">
-
+                <input type="hidden" name="attorney_id" value="{{$attorney->id}}">
+                <input type="hidden" name="user_id" value="{{Auth::id()}}">
                 <button type="submit" class="btn bg-color px-4">Submit</button>
             </form>
 

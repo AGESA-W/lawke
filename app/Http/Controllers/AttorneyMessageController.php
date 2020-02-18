@@ -15,8 +15,11 @@ class AttorneyMessageController extends Controller
      */
 
     Public function getMessageForm($id){
+        
         $attorney=Attorney::find($id);
+    
         return view('attorneys/messages.message_form')->with('attorney', $attorney);
+     
     }
     public function index()
     {
@@ -43,16 +46,18 @@ class AttorneyMessageController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'to' => ['required'],
-            'from' => ['required'],
-            'description' => ['required','string','min:75'],
+            // 'message_id'=>['required'],
+            'attorney_id' => ['required'],
+            'user_id' => ['required'],
+            'description' => ['required','string'],
            
         ]);
 
-        //create new Attorney
+        //create new Attorney Message
         $message= new AttorneyMessage;
-        $message->to = $request->input('to');
-        $message->from = $request->input('from');
+        $message->attorney_id = $request->input('attorney_id');
+        $message->user_id = $request->input('user_id');
+        // $message->message_id = $request->input('message_id');
         $message->description = $request->input('description');
         $message->save();
  
