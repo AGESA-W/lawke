@@ -9,7 +9,7 @@ import VueStarRating  from 'vue-star-rating';
  window.Jquery = require('jquery');
 
 
-
+require('popper.js');
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -27,6 +27,8 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('review-form', require('./components/ReviewComponent.vue').default);
+
+
 
 Vue.component('star-rating', VueStarRating);
 /**

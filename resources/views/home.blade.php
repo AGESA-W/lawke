@@ -8,7 +8,7 @@
             <div class="p-0">
               <ul class="nav user-nav-tabs nav-fill ml-auto pt-0" style="flex-direction:column;">
                 <li class="nav-item user-nav-item"><a class="nav-link user-nav-link active" href="#tab1" data-toggle="tab"><span class="fa fa-user"></span> Account</a></li>
-                <li class="nav-item user-nav-item"><a class="nav-link user-nav-link " href="#tab2" data-toggle="tab"><span class="fa fa-envelope"></span> Inbox</a></li>
+                <li class="nav-item user-nav-item"><a class="nav-link user-nav-link " href="#tab2" data-toggle="tab"><span class="fa fa-envelope"></span> Inbox <span class="badge badge-primary" style="margin-left:120px;">{{$user->countUserInbox()}}</span></a></li>
                 <li class="nav-item user-nav-item"><a class="nav-link user-nav-link " href="#tab3" data-toggle="tab"><span class="fa fa-pencil"></span> Reviews</a></li>
               </ul>
             </div><!-- /.card-header -->
@@ -64,6 +64,45 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="sectionDetails">
+                            <div class="sectionWrapper">
+                                <div class="sectionTitle">Account type</div>
+                                <div class="sectionContent">
+                                    <ul class="list-unstyled" style="margin:0">
+                                        <li class="float-left">User Account</li>
+                                        <li class="float-right">
+                                            <button type="button" class="btn btn-primary px-3 py-2 btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                Close account
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete Account</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                <p class="lead">Are you sure you want to delete your Account?</p> 
+                                </div>
+                                <div class="modal-footer">
+                                    <form action="{{route('user.delete',$user->id)}}" method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button class="btn btn-success px-3 py-2" type="submit">Delete</button>
+                                    </form>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
               <!-- /.tab-pane -->
@@ -74,8 +113,8 @@
                             @if($usermess->status==0)
                                 <div class="inbox" id="msg{{$usermess->id}}" style="background:#ccc;">
                                     <ul class="list-unstyled px-3" style="font-size:15px">
-                                        <a  class="text-decoration-none " href="#" data-toggle="collapse" data-target="#d{{$usermess->id}}">
-                                            <li class="list-item">Message from:<b>{{$usermess->user->name}}</b></li>
+                                        <a  class="text-decoration-none text-dark" href="#" data-toggle="collapse" data-target="#d{{$usermess->id}}">
+                                            <li class="list-item">Message from:<b> {{$usermess->attorney->firstname}} {{$usermess->attorney->lastname}} <span class="badge badge-pill bg-color"> New</span></b></li>
                                             <small class="text-secondary">Sent on:{{ date('d M, h:i a', strtotime($usermess->created_at)) }}</small>
                                         </a>
                                         <div class="collapse" id="d{{$usermess->id}}">{{$usermess->description}}</div>
@@ -85,8 +124,8 @@
                                 @else
                                 <div class="inbox">
                                     <ul class="list-unstyled">
-                                        <a  class="text-decoration-none" href="#" data-toggle="collapse" data-target="#d{{$usermess->id}}">
-                                            <li class="list-item">Message from:<b>{{$usermess->attorney->firstname}} {{$usermess->attorney->lastname}}</b> </li>           
+                                        <a  class="text-decoration-none text-dark" href="#" data-toggle="collapse" data-target="#d{{$usermess->id}}">
+                                            <li class="list-item">Message from:<b> {{$usermess->attorney->firstname}} {{$usermess->attorney->lastname}}</b> </li>           
                                         </a>
                                         <hr>
                                         <div class="collapse" id="d{{$usermess->id}}">
@@ -138,15 +177,53 @@
                            <li> 
                                 <div class="row">
                                     <div class="float-left col-md-3">
+                                        <img src="{{$review->attorney->image}}" alt="" style="width:80px;height:80px;">
                                         <small class="mb-0"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$review->rating}}"></star-rating></small>
-                                        <small class="text-secondary"><span class="text-dark">Posted On:</span> {{ date('d M, h:i a', strtotime($review->created_at)) }}</small>
+                                        <small class="text-secondary"><span class="text-dark">Review for</span> {{$review->attorney->firstname}} {{$review->attorney->lastname}}</small> 
+                                        <small class="text-secondary"><span class="text-dark">submited on:</span> {{ date('d M, h:i a', strtotime($review->created_at)) }}</small>
                                     </div>
                                     <div class="float-right col-md-9">
                                         <b>{{$review->headline}}</b>
                                         <p>{{$review->description}}</p>
-                                        {{-- <button  class="btn btn-success px-4">Edit</button>
-                                        <button  class="float-right btn btn-danger px-4">Delete</button> --}}
-                                        {{-- <a href="">See Actions</a> --}}
+                                        {{-- <a href="/reviews/{{$review->id}}/edit" class="btn btn-success px-4">Edit</a> --}}
+                                        <form action="{{route('reviews.destroy',$review->id)}}" method="post">
+                                            @method('DELETE')
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="float-right btn btn-danger px-4">Delete</button>
+                                        </form>
+                                        <button type="button" class="btn btn-success px-3 py-2 btn-sm" data-toggle="modal" data-target="#d{{$review->id}}">
+                                            Edit Review
+                                        </button>
+                                        <div class="modal fade" id="d{{$review->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit Review</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{route('reviews.update',$review->id)}}" method="post">
+                                                            @method('PUT')
+                                                            {{ csrf_field() }}
+                                                            <div class="form-group">
+                                                                <label for=""><span class="asterick"><b>*</b></span><b>Title</b> </label>
+                                                                <input type="text" class="form-control" name= "headline" value="{{$review->headline}}" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for=""><span class="asterick"><b>*</b></span> <b> Your review</b> </label>
+                                                                <textarea name= "description" class="form-control" placeholder="Be specific. Explain what your lawyer did (or failed to do) with your case. Your review should clearly indicate that you contacted, consulted with, or hired the attorney." maxlength="4000" id="description" cols="30" rows="5" required>{{$review->description}}</textarea>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button class="btn btn-success px-3" type="submit">Edit</button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>

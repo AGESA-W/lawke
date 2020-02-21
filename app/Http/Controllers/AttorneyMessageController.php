@@ -64,4 +64,5 @@ class AttorneyMessageController extends Controller
       return redirect()->back()->with('success', 'Message sent Successfully');
 
     }
+
 }

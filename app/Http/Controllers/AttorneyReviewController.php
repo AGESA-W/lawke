@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 
 class AttorneyReviewController extends Controller
 {
-     /**
+
+      /**
      * Create a new controller instance.
      *
      * @return void
@@ -17,7 +18,7 @@ class AttorneyReviewController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-    }
+    } 
 
     /**
      * Display a listing of the resource.
@@ -29,21 +30,21 @@ class AttorneyReviewController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create_form($id)
     {
         $attorney=Attorney::find($id);
         return view('reviews.review_form')->with('attorney',$attorney);
     }
-
-    // public function create()
-    // {
-    //     return view('reviews.review_form');
-    // }
+    
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -54,13 +55,6 @@ class AttorneyReviewController extends Controller
     public function store(Request $request)
     {
         auth()->user()->reviews()->create($request->all());
-
-        // return redirect()->back();
-        // // Post::create([
-        // //     'title' => request('title'),
-        // //     'body' => request('body'),
-        // //     'user_id' => auth()->id() 
-        // // ]);
 
 
     //     $this->validate($request, [
@@ -90,10 +84,10 @@ class AttorneyReviewController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\AttorneyReview  $attorneyReview
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(AttorneyReview $attorneyReview)
+    public function show($id)
     {
         //
     }
@@ -101,34 +95,51 @@ class AttorneyReviewController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\AttorneyReview  $attorneyReview
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(AttorneyReview $attorneyReview)
-    {
-        //
+    public function edit($id)
+    { 
+        $review=AttorneyReview::find($id);
+        return view('reviews.update_review_form')->with('review',$review);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AttorneyReview  $attorneyReview
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AttorneyReview $attorneyReview)
-    {
-        //
+    public function update(Request $request, $id)
+    { 
+        $this->validate($request, [
+            'headline' => ['required'],
+            'description' => ['required'],
+    
+        ]);
+            
+        // Update AttorneyReview by user
+        $review= AttorneyReview::find($id);
+        $review->headline = $request->input('headline');
+        $review->description = $request->input('description');
+        $review->save();
+
+        return redirect('/home')->with('success',"Your review has been updated!");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\AttorneyReview  $attorneyReview
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AttorneyReview $attorneyReview)
+    public function destroy($id)
     {
-        //
+        //Delete AttorneyReview by user
+        $review= AttorneyReview::find($id);
+        $review->delete();
+
+        return redirect('/home')->with('success',"Your review has been Deleted!");
     }
 }

@@ -74,9 +74,14 @@ class AttorneysController extends Controller
         $attorney=Attorney::find($attorney_id);
         
         return view('attorneys.attorney_dashboard')
+        ->with('attorney',$attorney)
         ->with('messages',$attorney->messages)
         ->with('usermessages',$attorney->usermessages)
+        ->with('reviews',$attorney->reviews)
         ->with('users',$users);
+        
+        
+        
         
     }
 

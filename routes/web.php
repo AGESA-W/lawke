@@ -54,19 +54,22 @@ Route::post('message',"HomeController@sendMessage");
 Route::get('/attorney-message/{id}',"AttorneyMessageController@getMessageForm")->name('attorney-message.form');
 Route::post('/attorney-message',"AttorneyMessageController@store")->name('send.message');
 
-// user message routes
-Route::post('/user-message',"UserMessageController@store")->name('user.send.message');
 
 //attorney review
-Route::resource('review',"AttorneyReviewController");
+Route::resource('reviews',"AttorneyReviewController");
 Route::get('review/{id}/write-review',"AttorneyReviewController@create_form")->name('write.review');
 
 // inbox attorney
 Route::get('/updateInbox',"InboxController@updateInbox");
 
+
+// user message routes
+Route::post('/user-message',"UserMessageController@store")->name('user.send.message');
+
 //inbox user
 Route::get('/updateUserInbox',"InboxController@updateUserInbox");
 
-Route::prefix('user')->group(function(){
-    Route::get('inbox',"HomeController@userinbox");
-});
+//Delete User
+Route::delete('/users/{user}',"HomeController@destroy")->name('user.delete');
+
+

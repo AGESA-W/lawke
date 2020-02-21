@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Attorney;
+use App\AttorneyReview;
 use App\Message;
 use DB;
 use Illuminate\Support\Facades\Auth;
@@ -37,20 +39,25 @@ class HomeController extends Controller
         // where users.id != " . Auth::id() . " 
         // group by users.id, users.name, users.email");
         // return view('home')->with('users',$users);
+
+       
+
         $user_id=auth()->user()->id;
         $user=User::find($user_id);
+
         return view('home')->with('user',$user)
         ->with('messages',$user->messages)
         ->with('usermessages',$user->usermessages)
         ->with('reviews',$user->reviews);
+        
+    } 
+    
+    //deleting User
+    public function destroy($id){
+        $user=User::find($id);
+        $user->delete();
+        return redirect('/')->with('success','Account deleted successfully');
     }
-    public function userinbox(){
-        $user_id=auth()->user()->id;
-        $user=User::find($user_id);
-        return view('user-inbox')->with('messages',$user->messages)
-        ->with('usermessages',$user->usermessages);
-    }
-
 
     // public function getMessage($user_id)
     // {

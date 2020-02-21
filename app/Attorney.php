@@ -6,6 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\AttorneyResetPasswordNotification;
+use DB;
+use Auth;
 class Attorney extends Authenticatable
 {
     use Notifiable;
@@ -105,4 +107,19 @@ class Attorney extends Authenticatable
         }
         return $count;
     }
+
+    public function countInbox(){
+
+        $test=DB::table('attorney_messages')
+        ->where('status',0)
+        ->where('attorney_id',Auth::id())
+        ->get();
+        $total=count($test);
+        
+        return $total;
+    }   
+
+
+
+
 }

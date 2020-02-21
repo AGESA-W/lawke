@@ -24,9 +24,9 @@
             <div>
                 <review-form
                 :attorney="{{$attorney}}" 
-                url="{{route('review.store')}}">
+                url="{{route('reviews.store')}}">
                 </review-form>
-                {{-- <form action="{{route('review.store')}}" method="post">
+                {{-- <form action="{{route('reviews.store')}}" method="post">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for=""><span class="asterick"><b>*</b></span><b> Select a rating for your lawyer</b></label>

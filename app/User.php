@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use DB;
+use Auth;
 
 class User extends Authenticatable
 {
@@ -59,6 +61,17 @@ class User extends Authenticatable
     public function usermessages(){
         return $this->hasmany('App\UserMessage');
     
-        }
+    }
+
+    public function countUserInbox(){
+
+        $test=DB::table('user_messages')
+        ->where('status',0)
+        ->where('user_id',Auth::id())
+        ->get();
+        $total=count($test);
+        
+        return $total;
+    }   
      
 }
