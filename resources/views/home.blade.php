@@ -185,23 +185,65 @@
                                     <div class="float-right col-md-9">
                                         <b>{{$review->headline}}</b>
                                         <p>{{$review->description}}</p>
-                                        {{-- <a href="/reviews/{{$review->id}}/edit" class="btn btn-success px-4">Edit</a> --}}
+                                        <div class="dropdown">
+                                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              See actions
+                                            </a>
+                                          
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a href="/reviews/{{$review->id}}/edit" class="dropdown-item dropdown-item-user btn  px-4">Edit</a>
+                                                <div class="dropdown-divider"></div>
+                                                <button type="button" class="btn  dropdown-item dropdown-item-user px-4 btn-sm" data-toggle="modal" data-target="#deleteModal">
+                                                    Delete
+                                                </button>
+                                              {{-- <form action="{{route('reviews.destroy',$review->id)}}" method="post">
+                                                    @method('DELETE')
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="dropdown-item-user dropdown-item btn btn-danger px-4">Delete</button>
+                                              </form> --}}
+                                            </div>
+                                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Delete Review</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                    <p class="lead">Are you sure you want to delete your Review?</p> 
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <form action="{{route('reviews.destroy',$review->id)}}" method="post">
+                                                            @method('DELETE')
+                                                            {{ csrf_field() }}
+                                                            <button type="submit" class="btn btn-success px-4">Delete</button>
+                                                      </form>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- <a href="/reviews/{{$review->id}}/edit" class="btn btn-success px-4">Edit</a>
                                         <form action="{{route('reviews.destroy',$review->id)}}" method="post">
                                             @method('DELETE')
                                             {{ csrf_field() }}
                                             <button type="submit" class="float-right btn btn-danger px-4">Delete</button>
-                                        </form>
-                                        <button type="button" class="btn btn-success px-3 py-2 btn-sm" data-toggle="modal" data-target="#d{{$review->id}}">
+                                        </form>  --}}
+                                        
+                                        {{-- <button type="button" class="btn btn-success px-3 py-2 btn-sm" data-toggle="modal" data-target="#d{{$review->id}}">
                                             Edit Review
                                         </button>
                                         <div class="modal fade" id="d{{$review->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Edit Review</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Review</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <form action="{{route('reviews.update',$review->id)}}" method="post">
@@ -223,7 +265,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>

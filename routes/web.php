@@ -72,4 +72,15 @@ Route::get('/updateUserInbox',"InboxController@updateUserInbox");
 //Delete User
 Route::delete('/users/{user}',"HomeController@destroy")->name('user.delete');
 
+// use App\PracticeArea;
 
+// Route::get('{praticearea}',function($value){
+//     return App\PracticeArea::where('area_practice', $value)->get();
+// });
+
+Route::get('/{praticearea}',"PagesController@areas")->name('practice.area');
+
+Route::get('/{praticearea}/{county}',"PagesController@county")->name('practice.county');
+
+
+    

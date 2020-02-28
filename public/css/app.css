@@ -11105,6 +11105,7 @@ body {
   line-height: 1.6;
   background: #fafafa;
   font-family: "Poppins", Arial, sans-serif !important;
+  overflow-x: hidden;
 }
 
 .navbar-light .navbar-toggler {
@@ -11112,17 +11113,13 @@ body {
   border-color: #fff;
 }
 
-.navbar-default {
-  background: #afa939;
-}
-
 .navbar-default-brand {
-  color: #fff !important;
+  color: #333 !important;
   font-weight: 700;
 }
 
 .navbar-default-link {
-  color: #fff !important;
+  color: #333 !important;
   font-weight: 600;
 }
 
@@ -11247,6 +11244,28 @@ body {
   color: #afa939;
 }
 
+.home-card-name {
+  color: #008cc9;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+.home-card-hr {
+  margin: -0.5rem -0.6rem 0.2rem;
+}
+
+.home-card-headline {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.home-card-description {
+  color: #333;
+}
+
 .nav-tabs .nav-link {
   color: #afa939;
   font-weight: 600;
@@ -11261,6 +11280,37 @@ body {
 }
 
 /******end of home***/
+
+/*******All practice Area*****/
+
+.search {
+  margin: -16px -128px 0 -118px;
+}
+
+.search .jumbotron {
+  background: rgba(0, 0, 0, 0.5);
+  height: 250px;
+}
+
+.search-jumbotron {
+  background: url("/images/hammer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 250px;
+  color: #fff;
+}
+
+.search-jumbotron-text {
+  font-size: 48px;
+  padding-top: 30px;
+}
+
+.wrapper-heading {
+  font-size: 17px !important;
+}
+
+/******* End All practice Area*****/
 
 footer {
   font-family: "Poppins", Arial, sans-serif !important;
@@ -11305,6 +11355,13 @@ footer .heading-2 {
 
 footer-widget p {
   margin-top: 20px;
+}
+
+.attorney-card-link {
+  font-size: 13.9px;
+  display: block;
+  line-height: 1.4;
+  color: #008cc9;
 }
 
 .mission {
@@ -11616,6 +11673,7 @@ footer-widget p {
   border-top: 5px solid #333 !important;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 30px;
+  background: #fff;
 }
 
 .review-guidelines-content {
@@ -11705,11 +11763,57 @@ footer-widget p {
   font-weight: 400;
 }
 
+.dropdown-item-user:hover {
+  background-color: #afa939;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 0;
+}
+
 .attorney-img {
   border-radius: 50%;
   width: 80px;
   height: 80px;
 }
+
+/*******end****/
+
+/****Attorney by county data****/
+
+.attorney-county {
+  color: #333;
+}
+
+.attorney-county-text {
+  font-family: circular, Avenir Next, Avenir, Century Gothic, sans-serif;
+  font-size: 1.75em;
+  line-height: 1.28571;
+}
+
+.attorney-county .breadcrumb {
+  background-color: transparent;
+  font-size: 14px;
+  margin: -15px 0 -5px -15px;
+}
+
+.attorney-county-smalltext {
+  font-size: 12.98px;
+}
+
+.attorney-county-description {
+  margin-left: -240px;
+}
+
+.attorney-county .icon-center {
+  border-left: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+}
+
+.attorney-county .review-text {
+  margin-left: -120px;
+}
+
+/*****end*******/
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome

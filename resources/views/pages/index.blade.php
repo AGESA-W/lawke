@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
 
-    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/app.js')}}"defer ></script>
     <script src="{{ asset('js/typewriter.js') }}"></script>
     {{-- <script src="{{ asset('js/constituency.js') }}"></script> --}}
 
@@ -123,218 +123,58 @@
             <div class="col-12 col-md-12">
                 <h2 class="text-center mt-3 mb-3"> <b> Top-rated lawyers near you</b></h2>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="card-deck">
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-4">
-                                            <img src="./images/profile.jpg" class="card-img" alt="...">
+                        @foreach ($attorneys->chunk(3) as $attorneychunk)
+                            <div class="carousel-item  @if($loop->first)active @endif">
+                                <div class="card-deck">
+                                    @foreach ($attorneychunk as $attorney)
+                                        <div class="card home-card mb-3 p-2">
+                                            <div class="row no-gutters">
+                                                <div class="col-md-4">
+                                                    <img src="{{$attorney->image}}" class="card-img" alt="..." style="width:120px;height:130px;">
+                                                </div>
+                                                <div class="col-md-8 ">
+                                                    <div class="card-body">
+                                                        <ul class="list-unstyled mb-0"style="margin-top:-18px">
+                                                            <li><a href="/profile/{{$attorney->id}}" class="text-decoration-none home-card-name card-title pt-0" >{{$attorney->firstname}} {{$attorney->lastname}}</a></li>
+                                                            <li><star-rating :star-size="17" active-color="#fc9735" :rating="{{$attorney->getStarRating()}}"></star-rating> <a href="/profile/{{$attorney->id}}#review" class="text-decoration-none">{{$attorney->reviewCount()}} review(s)</a></li>
+                                                        </ul>
+                                                        <small class="text-muted mt-0"><b>LOCATION</b></small>
+                                                        <p><span class="fa fa-map-marker text-secondary"style="font-size:16px;"> </span> {{$attorney->county}} County</p>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body pl-0">
+                                                    <h6 class="text-uppercase text-muted mb-0" style="margin-top:-40px;font-size:12px;"><b>practice area</b></h6>
+                                                    <p class="mt-0">@foreach ($attorney->practiceareas->take(1) as $area){{$area->area_practice}}@endforeach</p>
+                                                    <hr class="home-card-hr">
+                                                    @foreach ($attorney->reviews->take(1) as $review)
+                                                        <p class="home-card-headline">{{$review->headline}} </p>
+                                                        <small class="mb-0"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$review->rating}}"></star-rating><span class="text-secondary" style="">Posted by</span> {{$review->user->name}}</small>
+                                                        <small class="text-secondary">{{ date('d M,Y', strtotime($review->created_at)) }}</small>
+                                                        <p  class="home-card-description mb-0">{{substr($review->description,0,127)}}{{strlen($review->description)>127 ?"...":""}}</p>
+                                                        <a class="text-decoration-none" href="/profile/{{$attorney->id}}#review">Read more</a>
+                                                    @endforeach
+                                                </div>
+                                            </div>      
                                         </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Agesa Austin</h5>
-                                                <p class="card-text">Reviews.</p>
-                                                <p class="card-text">Location</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6 class="text-uppercase">practice areas</h6>
-                                            <p>your area</p>
-                                            <h6>comment</h6>
-                                            <p>one simple review</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-4">
-                                            <img src="./images/profile.jpg" class="card-img" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Agesa Austin</h5>
-                                                <p class="card-text">Reviews.</p>
-                                                <p class="card-text">Location</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6 class="text-uppercase">practice areas</h6>
-                                            <p>your area</p>
-                                            <h6>comment</h6>
-                                            <p>one simple review</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-4">
-                                            <img src="./images/profile.jpg" class="card-img" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Agesa Austin</h5>
-                                                <p class="card-text">Reviews.</p>
-                                                <p class="card-text">Location</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6 class="text-uppercase">practice areas</h6>
-                                            <p>your area</p>
-                                            <h6>comment</h6>
-                                            <p>one simple review</p>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="card-deck">
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-4">
-                                            <img src="./images/profile.jpg" class="card-img" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Agesa Austin</h5>
-                                                <p class="card-text">Reviews.</p>
-                                                <p class="card-text">Location</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6 class="text-uppercase">practice areas</h6>
-                                            <p>your area</p>
-                                            <h6>comment</h6>
-                                            <p>one simple review</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-4">
-                                            <img src="./images/profile.jpg" class="card-img" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Agesa Austin</h5>
-                                                <p class="card-text">Reviews.</p>
-                                                <p class="card-text">Location</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6 class="text-uppercase">practice areas</h6>
-                                            <p>your area</p>
-                                            <h6>comment</h6>
-                                            <p>one simple review</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-4">
-                                            <img src="./images/profile.jpg" class="card-img" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Agesa Austin</h5>
-                                                <p class="card-text">Reviews.</p>
-                                                <p class="card-text">Location</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6 class="text-uppercase">practice areas</h6>
-                                            <p>your area</p>
-                                            <h6>comment</h6>
-                                            <p>one simple review</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="card-deck">
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-4">
-                                            <img src="./images/profile.jpg" class="card-img" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Agesa Austin</h5>
-                                                <p class="card-text">Reviews.</p>
-                                                <p class="card-text">Location</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6 class="text-uppercase">practice areas</h6>
-                                            <p>your area</p>
-                                            <h6>comment</h6>
-                                            <p>one simple review</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-4">
-                                            <img src="./images/profile.jpg" class="card-img" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Agesa Austin</h5>
-                                                <p class="card-text">Reviews.</p>
-                                                <p class="card-text">Location</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6 class="text-uppercase">practice areas</h6>
-                                            <p>your area</p>
-                                            <h6>comment</h6>
-                                            <p>one simple review</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-4">
-                                            <img src="./images/profile.jpg" class="card-img" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Agesa Austin</h5>
-                                                <p class="card-text">Reviews.</p>
-                                                <p class="card-text">Location</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6 class="text-uppercase">practice areas</h6>
-                                            <p>your area</p>
-                                            <h6>comment</h6>
-                                            <p>one simple review</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            @endforeach
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <a class="carousel-control-prev mr-lg-4" style="margin-left:-100px;"  href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="fa fa-chevron-left" style="color:#333" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <a class="carousel-control-next" style="margin-right:-100px;"  href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="fa fa-chevron-right" style="color:#333" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
             </div>
             <h2 class="text-center text-capitalize mb-3 mt-3"> <b>Browse Attorneys</b></h2>
          <div class="col-12 col-md-12">
-            <div class="card">
+            <div class="attorney-card card">
                 <div class="card-header p-0">
                   <ul class="nav nav-tabs nav-fill ml-auto pt-0">
                     <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab">Practice Area</a></li>
@@ -345,17 +185,32 @@
                 <div class="card-body">
                   <div class="tab-content">
                     <div class="tab-pane active" id="tab_1">
-                      A wonderful serenity has taken possession of my entire soul,
-                      like these sweet mornings of spring which I enjoy with my whole heart.
-                      I am alone, and feel the charm of existence in this spot,
-                      which was created for the bliss of souls like mine. I am so happy,
-                      my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-                      that I neglect my talents. I should be incapable of drawing a single stroke
-                      at the present moment; and yet I feel that I never was a greater artist than now.
+                        @foreach ($practiceareas->chunk(4) as $practiceareachunk)
+                            <div class="row">
+                                @foreach ($practiceareachunk as $practicearea)
+                                <div class="col-md-3">
+                                    <ul class="list-unstyled">
+                                    <li> <a href="/{{$practicearea->area_practice}}" class="attorney-card-link text-decoration-none">{{$practicearea->area_practice}}</a> </li>
+                                    </ul>
+                                </div>
+                                @endforeach
+                            </div>
+                        @endforeach
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="tab_2">
-                      Nairobi Mombasa
+                        @foreach ($locations->chunk(4) as $locationchunk)
+                        <div class="row">
+                            @foreach ($locationchunk as $location)
+                            <div class="col-md-3">
+                                <ul class="list-unstyled">
+                                    <li> <a href="#" class="attorney-card-link text-decoration-none">{{$location->county}}Attorneys</a> </li>
+                                </ul>
+                            </div>
+                            @endforeach
+                        </div>
+                    @endforeach
+                      
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="tab_3">

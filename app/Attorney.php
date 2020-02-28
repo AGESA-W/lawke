@@ -49,7 +49,7 @@ class Attorney extends Authenticatable
 
 
     public function lsk(){
-        return $this->belongs('App\Lsk');
+        return $this->belongs(Lsk::class,'attorney_id');
     }
 
     
@@ -69,11 +69,11 @@ class Attorney extends Authenticatable
     }
  
     public function practiceareas(){
-        return $this->hasMany('App\PracticeArea');
+        return $this->hasMany('App\PracticeArea','attorney_id','attorney_id');
     }
  
      public function locations(){
-        return $this->hasMany('App\Location');
+        return $this->hasMany('App\Location','attorney_id','attorney_id');
     }
 
     //relationship with attorney messages

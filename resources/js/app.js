@@ -9,7 +9,6 @@ import VueStarRating  from 'vue-star-rating';
  window.Jquery = require('jquery');
 
 
-require('popper.js');
 require('./bootstrap');
 
 window.Vue = require('vue');

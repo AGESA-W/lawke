@@ -53,7 +53,6 @@
                                 <div class="clearfix"></div>
                             </div>
                         </div>
-                        
                         <div class="sectionDetails">
                             <div class="sectionWrapper">
                                 <div class="sectionTitle">Email</div>
@@ -100,7 +99,7 @@
                 </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab4">
-                <h5 class="mb-2 pb-3" style="border-bottom: #afa939 solid 2px;">Personal information</h5>
+                <h5 class="mb-2 pb-3" style="border-bottom: #afa939 solid 2px;">Professional information</h5>
                   <div class="tab-item">
                     <div class="sectionDetails">
                         <div class="sectionWrapper">

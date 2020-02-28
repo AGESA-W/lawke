@@ -26,6 +26,8 @@ class Lsk extends Model
         return $this->hasMany('App\Attorney','attorney_id','id');
     }
 
+   
+
     // public function attorney(){
     //     return $this->belongsTo('App\Attorney');
     // }

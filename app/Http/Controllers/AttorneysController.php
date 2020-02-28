@@ -24,7 +24,7 @@ class AttorneysController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:attorney',['except'=>['profile']]);
+        $this->middleware('auth:attorney',['except'=>['profile','getattorneys']]);
 
     }
 
@@ -60,10 +60,11 @@ class AttorneysController extends Controller
     
     }
 
+    
+
 
     public function dashboard()
     {
-
         $users = DB::select("select users.id, users.name,users.email 
         from users JOIN  attorney_messages ON users.id=attorney_messages.user_id and attorney_id = " . Auth::id() . " 
         where attorney_id = " . Auth::id() . " 

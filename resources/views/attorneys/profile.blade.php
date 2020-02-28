@@ -7,13 +7,13 @@
                     <div class="col-12  col-md-4">
                         <img src="{{$attorney->image}}" class="card-img " alt="{{$attorney->firstname}}" style="width:130px;height:148px;">
                     </div>
-                    <div class="col-12  col-md-8">
+                    <div class="col-12  col-md-8"> 
                         <div class="card-body ml-4 p-0">
                             <h5 class="card-title" style="color:#333333;font-size:28px;">{{$attorney->firstname}} {{$attorney->lastname}}</h5>
-                            <p class="card-text"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$attorney->getStarRating()}}"></star-rating> <a href="#review" class="text-decoration-none">{{$attorney->reviewCount()}} reviews</a></p>
+                            <p class="card-text"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$attorney->getStarRating()}}"></star-rating> <a href="#review" class="text-decoration-none">{{$attorney->reviewCount()}} review(s)</a></p>
                             <ul class="list-unstyled">
-                                <li class="list-item"><span class="fa fa-map-marker text-secondary"style="font-size:16px;"> </span> @foreach ($locations as $location){{$location->location}} @endforeach</li>
-                                <li class="list-item pt-1"> <img src="/images/verified.png" alt="" style="width:14px;height:14px">Free Consultation </li>
+                                <li ><span class="fa fa-map-marker text-secondary"style="font-size:16px;"> </span> @foreach ($locations as $location){{$location->location}} @endforeach</li>
+                                <li class=" pt-1"> <img src="/images/verified.png" alt="" style="width:14px;height:14px">Free Consultation </li>
                             </ul>      
                         </div>
                     </div>
