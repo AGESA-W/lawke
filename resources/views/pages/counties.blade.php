@@ -11,7 +11,7 @@
                     <li class="breadcrumb-item active" aria-current="page">{{$attorney->county}}</li>
                     </ol>
                 </nav>  
-                <h1 class="attorney-county-text mt-0"><strong>{{$attorney->county}} {{$area->area_practice}} lawyers</strong><small class="text-muted">({{ count($attorneys)}} results)</small></h1>
+                <h1 class="attorney-county-text mt-0"><strong>{{$attorney->county}} {{$area->area_practice}} lawyers</strong><small class="text-muted">(@if(count($attorneys)>0){{count($attorneys)}} result @else{{count($attorneys)}} results @endif)</small></h1>
                 <p class="text-muted">Compare {{$area->area_practice}} attorneys near you. Read reviews and contact them directly.</p>
             @endforeach
             @foreach ($attorneys as $attorney)

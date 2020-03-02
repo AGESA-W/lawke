@@ -7,10 +7,9 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class AttorneyResetPasswordNotification extends Notification
+class AdminResetPasswordNotification extends Notification
 {
     use Queueable;
-
     public $token;
 
     /**
@@ -43,9 +42,9 @@ class AttorneyResetPasswordNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-        ->line('You are receiving  this email because we received a password reset request for your account.')
-        ->action('Notification Action', route('attorney.password.reset',$this->token))
-        ->line('If you did not request a password reset,no further action is required!');
+            ->line('You are receiving  this email because we received a password reset request for your account.')
+            ->action('Notification Action', route('admin.password.reset',$this->token))
+            ->line('If you did not request a password reset,no further action is required!');;
     }
 
     /**

@@ -23,7 +23,7 @@ Route::get('/practice-areas','PagesController@practiceAreas')->name('practice.ar
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/users/logout', 'Auth\LoginController@UserLogout')->name('users.logout');
+Route::get('/users/logout', 'Auth\LoginController@UserLogout')->name('users.logout');//remember to give users
 
 
 // Attorneys pages
@@ -33,7 +33,7 @@ Route::get('/attorney_register',"Auth\AttorneysRegisterController@showRegistrati
 Route::get('/attorney_login',"Auth\AttorneysLoginController@showLoginForm")->name('attorney.login');
 Route::post('/attorneys',"Auth\AttorneysRegisterController@store")->name('attorneys.store');
 Route::post('/attorney_login',"Auth\AttorneysLoginController@Login")->name('attorney.login.submit');
-Route::get('/logout', 'Auth\AttorneysLoginController@logout')->name('attorney.logout');
+Route::get('/logout', 'Auth\AttorneysLoginController@logout')->name('attorney.logout');//remember to give attorneys
 
 Route::get('get-attorneys',"AttorneysController@getattorneys")->name('get.attorneys');
 
@@ -45,6 +45,20 @@ Route::prefix('attorney')->group(function(){
     Route::get('password/reset/{token}','Auth\AttorneysResetPasswordController@showResetForm')->name('attorney.password.reset');
 });
 
+// Admins pages
+
+Route::prefix('admin')->group(function(){
+  Route::get('/', 'AdminController@index')->name('admin.dashboard');
+  Route::get('/login',"Auth\AdminLoginController@showLoginForm")->name('admin.login');
+  Route::post('/login',"Auth\AdminLoginController@Login")->name('admin.login.submit');
+  Route::get('/logout', 'Auth\AdminLoginController@Adminlogout')->name('admin.logout');
+    
+  //Reset passwords for admins
+  Route::post('password/email','Auth\AdminForgotPasswordController@sendResetLinkEmail' )->name('admin.password.email');    
+  Route::get('password/reset','Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+  Route::post('password/reset','Auth\AdminResetPasswordController@reset')->name('admin.password.update');
+  Route::get('password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
+});
 
 //messaging
 Route::get('/message/{id}',"HomeController@getMessage")->name('message');
@@ -72,15 +86,17 @@ Route::get('/updateUserInbox',"InboxController@updateUserInbox");
 //Delete User
 Route::delete('/users/{user}',"HomeController@destroy")->name('user.delete');
 
-// use App\PracticeArea;
+/**********SOCIALITE */
+Route::get('login/github', 'Auth\LoginController@redirectToProvider');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
 
-// Route::get('{praticearea}',function($value){
-//     return App\PracticeArea::where('area_practice', $value)->get();
-// });
 
-Route::get('/{praticearea}',"PagesController@areas")->name('practice.area');
 
-Route::get('/{praticearea}/{county}',"PagesController@county")->name('practice.county');
+Route::get('/practice-areas/{praticearea}', "PagesController@areas")->name('practice.area');
+
+Route::get('/practice-areas/{praticearea}/{county}', "PagesController@county")->name('practice.county');
+
+Route::get('/all-lawyers/{county}', "PagesController@AllLocations")->name('location.practicearea');
 
 
     

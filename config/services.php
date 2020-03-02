@@ -34,4 +34,9 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
+    'github' => [
+        'client_id' => ' 54f8c4ce024db8dc2e14',
+        'client_secret' => 'd2840a1af39eb19d322eb8aaf434b8df2592d68b',
+        'redirect' => 'http://lawke/login/github/callback',
+    ],
 ];

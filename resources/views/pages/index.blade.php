@@ -155,7 +155,7 @@
                                                         <a class="text-decoration-none" href="/profile/{{$attorney->id}}#review">Read more</a>
                                                     @endforeach
                                                 </div>
-                                            </div>      
+                                            </div>  
                                         </div>
                                     @endforeach
                                 </div>
@@ -190,7 +190,7 @@
                                 @foreach ($practiceareachunk as $practicearea)
                                 <div class="col-md-3">
                                     <ul class="list-unstyled">
-                                    <li> <a href="/{{$practicearea->area_practice}}" class="attorney-card-link text-decoration-none">{{$practicearea->area_practice}}</a> </li>
+                                         <li> <a href="/practice-areas/{{$practicearea->area_practice}}" class="attorney-card-link text-decoration-none">{{$practicearea->area_practice}}</a> </li>
                                     </ul>
                                 </div>
                                 @endforeach
@@ -204,7 +204,7 @@
                             @foreach ($locationchunk as $location)
                             <div class="col-md-3">
                                 <ul class="list-unstyled">
-                                    <li> <a href="#" class="attorney-card-link text-decoration-none">{{$location->county}}Attorneys</a> </li>
+                                    <li> <a href="/all-lawyers/{{$location->county}}" class="attorney-card-link text-decoration-none">{{$location->county}} Attorneys</a> </li>
                                 </ul>
                             </div>
                             @endforeach

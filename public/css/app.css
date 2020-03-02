@@ -11281,10 +11281,10 @@ body {
 
 /******end of home***/
 
-/*******All practice Area*****/
+/*******counties page*****/
 
 .search {
-  margin: -16px -128px 0 -118px;
+  margin: -16px -125px 0 -118px;
 }
 
 .search .jumbotron {
@@ -11310,7 +11310,38 @@ body {
   font-size: 17px !important;
 }
 
-/******* End All practice Area*****/
+/******* End county page*****/
+
+/*******location page*****/
+
+.location {
+  margin: -16px -125px 0 -118px;
+}
+
+.location .jumbotron {
+  background: rgba(0, 0, 0, 0.4);
+  height: 250px;
+}
+
+.location-jumbotron {
+  background: url("/images/city.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 250px;
+  color: #fff;
+}
+
+.location-jumbotron-text {
+  font-size: 48px;
+  padding-top: 30px;
+}
+
+.location-heading {
+  font-size: 25px !important;
+}
+
+/******* End location page*****/
 
 footer {
   font-family: "Poppins", Arial, sans-serif !important;

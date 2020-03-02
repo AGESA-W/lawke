@@ -54,6 +54,14 @@ return [
             'driver' => 'token',
             'provider' => 'attorneys',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+        ],
     ],
 
     /*
@@ -81,6 +89,10 @@ return [
         'attorneys' => [
             'driver' => 'eloquent',
             'model' => App\Attorney::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
         ],
 
         // 'users' => [
@@ -114,6 +126,11 @@ return [
             'provider' => 'attorneys',
             'table' => 'password_resets',
             'expire' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 30,
         ],
     ],
 

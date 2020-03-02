@@ -58,6 +58,9 @@ class Handler extends ExceptionHandler
                 case 'attorney':
                     return redirect(route('attorney.login'));
                     break;
+                case 'admin':
+                    return redirect(route('admin.login'));
+                    break;
                 default:
                     return redirect(route('login'));
                     break;

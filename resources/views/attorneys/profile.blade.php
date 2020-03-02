@@ -62,7 +62,7 @@
                         @foreach ($locations as $location)
                             <div class="col-md-7 col-12">
                                 <div class="contact-image">
-                                    <img src="/{{$location->location_image}}" alt="">
+                                    <a href="https://www.google.com/maps/place/107+North+Side+Square,+Huntsville,+AL+35801,+USA/@34.7307565,-86.5879195,17z/data=!3m1!4b1!4m5!3m4!1s0x88626b56a165e753:0x84a14f2a2277fd86!8m2!3d34.7307521!4d-86.5857308" target="_blank"><img src="/{{$location->location_image}}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-md-5 col-12">

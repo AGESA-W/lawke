@@ -12,12 +12,6 @@ use Auth;
 class PagesController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth:attorney',['except'=>['index','areas','county']]);
-
-    }
-
     public function index(){
         // $practiceareas=DB::select('SELECT DISTINCT area_practice FROM practice_areas');
         $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
@@ -54,6 +48,19 @@ class PagesController extends Controller
 
         
     
+    }
+
+
+    public function AllLocations($county){//display practice area of county
+
+
+        $locations=Lsk::where('county', $county)->get();
+        $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
+       
+        return view('pages.location')->with('locations',$locations)
+        ->with('practiceareas',$practiceareas);
+        
+ 
     }
 
 

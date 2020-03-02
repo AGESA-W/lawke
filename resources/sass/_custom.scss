@@ -177,9 +177,9 @@ body{
 /******end of home***/
 
 
-/*******All practice Area*****/
+/*******counties page*****/
 .search{
-    margin: -16px -128px 0 -118px;
+    margin: -16px -125px 0 -118px;
     .jumbotron{
         // background-color: transparent;
         background: rgba(0, 0, 0, 0.5);
@@ -205,7 +205,37 @@ body{
     font-size: 17px !important;
 }  
 
-/******* End All practice Area*****/
+/******* End county page*****/
+
+/*******location page*****/
+.location{
+    margin: -16px -125px 0 -118px;
+    .jumbotron{
+        // background-color: transparent;
+        background: rgba(0, 0, 0, 0.4);
+        height:250px;
+
+    }
+    &-jumbotron{//background image
+        background: url("/images/city.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+       background-position: center center;
+        height:250px;
+        color:#fff;
+
+        &-text{//Display text
+            font-size:48px;
+            padding-top:30px;
+        }
+       
+    }
+}  
+.location-heading{//view by text
+    font-size: 25px !important;
+}  
+
+/******* End location page*****/
 
 
 footer{//footer
