@@ -8,7 +8,18 @@
             <div class="p-0">
               <ul class="nav user-nav-tabs nav-fill ml-auto pt-0" style="flex-direction:column;">
                 <li class="nav-item user-nav-item"><a class="nav-link user-nav-link active" href="#tab1" data-toggle="tab"><span class="fa fa-user"></span> Account</a></li>
-                <li class="nav-item user-nav-item"><a class="nav-link user-nav-link " href="#tab2" data-toggle="tab"><span class="fa fa-envelope"></span> Inbox <span class="badge badge-primary" style="margin-left:120px;">{{$user->countUserInbox()}}</span></a></li>
+                {{-- <li class="nav-item user-nav-item"><a class="nav-link user-nav-link " href="#tab2" data-toggle="tab"><span class="fa fa-envelope"></span> Inbox <span class="badge badge-primary" style="margin-left:120px;">{{$user->countUserInbox()}}</span></a></li> --}}
+                <li class="nav-item user-nav-item dropright">
+                    <a class="nav-link user-nav-link  dropdown-toggle" href="#"id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="/images/messenger.png" alt="" style="width:15px;height:15px"> Messenger
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="#tab2" data-toggle="tab"><span class="fa fa-envelope"></span> Inbox <span class="badge badge-primary" style="margin-left:120px;">{{$user->countUserInbox()}}</span></a>
+                        <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#tab4" data-toggle="tab"><span class="fa fa-chevron-right"></span> Sent </a>
+
+                    </div>
+                </li>
                 <li class="nav-item user-nav-item"><a class="nav-link user-nav-link " href="#tab3" data-toggle="tab"><span class="fa fa-pencil"></span> Reviews</a></li>
               </ul>
             </div><!-- /.card-header -->
@@ -107,6 +118,8 @@
                 </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab2">
+                    <h5 class="mb-2 pb-3" style="border-bottom: #afa939 solid 2px;">Messages Received</h5>
+
                     @if(count($usermessages)>0)
                         @foreach ($usermessages as $usermess)
                             <input type="hidden" value="{{$usermess->id}}" id="mId{{$usermess->id}}">
@@ -179,7 +192,7 @@
                                     <div class="float-left col-md-3">
                                         <img src="{{$review->attorney->image}}" alt="" style="width:80px;height:80px;">
                                         <small class="mb-0"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$review->rating}}"></star-rating></small>
-                                        <small class="text-secondary"><span class="text-dark">Review for</span> {{$review->attorney->firstname}} {{$review->attorney->lastname}}</small> 
+                                        <small class="text-secondary"><span class="text-dark">Review for</span> <a class="text-decoration-none" href="/profile/{{$review->attorney->id}}">{{$review->attorney->firstname}} {{$review->attorney->lastname}}</a></small> 
                                         <small class="text-secondary"><span class="text-dark">submited on:</span> {{ date('d M, h:i a', strtotime($review->created_at)) }}</small>
                                     </div>
                                     <div class="float-right col-md-9">
@@ -278,6 +291,37 @@
                 @endif
               </div>
               <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab4">
+                    <h5 class="mb-2 pb-3" style="border-bottom: #afa939 solid 2px;">Sent Messages</h5>
+
+                    @if(count($messages )>0)
+                        @foreach ($messages as $message)
+                            <input type="hidden" value="{{$message->id}}" id="mId{{$message->id}}">
+                            <div class="inbox">
+                                <ul class="list-unstyled px-3" style="font-size:15px">
+                                    <a  class="text-decoration-none" href="#" data-toggle="collapse" data-target="#d{{$message->id}}">
+                                        <li class="list-item">Message to:<b> {{$message->attorney->firstname}} {{$message->attorney->lastname}}</b></li>
+                                        <small class="text-secondary mt-0">Sent on:{{ date('d M, h:i a', strtotime($message->created_at)) }}</small>
+                                    </a>
+                                    <hr>
+                                    <div class="collapse" id="d{{$message->id}}">
+                                        <div class="sent">
+                                                <ul class="list-unstyled">
+                                                    <li class="list-item  sent-messageage mt-2">{{$message->description}}
+                                                        <br>
+                                                        <small class="text-secondary">{{ date('d M, h:i a', strtotime($message->created_at)) }}</small>
+                                                    </li>
+                                                    <div class="clearfix"></div>
+                                                </ul>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        @endforeach
+                        @else
+                        <p class="lead text-center text-primary">No Messages Sent Yet</p>
+                    @endif
+              </div>
             </div>
             <!-- /.tab-content -->
         </div><!-- /.card-body -->

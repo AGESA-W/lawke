@@ -11124,7 +11124,7 @@ body {
 }
 
 .element-background {
-  background: #afa939;
+  background: #89842c;
   color: #fff;
 }
 
@@ -11280,6 +11280,138 @@ body {
 }
 
 /******end of home***/
+
+/*********Contact****/
+
+.contact {
+  margin: -16px -125px 0 -118px;
+}
+
+.contact .jumbotron {
+  background: rgba(0, 0, 0, 0.5);
+  height: 380px;
+}
+
+.contact-jumbotron {
+  background: url("/images/contact.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 380px;
+  color: #fff;
+}
+
+.contact-jumbotron-text {
+  font-size: 45px;
+  padding-top: 30px;
+}
+
+.contact-us {
+  background: #e9ecef;
+  color: #333;
+  margin: -16px -125px 0 -118px;
+}
+
+.contact-us .lg-heading {
+  font-size: 4rem;
+}
+
+.contact-us .sm-heading {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+}
+
+.contact-us .boxes {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-top: 1rem;
+}
+
+.contact-us .boxes-item {
+  font-size: 2rem;
+  padding: 1.5rem 2.5rem;
+  margin-top: 3rem;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.contact-us .boxes-item:hover {
+  padding: 0.5rem 1.5rem;
+  background: #afa939;
+  border: 3px #fff solid;
+  color: #fff;
+}
+
+.contact-us .boxes-item:hover span {
+  color: #fff;
+}
+
+/****end*******/
+
+/*********About Page*****/
+
+.about {
+  margin: -16px -125px 0 -118px;
+}
+
+.about .jumbotron {
+  background: rgba(0, 0, 0, 0.5);
+  height: 380px;
+}
+
+.about-jumbotron {
+  background: url("/images/about back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 380px;
+  color: #fff;
+}
+
+.about-jumbotron-text {
+  font-size: 40px;
+  padding-top: 30px;
+}
+
+.about-plain {
+  margin: -16px -125px 0 -118px;
+}
+
+.about-plain-jumbotron {
+  height: 380px;
+  color: #333;
+}
+
+.about-plain-jumbotron-text {
+  padding-top: 30px;
+}
+
+.right-side {
+  background: #333;
+  color: #fff;
+  height: 380px;
+  padding: 90px;
+  font-size: 14px;
+}
+
+.about-last {
+  color: #333;
+}
+
+.about-last-right-side {
+  background: #e9ecef;
+  height: 380px;
+  padding: 20px 90px 90px 90px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/********End*********/
 
 /*******counties page*****/
 
@@ -11564,6 +11696,15 @@ footer-widget p {
   border: none;
   outline: none;
   background: transparent;
+  font-weight: 500;
+}
+
+.contact-text-box {
+  z-index: 1024;
+  position: absolute;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  margin: 15px 0px 0px 15px;
   font-weight: 500;
 }
 

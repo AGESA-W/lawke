@@ -3,7 +3,7 @@
     <div class="row mb-5">
       <div class="col-md">
         <div class="footer-widget mb-4">
-          <h2 class="logo"><a href="#">LAWKE <span>Justice.Innovation</span></a></h2>
+          <h2 class="logo"><a href="#">LECALCARE <span>Justice.Innovation</span></a></h2>
           <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           <ul class="footer-social list-unstyled float-left d-flex mt-5">
             <li class="pr-5"><a href="#"><span class="fa fa-twitter fa-2x"></span></a></li>
@@ -35,7 +35,7 @@
               <ul class="list-unstyled">
                 <li><span class="fa fa-map-marker px-3"></span> <span class="text">13602 Hill Lane. off Mara <span class="pl-5">Road, UpperHill, Nairobi, <span class="pl-5">KENYA</span></span></span></li>
                 <li class="pt-4"><a href="#"><span class="fa fa-phone px-3"></span><span class="text">+254-792-685-127</span></a></li>
-                <li class="pt-4"><a href="#"><span class="fa fa-envelope px-3"></span><span class="text">info@lawke.com</span></a></li>
+                <li class="pt-4"><a href="#"><span class="fa fa-envelope px-3"></span><span class="text">info@legalcare.com</span></a></li>
               </ul>
             </div>
         </div>

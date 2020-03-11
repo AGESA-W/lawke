@@ -18,9 +18,11 @@
 /*********Main Pages**********/
 Route::get('/','PagesController@index');
 Route::get('/practice-areas','PagesController@practiceAreas')->name('practice.areas');
+Route::get('/about','PagesController@about')->name('pages.about');
+Route::get('/contact','PagesController@contact')->name('pages.contact');
 /*********End Main Pages**********/
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users/logout', 'Auth\LoginController@UserLogout')->name('users.logout');//remember to give users
@@ -46,12 +48,21 @@ Route::prefix('attorney')->group(function(){
 });
 
 // Admins pages
-
 Route::prefix('admin')->group(function(){
   Route::get('/', 'AdminController@index')->name('admin.dashboard');
   Route::get('/login',"Auth\AdminLoginController@showLoginForm")->name('admin.login');
   Route::post('/login',"Auth\AdminLoginController@Login")->name('admin.login.submit');
   Route::get('/logout', 'Auth\AdminLoginController@Adminlogout')->name('admin.logout');
+
+  //users
+  Route::get('/users', 'AdminController@usersData')->name('users.table');
+  Route::put('/users/{id}', 'UserController@update')->name('users.update');
+
+  //attorneys
+  Route::get('/attorneys', 'AdminController@attorneysData')->name('attorneys.table');
+  Route::put('/attorneys/{id}', 'AttorneysController@update')->name('attorneys.update');
+
+
     
   //Reset passwords for admins
   Route::post('password/email','Auth\AdminForgotPasswordController@sendResetLinkEmail' )->name('admin.password.email');    
@@ -91,12 +102,12 @@ Route::get('login/github', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
 
 
-
+/*********SLUG ROUTES */
 Route::get('/practice-areas/{praticearea}', "PagesController@areas")->name('practice.area');
 
 Route::get('/practice-areas/{praticearea}/{county}', "PagesController@county")->name('practice.county');
 
 Route::get('/all-lawyers/{county}', "PagesController@AllLocations")->name('location.practicearea');
-
+/********* END SLUG ROUTES */
 
     

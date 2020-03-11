@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use DB;
 use Auth;
 
-class User extends Authenticatable
+class User extends Authenticatable  implements MustVerifyEmail
 {
     use Notifiable;
 

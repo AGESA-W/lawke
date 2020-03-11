@@ -20,7 +20,7 @@
                 </div>
                 <div class="card-body mt-2 p-0">
                 <a href="/attorney-message/{{$attorney->id}}">
-                        <button class="btn bg-color"style="width:100%;"><span class="fa fa-envelope"></span> Message</button>
+                        <button class="btn text-white element-background"style="width:100%;"><span class="fa fa-envelope"></span> Message</button>
                     </a>
                 </div>
                 <div class="text-center">
@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="col-12 col-md-8">
-            <h5 class="text-color font-weight-bolder">MEET THE ATTORNEY</h5>
+            <h5 class="text-color font-weight-bolder">MEET THE LAWYER</h5>
             <h2 class="mission-text">Fighting for your justice to win</h2>
             <div class="profile-nav sticky-top">
                 <div class="tabs p-0 ">
@@ -44,7 +44,7 @@
             </div>
             <div class="mt-3">
                 <section class="profile-content" id="about">
-                    <h5>About <span class="text-uppercase text-primary"> {{$attorney->firstname}} </span></h5>
+                    <h5>About <span class="text-uppercase"> {{$attorney->firstname}} {{$attorney->lastname}}</span></h5>
                     <p class="text-secondary">
                         Lorem ipsum dolor sit amet consectetur Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi illum omnis iste repellendus. Consectetur, quod et? Veritatis consequatur maiores sit. adipisicing elit. Eveniet, amet. Ad iusto fuga iure nobis dolore earum qui esse omnis, modi accusantium natus cumque aperiam in repellendus magnam culpa. <span id="dots"><b>.......</b></span> <span id="more">illo nemo quia, magni quidem at! Veniam, explicabo repellendus a consectetur minima possimus deserunt voluptate amet obcaecati optio eligendi sunt, libero necessitatibus quae expedita exercitationem sit qui deleniti facilis. Delectus explicabo pariatur adipisci, quod quisquam excepturi libero totam aut, soluta ratione hic perferendis beatae officia facilis ut veritatis iusto laudantium incidunt odio? Sit doloremque itaque tempore ad accusantium error cum reprehenderit blanditiis, est autem laboriosam. Itaque, fugiat non. Tempore, suscipit.</span>
                     </p>
@@ -60,17 +60,25 @@
                     <h5>Contact</h5>
                     <div class="row">
                         @foreach ($locations as $location)
-                            <div class="col-md-7 col-12">
+                            <div class="col-md-8 col-12">
                                 <div class="contact-image">
-                                    <a href="https://www.google.com/maps/place/107+North+Side+Square,+Huntsville,+AL+35801,+USA/@34.7307565,-86.5879195,17z/data=!3m1!4b1!4m5!3m4!1s0x88626b56a165e753:0x84a14f2a2277fd86!8m2!3d34.7307521!4d-86.5857308" target="_blank"><img src="/{{$location->location_image}}" alt=""></a>
+                                    <div class="contact-text-box px-2"><a class="text-decoration-none text-dark" href={{$location->coordinates}}>{{$location->location}}</a></div>
+                                    <a href={{$location->coordinates}} target="_blank"><img class="img-fluid" src="{{$location->location_image}}" alt="" style="width:475px;height:230px;"></a>
                                 </div>
                             </div>
-                            <div class="col-md-5 col-12">
-                                <div class="contact-details pl-5">
-                                    <p>{{$location->company_name}}</p>
-                                    <p>{{$location->location}}</p>
-                                    <p>PO.BOX:{{$location->address}}-00200</p>
-                                    <p class="text-secondary">Office: <span class="text-primary">{{$attorney->mobile}}</span> </p>
+                            <div class="col-md-4 col-12 pl-0 pr-1">
+                                <div class="contact-details pl-0">
+                                    <ul class="list-unstyled">
+                                        <li><strong>{{$location->company_name}}</strong></li>
+                                        <li style="font-weight:500">{{$location->location}}</li>
+                                        <li>PO.BOX:{{$location->address}}-00200</li>
+                                        <li class="text-secondary">Office: <span class="text-primary">{{$attorney->mobile}}</span> </li>
+                                    </ul>
+                                    <ul class="list-unstyled float-left d-flex mt-3" >
+                                        <li class="pr-5"><a href="# "style="color:#2a5788"><span class="fa fa-twitter fa-2x"></span></a></li>
+                                        <li><a href="#"style="color:#2a5788"><span class="fa fa-facebook fa-2x"></span></a></li>
+                                        <li class="pl-5"><a href="#"style="color:#2a5788"><span class="fa fa-instagram fa-2x"></span></a></li>
+                                      </ul>
                                 </div>
                             </div>
                         @endforeach
@@ -80,7 +88,7 @@
                     <h5>Resume</h5>
                     <h6 class="text-muted">LICENSE</h6>
                     <table class="table table-bordered">
-                        <thead class="bg-color text-white">
+                        <thead class="text-white element-background">
                             <tr>
                                 <td><b>County</b></td>
                                 <td><b>Status</b></td>
@@ -101,7 +109,7 @@
                     <hr>
                     <h6 class="text-muted mt-4">WORK EXPERIENCE</h6>
                     <table class="table table-bordered">
-                        <thead class="bg-color text-white">
+                        <thead class="text-white element-background">
                             <tr>
                                 <td><b>Title</b></td>
                                 <td><b>Company Name</b></td>
@@ -119,7 +127,7 @@
                     <hr>
                     <h6 class="text-muted mt-4">EDUCATION</h6>
                     <table class="table table-bordered">
-                        <thead class="bg-color text-white ">
+                        <thead class="text-white element-background">
                             <tr>
                                 <td><b>School Name</b></td>
                                 <td><b>Degree</b></td>
@@ -138,9 +146,10 @@
 
                 <section class="profile-content" id="review">
                     <h5 class="d-flex float-left">Reviews <span class="text-muted">({{$attorney->reviewCount()}})</span> <span class="pl-2" style="margin-top:-7px;"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$attorney->getStarRating()}}"></star-rating></span></h5>
-                    <button class="btn btn-primary float-right">
+                    <button class="btn  float-right " style="background:#2a5788">
                     <a class="text-white text-decoration-none" href="/review/{{$attorney->id}}/write-review"> Review {{$attorney->firstname}} {{$attorney->lastname}}</a>
                     </button>
+                    
                     <div class="clearfix"></div>
                     <div class="wrapper mt-3">
                         <ul class="list-unstyled">

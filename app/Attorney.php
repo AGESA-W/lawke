@@ -61,11 +61,11 @@ class Attorney extends Authenticatable
 
 
     public function educations(){
-        return $this->hasMany('App\Education');
+        return $this->hasMany('App\Education','attorney_id','attorney_id');
     }
  
     public function works(){
-        return $this->hasMany('App\Work');
+        return $this->hasMany('App\Work','attorney_id','attorney_id');
     }
  
     public function practiceareas(){

@@ -30,9 +30,20 @@ class AdminController extends Controller
      */
     public function index()
     {
-
         return view('admin.admin');
         
+    } 
+
+    public function usersData()
+    {   
+        $users=User::orderBy('created_at','asc')->paginate(5);
+        return view('admin.users')->with('users',$users);
+        
+    } 
+    public function attorneysData()
+    {   
+        $attorneys=Attorney::orderBy('created_at','asc')->paginate(5);
+        return view('admin.attorneys')->with('attorneys',$attorneys);
         
     } 
     

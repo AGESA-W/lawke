@@ -28,7 +28,7 @@
                 <nav class="navbar navbar-home navbar-expand-md">
                     <div class="container">
                         <span class="navbar-brand" href="{{ url('/') }}">
-                            {{ config('app.name', 'LAWKE') }}
+                            {{ config('app.name', 'LEGALCARE') }}
                         <p class="navbar-brand-logotxt">Justice.Innovation</p>
                         </span>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -39,26 +39,23 @@
                             <!-- Left Side Of Navbar -->
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link px-4">Home</a>
+                                    <a href="/" class="nav-link px-4">Home</a>
                                 </li> 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link px-4">About</a>
+                                    <a href="/about" class="nav-link px-4">About</a>
                                 </li>  
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link px-4">Attorneys</a>
-                                </li>   
+                                  
                                 <li class="nav-item">
                                     <a href="/practice-areas" class="nav-link px-4">Practice Areas</a>
                                 </li>
+                               
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link px-4">Case studies</a>
+                                    <a href="/contact" class="nav-link px-4">Contact</a>
                                 </li>
+
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link px-4">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link px-4">Contact</a>
-                                </li>
+                                    <a href="#" class="nav-link px-4">For Lawyers</a>
+                                </li> 
                             </ul>
                 
                             <!-- Right Side Of Navbar -->
@@ -100,10 +97,10 @@
                 <div class="container">
                     <div class="wrapper col-md-6">
                         <div class="showcase-heading">
-                            <p class="text-uppercase mb-1"> <b>Welcome to lawke</b> </p>
+                            <p class="text-uppercase mb-1"> <b>Welcome to legalcare</b> </p>
                         </div>
                         <div class="showcase-text">
-                            <h1>Attorneys Fighting For Your 
+                            <h1>Lawyers Fighting For Your 
                                 <span
                                     class="txt-type"
                                     data-wait="2000"
@@ -172,7 +169,7 @@
                     </a>
                 </div>
             </div>
-            <h2 class="text-center text-capitalize mb-3 mt-3"> <b>Browse Attorneys</b></h2>
+            <h2 class="text-center text-capitalize mb-3 mt-3"> <b>Browse Lawyers</b></h2>
          <div class="col-12 col-md-12">
             <div class="attorney-card card">
                 <div class="card-header p-0">
@@ -204,7 +201,7 @@
                             @foreach ($locationchunk as $location)
                             <div class="col-md-3">
                                 <ul class="list-unstyled">
-                                    <li> <a href="/all-lawyers/{{$location->county}}" class="attorney-card-link text-decoration-none">{{$location->county}} Attorneys</a> </li>
+                                    <li> <a href="/all-lawyers/{{$location->county}}" class="attorney-card-link text-decoration-none">{{$location->county}} Lawyers</a> </li>
                                 </ul>
                             </div>
                             @endforeach
@@ -232,7 +229,7 @@
                     </div>
                 </div>
                 <div class="col-6 col-md-6">
-                    <h5 class="text-color font-weight-bolder">WELCOME TO LAWKE</h5>
+                    <h5 class="text-color font-weight-bolder">WELCOME TO LEGALCARE</h5>
                     <h2 class="mission-text">We always fight for your justice to win</h2>
                     <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error quasi debitis voluptates vel perspiciatis possimus laborum! Enim, neque dolores?</p>
                     <div class="card mission-nav">
@@ -246,13 +243,11 @@
                         <div class="card-body text-secondary">
                           <div class="tab-content">
                             <div class="tab-pane active" id="tab1">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta tempora recusandae voluptatem
-                                numquam in nobis quisquam laborum. Consectetur, nesciunt illo.
+                                To provide legal service with quality member services and promote the rule of law, through advocacy and good governance.
                             </div>
                             <!-- /.tab-pane -->
                             <div class="tab-pane" id="tab2">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta tempora recusandae voluptatem
-                                numquam in nobis quisquam laborum. Consectetur, nesciunt illo.
+                                
                             </div>
                             <!-- /.tab-pane -->
                             <div class="tab-pane" id="tab3">
