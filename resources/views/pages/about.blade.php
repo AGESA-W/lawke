@@ -7,7 +7,7 @@
             </div>
         </div>
         <h1 class="text-center mt-3"><strong>LEGALCARE</strong></h1>
-        <p class="text-center well text-color"><b>Legalcare was founded in Nairobi, Kenya to make legal easier and <br> help people find a lawyer.</b> </p>
+        <p class="text-center well text-color" style="font-size:16px"><b>Legalcare was founded in Nairobi, Kenya to make legal easier and <br> help people find a lawyer.</b> </p>
         
     </div>
     <div class="why">

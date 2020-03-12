@@ -36,7 +36,7 @@ class AttorneysController extends Controller
     public function profile($id){
        
         // get id of the authenticated user
-         $user=Auth::user();
+        
      
         // $lsk=Lsk::find($id);
         // return view('attorneys.profile')

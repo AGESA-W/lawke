@@ -182,6 +182,50 @@ body{
 /******end of home***/
 
 
+/*******SEARCH******/
+.search-image{
+    height: 80px;
+    width:80px;
+}
+.search-lawyer{
+    margin: -16px -125px 0 -118px;
+    .jumbotron{
+        // background-color: transparent;
+        background: rgba(0, 0, 0, 0.5);
+        height:250px;
+
+    }
+    &-jumbotron{//background image
+        background: url("/images/hammer.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+       background-position: center center;
+        height:250px;
+        color:#fff;
+
+        &-text{//Display text
+            font-size:48px;
+            padding-top:30px;
+        }
+       
+    }
+    &-find{
+        font-weight: 700;
+        border-bottom: 4px solid $primary-color;
+        display: inline;
+        cursor: pointer;
+        padding: 0 11px 10px;
+    }
+    &-heading{
+        font-family: circular,Avenir Next,Avenir,Century Gothic,sans-serif;
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1.28571;
+    }
+} 
+
+/*******END SEARCH******/
+
 /*********Contact****/
 .contact{
     margin: -16px -125px 0 -118px;
@@ -266,8 +310,11 @@ body{
         color:#fff;
 
         &-text{//Display text
-            font-size:40px;
             padding-top:30px;
+            font-family: circular,Avenir Next,Avenir,Century Gothic,sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.28571;
         }
        
     }

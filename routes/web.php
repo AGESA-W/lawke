@@ -110,4 +110,6 @@ Route::get('/practice-areas/{praticearea}/{county}', "PagesController@county")->
 Route::get('/all-lawyers/{county}', "PagesController@AllLocations")->name('location.practicearea');
 /********* END SLUG ROUTES */
 
-    
+/*******SEARCH ROUTES********/
+Route::get('/search','SearchController@index')->name('search');
+Route::get('/search/action','SearchController@action')->name('search.action');

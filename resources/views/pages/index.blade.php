@@ -110,7 +110,8 @@
                         </div>
                         <p class="showcase-para">We have help thousands of people to get relief from national wide fights wrongfull denials. Now they trust lawke attorneys</p>
                         <div class="showcase-btns">
-                            <button class="btn btn-1 d-inline-block px-4 py-2 text-capitalize">get started <span class="fa fa-angle-right"></span></button>
+                            <a href="/search" class="text-decoration-none btn btn-1 d-inline-block px-4 py-2">Find your lawyer <span class="fa fa-angle-right"></span></a>
+                            {{-- <button class="btn btn-1 d-inline-block px-4 py-2">Find your lawyer <span class="fa fa-angle-right"></span></button> --}}
                         </div>
                     </div>
                 </div>

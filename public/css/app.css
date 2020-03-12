@@ -11281,6 +11281,53 @@ body {
 
 /******end of home***/
 
+/*******SEARCH******/
+
+.search-image {
+  height: 80px;
+  width: 80px;
+}
+
+.search-lawyer {
+  margin: -16px -125px 0 -118px;
+}
+
+.search-lawyer .jumbotron {
+  background: rgba(0, 0, 0, 0.5);
+  height: 250px;
+}
+
+.search-lawyer-jumbotron {
+  background: url("/images/hammer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 250px;
+  color: #fff;
+}
+
+.search-lawyer-jumbotron-text {
+  font-size: 48px;
+  padding-top: 30px;
+}
+
+.search-lawyer-find {
+  font-weight: 700;
+  border-bottom: 4px solid #afa939;
+  display: inline;
+  cursor: pointer;
+  padding: 0 11px 10px;
+}
+
+.search-lawyer-heading {
+  font-family: circular, Avenir Next, Avenir, Century Gothic, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.28571;
+}
+
+/*******END SEARCH******/
+
 /*********Contact****/
 
 .contact {
@@ -11374,8 +11421,11 @@ body {
 }
 
 .about-jumbotron-text {
-  font-size: 40px;
   padding-top: 30px;
+  font-family: circular, Avenir Next, Avenir, Century Gothic, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.28571;
 }
 
 .about-plain {
