@@ -76,6 +76,14 @@ class Attorney extends Authenticatable
         return $this->hasMany('App\Location','attorney_id','attorney_id');
     }
 
+    // public function endorsments(){
+    //     return $this->hasMany('App\Endorsment','endoser_id','attorney_id');
+    // }
+
+    public function endorsments(){
+        return $this->hasMany('App\Endorsment');
+    }
+
     //relationship with attorney messages
     public function messages(){
         return $this->hasMany('App\AttorneyMessage');
@@ -108,6 +116,8 @@ class Attorney extends Authenticatable
         return $count;
     }
 
+
+    //messages that are inbox
     public function countInbox(){
 
         $test=DB::table('attorney_messages')
@@ -119,6 +129,14 @@ class Attorney extends Authenticatable
         return $total;
     }   
 
+    //get the num of endorsments
+    public function endorsmentCount(){
+        $count = $this->endorsments()->count();
+        if(empty($count)){
+            return 0;
+        }
+        return $count;
+    }
 
 
 

@@ -52,21 +52,16 @@ class PagesController extends Controller
         ->get();
         // dd($attorneys);
         return view('pages.counties')->with('attorneys',$attorneys);
-
-        
-    
     }
 
 
     public function AllLocations($county){//display practice area of county
 
-
         $locations=Lsk::where('county', $county)->get();
         $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
        
         return view('pages.location')->with('locations',$locations)
-        ->with('practiceareas',$practiceareas);
-        
+        ->with('practiceareas',$practiceareas); 
  
     }
 

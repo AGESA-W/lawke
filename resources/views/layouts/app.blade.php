@@ -40,4 +40,42 @@
             @include('partials.footer')
         </div>
     </body>
+    <script>
+        $(document).ready(function (){
+            $('#edit').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var school = button.data('school_name') // Extract info from data-* attributes
+            var degree = button.data('degree') // Extract info from data-* attributes
+            var graduation = button.data('graduation') // Extract info from data-* attributes
+            var attorney_id = button.data('attorney_id') // Extract info from data-* attribute
+            var ed_id = button.data('education_id') // Extract info from data-* attribute
+
+            var modal = $(this)
+            modal.find('.modal-body #school_name').val(school);
+            modal.find('.modal-body #degree').val(degree);
+            modal.find('.modal-body #graduation').val(graduation);
+            modal.find('.modal-body #attorney_id').val(attorney_id);
+            modal.find('.modal-body #education_id').val(ed_id);
+
+            })
+
+            $('#editReview').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var title = button.data('title') // Extract info from data-* attributes
+            var description = button.data('description') // Extract info from data-* attributes
+            var rev_id = button.data('review_id') // Extract info from data-* attribute
+            
+
+            var modal = $(this)
+            modal.find('.modal-body #headline').val(title);
+            modal.find('.modal-body #description').val(description);
+            modal.find('.modal-body #review_id').val(rev_id);
+
+            
+
+
+            
+            })
+        });
+    </script>
 </html>

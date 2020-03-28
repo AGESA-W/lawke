@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "admin-lte": "^3.0.0-alpha.2",
         "font-awesome": "^4.7.0",
         "vue-router": "^3.1.6",
         "vue-star-rating": "^1.6.1"

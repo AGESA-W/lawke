@@ -178,6 +178,43 @@
                         <div class="clearfix"></div>
                     </div>
                 </section>
+                <section class="profile-content" id="endorsment">
+                    <h5 class="d-flex float-left">Lawyer endorsments<span class="text-muted">({{$attorney->endorsmentCount()}})</span></h5>
+                    <button class="btn  float-right " style="background:#2a5788">
+                    <a class="text-white text-decoration-none" href="/attorney/{{$attorney->id}}/endorsment"> Are you a Lawyer? Endorse this lawyer</a>
+                    </button>
+                    <div class="clearfix"></div>
+                    <div class="wrapper mt-3">
+                        <ul class="list-unstyled">
+                            @if(count($endorsments)>0)
+                                @foreach ($endorsments as $endorsment)
+                                        <li> 
+                                            <div class="row pt-2">
+                                                <div class="float-left col-md-1">
+                                                    @if($endorsment->endoser_id=$attorney->id)
+                                                    <img src="{{$attorney->image}}" alt="" style="width:40px;height:50px;">
+                                                    @endif
+                                                    <br>
+                                                </div>
+                                                <div class="float-right col-md-11 ml-0">
+                                                    <span><a href="#">name</a></span>,
+                                                    <small class="text-secondary">{{$endorsment->relationship}}  on
+                                                    {{ date('d M, h:i a', strtotime($endorsment->created_at)) }}</small>
+                                                    
+                                                    <p>{{$endorsment->message}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </li>
+                                @endforeach
+                                @else
+                                <h6> <b>No endorsments yet.</b> </h6>
+                                <p>Endorsments from fellow lawyers are important consideration for many when selecting the right lawyer.Be the first to endorse your colleague!</p>
+                            @endif
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </section>
                 <section class="profile-content " id="cost">
                     <h5 class="text-muted">COST</h5>
                     <p>Hourly Rates ---------------------- <b>ksh3000-ksh4000/hour</b> </p>

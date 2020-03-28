@@ -31,12 +31,25 @@ Route::get('/users/logout', 'Auth\LoginController@UserLogout')->name('users.logo
 // Attorneys pages
 Route::get('/profile/{id}',"AttorneysController@profile")->name('profile');
 Route::get('/attorney_dashboard',"AttorneysController@dashboard")->name('attorney_dashboard');
+
+//Endorsment
+Route::get('/attorney/{id}/endorsment',"EndorsmentController@endorsment")->name('attorney.endorsment');
+Route::post('/endorsments',"EndorsmentController@store")->name('endorsment.store');
+
+
+
+Route::put('/attorneys/{id}',"AttorneysController@updateLocation")->name('location.update');
+Route::post('/attorney_dashboard',"AttorneysController@addEducation")->name('add.education');
+Route::put('/attorney_dashboard/{attorney_dashboard}',"AttorneysController@updateEducation")->name('edit.education');
+
+// Route::Resource('/attorney_dashboard',"AttorneysController");
+
+
 Route::get('/attorney_register',"Auth\AttorneysRegisterController@showRegistrationForm")->name('attorney.register');
 Route::get('/attorney_login',"Auth\AttorneysLoginController@showLoginForm")->name('attorney.login');
 Route::post('/attorneys',"Auth\AttorneysRegisterController@store")->name('attorneys.store');
 Route::post('/attorney_login',"Auth\AttorneysLoginController@Login")->name('attorney.login.submit');
 Route::get('/logout', 'Auth\AttorneysLoginController@logout')->name('attorney.logout');//remember to give attorneys
-
 Route::get('get-attorneys',"AttorneysController@getattorneys")->name('get.attorneys');
 
 //reset password routes for attorneys
@@ -59,8 +72,16 @@ Route::prefix('admin')->group(function(){
   Route::put('/users/{id}', 'UserController@update')->name('users.update');
 
   //attorneys
-  Route::get('/attorneys', 'AdminController@attorneysData')->name('attorneys.table');
-  Route::put('/attorneys/{id}', 'AttorneysController@update')->name('attorneys.update');
+  Route::get('/attorneys/account', 'AdminController@attorneysaccount')->name('attorneys.account');
+  Route::put('/attorneys/{id}', 'AttorneysController@updateaccount')->name('update.account');
+
+  Route::get('/attorneys/work', 'AdminController@attorneyswork')->name('attorneys.work');
+  Route::put('/attorneys/{id}', 'AdminController@updatework')->name('update.work');
+  
+  Route::get('/attorneys/education', 'AdminController@attorneyseducation')->name('attorneys.education');
+  Route::put('/attorneys/{id}', 'AdminController@updateeducation')->name('update.education');
+
+  Route::get('/attorneys/location', 'AdminController@attorneyslocation')->name('attorneys.location');
 
 
     
@@ -78,7 +99,6 @@ Route::post('message',"HomeController@sendMessage");
 // attorney messaging routes
 Route::get('/attorney-message/{id}',"AttorneyMessageController@getMessageForm")->name('attorney-message.form');
 Route::post('/attorney-message',"AttorneyMessageController@store")->name('send.message');
-
 
 //attorney review
 Route::resource('reviews',"AttorneyReviewController");

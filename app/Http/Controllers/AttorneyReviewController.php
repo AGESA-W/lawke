@@ -111,21 +111,26 @@ class AttorneyReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     { 
-        $this->validate($request, [
-            'headline' => ['required'],
-            'description' => ['required'],
-    
-        ]);
-            
-        // Update AttorneyReview by user
-        $review= AttorneyReview::find($id);
-        $review->headline = $request->input('headline');
-        $review->description = $request->input('description');
-        $review->save();
 
-        return redirect('/home')->with('success',"Your review has been updated!");
+        $review=AttorneyReview::findOrFail($request->review_id);
+        $review->update($request->all());
+        return back()->with('success',"Your review has been updated!");
+
+        // $this->validate($request, [
+        //     'headline' => ['required'],
+        //     'description' => ['required'],
+    
+        // ]);
+            
+        // // Update AttorneyReview by user
+        // $review= AttorneyReview::find($id);
+        // $review->headline = $request->input('headline');
+        // $review->description = $request->input('description');
+        // $review->save();
+
+        // return redirect('/home')->with('success',"Your review has been updated!");
     }
 
     /**

@@ -204,16 +204,13 @@
                                             </a>
                                           
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <a href="/reviews/{{$review->id}}/edit" class="dropdown-item dropdown-item-user btn  px-4">Edit</a>
+                                                <button type="button" class="btn dropdown-item dropdown-item-user px-3 py-2 btn-sm" data-review_id="{{$review->id}}" data-title="{{$review->headline}}"  data-description="{{$review->description}}"  data-toggle="modal" data-target="#editReview">
+                                                    Edit Review
+                                                </button>
                                                 <div class="dropdown-divider"></div>
                                                 <button type="button" class="btn  dropdown-item dropdown-item-user px-4 btn-sm" data-toggle="modal" data-target="#deleteModal">
                                                     Delete
                                                 </button>
-                                              {{-- <form action="{{route('reviews.destroy',$review->id)}}" method="post">
-                                                    @method('DELETE')
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" class="dropdown-item-user dropdown-item btn btn-danger px-4">Delete</button>
-                                              </form> --}}
                                             </div>
                                             <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
@@ -239,17 +236,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- <a href="/reviews/{{$review->id}}/edit" class="btn btn-success px-4">Edit</a>
-                                        <form action="{{route('reviews.destroy',$review->id)}}" method="post">
-                                            @method('DELETE')
-                                            {{ csrf_field() }}
-                                            <button type="submit" class="float-right btn btn-danger px-4">Delete</button>
-                                        </form>  --}}
-                                        
-                                        {{-- <button type="button" class="btn btn-success px-3 py-2 btn-sm" data-toggle="modal" data-target="#d{{$review->id}}">
-                                            Edit Review
-                                        </button>
-                                        <div class="modal fade" id="d{{$review->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="editReview" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -259,17 +246,21 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form action="{{route('reviews.update',$review->id)}}" method="post">
+                                                        <form action="{{route('reviews.update','test')}}" method="post">
                                                             @method('PUT')
                                                             {{ csrf_field() }}
                                                             <div class="form-group">
-                                                                <label for=""><span class="asterick"><b>*</b></span><b>Title</b> </label>
-                                                                <input type="text" class="form-control" name= "headline" value="{{$review->headline}}" required>
+                                                                <label for="headline"><span class="asterick"><b>*</b></span><b>Title</b> </label>
+                                                                <input type="text" class="form-control" id="headline" name= "headline" value="" required>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for=""><span class="asterick"><b>*</b></span> <b> Your review</b> </label>
-                                                                <textarea name= "description" class="form-control" placeholder="Be specific. Explain what your lawyer did (or failed to do) with your case. Your review should clearly indicate that you contacted, consulted with, or hired the attorney." maxlength="4000" id="description" cols="30" rows="5" required>{{$review->description}}</textarea>
+                                                                <textarea name= "description" class="form-control" placeholder="Be specific. Explain what your lawyer did (or failed to do) with your case. Your review should clearly indicate that you contacted, consulted with, or hired the attorney." maxlength="4000" id="description" cols="30" rows="5" required></textarea>
                                                             </div>
+                                                            <div class="form-group">
+                                                                <input type="hidden" class="form-control" id="review_id" name= "review_id" value="" required>
+                                                            </div>
+                                                            
                                                             <div class="modal-footer">
                                                                 <button class="btn btn-success px-3" type="submit">Edit</button>
                                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
@@ -278,7 +269,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> --}}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>

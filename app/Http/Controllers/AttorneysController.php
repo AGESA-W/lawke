@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\Lsk;
 use App\Attorney;
 use App\Education;
+use App\Location;
 use App\AttorneyReview;
 use App\AttorneyMessage;
+use App\PracticeArea;
 use App\User;
 use Auth;
 use DB;
@@ -50,12 +52,14 @@ class AttorneysController extends Controller
        
  
         $attorney=Attorney::find($id);
-        return view('attorneys.profile')->with('attorney',$attorney)
+        return view('attorneys.profile')
+        ->with('attorney',$attorney)
         ->with('educations',$attorney->educations)
         ->with('works',$attorney->works)
         ->with('areas',$attorney->practiceareas)
         ->with('locations',$attorney->locations)
-        ->with('reviews',$attorney->reviews);
+        ->with('reviews',$attorney->reviews)
+        ->with('endorsments',$attorney->endorsments);
         //  ->with('reviews',$user->reviews);
     
     }
@@ -79,12 +83,76 @@ class AttorneysController extends Controller
         ->with('messages',$attorney->messages)
         ->with('usermessages',$attorney->usermessages)
         ->with('reviews',$attorney->reviews)
+        ->with('educations',$attorney->educations)
         ->with('users',$users);
         
-        
-        
-        
     }
+
+    public function updateLocation(Request $request, $id)//update location
+    { 
+        $this->validate($request, [
+            'company_name' => ['required', 'string'],
+            'location' => ['required', 'string'],
+            'address' => ['required','string',],
+    
+        ]);
+            
+        // Update the location
+        $location= Location::find($id);
+        $location->company_name = $request->input('company_name');
+        $location->location = $request->input('location');
+        $location->address = $request->input('address');
+        $location->save();
+
+        return redirect('/attorney_dashboard')->with('success',"Your location has been updated!");
+    }
+
+    public function updateEducation(Request $request)//update Education
+    { 
+        // $this->validate($request, [
+        //     'school_name' => ['required', 'string'],
+        //     'degree' => ['required', 'string'],
+        //     'graduation' => ['required','date'],
+        //     'attorney_id' => ['required'],
+    
+        // ]);
+            
+        // //Update Education
+        // $education= Education::find($id);
+        // $education->school_name = $request->input('school_name');
+        // $education->degree = $request->input('degree');
+        // $education->graduation = $request->input('graduation');
+        // $education->attorney_id = $request->input('attorney_id');
+        // $education->save();
+
+        // return redirect('/attorney_dashboard')->with('success',"Your Education has been updated!");
+        $education=Education::findOrFail($request->education_id);
+        $education->update($request->all());
+        return back()->with('success',"Your Education has been updated!");
+    }
+
+
+    public function addEducation(Request $request)//Add education
+    { 
+        $this->validate($request, [
+            'school_name' => ['required', 'string'],
+            'degree' => ['required', 'string'],
+            'graduation' => ['required','date'],
+            'attorney_id' => ['required'],
+    
+        ]);
+            
+        // add Education
+        $education= new Education;
+        $education->school_name = $request->input('school_name');
+        $education->degree = $request->input('degree');
+        $education->graduation = $request->input('graduation');
+        $education->attorney_id = $request->input('attorney_id');
+        $education->save();
+
+        return redirect('/attorney_dashboard')->with('success',"Your Education has been updated!");
+    }
+  
 
 
     public function getattorneys(Request $request){
@@ -115,7 +183,16 @@ class AttorneysController extends Controller
              return $data;
         else
             return ['firstname'=>'','lastname'=>''];
-        }
+    }
+
+
+    // public function endorsment($id){
+    //     $attorney=Attorney::find($id);
+    //     $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
+    //     return view('attorneys.endorsment')
+    //     ->with('practiceareas',$practiceareas)
+    //     ->with('attorney',$attorney);
+    // }
 
 }
 
