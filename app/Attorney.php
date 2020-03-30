@@ -77,7 +77,7 @@ class Attorney extends Authenticatable
     }
 
     // public function endorsments(){
-    //     return $this->hasMany('App\Endorsment','endoser_id','attorney_id');
+    //     return $this->hasMany('App\Endorsment','endosee_id','attorney_id');
     // }
 
     public function endorsments(){

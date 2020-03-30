@@ -32,6 +32,17 @@
 
                     </div>
                 </li>
+                <li class="nav-item user-nav-item dropright">
+                    <a class="nav-link user-nav-link  dropdown-toggle" href="#"id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="fa fa-thumbs-up"></span> Endorsments
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="#tab7" data-toggle="tab"><span class="fa fa-users"></span> Endorsements received</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#tab8" data-toggle="tab"><span class="fa fa-user"></span> Endorsements done </a>
+
+                    </div>
+                </li>
                 <li class="nav-item user-nav-item"><a class="nav-link user-nav-link " href="#tab3" data-toggle="tab"><span class="fa fa-pencil"></span> Reviews</a></li>
               </ul>
             </div><!-- /.card-header -->  
@@ -41,7 +52,7 @@
         <div class="user-text-wrapper">
             <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
-                  <h5 class="mb-2 pb-3" style="border-bottom: #afa939 solid 2px;">Personal information</h5>
+                    <h5 class="mb-2 pb-3" style="border-bottom: #afa939 solid 2px;">Personal information</h5>
                     <div class="tab-item">
                         <div class="sectionDetails">
                             <div class="sectionWrapper">
@@ -96,7 +107,7 @@
                                 </div>
                             </div>
                         </div>
-                       
+                        
                         <div class="sectionDetails">
                             <div class="sectionWrapper">
                                 <div class="sectionTitle">Registered On</div>
@@ -529,6 +540,61 @@
                     <p class="lead text-center text-primary"> <b>There are no reviews in your account.</b> </p>
                 @endif
               </div>
+              <div class="tab-pane" id="tab7">
+                <h5 class="mb-2 pb-3" style="border-bottom: #afa939 solid 2px;">Endorsments received</h5>
+                @if(count($reviews)>0)
+                    @foreach ($reviews as $review)
+                        <ul class="list-unstyled">
+                           <li> 
+                                <div class="row">
+                                    <div class="float-left col-md-3">
+                                        <small class="mb-0"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$review->rating}}"></star-rating></small>
+                                        <small class="text-secondary"><span class="text-dark">Posted On:</span> {{ date('d M, h:i a', strtotime($review->created_at)) }}</small>
+                                        <br>
+                                        <small class="text-secondary"><span class="text-dark">By:</span> {{ $review->user->name}} {{ $review->user->lastname}}</small>
+                                    </div>
+                                    <div class="float-right col-md-9">
+                                        <b>{{$review->headline}}</b>
+                                        <p>{{$review->description}}</p>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li> 
+                        </ul>
+                        
+                    @endforeach
+                    @else
+                    <p class="lead text-center text-primary"> <b>There are no reviews in your account.</b> </p>
+                @endif
+              </div>
+              <div class="tab-pane" id="tab8">
+                <h5 class="mb-2 pb-3" style="border-bottom: #afa939 solid 2px;">Endorsments done</h5>
+                @if(count($reviews)>0)
+                    @foreach ($reviews as $review)
+                        <ul class="list-unstyled">
+                           <li> 
+                                <div class="row">
+                                    <div class="float-left col-md-3">
+                                        <small class="mb-0"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$review->rating}}"></star-rating></small>
+                                        <small class="text-secondary"><span class="text-dark">Posted On:</span> {{ date('d M, h:i a', strtotime($review->created_at)) }}</small>
+                                        <br>
+                                        <small class="text-secondary"><span class="text-dark">By:</span> {{ $review->user->name}} {{ $review->user->lastname}}</small>
+                                    </div>
+                                    <div class="float-right col-md-9">
+                                        <b>{{$review->headline}}</b>
+                                        <p>{{$review->description}}</p>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li> 
+                        </ul>
+                        
+                    @endforeach
+                    @else
+                    <p class="lead text-center text-primary"> <b>There are no reviews in your account.</b> </p>
+                @endif
+              </div>
+
               <!-- /.tab-pane -->
             </div>
             <!-- /.tab-content -->

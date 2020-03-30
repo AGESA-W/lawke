@@ -197,10 +197,11 @@
                                                     <br>
                                                 </div>
                                                 <div class="float-right col-md-11 ml-0">
-                                                    <span><a href="#">name</a></span>,
-                                                    <small class="text-secondary">{{$endorsment->relationship}}  on
+                                                    <span><a href="#">Austin Agesa</a></span>,
+                                                    <small class="text-secondary"> Agency Lawyer  on
                                                     {{ date('d M, h:i a', strtotime($endorsment->created_at)) }}</small>
-                                                    
+                                                    <br>
+                                                    <small><b>Relationship:</b><span class="text-secondary"> {{$endorsment->relationship}}</span></small>
                                                     <p>{{$endorsment->message}}</p>
                                                 </div>
                                             </div>
