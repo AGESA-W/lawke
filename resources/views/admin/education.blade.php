@@ -30,11 +30,11 @@
                                 <td>{{$education->school_name}}</td>
                                 <td>{{$education->degree}}</td>
                                 <td>{{$education->graduation}}</td>
-                                <td><button class="btn btn-info btn-xs" data-toggle="modal" data-target="#e{{$education->id}}">Edit</button></td>
+                                <td><button class="btn btn-info btn-xs" data-institution="{{$education->school_name}}" data-graduation="{{$education->graduation}}" data-degree="{{$education->degree}}" data-education_id="{{$education->id}}" data-toggle="modal" data-target="#updateLawyerEducation">Edit</button></td>
                             </tr>
                         </tbody>
                             <!-- edit Modal -->
-                            <div class="modal fade" id="e{{$education->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="updateLawyerEducation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                 <div class="modal-content text-dark">
                                     <div class="modal-header">
@@ -44,17 +44,17 @@
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                        {{-- <form method="POST" action="{{ route('update.education',$education->id) }}">
+                                        <form method="POST" action="{{ route('update.lawyer.education','test') }}">
                                             @method('PUT')
                                             {{ csrf_field() }}
                     
                                             <div class="form-group row">
-                                                <label for="name" class="col-md-4 col-form-label text-md-right text-dark">{{ __('First Name') }}</label>
+                                                <label for="school_name" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Institution') }}</label>
                     
                                                 <div class="col-md-6">
-                                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$education->name}}" required autocomplete="name" autofocus>
+                                                    <input id="school_name" type="text" class="form-control @error('school_name') is-invalid @enderror" name="school_name" value="" required autocomplete="school_name" autofocus>
                     
-                                                    @error('name')
+                                                    @error('school_name')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
@@ -62,12 +62,12 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="lastname" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Last Name') }}</label>
+                                                <label for="degree" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Degree') }}</label>
                     
                                                 <div class="col-md-6">
-                                                    <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{$education->lastname}}" required autocomplete="lastname" autofocus>
+                                                    <input id="degree" type="text" class="form-control @error('degree') is-invalid @enderror" name="degree" value="" required autocomplete="degree" autofocus>
                     
-                                                    @error('lastname')
+                                                    @error('degree')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
@@ -75,38 +75,26 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="mobile" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Mobile') }}</label>
+                                                <label for="graduation" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Year of graduation') }}</label>
                     
                                                 <div class="col-md-6">
-                                                    <input id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="0{{$user->mobile}}" required autocomplete="mobile" autofocus>
+                                                    <input id="graduation" type="text" class="form-control @error('graduation') is-invalid @enderror" name="graduation" value="" required autocomplete="graduation" autofocus>
                     
-                                                    @error('mobile')
+                                                    @error('graduation')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                     @enderror
                                                 </div>
                                             </div>
+                                            <input type="hidden" id="education_id" name="education_id">
                     
-                                            <div class="form-group row">
-                                                <label for="email" class="col-md-4 col-form-label text-md-right text-dark">{{ __('E-Mail Address') }}</label>
-                    
-                                                <div class="col-md-6">
-                                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$user->email}}" required autocomplete="email">
-                    
-                                                    @error('email')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
                                             <div class="modal-footer">
                                                 <button type="submit" class="btn btn-primary">Save changes</button>
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                 
                                             </div>
-                                        </form> --}}
+                                        </form>
                                     </div>
                                 </div>
                                 </div>

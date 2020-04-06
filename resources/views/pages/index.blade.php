@@ -170,7 +170,7 @@
                     </a>
                 </div>
             </div>
-            <h2 class="text-center text-capitalize mb-3 mt-3"> <b>Browse Lawyers</b></h2>
+            <h2 class="text-center text-capitalize mb-3 mt-5"> <b>Browse Lawyers</b></h2>
          <div class="col-12 col-md-12">
             <div class="attorney-card card">
                 <div class="card-header p-0">
@@ -212,9 +212,9 @@
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="tab_3">
-                      <a href="#">A</a>
-                      <a href="#">B</a>
-                      
+                        @foreach ($letters as $letter)
+                            <a href="#" class="text-decoration-none pr-4">{{$letter}}</a>
+                        @endforeach
                     </div>
                     <!-- /.tab-pane -->
                   </div>

@@ -13,26 +13,32 @@ class PagesController extends Controller
 {
 
     public function index(){
-        // $practiceareas=DB::select('SELECT DISTINCT area_practice FROM practice_areas');
+        $letters = range('A', 'Z');
         $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
         $locations=Lsk::orderBy('id','desc')->distinct()->select('county')->get();
         $attorneys=Attorney::orderBy('firstname','desc')->take(6)->get(); 
         return view('pages.index')->with('attorneys',$attorneys)
         ->with('practiceareas',$practiceareas)
-        ->with('locations',$locations);
+        ->with('locations',$locations)
+        ->with('letters',$letters);
     }
 
+    // practice areas 
     public function practiceAreas(){
         return view('pages.practice-areas');
     }
 
+    //about page
     public function about(){
         return view('pages.about');
     }
+
+    //contact page
     public function contact(){
         return view('pages.contact');
     }
 
+    //get lawyers by practice area
     public function areas($practicearea){
         $locations=Lsk::orderBy('id','desc')->distinct()->select('county')->get();
         $practiceareas=PracticeArea::where('area_practice', $practicearea)->get();
@@ -40,8 +46,9 @@ class PagesController extends Controller
         return view('pages.areas')->with('practiceareas',$practiceareas)
         ->with('locations',$locations);
  
-    }
+    } 
 
+    //get lawyers by county
     public function county($practicearea,$county){
     
         $attorneys=Attorney::whereHas('practiceareas' , function ($builder) use($practicearea) {
@@ -50,7 +57,6 @@ class PagesController extends Controller
         )
         ->where('county', $county)
         ->get();
-        // dd($attorneys);
         return view('pages.counties')->with('attorneys',$attorneys);
     }
 

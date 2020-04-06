@@ -10,13 +10,15 @@
      @yield('content') 
   @endsection
 
+  <script src="{{ asset('js/app.js')}}"></script>
+
+
  <link rel="stylesheet" href="/css/app.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
   <div class="wrapper" id="app">
-
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
       <ul class="navbar-nav">
@@ -82,7 +84,7 @@
             </li>
             <li class="nav-item has-treeview ">
               <a href="#" class="nav-link ">
-                <i class="nav-icon fa fa-cogs text-light"></i>
+                <i class="nav-icon fa fa-users text-light"></i>
                 <p>
                   Lawyers
                   <i class="right fa fa-angle-down"></i>
@@ -155,6 +157,40 @@
   <!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPT -->
-  <script src="/js/app.js"defer></script>
 </body>
+  <script>
+    $(document).ready(function (){
+
+        $('#updateLawyerEducation').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var school = button.data('institution') // Extract info from data-* attributes
+        var grad = button.data('graduation') // Extract info from data-* attributes
+        var degree = button.data('degree') // Extract info from data-* attribute
+        var education_id = button.data('education_id') // Extract info from data-* attribute
+
+        var modal = $(this)
+        modal.find('.modal-body #school_name').val(school);
+        modal.find('.modal-body #graduation').val(grad);
+        modal.find('.modal-body #degree').val(degree);
+        modal.find('.modal-body #education_id').val(education_id);
+        })
+
+        $('#updateLawyerWork').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var company_name = button.data('company_name') // Extract info from data-* attributes
+        var location = button.data('location') // Extract info from data-* attributes
+        var address = button.data('address') // Extract info from data-* attribute
+        var work_id = button.data('work_id') // Extract info from data-* attribute
+
+
+        var modal = $(this)
+        modal.find('.modal-body #company_name').val(company_name);
+        modal.find('.modal-body #location').val(location);
+        modal.find('.modal-body #address').val(address);
+        modal.find('.modal-body #work_id').val(work_id);
+
+        })
+
+    });
+  </script>
 </html>

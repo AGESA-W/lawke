@@ -123,11 +123,16 @@
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                    ...
+                                         <p class="lead">Are you sure you want to delete your Account?</p> 
+                                    
                                     </div>
                                     <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                        <form action="{{route('admin.user.delete',$user->id)}}" method="post">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button class="btn btn-success px-3 py-2" type="submit">Yes</button>
+                                        </form>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                                     </div>
                                 </div>
                                 </div>

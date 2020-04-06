@@ -103,7 +103,7 @@
                                 <div class="modal-body">
                                 <p class="lead">Are you sure you want to delete your Account?</p> 
                                 </div>
-                                <div class="modal-footer">
+                                <div class="modal-footer"> 
                                     <form action="{{route('user.delete',$user->id)}}" method="post">
                                         @method('DELETE')
                                         @csrf

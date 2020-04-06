@@ -56,25 +56,19 @@
             modal.find('.modal-body #graduation').val(graduation);
             modal.find('.modal-body #attorney_id').val(attorney_id);
             modal.find('.modal-body #education_id').val(ed_id);
-
             })
+
 
             $('#editReview').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
             var title = button.data('title') // Extract info from data-* attributes
             var description = button.data('description') // Extract info from data-* attributes
             var rev_id = button.data('review_id') // Extract info from data-* attribute
-            
 
             var modal = $(this)
             modal.find('.modal-body #headline').val(title);
             modal.find('.modal-body #description').val(description);
             modal.find('.modal-body #review_id').val(rev_id);
-
-            
-
-
-            
             })
         });
     </script>

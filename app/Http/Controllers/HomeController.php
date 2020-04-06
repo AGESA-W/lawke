@@ -56,7 +56,7 @@ class HomeController extends Controller
     public function destroy($id){
         $user=User::find($id);
         $user->delete();
-        return redirect('/')->with('success','Account deleted successfully');
+        return redirect('/admin/users')->with('success','Account deleted successfully');
     }
 
     // public function getMessage($user_id)

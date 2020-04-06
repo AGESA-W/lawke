@@ -88,7 +88,7 @@ class AttorneysController extends Controller
         
     }
 
-    public function updateLocation(Request $request, $id)//update location
+    public function updateLocation(Request $request, $id)//lawyer updates location
     { 
         $this->validate($request, [
             'company_name' => ['required', 'string'],

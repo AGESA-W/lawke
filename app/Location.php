@@ -6,9 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Location extends Model
 {
-    public function lsk(){
-        return $this->belongsTo('App\Lsk');
-     }
+
+
+  /**
+   * The attributes that are mass assignable.
+   *
+   * @var array
+   */
+  protected $fillable = [
+    'company_name', 'address', 'location',
+  ];
+
+
+  public function lsk(){
+      return $this->belongsTo('App\Lsk');
+  }
 
 
    //   public function attorney(){

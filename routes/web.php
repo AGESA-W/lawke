@@ -42,9 +42,6 @@ Route::put('/attorneys/{id}',"AttorneysController@updateLocation")->name('locati
 Route::post('/attorney_dashboard',"AttorneysController@addEducation")->name('add.education');
 Route::put('/attorney_dashboard/{attorney_dashboard}',"AttorneysController@updateEducation")->name('edit.education');
 
-// Route::Resource('/attorney_dashboard',"AttorneysController");
-
-
 Route::get('/attorney_register',"Auth\AttorneysRegisterController@showRegistrationForm")->name('attorney.register');
 Route::get('/attorney_login',"Auth\AttorneysLoginController@showLoginForm")->name('attorney.login');
 Route::post('/attorneys',"Auth\AttorneysRegisterController@store")->name('attorneys.store');
@@ -69,17 +66,22 @@ Route::prefix('admin')->group(function(){
 
   //users
   Route::get('/users', 'AdminController@usersData')->name('users.table');
-  Route::put('/users/{id}', 'UserController@update')->name('users.update');
-
-  //attorneys
-  Route::get('/attorneys/account', 'AdminController@attorneysaccount')->name('attorneys.account');
-  Route::put('/attorneys/{id}', 'AttorneysController@updateaccount')->name('update.account');
-
-  Route::get('/attorneys/work', 'AdminController@attorneyswork')->name('attorneys.work');
-  Route::put('/attorneys/{id}', 'AdminController@updatework')->name('update.work');
+  Route::put('/users/{id}', 'AdminController@update')->name('users.update');
+  Route::delete('/users/{user}',"AdminController@userDestroy")->name('admin.user.delete');
   
+
+  /*********attorneys*******/
+  //account
+  Route::get('/attorneys/account', 'AdminController@attorneysaccount')->name('attorneys.account');
+  Route::put('/attorneys/account/{id}', 'AdminController@updateaccount')->name('update.lawyer.account');
+
+  //Work
+  Route::get('/attorneys/work', 'AdminController@attorneyswork')->name('attorneys.work');
+  Route::put('/attorneys/work/test', 'AdminController@updatework')->name('update.laywer.work');
+  
+  //education
   Route::get('/attorneys/education', 'AdminController@attorneyseducation')->name('attorneys.education');
-  Route::put('/attorneys/{id}', 'AdminController@updateeducation')->name('update.education');
+  Route::put('/attorneys/education/test', 'AdminController@updateeducation')->name('update.lawyer.education');
 
   Route::get('/attorneys/location', 'AdminController@attorneyslocation')->name('attorneys.location');
 

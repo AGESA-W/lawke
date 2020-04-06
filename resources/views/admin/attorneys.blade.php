@@ -22,7 +22,7 @@
                             <th>Certificate No</th>
                             <th>Email</th>
                             <th>Phone Number</th>
-                            <th class="pl-5">Modify</th>
+                            <th class="pl-5">Action</th>
                         </tr>
                     </thead>
                     @foreach ($attorneys as $attorney)
@@ -34,11 +34,11 @@
                                 <td>{{$attorney->license_no}}</td>
                                 <td>{{$attorney->email}}</td>
                                 <td>{{$attorney->mobile}}</td>
-                                <td><button class="btn btn-info btn-xs" data-toggle="modal" data-target="#e{{$attorney->id}}">Edit</button>|<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#d{{$attorney->id}}">Delete</button></td>
+                                <td><button class="btn btn-info btn-xs" data-toggle="modal" data-target="#u{{$attorney->id}}">Edit</button>|<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#d{{$attorney->id}}">Delete</button></td>
                             </tr>
                         </tbody>
                             <!-- edit Modal -->
-                            <div class="modal fade" id="e{{$attorney->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="u{{$attorney->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                 <div class="modal-content text-dark">
                                     <div class="modal-header">
@@ -48,7 +48,7 @@
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                        {{-- <form method="POST" action="{{ route('update.account',$attorney->id) }}"> --}}
+                                        <form method="POST" action="{{ route('update.lawyer.account',$attorney->id) }}">
                                             @method('PUT')
                                             {{ csrf_field() }}
                     
@@ -56,15 +56,16 @@
                                                 <label for="firstname" class="col-md-4 col-form-label text-md-right text-dark">{{ __('First Name') }}</label>
                     
                                                 <div class="col-md-6">
-                                                    <input id="firstname" type="text" class="form-control @error('name') is-invalid @enderror" name="firstname" value="{{$attorney->firstname}}" required autocomplete="firstname" autofocus>
+                                                    <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{$attorney->firstname}}" required autocomplete="firstname" autofocus>
                     
-                                                    @error('name')
+                                                    @error('firstname')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                     @enderror
                                                 </div>
                                             </div>
+                                            
                                             <div class="form-group row">
                                                 <label for="lastname" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Last Name') }}</label>
                     
@@ -91,7 +92,6 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                    
                                             <div class="form-group row">
                                                 <label for="email" class="col-md-4 col-form-label text-md-right text-dark">{{ __('E-Mail Address') }}</label>
                     
@@ -108,7 +108,6 @@
                                             <div class="modal-footer">
                                                 <button type="submit" class="btn btn-primary">Save changes</button>
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                
                                             </div>
                                         </form>
                                     </div>
