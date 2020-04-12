@@ -82,7 +82,15 @@
                 </p>
               </a>
             </li>
-            <li class="nav-item has-treeview ">
+            <li class="nav-item">
+              <a href="/admin/attorneys/account" class="nav-link">
+                <i class="nav-icon fa fa-users text-light"></i>
+                <p>
+                  Lawyers
+                </p>
+              </a>
+            </li>
+            {{-- <li class="nav-item has-treeview ">
               <a href="#" class="nav-link ">
                 <i class="nav-icon fa fa-users text-light"></i>
                 <p>
@@ -103,12 +111,6 @@
                     <p>Education</p>
                   </a>
                 </li>
-                {{-- <li class="nav-item">
-                  <a href="/admin/attorneys/location" class="nav-link">
-                    <i class="fa fa-map-marker nav-icon"></i>
-                    <p>Location</p>
-                  </a>
-                </li> --}}
                 <li class="nav-item">
                   <a href="/admin/attorneys/work" class="nav-link">
                     <i class="fa fa-map-marker nav-icon"></i>
@@ -116,7 +118,7 @@
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> --}}
             <li class="nav-item">
               <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();

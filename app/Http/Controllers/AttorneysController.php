@@ -36,20 +36,6 @@ class AttorneysController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable 
      */
     public function profile($id){
-       
-        // get id of the authenticated user
-        
-     
-        // $lsk=Lsk::find($id);
-        // return view('attorneys.profile')
-        // ->with('lsk',$lsk)
-        // ->with('attorneys',$lsk->educations)
-        // ->with('works',$lsk->works)
-        // ->with('areas',$lsk->practiceareas)
-        // ->with('locations',$lsk->locations)
-        //  ->with('reviews',$lsk->reviews)
-        //  ->with('reviews',$user->reviews);
-       
  
         $attorney=Attorney::find($id);
         return view('attorneys.profile')
@@ -64,9 +50,6 @@ class AttorneysController extends Controller
     
     }
 
-    
-
-
     public function dashboard()
     {
         $users = DB::select("select users.id, users.name,users.email 
@@ -74,16 +57,16 @@ class AttorneysController extends Controller
         where attorney_id = " . Auth::id() . " 
          group by users.id, users.name, users.email,attorney_id");
 
-
         $attorney_id=Auth::id();
         $attorney=Attorney::find($attorney_id);
-        
         return view('attorneys.attorney_dashboard')
         ->with('attorney',$attorney)
         ->with('messages',$attorney->messages)
         ->with('usermessages',$attorney->usermessages)
         ->with('reviews',$attorney->reviews)
         ->with('educations',$attorney->educations)
+        ->with('endorsments',$attorney->endorsments)
+        ->with('endorsers',$attorney->endorsers)
         ->with('users',$users);
         
     }
@@ -94,7 +77,6 @@ class AttorneysController extends Controller
             'company_name' => ['required', 'string'],
             'location' => ['required', 'string'],
             'address' => ['required','string',],
-    
         ]);
             
         // Update the location
@@ -152,8 +134,6 @@ class AttorneysController extends Controller
 
         return redirect('/attorney_dashboard')->with('success',"Your Education has been updated!");
     }
-  
-
 
     public function getattorneys(Request $request){
         $query = $request->get('term','');
@@ -184,15 +164,6 @@ class AttorneysController extends Controller
         else
             return ['firstname'=>'','lastname'=>''];
     }
-
-
-    // public function endorsment($id){
-    //     $attorney=Attorney::find($id);
-    //     $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
-    //     return view('attorneys.endorsment')
-    //     ->with('practiceareas',$practiceareas)
-    //     ->with('attorney',$attorney);
-    // }
 
 }
 

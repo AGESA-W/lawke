@@ -20,7 +20,7 @@
                             <th>Last Name</th>
                             <th>Email</th>
                             <th>Phone Number</th>
-                            <th class="pl-5">Modify</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     @foreach ($users as $user)
@@ -30,10 +30,10 @@
                                 <td>{{$user->lastname}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>0{{$user->mobile}}</td>
-                                <td><button class="btn btn-info btn-xs" data-toggle="modal" data-target="#e{{$user->id}}">Edit</button>|<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#d{{$user->id}}">Delete</button></td>
+                                <td><a href="/admin/users/details/{{$user->id}}" class="text-decoration-none"><button class="btn btn-sm bg-primary"><span class="fa fa-eye"></span></button></a></td>
                             </tr>
                         </tbody>
-                            <!-- edit Modal -->
+                            {{-- <!-- edit Modal -->
                             <div class="modal fade" id="e{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                 <div class="modal-content text-dark">
@@ -136,7 +136,7 @@
                                     </div>
                                 </div>
                                 </div>
-                            </div>
+                            </div> --}}
                     @endforeach
                 </table>
             </div>

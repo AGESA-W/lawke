@@ -542,57 +542,67 @@
               </div>
               <div class="tab-pane" id="tab7">
                 <h5 class="mb-2 pb-3" style="border-bottom: #afa939 solid 2px;">Endorsments received</h5>
-                @if(count($reviews)>0)
-                    @foreach ($reviews as $review)
-                        <ul class="list-unstyled">
-                           <li> 
-                                <div class="row">
-                                    <div class="float-left col-md-3">
-                                        <small class="mb-0"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$review->rating}}"></star-rating></small>
-                                        <small class="text-secondary"><span class="text-dark">Posted On:</span> {{ date('d M, h:i a', strtotime($review->created_at)) }}</small>
-                                        <br>
-                                        <small class="text-secondary"><span class="text-dark">By:</span> {{ $review->user->name}} {{ $review->user->lastname}}</small>
-                                    </div>
-                                    <div class="float-right col-md-9">
-                                        <b>{{$review->headline}}</b>
-                                        <p>{{$review->description}}</p>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li> 
-                        </ul>
-                        
-                    @endforeach
-                    @else
-                    <p class="lead text-center text-primary"> <b>There are no reviews in your account.</b> </p>
-                @endif
+                <div class="wrapper mt-3">
+                    <ul class="list-unstyled">
+                        @if(count($endorsments)>0)
+                            @foreach ($endorsments as $endorsment)
+                                    <li> 
+                                        <div class="row pt-2">
+                                            <div class="float-left col-md-1">
+                                                <img src="{{$endorsment->endorser->image}}" alt="" style="width:40px;height:50px;">
+                                                <br>
+                                            </div>
+                                            <div class="float-right col-md-11 ml-0">
+                                                <span><a href="#">{{$endorsment->endorser->firstname}} {{$endorsment->endorser->lastname}}</a></span>
+                                                <small class="text-secondary">on
+                                                {{ date('d M, h:i a', strtotime($endorsment->created_at)) }}</small>
+                                                <br>
+                                                <small><b>Relationship:</b><span class="text-secondary"> {{$endorsment->relationship}}</span></small>
+                                                <p>{{$endorsment->message}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                            @endforeach
+                            @else
+                            <h6> <b>No endorsments yet.</b> </h6>
+                            <p>Endorsments from fellow lawyers are important consideration for many when selecting the right lawyer.None of you colleagues has endorsed you!</p>
+                        @endif
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
               </div>
               <div class="tab-pane" id="tab8">
                 <h5 class="mb-2 pb-3" style="border-bottom: #afa939 solid 2px;">Endorsments done</h5>
-                @if(count($reviews)>0)
-                    @foreach ($reviews as $review)
-                        <ul class="list-unstyled">
-                           <li> 
-                                <div class="row">
-                                    <div class="float-left col-md-3">
-                                        <small class="mb-0"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$review->rating}}"></star-rating></small>
-                                        <small class="text-secondary"><span class="text-dark">Posted On:</span> {{ date('d M, h:i a', strtotime($review->created_at)) }}</small>
-                                        <br>
-                                        <small class="text-secondary"><span class="text-dark">By:</span> {{ $review->user->name}} {{ $review->user->lastname}}</small>
-                                    </div>
-                                    <div class="float-right col-md-9">
-                                        <b>{{$review->headline}}</b>
-                                        <p>{{$review->description}}</p>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li> 
-                        </ul>
-                        
-                    @endforeach
-                    @else
-                    <p class="lead text-center text-primary"> <b>There are no reviews in your account.</b> </p>
-                @endif
+                <div class="wrapper mt-3">
+                    <ul class="list-unstyled">
+                        @if(count($endorsments)>0)
+                            @foreach ($endorsments as $endorsment)
+                                    <li> 
+                                        <div class="row pt-2">
+                                            <div class="float-left col-md-1">
+                                                <img src="{{$endorsment->attorney->image}}" alt="" style="width:40px;height:50px;">
+                                                <br>
+                                            </div>
+                                            <div class="float-right col-md-11 ml-0">
+                                                <span><a href="#">{{$endorsment->attorney->firstname}} {{$endorsment->attorney->lastname}}</a></span>
+                                                <small class="text-secondary">on
+                                                {{ date('d M, h:i a', strtotime($endorsment->created_at)) }}</small>
+                                                <br>
+                                                <small><b>Relationship:</b><span class="text-secondary"> {{$endorsment->relationship}}</span></small>
+                                                <p>{{$endorsment->message}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                            @endforeach
+                            @else
+                            <h6> <b>No endorsments yet.</b> </h6>
+                            <p>Endorsments from fellow lawyers are important consideration for many when selecting the right lawyer.You haven't endorsed any of your colleagues yet!</p>
+                        @endif
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
               </div>
 
               <!-- /.tab-pane -->

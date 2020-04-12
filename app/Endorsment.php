@@ -19,4 +19,11 @@ class Endorsment extends Model
     public function attorney(){
         return $this->belongsTo('App\Attorney');
     }
+    
+    public function endorser()
+    {
+        return $this->belongsTo('App\Attorney', 'endoser_id');
+    }
+   
+
 }

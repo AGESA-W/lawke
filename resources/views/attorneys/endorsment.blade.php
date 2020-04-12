@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <label for="relationship">How do you know this lawyer?</label>
                     <select  class="form-control" name="relationship" id="relationship" required>
-                        <option value="">----------Select----------</option>
+                        <option value=""></option>
                         <option value="Worked for lawyer">Worked for lawyer</option>
                         <option value="Supervised lawyer">Supervised lawyer</option>
                         <option value="Worked together on a matter">Worked together on a matter</option>
@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <label for="practicearea">For which practice are are you endorsing this lawyer?</label>
                     <select class="form-control" name="practicearea" id="practicearea">
-                        <option value="">----------Select----------</option>
+                        <option value=""></option>
                         @foreach ($practiceareas as $practicearea)
                             <option value="{{$practicearea->area_practice}}">{{$practicearea->area_practice}}</option>
                         @endforeach
@@ -43,7 +43,7 @@
                     <textarea class="form-control" name="message" id="" cols="30" rows="8" placeholder="">I endorse this lawyer's work.</textarea>
                 </div>
                 <input type="hidden" id="endoser_id" name="endoser_id" value="{{Auth::id()}}">
-                <input type="hidden" id="endosee_id" name="endosee_id" value="{{$attorney->id}}">
+                <input type="hidden" id="attorney_id" name="attorney_id" value="{{$attorney->id}}">
                 <button type="submit" class="btn btn-primary">Submit Endorsment</button>
             </form> 
         </div>

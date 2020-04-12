@@ -22,7 +22,7 @@
                             <th>Certificate No</th>
                             <th>Email</th>
                             <th>Phone Number</th>
-                            <th class="pl-5">Action</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     @foreach ($attorneys as $attorney)
@@ -34,10 +34,10 @@
                                 <td>{{$attorney->license_no}}</td>
                                 <td>{{$attorney->email}}</td>
                                 <td>{{$attorney->mobile}}</td>
-                                <td><button class="btn btn-info btn-xs" data-toggle="modal" data-target="#u{{$attorney->id}}">Edit</button>|<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#d{{$attorney->id}}">Delete</button></td>
+                                <td><a href="/admin/attorneys/details/{{$attorney->id}}" class="text-decoration-none"><button class="btn btn-sm bg-primary"><span class="fa fa-eye"></span></button></a></td>
                             </tr>
                         </tbody>
-                            <!-- edit Modal -->
+                            {{-- <!-- edit Modal -->
                             <div class="modal fade" id="u{{$attorney->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                 <div class="modal-content text-dark">
@@ -134,7 +134,7 @@
                                     </div>
                                 </div>
                                 </div>
-                            </div>
+                            </div> --}}
                     @endforeach
                 </table>
             </div>

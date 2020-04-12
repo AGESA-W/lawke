@@ -73,7 +73,14 @@ class AdminController extends Controller
         $user->mobile = $request->input('mobile');
         $user->save();
 
-        return redirect('/admin/users')->with('success',"User has been updated!");
+        return back()->with('success',"User has been updated!");
+    }
+
+    //specific user details
+    public function userdetails($id)
+    { 
+        $user= User::find($id);
+        return view('admin.user_details')->with('user',$user);
     }
 
 
@@ -91,6 +98,17 @@ class AdminController extends Controller
         return view('admin.attorneys')->with('attorneys',$attorneys);
         
     } 
+
+
+     //specific lawyer details
+     public function attorneydetails($id)
+     { 
+         $attorney= Attorney::find($id);
+         return view('admin.attorney_details')
+        ->with('educations',$attorney->educations)
+        ->with('locations',$attorney->locations)
+         ->with('attorney',$attorney);
+     }
 
     // Update lawyers account information
     public function updateaccount(Request $request,$id)
@@ -110,7 +128,7 @@ class AdminController extends Controller
         $attorney->mobile = $request->input('mobile');
         $attorney->save();
 
-        return redirect('/admin/attorneys/account')->with('success',"Account information has been updated!");
+        return back()->with('success',"Account information has been updated!");
     }
 
     //display lawyers work information

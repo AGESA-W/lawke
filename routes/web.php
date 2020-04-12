@@ -67,6 +67,7 @@ Route::prefix('admin')->group(function(){
   //users
   Route::get('/users', 'AdminController@usersData')->name('users.table');
   Route::put('/users/{id}', 'AdminController@update')->name('users.update');
+  Route::get('/users/details/{id}', 'AdminController@userdetails')->name('users.details');
   Route::delete('/users/{user}',"AdminController@userDestroy")->name('admin.user.delete');
   
 
@@ -74,6 +75,8 @@ Route::prefix('admin')->group(function(){
   //account
   Route::get('/attorneys/account', 'AdminController@attorneysaccount')->name('attorneys.account');
   Route::put('/attorneys/account/{id}', 'AdminController@updateaccount')->name('update.lawyer.account');
+  Route::get('/attorneys/details/{id}', 'AdminController@attorneydetails')->name('attorney.details');
+
 
   //Work
   Route::get('/attorneys/work', 'AdminController@attorneyswork')->name('attorneys.work');

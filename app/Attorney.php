@@ -76,10 +76,7 @@ class Attorney extends Authenticatable
         return $this->hasMany('App\Location','attorney_id','attorney_id');
     }
 
-    // public function endorsments(){
-    //     return $this->hasMany('App\Endorsment','endosee_id','attorney_id');
-    // }
-
+    //relationship with endorsments
     public function endorsments(){
         return $this->hasMany('App\Endorsment');
     }

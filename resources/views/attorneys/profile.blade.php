@@ -191,14 +191,12 @@
                                         <li> 
                                             <div class="row pt-2">
                                                 <div class="float-left col-md-1">
-                                                    @if($endorsment->endoser_id=$attorney->id)
-                                                    <img src="{{$attorney->image}}" alt="" style="width:40px;height:50px;">
-                                                    @endif
+                                                    <img src="{{$endorsment->endorser->image}}" alt="" style="width:40px;height:50px;">
                                                     <br>
                                                 </div>
                                                 <div class="float-right col-md-11 ml-0">
-                                                    <span><a href="#">Austin Agesa</a></span>,
-                                                    <small class="text-secondary"> Agency Lawyer  on
+                                                    <span><a href="#">{{$endorsment->endorser->firstname}} {{$endorsment->endorser->lastname}}</a></span>
+                                                    <small class="text-secondary">on
                                                     {{ date('d M, h:i a', strtotime($endorsment->created_at)) }}</small>
                                                     <br>
                                                     <small><b>Relationship:</b><span class="text-secondary"> {{$endorsment->relationship}}</span></small>

@@ -37,7 +37,7 @@ class EndorsmentController extends Controller
             'message' => ['required'],
             'practicearea' => ['required','string'],
             'endoser_id' => ['required'],
-            'endosee_id' => ['required'],
+            'attorney_id' => ['required'],//endosee
     
         ]);
             
@@ -47,7 +47,7 @@ class EndorsmentController extends Controller
         $endorsment->practicearea = $request->input('practicearea');
         $endorsment->message = $request->input('message');
         $endorsment->endoser_id = $request->input('endoser_id');
-        $endorsment->endosee_id = $request->input('endosee_id');
+        $endorsment->attorney_id = $request->input('attorney_id');
         $endorsment->save();
 
         return back()->with('success',"You have successfully endorsed this lawyer!");
