@@ -989,5 +989,42 @@ footer{//footer
     padding-bottom:0;
     } 
 }
+.reports{
+    &-nav .nav-tabs .nav-link{//card Navbar
+        background: #fff;
+        color: #000000;
+        font-weight: 600;
+        border-radius: 0;
+        border: none;
+    
+        &.active {//active state
+        color:#fff; 
+        background-color:#3490dc;
+        border: 2px solid #3490dc;
+    }
+    }
+}
+// .paginate_button.current{
+//     background:#3490dc !important;
+//     color:#fff !important;
+//     font-size:12px !important;
+//     padding:4px 8px !important;
+// }
+
+// .paginate_button.next{
+//     border:1px solid #BDC3C7 !important;
+//     padding:3.5px 8px !important;
+//     margin-left:0 !important;
+
+// }
+
+// .paginate_button.previous{
+//     border:1px solid #BDC3C7 !important;
+//     padding:3.5px 8px !important;
+//     margin:0px 0px 0px 0px!important;
+
+// }
+
+
 
 /*******END*******/

@@ -25,7 +25,7 @@ class UserMessageController extends Controller
         $usermessage->description = $request->input('description');
         $usermessage->save();
             
-        return redirect()->intended(route('attorney_dashboard'))->with('success', 'Message sent Successfully');
+        return back()->with('success', 'Message sent Successfully');
     
 }
 }

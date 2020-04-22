@@ -61,7 +61,7 @@ class AttorneyMessageController extends Controller
         $message->description = $request->input('description');
         $message->save();
  
-      return redirect()->back()->with('success', 'Message sent Successfully');
+      return back()->with('success', 'Message sent Successfully');
 
     }
 

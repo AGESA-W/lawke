@@ -64,11 +64,19 @@ Route::prefix('admin')->group(function(){
   Route::post('/login',"Auth\AdminLoginController@Login")->name('admin.login.submit');
   Route::get('/logout', 'Auth\AdminLoginController@Adminlogout')->name('admin.logout');
 
+  //reports
+  Route::get('/reports/create', 'AdminController@ratingreport')->name('rating.report');
+  Route::get('/reports/create/reg', 'AdminController@lawyerRegReport')->name('lawyerReg.report');
+  Route::get('/reports/create/pdf', 'AdminController@pdf')->name('rating.pdf');
+
   //users
   Route::get('/users', 'AdminController@usersData')->name('users.table');
   Route::put('/users/{id}', 'AdminController@update')->name('users.update');
   Route::get('/users/details/{id}', 'AdminController@userdetails')->name('users.details');
   Route::delete('/users/{user}',"AdminController@userDestroy")->name('admin.user.delete');
+
+   //search client
+   Route::get('/users/search','SearchController@clientaction')->name('client.search.action');
   
 
   /*********attorneys*******/
@@ -76,6 +84,9 @@ Route::prefix('admin')->group(function(){
   Route::get('/attorneys/account', 'AdminController@attorneysaccount')->name('attorneys.account');
   Route::put('/attorneys/account/{id}', 'AdminController@updateaccount')->name('update.lawyer.account');
   Route::get('/attorneys/details/{id}', 'AdminController@attorneydetails')->name('attorney.details');
+
+  //search lawyer
+  Route::get('/attorneys/account/search','SearchController@lawyeraction')->name('lawyer.search.action');
 
 
   //Work

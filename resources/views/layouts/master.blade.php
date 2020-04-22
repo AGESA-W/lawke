@@ -12,13 +12,26 @@
 
   <script src="{{ asset('js/app.js')}}"></script>
 
+{{-- datatables --}}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+
+{{-- datepicker --}}
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
 
  <link rel="stylesheet" href="/css/app.css">
+
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
 </head>
 <body class="hold-transition sidebar-mini">
-  <div class="wrapper" id="app">
+  <div class="wrapper" >
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
       <ul class="navbar-nav">
@@ -26,18 +39,6 @@
           <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
         </li>
       </ul>
-
-      <!-- SEARCH FORM -->
-      <form class="form-inline ml-3">
-        <div class="input-group input-group-sm">
-          <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-navbar" type="submit">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-        </div>
-      </form>
 
     </nav>
     <!-- /.navbar -->
@@ -68,7 +69,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
               <a href="/admin" class="nav-link active">
-                <i class="nav-icon fa fa-dashboard text-light"></i>
+                <i class="fa fa-dashboard text-light"></i>
                 <p>
                   Dashboard
                 </p>
@@ -76,7 +77,7 @@
             </li>
             <li class="nav-item">
               <a href="/admin/users" class="nav-link">
-                <i class="nav-icon fa fa-users text-light"></i>
+                <i class="fa fa-users text-light"></i>
                 <p>
                   Users
                 </p>
@@ -84,46 +85,25 @@
             </li>
             <li class="nav-item">
               <a href="/admin/attorneys/account" class="nav-link">
-                <i class="nav-icon fa fa-users text-light"></i>
+                <i class="fa fa-users text-light"></i>
                 <p>
                   Lawyers
                 </p>
               </a>
             </li>
-            {{-- <li class="nav-item has-treeview ">
-              <a href="#" class="nav-link ">
-                <i class="nav-icon fa fa-users text-light"></i>
+            <li class="nav-item">
+              <a href="/admin/reports/create" class="nav-link">
+                <i class="fa fa-download text-light"></i>
                 <p>
-                  Lawyers
-                  <i class="right fa fa-angle-down"></i>
+                  Reports
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="/admin/attorneys/account" class="nav-link ">
-                    <i class="fa fa-user nav-icon text-light"></i>
-                    <p>Account</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="/admin/attorneys/education" class="nav-link">
-                    <i class="fa fa-book nav-icon"></i>
-                    <p>Education</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="/admin/attorneys/work" class="nav-link">
-                    <i class="fa fa-map-marker nav-icon"></i>
-                    <p>Place of work</p>
-                  </a>
-                </li>
-              </ul>
-            </li> --}}
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">
-                  <i class="nav-icon fa fa-power-off text-danger"></i>
+                  <i class="fa fa-power-off text-danger"></i>
                   {{ __('Logout') }}
               </a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -159,6 +139,9 @@
   <!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPT -->
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+
 </body>
   <script>
     $(document).ready(function (){
@@ -190,8 +173,50 @@
         modal.find('.modal-body #location').val(location);
         modal.find('.modal-body #address').val(address);
         modal.find('.modal-body #work_id').val(work_id);
-
         })
+
+        //rating datepicker
+        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#startDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            format:'yyyy-mm-dd',
+            // minDate: today,
+            maxDate: function () {
+                return $('#endDate').val();
+            }
+        });
+        $('#endDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            format:'yyyy-mm-dd',
+            maxDate: today,
+            minDate: function () {
+                return $('#startDate').val();
+            }
+        });
+
+        // Lawyer registration datepicker
+        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#beginDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            format:'yyyy-mm-dd',
+            // minDate: today,
+            maxDate: function () {
+                return $('#lastDate').val();
+            }
+        });
+        $('#lastDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            format:'yyyy-mm-dd',
+            maxDate: today,
+            minDate: function () {
+                return $('#beginDate').val();
+            }
+        });
+
 
     });
   </script>

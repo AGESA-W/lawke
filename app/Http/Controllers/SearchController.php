@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Attorney;
+use App\User;
 class SearchController extends Controller
 
 {
@@ -68,7 +69,6 @@ class SearchController extends Controller
       </div>
       <hr>
       ';
-    
       }
   
     }
@@ -87,4 +87,133 @@ class SearchController extends Controller
     echo json_encode($data);
     }
   }
+
+  //admin lawyer search
+  function lawyeraction(Request $request)
+  {
+    if($request->ajax())
+    {
+    $output = '';
+    $query = $request->get('query');//query user searches
+    if($query != '')
+    {
+      $data = DB::table('attorneys')
+      ->where('firstname', 'like', '%'.$query.'%')
+      ->orWhere('lastname', 'like', '%'.$query.'%')
+      ->orderBy('id', 'asc')
+      ->get();
+
+    }
+    else
+    {
+      $data = DB::table('attorneys')
+      ->orderBy('id', 'asc')
+      ->get();
+      
+    }
+
+    //count query results
+    $total_row = $data->count();
+    if($total_row >0)
+    {
+      foreach($data as $row)
+      {
+      $output .= '
+        <tr>
+          <td>'.$row->id.'</td>
+          <td>'.$row->firstname.'</td>
+          <td>'.$row->lastname.'</td>
+          <td>'.$row->license_no.'</td>
+          <td>'.$row->email.'</td>
+          <td>'.$row->mobile.'</td>
+          <td><a href="/admin/attorneys/details/'.$row->id.'" class="text-decoration-none"><button class="btn btn-sm bg-primary"><span class="fa fa-eye"></span></button></a></td>
+          
+        </tr>
+      ';
+    
+      }
+  
+    }
+    else
+    {
+      $output = '
+      <tr>
+        <td align="center" colspan="7"> <b>Missing data matching your search results !</b></td>
+      </tr>
+      ';
+    }
+
+    $data = array(
+      'table_data'  => $output,
+      'total_data'  => $total_row
+    );
+
+    echo json_encode($data);
+    }
+  }
+
+
+  //admin client search
+  // function clientaction(Request $request)
+  // {
+  //   if($request->ajax())
+  //   {
+  //   $output = '';
+  //   $query = $request->get('query');//query admin searches
+  //   if($query != '')
+  //   {
+  //     $data = DB::table('users')
+  //     ->where('name', 'like', '%'.$query.'%')
+  //     ->orWhere('lastname', 'like', '%'.$query.'%')
+  //     ->orderBy('id', 'asc')
+  //     ->get();
+
+  //   }
+  //   else
+  //   {
+  //     $data = DB::table('users')
+  //     ->orderBy('id', 'asc')
+  //     ->get();
+      
+  //   }
+
+  //   //count query results
+  //   $total_row = $data->count();
+  //   if($total_row >0)
+  //   {
+  //     foreach($data as $row)
+  //     {
+  //     $output .= '
+  //       <tr>
+  //         <td>'.$row->id.'</td>
+  //         <td>'.$row->name.'</td>
+  //         <td>'.$row->lastname.'</td>
+  //         <td>'.$row->email.'</td>
+  //         <td>0'.$row->mobile.'</td>
+  //         <td><a href="/admin/users/details/'.$row->id.'" class="text-decoration-none"><button class="btn btn-sm bg-primary"><span class="fa fa-eye"></span></button></a></td>
+          
+  //       </tr>
+  //     ';
+    
+  //     }
+  
+  //   }
+  //   else
+  //   {
+  //     $output = '
+  //     <tr>
+  //       <td align="center" colspan="6"> <b>Missing data matching your search results !</b></td>
+  //     </tr>
+  //     ';
+  //   }
+
+  //   $data = array(
+  //     'table_data'  => $output,
+  //     'total_data'  => $total_row
+  //   );
+
+  //   echo json_encode($data);
+  //   }
+  // }
+
 }

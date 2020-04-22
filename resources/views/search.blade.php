@@ -9,7 +9,7 @@
                     <i class="fa fa-search" aria-hidden="true"></i>
                     <input class="form-control form-control-sm mt-3 ml-3 w-75" type="text" name="search" id="search" placeholder="Search by name or county"
                         aria-label="Search">
-                    </form>
+                </form>
                 {{-- <input type="text" name="search" id="search" class="form-control"  placeholder="Search Customer Data" /> --}}
             </div>
         </div>

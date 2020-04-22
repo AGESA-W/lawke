@@ -13,6 +13,11 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+//sweet alert
+import swal from 'sweetalert2'
+window.swal = swal;
+
+
 
 /**
  * The following block of code may be used to automatically register your

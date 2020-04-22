@@ -12,6 +12,8 @@ use App\Message;
 use DB;
 use Illuminate\Support\Facades\Auth;
 
+use PDF;
+
 
 class AdminController extends Controller
 {
@@ -36,12 +38,115 @@ class AdminController extends Controller
         
     } 
 
+    // lawyers registration
+    public function lawyerRegReport(Request $request)
+    {
+        if(request()->ajax())
+        {
+            if(!empty($request->startDate)){
+                $data = DB::table('attorneys')
+                ->whereBetween('created_at', array($request->beginDate, $request->lastDate))
+                ->get();
+                
+            }
+        
+         else{
+            $data = DB::table('attorneys')
+            ->get();
+        }
+        return datatables()->of($data)->make(true);
+    }   
+        return view('admin.reports');
+    } 
+
+
+    // rating report
+    public function ratingreport(Request $request)
+    {
+        if(request()->ajax())
+        {
+            if(!empty($request->startDate)){
+               
+                if($request->rating == 5){
+                $data = AttorneyReview::where('rating',5)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
+                }
+                elseif($request->rating == 4){
+                    $data = AttorneyReview::where('rating',4)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
+                }
+                elseif($request->rating == 3){
+                    $data = AttorneyReview::where('rating',3)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
+                }
+                elseif($request->rating == 2){
+                    $data = AttorneyReview::where('rating',2)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
+                }
+                elseif($request->rating == 1){
+                    $data = AttorneyReview::where('rating',1)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
+                }
+            }
+            else{
+                $data = DB::table('attorney_reviews')
+                ->get();
+            }
+            return datatables()->of($data)->make(true);
+        }
+        return view('admin.reports');
+        
+    } 
+
+
+    function pdf()
+    {
+     $pdf = \App::make('dompdf.wrapper');
+     $pdf->loadHTML($this->convert_customer_data_to_html());
+     return $pdf->stream();
+    }
+
+    function convert_customer_data_to_html()
+    {
+     $customer_data = AttorneyReview::all();
+
+     $output = '
+     <h3 align="center">Customer Data</h3>
+     <table width="100%" style="border-collapse: collapse; border: 0px;">
+      <tr>
+    <th style="border: 1px solid; padding:12px;" width="20%">Name</th>
+    <th style="border: 1px solid; padding:12px;" width="30%">Address</th>
+    <th style="border: 1px solid; padding:12px;" width="15%">City</th>
+    <th style="border: 1px solid; padding:12px;" width="15%">Postal Code</th>
+   </tr>
+     ';  
+     foreach($customer_data as $customer)
+     {
+      $output .= '
+      <tr>
+       <td style="border: 1px solid; padding:12px;">'.$customer->id.'</td>
+       <td style="border: 1px solid; padding:12px;">'.$customer->attorney_id.'</td>
+       <td style="border: 1px solid; padding:12px;">'.$customer->rating.'</td>
+       <td style="border: 1px solid; padding:12px;">'.$customer->headline.'</td>
+      </tr>
+      ';
+     }
+     $output .= '</table>';
+     return $output;
+    }
+
+
 
     //displaying user data
     public function usersData()
     {   
-        $users=User::orderBy('created_at','asc')->paginate(5);
-        return view('admin.users')->with('users',$users);
+        if(request()->ajax())
+        {
+            return datatables()->of(User::latest()->get())
+            ->addColumn('action', function($data){
+                $button = '<a href="/admin/users/details/'.$data->id.'" class="text-decoration-none"><button class="view btn btn-sm bg-primary" name="view" id="'.$data->id.'"><span class="fa fa-eye"></span></button></a>';
+                $button .= '&nbsp;&nbsp;';
+                return $button;
+            })
+            ->rawColumns(['action'])
+            ->make(true);
+        }
+        return view('admin.users');
         
     } 
 
