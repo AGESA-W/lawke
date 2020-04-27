@@ -41,7 +41,7 @@ class EndorsmentController extends Controller
     
         ]);
             
-        // add Education
+        // add Endorsment
         $endorsment= new Endorsment;
         $endorsment->relationship = $request->input('relationship');
         $endorsment->practicearea = $request->input('practicearea');
@@ -51,5 +51,23 @@ class EndorsmentController extends Controller
         $endorsment->save();
 
         return back()->with('success',"You have successfully endorsed this lawyer!");
+    }
+    public function update(Request $request)
+    { 
+
+        $endorsment=Endorsment::findOrFail($request->endorsment_id);
+        $endorsment->update($request->all());
+        return back()->with('success',"Your endorsment has been updated!");
+
+    }
+
+
+    //Delete Endorsment by lawyer
+    public function destroy($id)
+    {
+        $endorsment= Endorsment::findOrFail($id);
+        $endorsment->delete();
+
+        return back()->with('success',"Your endorsment has been Deleted!");
     }
 }

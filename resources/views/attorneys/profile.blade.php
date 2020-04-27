@@ -46,7 +46,15 @@
                 <section class="profile-content" id="about">
                     <h5>About <span class="text-uppercase"> {{$attorney->firstname}} {{$attorney->lastname}}</span></h5>
                     <p class="text-secondary">
-                        Lorem ipsum dolor sit amet consectetur Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi illum omnis iste repellendus. Consectetur, quod et? Veritatis consequatur maiores sit. adipisicing elit. Eveniet, amet. Ad iusto fuga iure nobis dolore earum qui esse omnis, modi accusantium natus cumque aperiam in repellendus magnam culpa. <span id="dots"><b>.......</b></span> <span id="more">illo nemo quia, magni quidem at! Veniam, explicabo repellendus a consectetur minima possimus deserunt voluptate amet obcaecati optio eligendi sunt, libero necessitatibus quae expedita exercitationem sit qui deleniti facilis. Delectus explicabo pariatur adipisci, quod quisquam excepturi libero totam aut, soluta ratione hic perferendis beatae officia facilis ut veritatis iusto laudantium incidunt odio? Sit doloremque itaque tempore ad accusantium error cum reprehenderit blanditiis, est autem laboriosam. Itaque, fugiat non. Tempore, suscipit.</span>
+                        Lorem ipsum dolor sit amet consectetur Lorem, ipsum dolor sit amet consectetur 
+                        adipisicing elit. Modi illum omnis iste repellendus. Consectetur, quod et? Veritatis consequatur maiores sit. 
+                        adipisicing elit. Eveniet, amet. Ad iusto fuga iure nobis dolore earum qui esse omnis, modi accusantium natus 
+                        cumque aperiam in repellendus magnam culpa. <span id="dots"><b>.......</b></span> <span id="more">illo nemo quia,
+                        magni quidem at! Veniam, explicabo repellendus a consectetur minima possimus deserunt voluptate amet obcaecati 
+                        optio eligendi sunt, libero necessitatibus quae expedita exercitationem sit qui deleniti facilis. Delectus 
+                        explicabo pariatur adipisci, quod quisquam excepturi libero totam aut, soluta ratione hic perferendis beatae
+                        officia facilis ut veritatis iusto laudantium incidunt odio? Sit doloremque itaque tempore ad accusantium error
+                        cum reprehenderit blanditiis, est autem laboriosam. Itaque, fugiat non. Tempore, suscipit.</span>
                     </p>
                     <button class="text-color" type="button" id="read"onclick="read()">Read More</span></button>
                     <hr>
@@ -190,11 +198,11 @@
                                 @foreach ($endorsments as $endorsment)
                                         <li> 
                                             <div class="row pt-2">
-                                                <div class="float-left col-md-1">
-                                                    <img src="{{$endorsment->endorser->image}}" alt="" style="width:40px;height:50px;">
+                                                <div class="float-left col-md-2">
+                                                    <img src="{{$endorsment->endorser->image}}" alt="" style="width:80px;height:80px;">
                                                     <br>
                                                 </div>
-                                                <div class="float-right col-md-11 ml-0">
+                                                <div class="float-right col-md-10 ml-0">
                                                     <span><a href="#">{{$endorsment->endorser->firstname}} {{$endorsment->endorser->lastname}}</a></span>
                                                     <small class="text-secondary">on
                                                     {{ date('d M, h:i a', strtotime($endorsment->created_at)) }}</small>

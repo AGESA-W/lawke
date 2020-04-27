@@ -167,7 +167,6 @@
         var address = button.data('address') // Extract info from data-* attribute
         var work_id = button.data('work_id') // Extract info from data-* attribute
 
-
         var modal = $(this)
         modal.find('.modal-body #company_name').val(company_name);
         modal.find('.modal-body #location').val(location);

@@ -409,21 +409,111 @@
         <hr>
         <div class="row">
             <div class="col-md-12">
-                @foreach ($locations as $location)
-                    <div class="col-md-4 col-12 pl-0 pr-1">
-                        <div class="contact-details pl-0">
-                            <ul class="list-unstyled">
-                                <li><strong>{{$location->company_name}}</strong></li>
-                                <li style="font-weight:500">{{$location->location}}</li>
-                                <li>PO.BOX:{{$location->address}}-00200</li>
-                                <li class="text-secondary">Office: <span class="text-primary">{{$attorney->mobile}}</span> </li>
-                            </ul>
-                        </div>
-                    </div>
-                 @endforeach
-                <div class="buttons mt-2">
-                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#e{{$attorney->id}}">Edit</button> <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#d{{$attorney->id}}">Delete</button> 
+                <div class="wrapper">
+                    <ul class="list-unstyled">
+                        @if(count($endorsments)>0)
+                            @foreach ($endorsments as $endorsment)
+                                    <li> 
+                                        <div class="row pt-2">
+                                            <div class="float-left col-md-1">
+                                                <img src="{{$endorsment->endorser->image}}" alt="" style="width:80px;height:90px;">
+                                                <br>
+                                            </div>
+                                            <div class="float-right col-md-10 ml-0">
+                                                By <span><a class= "text-decoration-none" href="/admin/attorneys/details/{{$endorsment->endorser->id}}">{{$endorsment->endorser->firstname}} {{$endorsment->endorser->lastname}}</a></span>
+                                                <small class="text-secondary">on
+                                                {{ date('d M, h:i a', strtotime($endorsment->created_at)) }}</small>
+                                                <br>
+                                                <small><b>Relationship:</b><span class="text-secondary"> {{$endorsment->relationship}}</span></small>
+                                                <p>{{$endorsment->message}}</p>
+                                                 {{-- <button class="btn btn-primary btn-sm"data-toggle="modal" data-target="#e{{$education->id}}"><span class="fa fa-pencil"></span> Edit</button>  <button class="btn btn-secondary btn-sm ml-2"data-toggle="modal" data-target="#del{{$education->id}}"><span class="fa fa-trash"></span> Delete</button> --}}
+                                                 <div class="dropdown">
+                                                    <a class="btn btn-primary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      See actions
+                                                    </a>
+                                                  
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                        <button type="button" class="btn dropdown-item dropdown-item-user px-3 py-2 btn-sm" data-endorsment_id="{{$endorsment->id}}" data-relationship="{{$endorsment->relationship}}"  data-message="{{$endorsment->message}}"  data-toggle="modal" data-target="#editEndorsment">
+                                                            <span class="fa fa-pencil"></span> Edit 
+                                                        </button>
+                                                        <div class="dropdown-divider"></div>
+                                                        <button type="button" class="btn  dropdown-item dropdown-item-user px-3 py-2 btn-sm" data-toggle="modal" data-target="#deleteModal">
+                                                            <span class="fa fa-trash"></span> Delete
+                                                        </button>
+                                                    </div>
 
+                                                    {{-- edit modal --}}
+                                                    <div class="modal fade" id="editEndorsment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Edit Endorsment</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form action="{{route('endorsment.update','test')}}" method="post">
+                                                                        @method('PUT')
+                                                                        {{ csrf_field() }}
+                                                                        <div class="form-group">
+                                                                            <label for="relationship"><span class="asterick"><b>*</b></span><b>Relationship</b> </label>
+                                                                            <input type="text" class="form-control" id="relationship" name= "relationship" value="" required>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for=""><span class="asterick"><b>*</b></span> <b> Message</b> </label>
+                                                                            <textarea name= "message" class="form-control" maxlength="4000" id="message" cols="30" rows="5" required></textarea>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <input type="hidden" class="form-control" id="endorsment_id" name= "endorsment_id" value="" required>
+                                                                        </div>
+                                                                        
+                                                                        <div class="modal-footer">
+                                                                            <button class="btn btn-sm btn-success px-2" type="submit">Edit</button>
+                                                                            <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancel</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    {{-- delete modal --}}
+                                                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Delete Review</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                            <p class="lead">Are you sure you want to delete this Endorsment?</p> 
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <form action="{{route('endorsment.destroy',$endorsment->id)}}" method="post">
+                                                                    @method('DELETE')
+                                                                    {{ csrf_field() }}
+                                                                    <button type="submit" class="btn btn-success px-4">Delete</button>
+                                                              </form>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                            @endforeach
+                            @else
+                            <h6> <b>No endorsments yet.</b> </h6>
+                            <p>Endorsments from fellow lawyers are important consideration for many when selecting the right lawyer.None of you colleagues has endorsed you!</p>
+                        @endif
+                    </ul>
+                    <div class="clearfix"></div>
                 </div>
             </div>
         </div>

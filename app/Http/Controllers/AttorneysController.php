@@ -37,7 +37,7 @@ class AttorneysController extends Controller
      */
     public function profile($id){
  
-        $attorney=Attorney::find($id);
+        $attorney=Attorney::findOrFail($id);
         return view('attorneys.profile')
         ->with('attorney',$attorney)
         ->with('educations',$attorney->educations)
@@ -58,7 +58,7 @@ class AttorneysController extends Controller
          group by users.id, users.name, users.email,attorney_id");
 
         $attorney_id=Auth::id();
-        $attorney=Attorney::find($attorney_id);
+        $attorney=Attorney::findOrFail($attorney_id);
         return view('attorneys.attorney_dashboard')
         ->with('attorney',$attorney)
         ->with('messages',$attorney->messages)
@@ -66,7 +66,7 @@ class AttorneysController extends Controller
         ->with('reviews',$attorney->reviews)
         ->with('educations',$attorney->educations)
         ->with('endorsments',$attorney->endorsments)
-        ->with('endorsers',$attorney->endorsers)
+        ->with('endorsers',$attorney->doneEndorsments)
         ->with('users',$users);
         
     }
@@ -80,7 +80,7 @@ class AttorneysController extends Controller
         ]);
             
         // Update the location
-        $location= Location::find($id);
+        $location= Location::findOrFail($id);
         $location->company_name = $request->input('company_name');
         $location->location = $request->input('location');
         $location->address = $request->input('address');

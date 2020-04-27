@@ -232,6 +232,7 @@ class AdminController extends Controller
          $attorney= Attorney::find($id);
          return view('admin.attorney_details')
         ->with('educations',$attorney->educations)
+        ->with('endorsments',$attorney->endorsments)
         ->with('locations',$attorney->locations)
          ->with('attorney',$attorney);
      }

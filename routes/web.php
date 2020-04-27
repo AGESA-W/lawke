@@ -35,7 +35,8 @@ Route::get('/attorney_dashboard',"AttorneysController@dashboard")->name('attorne
 //Endorsment
 Route::get('/attorney/{id}/endorsment',"EndorsmentController@endorsment")->name('attorney.endorsment');
 Route::post('/endorsments',"EndorsmentController@store")->name('endorsment.store');
-
+Route::put('/attorney_dashboard/test',"EndorsmentController@update")->name('endorsment.update');
+Route::delete('/attorney_dashboard/{id}',"EndorsmentController@destroy")->name('endorsment.destroy');
 
 
 Route::put('/attorneys/{id}',"AttorneysController@updateLocation")->name('location.update');

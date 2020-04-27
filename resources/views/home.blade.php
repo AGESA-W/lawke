@@ -82,8 +82,8 @@
                                     <ul class="list-unstyled" style="margin:0">
                                         <li class="float-left">User Account</li>
                                         <li class="float-right">
-                                            <button type="button" class="btn btn-primary px-3 py-2 btn-sm" data-toggle="modal" data-target="#exampleModal">
-                                                Close account
+                                            <button type="button" class="btn btn-primary  btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                Close Account
                                             </button>
                                         </li>
                                     </ul>
@@ -199,7 +199,7 @@
                                         <b>{{$review->headline}}</b>
                                         <p>{{$review->description}}</p>
                                         <div class="dropdown">
-                                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <a class="btn btn-primary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                               See actions
                                             </a>
                                           
