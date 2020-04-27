@@ -38,12 +38,12 @@ class AdminController extends Controller
         
     } 
 
-    // lawyers registration
+    // lawyers registration Report
     public function lawyerRegReport(Request $request)
     {
         if(request()->ajax())
         {
-            if(!empty($request->startDate)){
+            if(!empty($request->beginDate)){
                 $data = DB::table('attorneys')
                 ->whereBetween('created_at', array($request->beginDate, $request->lastDate))
                 ->get();
@@ -58,6 +58,28 @@ class AdminController extends Controller
     }   
         return view('admin.reports');
     } 
+
+
+
+     // Users registration Report
+     public function userRegReport(Request $request)
+     {
+         if(request()->ajax())
+         {
+             if(!empty($request->beginDate)){
+                 $data = DB::table('users')
+                 ->whereBetween('created_at', array($request->firstDate, $request->finalDate))
+                 ->get();
+             }
+         
+          else{
+             $data = DB::table('users')
+             ->get();
+         }
+         return datatables()->of($data)->make(true);
+        }   
+         return view('admin.reports');
+     } 
 
 
     // rating report
@@ -201,7 +223,6 @@ class AdminController extends Controller
     {   
         $attorneys=Attorney::orderBy('created_at','asc')->paginate(5);
         return view('admin.attorneys')->with('attorneys',$attorneys);
-        
     } 
 
 
@@ -244,9 +265,9 @@ class AdminController extends Controller
     } 
 
      //update lawyer work info
-     public function updatework(Request $request)
+     public function updatework(Request $request,$id)
      { 
-        $work=Location::findOrFail($request->work_id);
+        $work=Location::findOrFail($id);
         $work->update($request->all());
         return back()->with('success',"work information has been updated!");
      }
@@ -259,19 +280,39 @@ class AdminController extends Controller
     } 
 
     //update lawyer education
-    public function updateeducation(Request $request)
+    public function updateeducation(Request $request,$id)
     { 
-        $education=Education::findOrFail($request->education_id);
+        $education=Education::findOrFail($id);
         $education->update($request->all());
         return back()->with('success',"Education has been updated!");
     }
+    
+    // Add Lawyer Education
+    public function addEducation(Request $request)//Add education
+    { 
+    $this->validate($request, [
+        'school_name' => ['required', 'string'],
+        'degree' => ['required', 'string'],
+        'graduation' => ['required','date'],
+        'attorney_id' => ['required'],
 
-    // public function attorneyslocation()
-    // {   
-    //     $users=User::orderBy('created_at','asc')->paginate(5);
-    //     return view('admin.location')->with('users',$users);
+    ]);
         
-    // } 
-    
-    
+    // add Education
+    $education= new Education;
+    $education->school_name = $request->input('school_name');
+    $education->degree = $request->input('degree');
+    $education->graduation = $request->input('graduation');
+    $education->attorney_id = $request->input('attorney_id');
+    $education->save();
+
+    return back()->with('success',"Your Education details have been updated!");
+    }
+
+    //deleting Education
+    public function educationDestroy($id){
+        $education=Education::findOrFail($id);
+        $education->delete();
+        return back()->with('success','Education details deleted !');
+    }
 }

@@ -199,22 +199,43 @@
         // Lawyer registration datepicker
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
         $('#beginDate').datepicker({
-            uiLibrary: 'bootstrap4',
-            iconsLibrary: 'fontawesome',
-            format:'yyyy-mm-dd',
-            // minDate: today,
-            maxDate: function () {
-                return $('#lastDate').val();
-            }
+          uiLibrary: 'bootstrap4',
+          iconsLibrary: 'fontawesome',
+          format:'yyyy-mm-dd',
+          // minDate: today,
+          maxDate: function () {
+            return $('#lastDate').val();
+          }
         });
         $('#lastDate').datepicker({
-            uiLibrary: 'bootstrap4',
-            iconsLibrary: 'fontawesome',
-            format:'yyyy-mm-dd',
-            maxDate: today,
-            minDate: function () {
-                return $('#beginDate').val();
-            }
+          uiLibrary: 'bootstrap4',
+          iconsLibrary: 'fontawesome',
+          format:'yyyy-mm-dd',
+          maxDate: today,
+          minDate: function () {
+            return $('#beginDate').val();
+          }
+        });
+
+         // Users registration datepicker
+         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#firstDate').datepicker({
+          uiLibrary: 'bootstrap4',
+          iconsLibrary: 'fontawesome',
+          format:'yyyy-mm-dd',
+          // minDate: today,
+          maxDate: function () {
+            return $('#finalDate').val();
+          }
+        });
+        $('#finalDate').datepicker({
+          uiLibrary: 'bootstrap4',
+          iconsLibrary: 'fontawesome',
+          format:'yyyy-mm-dd',
+          maxDate: today,
+          minDate: function () {
+            return $('#firstDate').val();
+          }
         });
 
 

@@ -113,7 +113,7 @@ class AttorneysController extends Controller
         return back()->with('success',"Your Education has been updated!");
     }
 
-
+    // Add Education
     public function addEducation(Request $request)//Add education
     { 
         $this->validate($request, [
@@ -132,7 +132,7 @@ class AttorneysController extends Controller
         $education->attorney_id = $request->input('attorney_id');
         $education->save();
 
-        return redirect('/attorney_dashboard')->with('success',"Your Education has been updated!");
+        return back()->with('success',"Your Education has been updated!");
     }
 
     public function getattorneys(Request $request){

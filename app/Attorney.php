@@ -91,7 +91,7 @@ class Attorney extends Authenticatable
         return $this->hasMany('App\UserMessage');
     }
 
-
+  //get the rating
     public function getStarRating(){
         $count = $this->reviews()->count();
         if(empty($count)){

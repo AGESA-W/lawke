@@ -66,7 +66,8 @@ Route::prefix('admin')->group(function(){
 
   //reports
   Route::get('/reports/create', 'AdminController@ratingreport')->name('rating.report');
-  Route::get('/reports/create/reg', 'AdminController@lawyerRegReport')->name('lawyerReg.report');
+  Route::get('/reports/create/lawyers', 'AdminController@lawyerRegReport')->name('lawyerReg.report');
+  Route::get('/reports/create/users', 'AdminController@userRegReport')->name('userReg.report');
   Route::get('/reports/create/pdf', 'AdminController@pdf')->name('rating.pdf');
 
   //users
@@ -84,6 +85,8 @@ Route::prefix('admin')->group(function(){
   Route::get('/attorneys/account', 'AdminController@attorneysaccount')->name('attorneys.account');
   Route::put('/attorneys/account/{id}', 'AdminController@updateaccount')->name('update.lawyer.account');
   Route::get('/attorneys/details/{id}', 'AdminController@attorneydetails')->name('attorney.details');
+  //Delete Education
+  Route::delete('/attorneys/details/{id}',"AdminController@educationDestroy")->name('education.delete');
 
   //search lawyer
   Route::get('/attorneys/account/search','SearchController@lawyeraction')->name('lawyer.search.action');
@@ -91,11 +94,12 @@ Route::prefix('admin')->group(function(){
 
   //Work
   Route::get('/attorneys/work', 'AdminController@attorneyswork')->name('attorneys.work');
-  Route::put('/attorneys/work/test', 'AdminController@updatework')->name('update.laywer.work');
+  Route::put('/attorneys/work/{id}', 'AdminController@updatework')->name('update.laywer.work');
   
   //education
   Route::get('/attorneys/education', 'AdminController@attorneyseducation')->name('attorneys.education');
-  Route::put('/attorneys/education/test', 'AdminController@updateeducation')->name('update.lawyer.education');
+  Route::put('/attorneys/education/{id}', 'AdminController@updateeducation')->name('update.lawyer.education');
+  Route::post('/attorneys/details',"AdminController@addEducation")->name('add.lawyerEducation');
 
   Route::get('/attorneys/location', 'AdminController@attorneyslocation')->name('attorneys.location');
 

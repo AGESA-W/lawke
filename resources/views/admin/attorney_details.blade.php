@@ -16,7 +16,7 @@
                     <li><small class="text-secondary">{{ date('d M,Y', strtotime($attorney->created_at)) }}</small></li>
                 </ul>
                 <div class="buttons mt-2"> 
-                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#u{{$attorney->id}}">Edit</button> <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#d{{$attorney->id}}">Delete</button>
+                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#u{{$attorney->id}}"><span class="fa fa-pencil"></span> Edit</button> <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#d{{$attorney->id}}"><span class="fa fa-trash"></span> Delete</button>
                 </div>
                 <!-- edit Modal -->
                 <div class="modal fade" id="u{{$attorney->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -128,10 +128,10 @@
                 <table class="table table-bordered">
                     <thead class="text-white"style="background:#008ecc">
                         <tr>
-                            <td><b>School Name</b></td>
+                            <td><b>Institution Name</b></td>
                             <td><b>Degree</b></td>
                             <td><b>Graduated</b></td>
-                            <td>Action</td>
+                            <td><b>Action</b></td>
                         </tr>
                     </thead>
                     @foreach ($educations as $education)
@@ -139,78 +139,174 @@
                             <td>{{$education->school_name}}</td>
                             <td>{{$education->degree}}</td>
                             <td>{{$education->graduation}}</td>
-                            <td> <button class="btn btn-primary btn-sm" data-institution="{{$education->school_name}}" data-graduation="{{$education->graduation}}" data-degree="{{$education->degree}}" data-education_id="{{$education->id}}" data-toggle="modal" data-target="#updateLawyerEducation">Edit</button></td>
+                            <td> <button class="btn btn-primary btn-sm"data-toggle="modal" data-target="#e{{$education->id}}"><span class="fa fa-pencil"></span> Edit</button>  <button class="btn btn-secondary btn-sm ml-2"data-toggle="modal" data-target="#del{{$education->id}}"><span class="fa fa-trash"></span> Delete</button></td>
                         </tbody>
                         <!-- edit Modal -->
-                        <div class="modal fade" id="updateLawyerEducation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content text-dark">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Edit Education</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form method="POST" action="{{ route('update.lawyer.education','test') }}">
-                                        @method('PUT')
-                                        {{ csrf_field() }}
-                
-                                        <div class="form-group row">
-                                            <label for="school_name" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Institution') }}</label>
-                
-                                            <div class="col-md-6">
-                                                <input id="school_name" type="text" class="form-control @error('school_name') is-invalid @enderror" name="school_name" value="" required autocomplete="school_name" autofocus>
-                
-                                                @error('school_name')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
+                        <div class="modal fade" id="e{{$education->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content text-dark">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Edit Education</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="POST" action="{{ route('update.lawyer.education',$education->id) }}">
+                                            @method('PUT')
+                                            {{ csrf_field() }}
+                    
+                                            <div class="form-group row">
+                                                <label for="school_name" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Institution') }}</label>
+                    
+                                                <div class="col-md-6">
+                                                    <input id="school_name" type="text" class="form-control @error('school_name') is-invalid @enderror" name="school_name" value="{{$education->school_name}}" required autocomplete="school_name" autofocus>
+                    
+                                                    @error('school_name')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="degree" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Degree') }}</label>
-                
-                                            <div class="col-md-6">
-                                                <input id="degree" type="text" class="form-control @error('degree') is-invalid @enderror" name="degree" value="" required autocomplete="degree" autofocus>
-                
-                                                @error('degree')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
+                                            <div class="form-group row">
+                                                <label for="degree" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Degree') }}</label>
+                    
+                                                <div class="col-md-6">
+                                                    <input id="degree" type="text" class="form-control @error('degree') is-invalid @enderror" name="degree" value="{{$education->degree}}" required autocomplete="degree" autofocus>
+                    
+                                                    @error('degree')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="graduation" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Year of graduation') }}</label>
-                
-                                            <div class="col-md-6">
-                                                <input id="graduation" type="text" class="form-control @error('graduation') is-invalid @enderror" name="graduation" value="" required autocomplete="graduation" autofocus>
-                
-                                                @error('graduation')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
+                                            <div class="form-group row">
+                                                <label for="graduation" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Year of graduation') }}</label>
+                    
+                                                <div class="col-md-6">
+                                                    <input id="graduation" type="text" class="form-control @error('graduation') is-invalid @enderror" name="graduation" value="{{$education->graduation}}" required autocomplete="graduation" autofocus>
+                    
+                                                    @error('graduation')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
                                             </div>
-                                        </div>
-                                        <input type="hidden" id="education_id" name="education_id">
-                
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Save changes</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            
-                                        </div>
-                                    </form>
+                                            {{-- <input type="hidden" id="education_id" name="education_id"> --}}
+                    
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- delete Modal -->
+                        <div class="modal fade" id="del{{$education->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Delete Education Details</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="lead">Are you sure you want to delete this Education details?</p> 
+                                    </div>
+                                    <div class="modal-footer"> 
+                                        <form action="{{route('education.delete',$education->id)}}" method="post">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button class="btn btn-sm btn-success" type="submit">Delete</button>
+                                        </form>
+                                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                     @endforeach
                 </table>
                 <div class="buttons mt-2">
-                    <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#d{{$attorney->id}}">Add Education</button> 
+                    <!-- </Modal -->
+                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AdminAddEducation">
+                        <span class="fa fa-plus"></span> Add New
+                    </button>
+                    <!-- Add Education Modal -->
+                    <div class="modal fade" id="AdminAddEducation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Education</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="POST" action="{{ route('add.lawyerEducation') }}">
+                                    {{ csrf_field() }}
+            
+                                    <div class="form-group row">
+                                        <label for="company_name" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Institution') }}</label>
+            
+                                        <div class="col-md-6">
+                                            <input id="school_name" type="text" class="form-control @error('school_name') is-invalid @enderror" name="school_name" value="{{ old('school_name') }}" required autocomplete="school_name" autofocus>
+            
+                                            @error('school_name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="degree" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Degree') }}</label>
+            
+                                        <div class="col-md-6">
+                                            <input id="degree" type="text" class="form-control @error('degree') is-invalid @enderror" name="degree" value="{{ old('degree') }}" required autocomplete="degree" autofocus>
+            
+                                            @error('degree')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="graduation" class="col-md-4 col-form-label text-md-right text-dark">{{ __('Year of Graduation') }}</label>
+            
+                                        <div class="col-md-6">
+                                            <input id="graduation" type="date" class="form-control @error('graduation') is-invalid @enderror" name="graduation" value="{{ old('graduation') }}" required autocomplete="graduation" autofocus>
+            
+                                            @error('graduation')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="form-group-row">
+                                        <input type="hidden" name="attorney_id" value="{{$attorney->attorney_id}}">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success">Save changes</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                      <!-- </Modal -->
                 </div>
 
             </div>
@@ -233,11 +329,11 @@
                         </ul>
                     </div>
                     <div class="buttons mt-2">
-                        <button class="btn btn-primary btn-sm" data-work_id="{{$location->id}}" data-company_name="{{$location->company_name}}" data-location="{{$location->location}}" data-address="{{$location->address}}" data-toggle="modal" data-target="#updateLawyerWork">Edit</button>
+                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#up{{$location->id}}"><span class="fa fa-pencil"></span> Edit</button>
                     </div>
 
                     <!-- edit Modal -->
-                    <div class="modal fade" id="updateLawyerWork" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="up{{$location->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content text-dark">
                             <div class="modal-header">
@@ -247,7 +343,7 @@
                             </button>
                             </div>
                             <div class="modal-body">
-                                <form method="POST" action="{{ route('update.laywer.work',"test") }}">
+                                <form method="POST" action="{{ route('update.laywer.work',$location->id) }}">
                                     @method('PUT')
                                     {{ csrf_field() }}
             
