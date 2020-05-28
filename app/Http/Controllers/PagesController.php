@@ -71,5 +71,9 @@ class PagesController extends Controller
  
     }
 
-
+    //get-advice
+    public function getadvice(){
+    
+        return view('get_advice');
+    }
 }

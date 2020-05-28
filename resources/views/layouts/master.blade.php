@@ -121,7 +121,7 @@
     <div class="content-wrapper">
       <!-- Main content -->
       <div class="content">
-        <div class="container-fluid text-dark">
+        <div class="container-fluid text-dark ">
           @include('partials.messages')
           @yield('content')
         </div><!-- /.container-fluid -->
@@ -146,33 +146,45 @@
   <script>
     $(document).ready(function (){
 
-        $('#updateLawyerEducation').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-        var school = button.data('institution') // Extract info from data-* attributes
-        var grad = button.data('graduation') // Extract info from data-* attributes
-        var degree = button.data('degree') // Extract info from data-* attribute
-        var education_id = button.data('education_id') // Extract info from data-* attribute
+        // $('#updateLawyerEducation').on('show.bs.modal', function (event) {
+        // var button = $(event.relatedTarget) // Button that triggered the modal
+        // var school = button.data('institution') // Extract info from data-* attributes
+        // var grad = button.data('graduation') // Extract info from data-* attributes
+        // var degree = button.data('degree') // Extract info from data-* attribute
+        // var education_id = button.data('education_id') // Extract info from data-* attribute
 
-        var modal = $(this)
-        modal.find('.modal-body #school_name').val(school);
-        modal.find('.modal-body #graduation').val(grad);
-        modal.find('.modal-body #degree').val(degree);
-        modal.find('.modal-body #education_id').val(education_id);
-        })
+        // var modal = $(this)
+        // modal.find('.modal-body #school_name').val(school);
+        // modal.find('.modal-body #graduation').val(grad);
+        // modal.find('.modal-body #degree').val(degree);
+        // modal.find('.modal-body #education_id').val(education_id);
+        // })
 
-        $('#updateLawyerWork').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-        var company_name = button.data('company_name') // Extract info from data-* attributes
-        var location = button.data('location') // Extract info from data-* attributes
-        var address = button.data('address') // Extract info from data-* attribute
-        var work_id = button.data('work_id') // Extract info from data-* attribute
+        // $('#updateLawyerWork').on('show.bs.modal', function (event) {
+        // var button = $(event.relatedTarget) // Button that triggered the modal
+        // var company_name = button.data('company_name') // Extract info from data-* attributes
+        // var location = button.data('location') // Extract info from data-* attributes
+        // var address = button.data('address') // Extract info from data-* attribute
+        // var work_id = button.data('work_id') // Extract info from data-* attribute
 
-        var modal = $(this)
-        modal.find('.modal-body #company_name').val(company_name);
-        modal.find('.modal-body #location').val(location);
-        modal.find('.modal-body #address').val(address);
-        modal.find('.modal-body #work_id').val(work_id);
-        })
+        // var modal = $(this)
+        // modal.find('.modal-body #company_name').val(company_name);
+        // modal.find('.modal-body #location').val(location);
+        // modal.find('.modal-body #address').val(address);
+        // modal.find('.modal-body #work_id').val(work_id);
+        // })
+
+        // $('#editEndorsment').on('show.bs.modal', function (event) {
+        // var button = $(event.relatedTarget) // Button that triggered the modal
+        // var relationship = button.data('relationship') // Extract info from data-* attributes
+        // var message = button.data('message') // Extract info from data-* attributes
+        // var endorsment_id = button.data('endorsment_id') // Extract info from data-* attribute
+
+        // var modal = $(this)
+        // modal.find('.modal-body #relationship').val(relationship);
+        // modal.find('.modal-body #message').val(message);
+        // modal.find('.modal-body #endorsment_id').val(endorsment_id);
+        // })
 
         //rating datepicker
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());

@@ -24827,6 +24827,36 @@ body {
   color: #333;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(172, 172, 42, 0.95) !important;
+  height: 100%;
+  width: 93%;
+  opacity: 0;
+  -webkit-transition: 0.75s ease;
+  transition: 0.75s ease;
+}
+
+.overlay-btn {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 32%;
+}
+
+.home-card:hover .overlay-btn {
+  -webkit-transition: 0.75s ease;
+  transition: 0.75s ease;
+  transform: translateY(200px);
+  -webkit-transform: translateY(200px);
+}
+
+.home-card:hover .overlay {
+  opacity: 1;
+}
+
 .nav-tabs .nav-link {
   color: #afa939;
   font-weight: 600;
@@ -24850,7 +24880,11 @@ body {
 }
 
 .search-lawyer {
-  margin: -16px -125px 0 -118px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9%;
+  border-radius: 0;
 }
 
 .search-lawyer .jumbotron {
@@ -24892,7 +24926,11 @@ body {
 /*********Contact****/
 
 .contact {
-  margin: -16px -125px 0 -118px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9%;
+  border-radius: 0;
 }
 
 .contact .jumbotron {
@@ -24964,7 +25002,11 @@ body {
 /*********About Page*****/
 
 .about {
-  margin: -16px -125px 0 -118px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9%;
+  border-radius: 0;
 }
 
 .about .jumbotron {
@@ -25027,7 +25069,10 @@ body {
 /*******counties page*****/
 
 .search {
-  margin: -16px -125px 0 -118px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9%;
 }
 
 .search .jumbotron {
@@ -25058,7 +25103,10 @@ body {
 /*******location page*****/
 
 .location {
-  margin: -16px -125px 0 -118px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9%;
 }
 
 .location .jumbotron {
@@ -25136,6 +25184,26 @@ footer-widget p {
   display: block;
   line-height: 1.4;
   color: #008cc9;
+}
+
+.works-item {
+  font-size: 2rem;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 3px;
+}
+
+.works .nav-link {
+  color: #959595;
+}
+
+.works .nav-link.active {
+  border-bottom: 3px solid #afa939;
+  color: #000;
+}
+
+.works .profile-text {
+  color: #afa939;
+  font-weight: 600;
 }
 
 .mission {
@@ -25619,7 +25687,119 @@ footer-widget p {
   border: 2px solid #3490dc;
 }
 
+.inner {
+  overflow: hidden;
+}
+
+.inner img {
+  -webkit-transition: all 1.5s ease;
+  transition: all 1.5s ease;
+}
+
+.inner:hover img {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.view {
+  box-shadow: 0px 0px 16px 0px #fff;
+  -webkit-box-shadow: 0px 0px 10px 0px #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.view::before {
+  content: " ";
+  width: calc(100% + 8px);
+  height: calc(100% + 100px);
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: none;
+  display: block;
+  border: 4px solid transparent;
+  z-index: -1;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.view:hover::before {
+  border-color: #3490dc;
+}
+
+.view .contact-info {
+  background: #3490dc;
+  padding: 20px 30px;
+  position: absolute;
+  right: 0%;
+  bottom: 32%;
+  width: 100%;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.view:hover .contact-info {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.view .contact-info .btn {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 300;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 7px;
+}
+
+.view .contact-info .btn:hover {
+  background-color: #343a40;
+}
+
 /*******END*******/
+
+.people-saying-para {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.st0 {
+  fill: #F8F9F9;
+  stroke: #afa939;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+.st1 {
+  fill: none;
+}
+
+.st2 {
+  fill: #676767;
+}
+
+.st3 {
+  font-family: "Proxima Nova";
+}
+
+.st4 {
+  font-size: 22px;
+}
+
+.st5 {
+  fill: #F8F9F9;
+  stroke: #afa939;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome

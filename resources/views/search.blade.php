@@ -14,15 +14,45 @@
             </div>
         </div>
     </div>
-    <div class="hello">
+    <div class="row" style="margin-top:250px;">
+        <div class="col-md-3">
+            <p class="mb-0"><strong>Filter by</strong></p>
+            <div class="text-muted">REVIEWS</div>
+            <input type="radio" name="lawyer-rating" id="rating-5" value="5">
+            @for ($i = 0; $i < 5; $i++)
+                <span class="fa fa-star"style="color:#ffe234"></span>
+            @endfor
+            <br>
 
+            <input type="radio" name="lawyer-rating" id="rating-4">
+            @for ($i = 0; $i < 4; $i++)
+                <span class="fa fa-star" style="color:#ffe234"></span>
+            @endfor
+            <br>
+
+            <input type="radio" name="lawyer-rating" id="rating-3">
+            @for ($i = 0; $i < 3; $i++)
+                <span class="fa fa-star"style="color:#ffe234"></span>
+            @endfor
+            <br>
+
+            <input type="radio" name="lawyer-rating" id="rating-2">
+            @for ($i = 0; $i < 2; $i++)
+                <span class="fa fa-star"style="color:#ffe234"></span>
+            @endfor
+            <br>
+
+            <input type="radio" name="lawyer-rating" id="rating-1">
+                <span class="fa fa-star"style="color:#ffe234"></span>
+        </div>
+        <div class="col-md-9">
+            <div class="hello">
+
+            </div>
+        </div>
     </div>
-    {{-- <div class="table-responsive table-hover mt-3" >
-        <table class="table table-striped table-bordered"> 
-            <tbody></tbody>
-        </table>
-    </div> --}}
-              
+    
+ 
    <script>
     $(document).ready(function(){
 
@@ -46,6 +76,19 @@
         var query = $(this).val();
         fetch_customer_data(query);
         });
+
+
+        $('#rating-5').click( function(){
+
+            var rating = [];
+            if( $(this).is(":checked")){
+                rating.push( $(this).val());
+            }
+
+            finalrating = rating.toString();
+            alert(finalrating)
+        });
+
     });
    </script>
 @endsection

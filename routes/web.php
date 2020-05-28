@@ -77,9 +77,10 @@ Route::prefix('admin')->group(function(){
   Route::get('/users/details/{id}', 'AdminController@userdetails')->name('users.details');
   Route::delete('/users/{user}',"AdminController@userDestroy")->name('admin.user.delete');
 
-   //search client
-   Route::get('/users/search','SearchController@clientaction')->name('client.search.action');
-  
+  // reviews
+  Route::put('/users/details/{id}','AdminController@updateReview')->name('admin.reviews.update');
+  Route::delete('/users/details/{id}','AdminController@destroyReview')->name('admin.reviews.destroy');
+
 
   /*********attorneys*******/
   //account
@@ -88,10 +89,6 @@ Route::prefix('admin')->group(function(){
   Route::get('/attorneys/details/{id}', 'AdminController@attorneydetails')->name('attorney.details');
   //Delete Education
   Route::delete('/attorneys/details/{id}',"AdminController@educationDestroy")->name('education.delete');
-
-  //search lawyer
-  Route::get('/attorneys/account/search','SearchController@lawyeraction')->name('lawyer.search.action');
-
 
   //Work
   Route::get('/attorneys/work', 'AdminController@attorneyswork')->name('attorneys.work');
@@ -103,6 +100,10 @@ Route::prefix('admin')->group(function(){
   Route::post('/attorneys/details',"AdminController@addEducation")->name('add.lawyerEducation');
 
   Route::get('/attorneys/location', 'AdminController@attorneyslocation')->name('attorneys.location');
+
+  // Endorsment
+  Route::put('/attorneys/details/{id}',"AdminController@endorsmentUpdate")->name('admin.endorsment.update');
+  Route::delete('/attorneys/endorsment/{id}',"AdminController@endorsmentDestroy")->name('admin.endorsment.destroy');
 
 
     
@@ -154,3 +155,5 @@ Route::get('/all-lawyers/{county}', "PagesController@AllLocations")->name('locat
 /*******SEARCH ROUTES********/
 Route::get('/search','SearchController@index')->name('search');
 Route::get('/search/action','SearchController@action')->name('search.action');
+
+Route::get('/get-advice','PagesController@getadvice')->name('get.advice');

@@ -70,7 +70,7 @@ body{
         z-index:-1;
         height: 100%;
         width:100%;
-        background: rgba(0, 0, 0, 0.5)
+        background: rgba(0, 0, 0, 0.5);
     }
     .txt-type{//color for type writer text
         color:$primary-color;
@@ -167,6 +167,36 @@ body{
    
     
 }
+// home card overlay
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    background: rgba(172, 172, 42, 0.95) !important;
+
+    height:100%;
+    width:93%;
+    opacity:0;
+    transition: .75s ease;
+
+}
+.overlay-btn{
+    position: absolute;
+    text-align:center;
+    top:0;
+    left:32%;
+}
+.home-card:hover .overlay-btn {
+    transition: .75s ease;
+    transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+}
+
+.home-card:hover .overlay{
+    opacity: 1;
+
+}
+// ./homecard overlay
 .nav-tabs .nav-link{//card Navbar
     color: $primary-color; 
     font-weight:600;
@@ -188,7 +218,12 @@ body{
     width:80px;
 }
 .search-lawyer{
-    margin: -16px -125px 0 -118px;
+    // margin: -16px -125px 0 -118px;
+    position: absolute;
+    left:0;
+    right:0;
+    top:9%;
+    border-radius: 0;
     .jumbotron{
         // background-color: transparent;
         background: rgba(0, 0, 0, 0.5);
@@ -228,7 +263,12 @@ body{
 
 /*********Contact****/
 .contact{
-    margin: -16px -125px 0 -118px;
+    // margin: -16px -125px 0 -118px;
+    position: absolute;
+    left:0;
+    right:0;
+    top:9%;
+    border-radius: 0;
     .jumbotron{
         background: rgba(0, 0, 0, 0.5);
         height:380px;
@@ -290,11 +330,17 @@ body{
     }
 }
 
+
 /****end*******/
 
 /*********About Page*****/
 .about{
-    margin: -16px -125px 0 -118px;
+    // margin: -16px -125px 0 -118px;
+    position: absolute;
+    left:0;
+    right:0;
+    top:9%;
+    border-radius: 0;
     .jumbotron{
         // background-color: transparent;
         background: rgba(0, 0, 0, 0.5);
@@ -321,6 +367,7 @@ body{
 }  
 .about-plain{//plain jumbotron
     margin: -16px -125px 0 -118px;
+    
    
     &-jumbotron{//background image
         height:380px;
@@ -356,7 +403,12 @@ body{
 
 /*******counties page*****/
 .search{
-    margin: -16px -125px 0 -118px;
+    // margin: -16px -125px 0 -118px;
+    position: absolute;
+    left:0;
+    right:0;
+    top:9%;
+    
     .jumbotron{
         // background-color: transparent;
         background: rgba(0, 0, 0, 0.5);
@@ -386,7 +438,11 @@ body{
 
 /*******location page*****/
 .location{
-    margin: -16px -125px 0 -118px;
+    // margin: -16px -125px 0 -118px;
+    position: absolute;
+    left:0;
+    right:0;
+    top:9%;
     .jumbotron{
         // background-color: transparent;
         background: rgba(0, 0, 0, 0.4);
@@ -473,6 +529,31 @@ footer{//footer
         color:#008cc9;
     }
 }
+
+// how it works section
+.works{
+    &-item{
+        font-size: 2rem;
+        border-bottom: 3px solid transparent;
+        padding-bottom:3px;
+    }
+    .nav-link{
+        color: #959595;
+
+    }
+    .nav-link.active{
+        border-bottom: 3px solid #afa939;
+        color:#000;
+
+    }
+    .profile-text{
+        color:#afa939;
+        font-weight:600;
+    }
+}
+
+// end
+
 .mission{//image
     background: url(/images/mission.jpg);
     background-size: cover;
@@ -1026,5 +1107,82 @@ footer{//footer
 // }
 
 
+.inner{
+    overflow:hidden;
+}
+.inner img{
+    transition: all 1.5s ease;
+}
+.inner:hover img{
+    transform: scale(1.5);
+}
+.view{
+    box-shadow: 0px 0px 16px 0px #fff;
+    -webkit-box-shadow: 0px 0px 10px 0px #fff;
+    position:relative;
+    z-index:1;
+}
+// .view .image{
+//     position:relative;
+//     // overflow:hidden;
+//     // height:250px;
+// }
+.view::before{
+    content: " ";
+    width:calc(100% + 8px);
+    height:calc(100% + 100px);
+    position: absolute;
+    top:-4px;
+    right:-4px;
+    background: none;
+    display:block;
+    border:4px solid transparent;
+    z-index:-1;
+    transition:all 0.4s;
 
+}
+.view:hover::before{
+    border-color:#3490dc;
+}
+.view .contact-info{
+    background: #3490dc;
+    padding: 20px 30px;
+    position: absolute;
+    right:0%;
+    bottom:32%;
+    width:100%;
+    transform: translateY(100%);
+    opacity:0;
+    transition:all 0.5s;
+}
+.view:hover .contact-info{
+    opacity:1;
+    transform:none;
+}
+.view .contact-info .btn
+{
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: 300;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius:7px;
+}
+.view .contact-info .btn:hover{
+    background-color: #343a40;
+}
 /*******END*******/
+
+.people-saying{
+    &-para{
+        font-size:2.5rem;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+// svg icons
+.st0{fill:#F8F9F9;stroke:#afa939;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st1{fill:none;}
+.st2{fill:#676767;}
+.st3{font-family:'Proxima Nova';}
+.st4{font-size:22px;}
+.st5{fill:#F8F9F9;stroke:#afa939;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}

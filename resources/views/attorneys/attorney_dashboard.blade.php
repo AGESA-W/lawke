@@ -118,6 +118,16 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="sectionDetails">
+                            <div class="sectionWrapper">
+                                <div class="sectionTitle">About</div>
+                                <div class="sectionContent">
+                                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore voluptatibus quam dolorem quae consequuntur iste, distinctio eos tenetur a nostrum ut. Doloremque repudiandae sit voluptate harum recusandae deleniti deserunt? Ea libero deserunt neque eos recusandae placeat dolor iste fuga eius!</p>
+                                    <button class="btn btn-primary btn-sm px-3">Edit</button>
+                                 </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
               <!-- /.tab-pane -->

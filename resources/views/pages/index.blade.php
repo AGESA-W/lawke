@@ -7,13 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'LAWKE') }}</title>
+    <title>{{ config('app.name', 'LEGALMEET') }}</title>
 
     <!-- Scripts -->
 
     <script src="{{ asset('js/app.js')}}"defer ></script>
     <script src="{{ asset('js/typewriter.js') }}"></script>
-    {{-- <script src="{{ asset('js/constituency.js') }}"></script> --}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -28,7 +27,7 @@
                 <nav class="navbar navbar-home navbar-expand-md">
                     <div class="container">
                         <span class="navbar-brand" href="{{ url('/') }}">
-                            {{ config('app.name', 'LEGALCARE') }}
+                            {{ config('app.name', 'LEGALMEET') }}
                         <p class="navbar-brand-logotxt">Justice.Innovation</p>
                         </span>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -97,7 +96,7 @@
                 <div class="container">
                     <div class="wrapper col-md-6">
                         <div class="showcase-heading">
-                            <p class="text-uppercase mb-1"> <b>Welcome to legalcare</b> </p>
+                            <p class="text-uppercase mb-1"> <b>Welcome to legalmeet</b> </p>
                         </div>
                         <div class="showcase-text">
                             <h1>Lawyers Fighting For Your 
@@ -111,14 +110,15 @@
                         <p class="showcase-para">We have help thousands of people to get relief from national wide fights wrongfull denials. Now they trust lawke attorneys</p>
                         <div class="showcase-btns">
                             <a href="/search" class="text-decoration-none btn btn-1 d-inline-block px-4 py-2">Find your lawyer <span class="fa fa-angle-right"></span></a>
-                            {{-- <button class="btn btn-1 d-inline-block px-4 py-2">Find your lawyer <span class="fa fa-angle-right"></span></button> --}}
+                            <a href="/get-advice" class="text-decoration-none btn btn-1 d-inline-block px-4 py-2"style="margin-left:120px;">Get advice<span class="fa fa-angle-right ml-2"></span></a>
+
                         </div>
                     </div>
                 </div>
             </div>
         </main>
         <div class="container">
-            <div class="col-12 col-md-12">
+            <div class="col-sm-12 col-md-12">
                 <h2 class="text-center mt-3 mb-3"> <b> Top-rated lawyers near you</b></h2>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
@@ -126,15 +126,17 @@
                             <div class="carousel-item  @if($loop->first)active @endif">
                                 <div class="card-deck">
                                     @foreach ($attorneychunk as $attorney)
-                                        <div class="card home-card mb-3 p-2">
+                                        <div class="card home-card mb-3 p-2 col-sm-12">
+                                            <div class="overlay ctr"><a class="text-decoration-none btn btn-outline-warning overlay-btn pt-0" href="/profile/{{$attorney->id}}"> <i class="fa fa-search"></i> View profile</a></div>
                                             <div class="row no-gutters">
-                                                <div class="col-md-4">
-                                                    <img src="{{$attorney->image}}" class="card-img" alt="..." style="width:120px;height:130px;">
+                                                <div class="col-md-4 col-sm-12">
+                                                    <img src="{{$attorney->image}}" class="card-img img-fluid" alt="..." style="width:120px;height:130px;">
                                                 </div>
-                                                <div class="col-md-8 ">
+                                               
+                                                <div class="col-md-8 col-sm-12">
                                                     <div class="card-body">
                                                         <ul class="list-unstyled mb-0"style="margin-top:-18px">
-                                                            <li><a href="/profile/{{$attorney->id}}" class="text-decoration-none home-card-name card-title pt-0" >{{$attorney->firstname}} {{$attorney->lastname}}</a></li>
+                                                            <li><a class="text-decoration-none home-card-name card-title pt-0" href="/profile/{{$attorney->id}}">{{$attorney->firstname}} {{$attorney->lastname}}</a></li>
                                                             <li><star-rating :star-size="17" active-color="#fc9735" :rating="{{$attorney->getStarRating()}}"></star-rating> <a href="/profile/{{$attorney->id}}#review" class="text-decoration-none">{{$attorney->reviewCount()}} review(s)</a></li>
                                                         </ul>
                                                         <small class="text-muted mt-0"><b>LOCATION</b></small>
@@ -145,15 +147,18 @@
                                                     <h6 class="text-uppercase text-muted mb-0" style="margin-top:-40px;font-size:12px;"><b>practice area</b></h6>
                                                     <p class="mt-0">@foreach ($attorney->practiceareas->take(1) as $area){{$area->area_practice}}@endforeach</p>
                                                     <hr class="home-card-hr">
+                                                    
                                                     @foreach ($attorney->reviews->take(1) as $review)
                                                         <p class="home-card-headline">{{$review->headline}} </p>
                                                         <small class="mb-0"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$review->rating}}"></star-rating><span class="text-secondary" style="">Posted by</span> {{$review->user->name}}</small>
                                                         <small class="text-secondary">{{ date('d M,Y', strtotime($review->created_at)) }}</small>
                                                         <p  class="home-card-description mb-0">{{substr($review->description,0,127)}}{{strlen($review->description)>127 ?"...":""}}</p>
                                                         <a class="text-decoration-none" href="/profile/{{$attorney->id}}#review">Read more</a>
+                                                        
                                                     @endforeach
                                                 </div>
-                                            </div>  
+                                            </div> 
+                                             
                                         </div>
                                     @endforeach
                                 </div>
@@ -222,7 +227,112 @@
                 </div><!-- /.card-body -->
             </div>
           </div>
-          <div class="container">
+          <div class="works ml-3">
+            <ul class="nav pt-0 mb-3">
+                <li class="nav-item works-item"><a class="nav-link active" href="#tab1" data-toggle="tab">How It Works</a></li>
+                <li class="nav-item works-item" style="margin-left:500px;"><a class="nav-link" href="#tab2" data-toggle="tab" >How It Works - Lawyers</a></li>
+            </ul>
+            <div class="works-body text-secondary">
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12">
+                            <img src="images/view-profiles.png" alt="" class="img-fluid" style="height:150px;width:150px">
+                            <div class="mt-2">
+                                <p class="profile-text lead mb-0">1.View Lawyer profiles</p>
+                                <p>View different lawyer profiles from the pool of available lawyers.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <img src="images/response.png" alt="" class="img-fluid" style="height:130px;width:150px">
+                            <div class=" mt-4">
+                                <p class="profile-text lead mb-0">2.Review Responses</p>
+                                <p>Compare client ratings, fees and full background information.</p>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <img src="images/choose-lawyers.png" alt="" class="img-fluid" style="height:150px;width:200px">
+                            <div class="mt-2">
+                                <p class="profile-text lead mb-0">3.Choose a Lawyer</p>
+                                <p>Meet for initial consultaions and decide who is the right fit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="tab2">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12">
+                            <img src="images/hand-shaking.png" alt="" class="img-fluid" style="height:150px;width:200px">
+                            <div class=" mt-2">
+                                <p class="profile-text lead mb-0">1.Become a member</p>
+                                <p>Sign up and become a member of LegalCare.Gain access to clients in need of your legal services.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <img src="images/speaker.png" alt="" class="img-fluid" style="height:130px;width:150px">
+                            <div class="mt-4">
+                                <p class="profile-text lead mb-0">2.We market your practice</p>
+                                <p>Save yourself time and money.Let us expand your opportunites and increase the local visibility for your legal practice.</p>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <img src="images/people.png" alt="" class="img-fluid" style="height:150px;width:220px">
+                            <div class="mt-2">
+                                <p class="profile-text lead mb-0">3.Choose your clients</p>
+                                <p>Evaluate a steady streams of cases.Contact potential clients instantly for your most lucrative practice areas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.tab-pane -->
+        
+              </div>
+              <!-- /.tab-content -->
+            </div><!-- /.card-body -->
+         </div>
+         <div class="people-saying">
+            {{-- <p class="about-plain-jumbotron-text"><strong>What People Are Saying <br>About LegalCare </strong></p> --}}
+            {{-- <h1 class="about-plain-jumbotron-text text-center" ><strong>What People Are Saying <br>About LegalCare</strong></h1> --}}
+            
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background:#e9ecef;position: absolute;left:0;right:0;">
+            <h1 class="about-plain-jumbotron-text text-center" ><strong>What People Are Saying <br>About LegalCare</strong></h1>
+
+                <ol class="carousel-indicators mt-4">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item text-center active">
+                        <span class="fa fa-quote-left fa-3x text-color"></span>
+                        <blockquote class="mb-5">I needed assistance with some legal matters and didn't know where to go <b>I found LegalCare</b> <p> and decided to give it a try <b>It was very helpful</b> am very satisfied.</p>
+                        <div class="text-muted ">– Small claims client</div> </blockquote>
+                  </div>
+                  <div class="carousel-item text-center">
+                        <span class="fa fa-quote-left fa-3x text-color"></span>
+                        <blockquote class="mb-5">Thanks for the legal advice. I was able to get <b>clarity of my rights</b> <p> and <b>what to expect</b> during my case.</p>
+                        <div class="text-muted">– Small claims client</div> </blockquote>
+                  </div>
+                  <div class="carousel-item text-center">
+                        <span class="fa fa-quote-left fa-3x text-color"></span>
+                        <blockquote class="mb-5">Thanks for the legal advice. I was able to get <b>clarity of my rights</b> <p> and <b>what to expect</b> during my case.</p>
+                        <div class="text-muted">– Small claims client</div> </blockquote>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+            </div>
+         </div>
+          <div class="container" style="margin-top:350px;">
               <div class="row mt-5">
                 <div class="col-6 col-md-6">
                     <div class="mission">
@@ -230,30 +340,32 @@
                     </div>
                 </div>
                 <div class="col-6 col-md-6">
-                    <h5 class="text-color font-weight-bolder">WELCOME TO LEGALCARE</h5>
+                    <h5 class="text-color font-weight-bolder">WELCOME TO LEGALMEET</h5>
                     <h2 class="mission-text">We always fight for your justice to win</h2>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error quasi debitis voluptates vel perspiciatis possimus laborum! Enim, neque dolores?</p>
+                    <p class="text-secondary">We believe that more information helps you make better decisions. At Legalmeet, we provide you with detailed information on lawyers  so that you can make the choices that are right for you.</p>
                     <div class="card mission-nav">
                         <div class="card-header p-0">
                           <ul class="nav nav-tabs nav-fill ml-auto pt-0">
-                            <li class="nav-item"><a class="nav-link active" href="#tab1" data-toggle="tab">Our Mission</a></li>
-                            <li class="nav-item border"><a class="nav-link" href="#tab2" data-toggle="tab">Our Vision</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#tab3" data-toggle="tab">Our Values</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="#tab7" data-toggle="tab">Our Mission</a></li>
+                            <li class="nav-item border"><a class="nav-link" href="#tab8" data-toggle="tab">Our Vision</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#tab9" data-toggle="tab">Our Values</a></li>
                           </ul>
                         </div><!-- /.card-header -->
                         <div class="card-body text-secondary">
                           <div class="tab-content">
-                            <div class="tab-pane active" id="tab1">
-                                To provide legal service with quality member services and promote the rule of law, through advocacy and good governance.
+                            <div class="tab-pane active" id="tab7">
+                                To provide legal services with quality member services and promote the rule of law, through advocacy and good governance.
                             </div>
                             <!-- /.tab-pane -->
-                            <div class="tab-pane" id="tab2">
-                                
+                            <div class="tab-pane" id="tab8">
+                                To be the leading legal services provider.
                             </div>
                             <!-- /.tab-pane -->
-                            <div class="tab-pane" id="tab3">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta tempora recusandae voluptatem
-                               numquam in nobis quisquam laborum. Consectetur, nesciunt illo.
+                            <div class="tab-pane" id="tab9">
+                              <ul class="list-unstyled">
+                                  <li>Rule of law and administration of justice</li>
+                                  <li>Democracy and good governance.</li>
+                              </ul>
                             </div>
                             <!-- /.tab-pane -->
                           </div>

@@ -426,14 +426,13 @@
                                                 <br>
                                                 <small><b>Relationship:</b><span class="text-secondary"> {{$endorsment->relationship}}</span></small>
                                                 <p>{{$endorsment->message}}</p>
-                                                 {{-- <button class="btn btn-primary btn-sm"data-toggle="modal" data-target="#e{{$education->id}}"><span class="fa fa-pencil"></span> Edit</button>  <button class="btn btn-secondary btn-sm ml-2"data-toggle="modal" data-target="#del{{$education->id}}"><span class="fa fa-trash"></span> Delete</button> --}}
                                                  <div class="dropdown">
                                                     <a class="btn btn-primary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                       See actions
                                                     </a>
                                                   
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                        <button type="button" class="btn dropdown-item dropdown-item-user px-3 py-2 btn-sm" data-endorsment_id="{{$endorsment->id}}" data-relationship="{{$endorsment->relationship}}"  data-message="{{$endorsment->message}}"  data-toggle="modal" data-target="#editEndorsment">
+                                                        <button type="button" class="btn dropdown-item dropdown-item-user px-3 py-2 btn-sm" data-toggle="modal" data-target="#edE{{$endorsment->id}}">
                                                             <span class="fa fa-pencil"></span> Edit 
                                                         </button>
                                                         <div class="dropdown-divider"></div>
@@ -443,7 +442,7 @@
                                                     </div>
 
                                                     {{-- edit modal --}}
-                                                    <div class="modal fade" id="editEndorsment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="edE{{$endorsment->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -453,19 +452,26 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form action="{{route('endorsment.update','test')}}" method="post">
+                                                                    <form action="{{route('admin.endorsment.update',$endorsment->id)}}" method="post">
                                                                         @method('PUT')
                                                                         {{ csrf_field() }}
                                                                         <div class="form-group">
                                                                             <label for="relationship"><span class="asterick"><b>*</b></span><b>Relationship</b> </label>
-                                                                            <input type="text" class="form-control" id="relationship" name= "relationship" value="" required>
+                                                                            <select  class="form-control" name="relationship" id="relationship" required>
+                                                                                <option value="{{$endorsment->relationship}}">{{$endorsment->relationship}}</option>
+                                                                                <option value="Worked for lawyer">Worked for lawyer</option>
+                                                                                <option value="Supervised lawyer">Supervised lawyer</option>
+                                                                                <option value="Worked together on a matter">Worked together on a matter</option>
+                                                                                <option value="Opposing counsel on a matte">Opposing counsel on a matter</option>
+                                                                                <option value="Co-woker">Co-woker</option>
+                                                                                <option value="Friend">Friend</option>
+                                                                                <option value="Family">Family</option>
+                                                                            </select>
+                                                                            {{-- <input type="text" class="form-control" id="relationship" name= "relationship" value="{{$endorsment->relationship}}" required> --}}
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label for=""><span class="asterick"><b>*</b></span> <b> Message</b> </label>
-                                                                            <textarea name= "message" class="form-control" maxlength="4000" id="message" cols="30" rows="5" required></textarea>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <input type="hidden" class="form-control" id="endorsment_id" name= "endorsment_id" value="" required>
+                                                                            <textarea name= "message" class="form-control" maxlength="4000" id="message" cols="30" rows="5" required>{{$endorsment->message}}</textarea>
                                                                         </div>
                                                                         
                                                                         <div class="modal-footer">
@@ -483,7 +489,7 @@
                                                         <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Delete Review</h5>
+                                                            <h5 class="modal-title" id="exampleModalLabel">Delete Endorsment</h5>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
@@ -492,12 +498,12 @@
                                                             <p class="lead">Are you sure you want to delete this Endorsment?</p> 
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <form action="{{route('endorsment.destroy',$endorsment->id)}}" method="post">
+                                                                <form action="{{route('admin.endorsment.destroy',$endorsment->id)}}" method="post">
                                                                     @method('DELETE')
                                                                     {{ csrf_field() }}
-                                                                    <button type="submit" class="btn btn-success px-4">Delete</button>
+                                                                    <button type="submit" class="btn btn-sm btn-success">Delete</button>
                                                               </form>
-                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                                <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancel</button>
                                                             </div>
                                                         </div>
                                                         </div>

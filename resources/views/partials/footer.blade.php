@@ -3,7 +3,7 @@
     <div class="row mb-5">
       <div class="col-md">
         <div class="footer-widget mb-4">
-          <h2 class="logo"><a href="#">LECALCARE <span>Justice.Innovation</span></a></h2>
+          <h2 class="logo"><a href="#">LEGALMEET <span>Justice.Innovation</span></a></h2>
           <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           <ul class="footer-social list-unstyled float-left d-flex mt-5">
             <li class="pr-5"><a href="#"><span class="fa fa-twitter fa-2x"></span></a></li>

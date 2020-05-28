@@ -9,7 +9,7 @@
         </div>
     </div>
    
-    <h2 class="text-center"><strong>Contact us</strong></h2>
+    <h2 class="text-center" style="margin-top:390px;"><strong>Contact us</strong></h2>
     <p class="text-center lead">
         If you have a question about using Legalcare, you may find the answer in the FAQ. You can also send <br> us an email to info@legalcare.com.
         Our team is able to handle inquiries <br> between the hours of 7am-4pm  Monday-Friday, and should respond within 24 hours

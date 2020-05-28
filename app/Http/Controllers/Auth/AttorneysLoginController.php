@@ -27,9 +27,9 @@ class AttorneysLoginController extends Controller
             'password' => 'required|string',
         ]);
 
-        //attempt login the user
+        //attempt login the lawyer
         if(Auth::guard('attorney')->attempt(['email' => $request->email, 'password' => $request->password],$request->remember)){
-            //if successful redirect to intended location
+            // if successful redirect to intended location
             return redirect()->intended(route('attorney_dashboard'));
 
         }

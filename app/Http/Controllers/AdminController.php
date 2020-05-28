@@ -8,6 +8,7 @@ use App\Attorney;
 use App\Education;
 use App\Location;
 use App\AttorneyReview;
+use App\Endorsment;
 use App\Message;
 use DB;
 use Illuminate\Support\Facades\Auth;
@@ -58,8 +59,6 @@ class AdminController extends Controller
     }   
         return view('admin.reports');
     } 
-
-
 
      // Users registration Report
      public function userRegReport(Request $request)
@@ -131,11 +130,11 @@ class AdminController extends Controller
      <h3 align="center">Customer Data</h3>
      <table width="100%" style="border-collapse: collapse; border: 0px;">
       <tr>
-    <th style="border: 1px solid; padding:12px;" width="20%">Name</th>
-    <th style="border: 1px solid; padding:12px;" width="30%">Address</th>
-    <th style="border: 1px solid; padding:12px;" width="15%">City</th>
-    <th style="border: 1px solid; padding:12px;" width="15%">Postal Code</th>
-   </tr>
+        <th style="border: 1px solid; padding:12px;" width="20%">Name</th>
+        <th style="border: 1px solid; padding:12px;" width="30%">Address</th>
+        <th style="border: 1px solid; padding:12px;" width="15%">City</th>
+        <th style="border: 1px solid; padding:12px;" width="15%">Postal Code</th>
+      </tr>
      ';  
      foreach($customer_data as $customer)
      {
@@ -151,7 +150,6 @@ class AdminController extends Controller
      $output .= '</table>';
      return $output;
     }
-
 
 
     //displaying user data
@@ -174,13 +172,6 @@ class AdminController extends Controller
 
 
     //updating the user
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     { 
         $this->validate($request, [
@@ -207,9 +198,26 @@ class AdminController extends Controller
     public function userdetails($id)
     { 
         $user= User::find($id);
-        return view('admin.user_details')->with('user',$user);
+        return view('admin.user_details')
+        ->with('reviews',$user->reviews)
+        ->with('user',$user);
     }
 
+    // update user reviews
+    public function updateReview(Request $request,$id)
+    {
+        $review=AttorneyReview::findOrFail($id);
+        $review->update($request->all());
+        return back()->with('success','Review has been updated');
+    }
+
+    // delete user reviews
+   public function destroyReview($id)
+   {
+       $review=AttorneyReview::findOrFail($id);
+       $review->delete();
+       return back()->with('success','Review has been deleted');
+    }
 
     //Delete the user
     public function userDestroy($id){
@@ -221,8 +229,18 @@ class AdminController extends Controller
     //display lawyers account information
     public function attorneysaccount()
     {   
-        $attorneys=Attorney::orderBy('created_at','asc')->paginate(5);
-        return view('admin.attorneys')->with('attorneys',$attorneys);
+        if(request()->ajax())
+        {
+            return datatables()->of(Attorney::latest()->get())
+            ->addColumn('action', function($data){
+                $button = '<a href="/admin/attorneys/details/'.$data->id.'" class="text-decoration-none"><button class="view btn btn-sm bg-primary" name="view" id="'.$data->id.'"><span class="fa fa-eye"></span></button></a>';
+                $button .= '&nbsp;&nbsp;';
+                return $button;
+            })
+            ->rawColumns(['action'])
+            ->make(true);
+        }
+        return view('admin.attorneys');
     } 
 
 
@@ -316,4 +334,21 @@ class AdminController extends Controller
         $education->delete();
         return back()->with('success','Education details deleted !');
     }
+
+
+    // update Endorsment
+    public function endorsmentUpdate(Request $request,$id)
+    { 
+        $endorsment=Endorsment::findOrFail($id);
+        $endorsment->update($request->all());
+        return back()->with('success',"Endorsment has been updated!");
+    }
+
+    //deleting Education
+    public function endorsmentDestroy($id){
+        $endorsment=Endorsment::findOrFail($id);
+        $endorsment->delete();
+        return back()->with('success','Endorsment has been deleted!');
+    }
+  
 }

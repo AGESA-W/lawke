@@ -49,6 +49,13 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if($this->isHttpException($exception)){
+            $code = $exception->getStatusCode();
+            if($code =='404')
+            {
+                return response()->view('404');
+            }
+        }
         // Check out Error Handling #render for more information
         // render method is responsible for converting a given exception into an HTTP response
         // Catch AthenticationException and redirect back to somewhere else...

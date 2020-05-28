@@ -4,13 +4,13 @@
         <div class="location">
             <div class="location-jumbotron">
             <div class="jumbotron text-center">
-                <h1 class="location-jumbotron-text"><strong>Find {{$location->county}}  Attorneys</strong></h1>
+                <h1 class="location-jumbotron-text"><strong>Find {{$location->county}}  Lawyers</strong></h1>
             </div>
             </div>
         </div>
-        <div class="location-wrapper">
+        <div class="location-wrapper" style="margin-top:260px;">
             <h3 class="location-heading mb-0 mt-2"><strong>See {{$location->county}} lawyers by practice area</strong></h3>
-            <p class="well">Choose an area of law to find top-rated attorneys near you.</p>
+            <p class="well">Choose an area of law to find top-rated lawyers near you.</p>
             @foreach ($practiceareas->chunk(4) as $practiceareachunk)
                 <div class="row">
                     @foreach ($practiceareachunk as $practicearea)

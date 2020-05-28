@@ -249,7 +249,7 @@
                     <p>You are 30 seconds away from creating an account as an Attorney!</p>
                 </div>
                 <div class="col-md-9 register-right">
-                    <h3 class="register-heading">Register as an Attorney</h3>
+                    <h3 class="register-heading">Register as a Lawyer</h3>
                     <form method="POST" action="{{ route('attorneys.store') }}">
                         @csrf
                         <div class="row register-form">

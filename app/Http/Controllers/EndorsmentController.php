@@ -52,13 +52,12 @@ class EndorsmentController extends Controller
 
         return back()->with('success',"You have successfully endorsed this lawyer!");
     }
+    // update Endorsment
     public function update(Request $request)
     { 
-
         $endorsment=Endorsment::findOrFail($request->endorsment_id);
         $endorsment->update($request->all());
         return back()->with('success',"Your endorsment has been updated!");
-
     }
 
 
