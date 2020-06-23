@@ -50,7 +50,6 @@ class PagesController extends Controller
 
     //get lawyers by county
     public function county($practicearea,$county){
-    
         $attorneys=Attorney::whereHas('practiceareas' , function ($builder) use($practicearea) {
               return $builder->where('area_practice', $practicearea);
             }
@@ -60,20 +59,18 @@ class PagesController extends Controller
         return view('pages.counties')->with('attorneys',$attorneys);
     }
 
-
-    public function AllLocations($county){//display practice area of county
-
+    //display practice area of county
+    public function AllLocations($county){
         $locations=Lsk::where('county', $county)->get();
         $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
        
         return view('pages.location')->with('locations',$locations)
         ->with('practiceareas',$practiceareas); 
- 
     }
 
-    //get-advice
-    public function getadvice(){
-    
-        return view('get_advice');
+    // for-lawyers
+    public function forLawyers(){
+        return view('pages.for_lawyers');
     }
+    
 }

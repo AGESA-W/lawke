@@ -90,8 +90,14 @@ class Attorney extends Authenticatable
         return $this->hasMany('App\UserMessage');
     }
 
+    //relationship with endorsment done
     public function doneEndorsments(){
         return $this->hasMany('App\Endorsment', 'endoser_id', 'id');
+    }
+
+    //relationship with answers
+    public function answers(){
+        return $this->hasMany('App\Answer', 'attorney_id', 'id');
     }
 
   //get the rating

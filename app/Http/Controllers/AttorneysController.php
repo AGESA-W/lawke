@@ -59,6 +59,9 @@ class AttorneysController extends Controller
 
         $attorney_id=Auth::id();
         $attorney=Attorney::findOrFail($attorney_id);
+
+        $answers = $attorney->answers->load('question');
+
         return view('attorneys.attorney_dashboard')
         ->with('attorney',$attorney)
         ->with('messages',$attorney->messages)
@@ -67,7 +70,8 @@ class AttorneysController extends Controller
         ->with('educations',$attorney->educations)
         ->with('endorsments',$attorney->endorsments)
         ->with('endorsers',$attorney->doneEndorsments)
-        ->with('users',$users);
+        ->with('users',$users)
+        ->with('answers',$answers);
         
     }
 

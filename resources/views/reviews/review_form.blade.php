@@ -74,13 +74,13 @@
                 </form> --}}
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" style="margin-top:38px">
             <div class="review-guidelines">
                 <img src="/images/arrows2.jpg" alt="" class="review-guidelines-image">
                 <h5><b>Review guidelines</b> </h5>
                 <div class="review-guidelines-content">
                     <ul class="list-unstyled">
-                        <li><b>Lawke allows reviews for your attorney.</b>Please do not leave a review for a lawyer you did not hire or consult with.</li>
+                        <li><b>Legalmeet allows reviews for your lawyer.</b>Please do not leave a review for a lawyer you did not hire or consult with.</li>
                         <li><b>Be specific.</b>Explain what your lawyer did (or failed to do) with your case. Your review should clearly indicate that you contacted, consulted with, or hired the attorney.</li>
                         <li><b>…but not too specific.</b>Leave out any sensitive information</li>
                         <li><b>Be helpful, not spiteful.</b>Do not post hostile or insulting content.</li>

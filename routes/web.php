@@ -20,6 +20,8 @@ Route::get('/','PagesController@index');
 Route::get('/practice-areas','PagesController@practiceAreas')->name('practice.areas');
 Route::get('/about','PagesController@about')->name('pages.about');
 Route::get('/contact','PagesController@contact')->name('pages.contact');
+Route::get('/for-lawyers','PagesController@forLawyers')->name('for-lawyers');
+
 /*********End Main Pages**********/
 
 Auth::routes(['verify' => true]);
@@ -156,4 +158,23 @@ Route::get('/all-lawyers/{county}', "PagesController@AllLocations")->name('locat
 Route::get('/search','SearchController@index')->name('search');
 Route::get('/search/action','SearchController@action')->name('search.action');
 
-Route::get('/get-advice','PagesController@getadvice')->name('get.advice');
+//questions
+Route::get('/get-advice','QuestionController@getadvice')->name('get.advice');
+Route::get('/ask-lawyer','QuestionController@asklawyer')->name('ask.lawyer');
+Route::post('/ask','QuestionController@clientQuestionStore')->name('client.question');
+Route::get('/topics/{category}', "QuestionController@topic")->name('individual.topic');
+Route::get('/legal-answers/{question}', "QuestionController@answers")->name('question.answer');
+Route::put('/question/{id}','QuestionController@updateQuestion')->name('question.update');
+
+
+
+// answer
+Route::get('/legal-answers/{question}/add-answer', "AnswerController@answer")->name('answer');
+Route::post('/ask-lawyer','AnswerController@attorneyAnswerStore')->name('attorney.answer');
+Route::put('/answer/{id}','AnswerController@updateAnswer')->name('answer.update');
+Route::delete('/delete-answer/{id}','AnswerController@deleteAnswer')->name('answer.destroy');
+
+
+
+
+

@@ -63,6 +63,11 @@ class User extends Authenticatable  implements MustVerifyEmail
     
     }
 
+    //relationship with questions
+    public function questions(){
+        return $this->hasMany('App\Question', 'user_id', 'id');
+    }
+
     public function countUserInbox(){
 
         $test=DB::table('user_messages')

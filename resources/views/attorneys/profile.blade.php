@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="card-body mt-2 p-0">
-                <a href="/attorney-message/{{$attorney->id}}">
+                    <a href="/attorney-message/{{$attorney->id}}">
                         <button class="btn text-white element-background"style="width:100%;"><span class="fa fa-envelope"></span> Message</button>
                     </a>
                 </div>

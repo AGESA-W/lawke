@@ -7,6 +7,10 @@ use App\User;
 use App\Attorney;
 use App\AttorneyReview;
 use App\Message;
+use App\Lsk;
+use App\PracticeArea;
+
+
 use DB;
 use Illuminate\Support\Facades\Auth;
 use Pusher\Pusher;
@@ -40,15 +44,21 @@ class HomeController extends Controller
         // group by users.id, users.name, users.email");
         // return view('home')->with('users',$users);
 
-       
 
         $user_id=auth()->user()->id;
         $user=User::find($user_id);
 
+        $locations=Lsk::orderBy('id','desc')->distinct()->select('county')->get();
+        $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
+
         return view('home')->with('user',$user)
         ->with('messages',$user->messages)
         ->with('usermessages',$user->usermessages)
-        ->with('reviews',$user->reviews);
+        ->with('reviews',$user->reviews)
+        ->with('questions',$user->questions)
+        ->with('locations',$locations)
+        ->with('practiceareas',$practiceareas);
+
         
     } 
     

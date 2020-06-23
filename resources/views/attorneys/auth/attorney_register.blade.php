@@ -314,7 +314,7 @@
 
                                         <div class="option2 pl-5">
                                             <input class="form-check-input " type="radio" name="gender" id="female" value="female" required autocomplete="gender">
-                                            <label  for="female">Female</label>
+                                            <label class="form-check-label"  for="female">Female</label>
                                         </div>
                                     </div>
                                     @error('gender')

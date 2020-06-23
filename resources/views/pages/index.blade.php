@@ -53,7 +53,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link px-4">For Lawyers</a>
+                                    <a href="for-lawyers" class="nav-link px-4">For Lawyers</a>
                                 </li> 
                             </ul>
                 
@@ -297,13 +297,13 @@
             {{-- <p class="about-plain-jumbotron-text"><strong>What People Are Saying <br>About LegalCare </strong></p> --}}
             {{-- <h1 class="about-plain-jumbotron-text text-center" ><strong>What People Are Saying <br>About LegalCare</strong></h1> --}}
             
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background:#e9ecef;position: absolute;left:0;right:0;">
+            <div id="CarouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background:#e9ecef;position: absolute;left:0;right:0;">
             <h1 class="about-plain-jumbotron-text text-center" ><strong>What People Are Saying <br>About LegalCare</strong></h1>
 
                 <ol class="carousel-indicators mt-4">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  <li data-target="#CarouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#CarouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#CarouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item text-center active">
@@ -322,11 +322,11 @@
                         <div class="text-muted">– Small claims client</div> </blockquote>
                   </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#CarouselExampleIndicators" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#CarouselExampleIndicators" role="button" data-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
