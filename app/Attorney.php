@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\AttorneyResetPasswordNotification;
 use DB;
 use Auth;
+use App\Notifications\verifyEmail;
+
 class Attorney extends Authenticatable
 {
     use Notifiable;
@@ -20,7 +22,7 @@ class Attorney extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstname','lastname', 'license_no','national_id','mobile','about','gender','email','image','county','password',
+        'firstname','lastname', 'license_no','national_id','mobile','about','gender','email','image','county','password','token',
     ];
 
     /**
@@ -144,6 +146,23 @@ class Attorney extends Authenticatable
         return $count;
     }
 
+
+    /**
+     * 
+     *
+     */
+    public function verified()
+    {
+        return $this->token === null;
+    }
+
+    /**
+     * send verification email
+     */
+    public function sendVerificationEmail()
+    {
+        $this->notify(new verifyEmail($this));
+    }
 
 
 }

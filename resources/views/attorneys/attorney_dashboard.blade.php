@@ -125,8 +125,93 @@
                             <div class="sectionWrapper">
                                 <div class="sectionTitle">About</div>
                                 <div class="sectionContent">
-                                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore voluptatibus quam dolorem quae consequuntur iste, distinctio eos tenetur a nostrum ut. Doloremque repudiandae sit voluptate harum recusandae deleniti deserunt? Ea libero deserunt neque eos recusandae placeat dolor iste fuga eius!</p>
-                                    <button class="btn btn-primary btn-sm px-3">Edit</button>
+                                    @if ($attorney->about != null)
+                                        <p>{{$attorney->about}}</p>
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editAboutModal">
+                                            <span class="fa fa-pencil"></span> Edit information
+                                        </button>
+                                        @else
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#aboutModal">
+                                            <span class="fa fa-pencil"></span> Tell us about yourself
+                                        </button>
+                                    @endif
+                                     <!-- Tell us about yourself Modal -->
+                                    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Tell us about yourself</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body">
+                                            <form method="POST" action="{{route('about.attorney',$attorney->id)}}">
+                                                @method('PUT')
+                                                    {{ csrf_field() }}
+                            
+                                                <div class="form-group">
+                                                    <label for="about" class="pl-1" style="border-left:3px solid #afa939">{{ __('About yourself') }}</label>
+                        
+                                                    <textarea class="form-control" name="about" id="about" cols="30" rows="10" 
+                                                        placeholder="Briefly give information about yourself that can allow clients to know more about you. The information can contain your education background, your area of specilisation or any relevant information you wish your clients to know about you. ">
+                                                    </textarea>
+                                                    @error('about')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-success">Submit</button>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <!-- ./Tell us about yourself Modal -->
+
+                                     <!-- edit about yourself Modal -->
+                                     <div class="modal fade" id="editAboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Tell us about yourself</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body">
+                                            <form method="POST" action="{{route('about.attorney',$attorney->id)}}">
+                                                @method('PUT')
+                                                    {{ csrf_field() }}
+                            
+                                                <div class="form-group">
+                                                    <label for="about" class="pl-1" style="border-left:3px solid #afa939">{{ __('About yourself') }}</label>
+                        
+                                                    <textarea class="form-control" class="ml-0" name="about" id="about" cols="30" rows="10">{{$attorney->about}}</textarea>
+                                                    @error('about')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-success">Save changes</button>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <!-- ./edit about yourself Modal -->
+
+
                                  </div>
                             </div>
                         </div>

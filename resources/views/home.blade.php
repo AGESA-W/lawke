@@ -86,7 +86,7 @@
                                         <li class="float-left">User Account</li>
                                         <li class="float-right">
                                             <button type="button" class="btn btn-primary  btn-sm" data-toggle="modal" data-target="#exampleModal">
-                                                Close Account
+                                                <span class="fa fa-trash"></span> Close Account
                                             </button>
                                         </li>
                                     </ul>

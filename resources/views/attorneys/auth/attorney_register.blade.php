@@ -246,7 +246,7 @@
                 <div class="col-md-3 register-left">
                     <img src="images/logo_white.png" alt=""/>
                     <h3>Welcome</h3>
-                    <p>You are 30 seconds away from creating an account as an Attorney!</p>
+                    <p>You are 30 seconds away from creating an account as a Lawyer!</p>
                 </div>
                 <div class="col-md-9 register-right">
                     <h3 class="register-heading">Register as a Lawyer</h3>
@@ -276,7 +276,7 @@
                                         @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="lastname" class="col-form-label ">{{ __('LastName:') }}</label>
+                                    <label for="lastname" class="col-form-label ">{{ __('LastName') }}</label>
                                     <input id="lastname" type="text" data-type="lastname" class="autocomplete_txt form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" readonly="readonly" required autocomplete="lastname" autofocus>
         
                                         @error('lastname')
@@ -307,7 +307,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="gender" class="col-form-label ">{{ __('Gender:') }}</label>
+                                    <label for="gender" class="col-form-label ">{{ __('Gender') }}</label>
                                     <div class="d-flex form-check">
                                         <input class="form-check-input" type="radio"  name="gender" id="male" value="male"  required autocomplete="gender" >
                                         <label class="form-check-label" for="male">Male</label>
@@ -324,9 +324,26 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-6 mt-4">
+                            <div class="col-md-6 ">
+                                <p class="register-para">Practice Details</p>
+
                                 <div class="form-group">
-                                    <label for="license_no" class="col-form-label ">{{ ('License No:') }}</label>
+                                    <label for="practice_area" class="col-form-label ">{{ ('Select your main practice area') }}</label>
+                                    <select name="practice_area" id="practice_area" class="form-control">
+                                        @foreach ($practiceareas as $practicearea)
+                                        <option value="{{$practicearea->area_practice}}">{{$practicearea->area_practice}}</option>
+                                        @endforeach
+
+                                    </select>
+                                    @error('practice_area')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="license_no" class="col-form-label ">{{ ('License No') }}</label>
                                     <input id="license_no" type="text" data-type="license_no" placeholder="P.105/1234/56" class="mb-3 autocomplete_txt form-control @error('license_no') is-invalid @enderror" name="license_no" value="{{ old('license_no') }}"  readonly="readonly" required autocomplete="license_no" autofocus>
 
                                     @error('license_no')
@@ -335,6 +352,7 @@
                                         </span>
                                     @enderror
                                 </div>
+
                                 <p class="register-para">Account Details</p>
                                 <div class="form-group">
                                     <label for="email" class="col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -412,6 +430,7 @@
                 }
             }); 
             });
+
         </script>
     </div>
 </body>

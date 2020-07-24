@@ -18,16 +18,13 @@
             <div class="col-12 col-md-6" style=" margin-left:-40px;">
                 <div class="right-side" style="">
                     <h1> <b>Why Legalmeet?</b>  </h1>
-                    <p>We believe that more information helps you make better decisions. At Legalmeet, we provide you with detailed information on lawyers  so that you can make the choices that are right for you.</p>
+                    <p style="font-weight:500;font-size:16px;line-height:1.6">We believe that more information helps you make better decisions. At Legalmeet, we provide you with detailed information on lawyers  so that you can make the choices that are right for you.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="people-saying mt-5">
-        {{-- <p class="about-plain-jumbotron-text"><strong>What People Are Saying <br>About LegalCare </strong></p> --}}
-        {{-- <h1 class="about-plain-jumbotron-text text-center" ><strong>What People Are Saying <br>About LegalCare</strong></h1> --}}
-        
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background:#e9ecef;position: absolute;left:0;right:0;">
         <h1 class="about-plain-jumbotron-text text-center" ><strong>What People Are Saying <br>About LegalMeet</strong></h1>
 
@@ -39,7 +36,7 @@
             <div class="carousel-inner">
               <div class="carousel-item text-center active">
                     <span class="fa fa-quote-left fa-3x text-color"></span>
-                    <blockquote class="mb-5">I needed assistance with some legal matters and didn't know where to go <b>I found LegalCare</b> <p> and decided to give it a try <b>It was very helpful</b> am very satisfied.</p>
+                    <blockquote class="mb-5">I needed assistance with some legal matters and didn't know where to go <b>I found Legalmeet</b> <p> and decided to give it a try <b>It was very helpful</b> am very satisfied.</p>
                     <div class="text-muted ">– Small claims client</div> </blockquote>
               </div>
               <div class="carousel-item text-center">
@@ -83,8 +80,13 @@
                 <div class="about-last-right-side">
                     <h1> <b>95%</b>  </h1>
                     <h5><b>of lawyers in Kenya are registered on Legalmeet.</b> </h5>
-                    <p class="pt-4">Imagine having nearly every licensed lawyer in Kenya right at your fingertips, the moment you need help. Legalcare has that, plus detailed profiles and reviews</p>
-                    <button class="btn bg-color"><b>Find your Lawyer</b> </button>
+                    <p class="pt-2 mb-0 text-primary font-weight-bold">Imagine having nearly every licensed lawyer in Kenya right at your fingertips, the moment you need help. Legalmeet has that, plus detailed profiles and reviews</p>
+                    <a href="/search" class="text-decoration-none btn bg-primary  font-weight-bold">Find your lawyer</a>
+
+
+                    <p class="mt-3 mb-0 text-success font-weight-bold">Post your question for free, and experienced lawyers will respond. Or, find answers to previously asked questions.</p>
+                    {{-- <button class="btn bg-color float-right"><b>Ask a lawyer</b> </button> --}}
+                    <a href="/ask-lawyer" class="text-decoration-none btn bg-success float-right font-weight-bold">Ask a lawyer</a>
                 </div>
               
             </div>

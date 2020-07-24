@@ -32,7 +32,11 @@ Route::get('/users/logout', 'Auth\LoginController@UserLogout')->name('users.logo
 
 // Attorneys pages
 Route::get('/profile/{id}',"AttorneysController@profile")->name('profile');
-Route::get('/attorney_dashboard',"AttorneysController@dashboard")->name('attorney_dashboard');
+Route::get('/attorney_dashboard',"AttorneysController@dashboard")->name('attorney_dashboard')->middleware('verify');
+
+//about
+Route::put('/attor/{id}',"AttorneysController@aboutAttorney")->name('about.attorney');
+
 
 //Endorsment
 Route::get('/attorney/{id}/endorsment',"EndorsmentController@endorsment")->name('attorney.endorsment');
@@ -175,6 +179,23 @@ Route::put('/answer/{id}','AnswerController@updateAnswer')->name('answer.update'
 Route::delete('/delete-answer/{id}','AnswerController@deleteAnswer')->name('answer.destroy');
 
 
+Route::get('/markAsRead',function(){
+  auth()->user()->unreadNotifications->markAsRead();
+});
 
+// verify attorney account
+Route::get('/verify-attorney/{token}','VerifyController@verify')->name('verify.attorney');
 
+// verify email
+Route::get('/email/verify-attorney','VerifyController@verifyEmail')->name('verify.email');
 
+Route::post('/email/verify-attorney','VerifyController@resendEmail')->name('verification.resend.attorney');
+
+//contact pages
+Route::get('/support/lawyers/How-to-contact-legalmeet','ContactController@contact');
+
+//clients
+Route::get('/support/clients/How-to-contact-legalmeet','ContactController@contactClient');
+Route::get('/support/clients/How-do-I-search-for-lawyer','ContactController@search');
+Route::get('/support/clients/Where-is-my-review','ContactController@review');
+Route::get('/support/clients/How-do-I-view-and-send-message','ContactController@message');

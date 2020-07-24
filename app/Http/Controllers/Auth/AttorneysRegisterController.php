@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Attorney;
+use App\PracticeArea;
+use App\Notifications\verifyEmail;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -38,6 +41,7 @@ class AttorneysRegisterController extends Controller
             'gender' => ['required','string','max:255'],
             'image' => ['required','string'],
             'county' => ['required','string'],
+            'practice_area' => ['required','string'],
             'email' => ['required','string','email','max:255','unique:attorneys'],
             'password' => ['required','string','min:8','confirmed'],
         ]);
@@ -54,15 +58,21 @@ class AttorneysRegisterController extends Controller
         $attorney->email = $request->input('email');
         $attorney->image = $request->input('image');
         $attorney->county = $request->input('county');
+        $attorney->practice_area = $request->input('practice_area');
         $attorney->password = Hash::make($request->input('password'));
+
+        $attorney->token = str_random(25);
         $attorney->save();
+
+        $attorney->sendverificationEmail();
  
       return redirect('attorney_dashboard')->with('success', 'Account created Successfully');
 
     }
 
     public function showRegistrationForm(){
-        return view('attorneys/auth.attorney_register');
+        $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
+        return view('attorneys/auth.attorney_register')->with('practiceareas',$practiceareas);
     } 
 
 }

@@ -45,7 +45,6 @@ class PagesController extends Controller
 
         return view('pages.areas')->with('practiceareas',$practiceareas)
         ->with('locations',$locations);
- 
     } 
 
     //get lawyers by county

@@ -24940,16 +24940,19 @@ body {
 
 .contact-jumbotron {
   background: url("/images/contact.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   height: 380px;
   color: #fff;
 }
 
 .contact-jumbotron-text {
-  font-size: 45px;
+  font-size: 50px;
   padding-top: 30px;
+}
+
+.contact-list {
+  line-height: 1.9;
 }
 
 .contact-us {

@@ -74,8 +74,24 @@ class AttorneysController extends Controller
         ->with('answers',$answers);
         
     }
+    // about
+    public function aboutAttorney(Request $request,$id){
 
-    public function updateLocation(Request $request, $id)//lawyer updates location
+
+        $this->validate($request,[
+            'about' =>'required'
+        ]);
+
+        $abt= Attorney::findOrFail($id);
+        $abt->about = $request->input('about');
+        $abt->save();
+
+        return redirect('/attorney_dashboard')->with('success',"Your information has been updated!");
+
+
+    }
+    //lawyer updates location
+    public function updateLocation(Request $request, $id)
     { 
         $this->validate($request, [
             'company_name' => ['required', 'string'],

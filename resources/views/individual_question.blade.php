@@ -30,10 +30,7 @@
                     <a href="/ask-lawyer" class="text-center mt-2 px-4 py-2 btn btn-sm btn-outline-success">Ask a lawyer - it's free!</a> 
                     <a href="/topics/{{$question->category}}" class="text-center ml-5 mt-2 px-4 py-2 btn btn-sm btn-outline-primary">Browse related questions</a> 
                 </div>
-                
-                {{-- @foreach ($answers as $answer)
-                   
-                @endforeach --}}
+            
                 <h5 class="mt-2">
                     <b>
                         @if(count($answers)>1) 
@@ -65,7 +62,7 @@
                                     @endforeach
                                     <p class="mb-0 text-muted">{{$answer->attorney->county}} County</p>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-sm-12 col-12">
                                     <a href="/attorney-message/{{$answer->attorney->id}}" class="text-center mt-2 px-4 py-2 btn btn-sm btn-outline-success">
                                         <span class="fa fa-envelope"></span> Message
                                     </a>

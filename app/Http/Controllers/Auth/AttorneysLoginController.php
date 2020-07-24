@@ -48,11 +48,13 @@ class AttorneysLoginController extends Controller
 
 
     //Logout the attorney
-    public function logout(){
+    public function logout()
+    {
         Auth::guard('attorney')->logout();
   
         return  redirect('/');
     }
+
     protected function guard()
     {
         return Auth::guard('attorney');

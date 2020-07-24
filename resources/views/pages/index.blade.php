@@ -44,9 +44,9 @@
                                     <a href="/about" class="nav-link px-4">About</a>
                                 </li>  
                                   
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a href="/practice-areas" class="nav-link px-4">Practice Areas</a>
-                                </li>
+                                </li> --}}
                                
                                 <li class="nav-item">
                                     <a href="/contact" class="nav-link px-4">Contact</a>
@@ -107,7 +107,7 @@
                                 </span>
                             </h1>
                         </div>
-                        <p class="showcase-para">We have help thousands of people to get relief from national wide fights wrongfull denials. Now they trust lawke attorneys</p>
+                        <p class="showcase-para">We have help thousands of people to get relief from national wide fights wrongfull denials. Now they trust legalmeet lawyers</p>
                         <div class="showcase-btns">
                             <a href="/search" class="text-decoration-none btn btn-1 d-inline-block px-4 py-2">Find your lawyer <span class="fa fa-angle-right"></span></a>
                             <a href="/get-advice" class="text-decoration-none btn btn-1 d-inline-block px-4 py-2"style="margin-left:120px;">Get advice<span class="fa fa-angle-right ml-2"></span></a>

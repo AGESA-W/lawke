@@ -8,11 +8,12 @@ use App\PracticeArea;
 use App\Question;
 use App\Answer;
 use App\Attorney;
+use App\Jobs\QuestionAskedJob;
+use Illuminate\Support\Facades\Mail;
+// use App\Notifications\QuestionAsked;
 
 use Auth;
-
-
-
+use DB;
 
 class QuestionController extends Controller
 
@@ -51,6 +52,8 @@ class QuestionController extends Controller
 
     public function clientQuestionStore(Request $request)
     {
+        $attorney=Attorney::where('practice_area',$request->category)->first();
+
         $this->validate($request, [
             'category' => ['required'],
             'question' => ['required','min:10','max:128'],
@@ -70,8 +73,13 @@ class QuestionController extends Controller
         $advice->user_id = $request->input('user_id');
         $advice->anonymous = $request->input('anonymous');
         $advice->save();
+
+
+        dispatch(new QuestionAskedJob($attorney));
+
+        // dd($attorney);
  
-         return back()->with('success', 'Your question has been shared anonymously');
+         return back()->with('success', 'Your question has been shared');
     }
 
     // update question
@@ -100,14 +108,14 @@ class QuestionController extends Controller
     }
     //individual topic 
     public function topic($category){
-        $topics=Question::where('category', $category)->orderBy('created_at','desc')->get();
+        $topics=Question::where('category', $category)->orderBy('created_at','desc')->paginate(7);
         return view('topic')
         ->with('topics',$topics);
  
     } 
 
     public function answers($question){
-        
+
         $question=Question::where('question', $question)->first();
         $answers = $question->answers->load('attorney');
             // dd($question, $answers->load('attorney'));
@@ -116,4 +124,7 @@ class QuestionController extends Controller
         ->with('question',$question);
  
     } 
+
+
+
 }

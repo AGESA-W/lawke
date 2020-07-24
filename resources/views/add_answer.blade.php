@@ -44,6 +44,8 @@
             </div>
             <input type="hidden" class="form-control" value="{{Auth::id()}}" name="attorney_id">
             <input type="hidden" class="form-control" value="{{$question->id}}" name="question_id">
+            <input type="hidden" class="form-control" value="{{$question->user_id}}" name="user_id">
+
 
             <button type="submit" class="btn btn-sm btn-success">Continue</button>
         </form>

@@ -25,7 +25,8 @@ class CreateAttorneysTable extends Migration
             $table->string('gender');
             $table->string('image');
             $table->string('county');
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('practice_area');
+            $table->string('token')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

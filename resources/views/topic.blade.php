@@ -15,6 +15,7 @@
         </div>
     </div>
     <div class="show-questions" style="margin-top:260px;">
+        <a href="/get-advice" class="text-decoration-none"> <span class="fa fa-angle-left"></span> Go Back</a>
         <h5> <b>Recently asked questions</b> </h5>
         <div class="row">
             <div class="col-md-8 col-sm-12">
@@ -28,8 +29,9 @@
                     @endforeach
                
             </div>
-        </div>
-        
-        
-    </div>    
+        </div> 
+    </div> 
+    <div class="mt-3 mb-4">
+        {{ $topics->links() }}
+    </div>
 @endsection

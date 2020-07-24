@@ -146,11 +146,11 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-sm-10 col-md-8 center-block u-margin-bottom-2">
-                <p>The clients generated through LegalMatch provide me a unique set of advantages, mainly because so much of the initial work is done quickly and easily via the internet</p>
+                <p>The clients generated through Legalmeet provide me a unique set of advantages, mainly because so much of the initial work is done quickly and easily via the internet</p>
                 <p><strong>— Mara Hardwick, Competition lawyer, Uasin-Gishu County</strong></p>
             </div>
             <div class="col-sm-10 col-md-8 center-block u-margin-bottom-2">
-                <p>I first thought of LegalMatch as a possible way of getting a client or two. I quickly found out that it is a great source of clients. These are clients who have a need and are looking for assistance.</p>
+                <p>I first thought of Legalmeet as a possible way of getting a client or two. I quickly found out that it is a great source of clients. These are clients who have a need and are looking for assistance.</p>
                 <p><strong>— Philip Burge, Agency lawyer, Wajir County</strong></p>
             </div>
             <div class="col-sm-10 col-md-8 center-block u-margin-bottom-2">
