@@ -2,18 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\User;
-use App\Attorney;
-use App\Education;
-use App\Location;
-use App\AttorneyReview;
-use App\Endorsment;
-use App\Message;
 use DB;
-use Illuminate\Support\Facades\Auth;
 
 use PDF;
+use App\Lsk;
+use App\User;
+use App\Answer;
+use App\Message;
+use App\Attorney;
+use App\Location;
+use App\Question;
+use App\Education;
+use App\Endorsment;
+
+use App\PracticeArea;
+use App\AttorneyReview;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\DataTables\AttorneyDataTable;
 
 
 class AdminController extends Controller
@@ -35,7 +41,19 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.admin');
+        $attorneys=Attorney::all();
+        $users=User::all();
+        $questions=Question::all();
+        $answers=Answer::all();
+
+
+
+        return view('admin.admin')
+        ->with('attorneys',$attorneys)
+        ->with('questions',$questions)
+        ->with('answers',$answers)
+        ->with('users',$users);
+
         
     } 
 
@@ -82,44 +100,48 @@ class AdminController extends Controller
 
 
     // rating report
-    public function ratingreport(Request $request)
+    public function ratingreport(Request $request )
     {
+        $data='';
         if(request()->ajax())
         {
             if(!empty($request->startDate)){
                
                 if($request->rating == 5){
-                $data = AttorneyReview::where('rating',5)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
+                $data = Attorney::where('rating',5)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
                 }
                 elseif($request->rating == 4){
-                    $data = AttorneyReview::where('rating',4)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
+                    $data = Attorney::where('rating',4)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
                 }
                 elseif($request->rating == 3){
-                    $data = AttorneyReview::where('rating',3)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
+                    $data = Attorney::where('rating',3)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
                 }
                 elseif($request->rating == 2){
-                    $data = AttorneyReview::where('rating',2)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
+                    $data = Attorney::where('rating',2)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
                 }
                 elseif($request->rating == 1){
-                    $data = AttorneyReview::where('rating',1)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
+                    $data = Attorney::where('rating',1)->whereBetween('created_at', array($request->startDate, $request->endDate))->get();
                 }
             }
             else{
-                $data = DB::table('attorney_reviews')
+                $data = DB::table('attorneys')
                 ->get();
             }
             return datatables()->of($data)->make(true);
+           
         }
+   
         return view('admin.reports');
-        
     } 
 
+   
 
     function pdf()
     {
      $pdf = \App::make('dompdf.wrapper');
      $pdf->loadHTML($this->convert_customer_data_to_html());
      return $pdf->stream();
+     
     }
 
     function convert_customer_data_to_html()
@@ -191,15 +213,24 @@ class AdminController extends Controller
         $user->mobile = $request->input('mobile');
         $user->save();
 
-        return back()->with('success',"User has been updated!");
+        return back()->with('success',"User details have been updated!");
     }
 
     //specific user details
     public function userdetails($id)
     { 
         $user= User::find($id);
+        $reviews=AttorneyReview::where('user_id', $user->id)->paginate(5);
+        $questions=Question::where('user_id', $user->id)->paginate(5);
+        $practiceareas=PracticeArea::orderBy('area_practice','asc')->distinct()->select('area_practice')->get();
+        $locations=Lsk::orderBy('county','asc')->distinct()->select('county')->get();
+
+        
         return view('admin.user_details')
-        ->with('reviews',$user->reviews)
+        ->with('reviews',$reviews)
+        ->with('questions',$questions)
+        ->with('practiceareas',$practiceareas)
+        ->with('locations',$locations)
         ->with('user',$user);
     }
 
@@ -212,8 +243,7 @@ class AdminController extends Controller
     }
 
     // delete user reviews
-   public function destroyReview($id)
-   {
+    public function destroyReview($id){
        $review=AttorneyReview::findOrFail($id);
        $review->delete();
        return back()->with('success','Review has been deleted');
@@ -248,10 +278,13 @@ class AdminController extends Controller
      public function attorneydetails($id)
      { 
          $attorney= Attorney::find($id);
+        $answers = $attorney->answers->load('question');
+
          return view('admin.attorney_details')
         ->with('educations',$attorney->educations)
         ->with('endorsments',$attorney->endorsments)
         ->with('locations',$attorney->locations)
+        ->with('answers',$answers)
          ->with('attorney',$attorney);
      }
 
@@ -309,23 +342,23 @@ class AdminController extends Controller
     // Add Lawyer Education
     public function addEducation(Request $request)//Add education
     { 
-    $this->validate($request, [
-        'school_name' => ['required', 'string'],
-        'degree' => ['required', 'string'],
-        'graduation' => ['required','date'],
-        'attorney_id' => ['required'],
+        $this->validate($request, [
+            'school_name' => ['required', 'string'],
+            'degree' => ['required', 'string'],
+            'graduation' => ['required','date'],
+            'attorney_id' => ['required'],
 
-    ]);
+        ]);
         
-    // add Education
-    $education= new Education;
-    $education->school_name = $request->input('school_name');
-    $education->degree = $request->input('degree');
-    $education->graduation = $request->input('graduation');
-    $education->attorney_id = $request->input('attorney_id');
-    $education->save();
+        // add Education
+        $education= new Education;
+        $education->school_name = $request->input('school_name');
+        $education->degree = $request->input('degree');
+        $education->graduation = $request->input('graduation');
+        $education->attorney_id = $request->input('attorney_id');
+        $education->save();
 
-    return back()->with('success',"Your Education details have been updated!");
+        return back()->with('success',"Your Education details have been updated!");
     }
 
     //deleting Education
@@ -350,5 +383,62 @@ class AdminController extends Controller
         $endorsment->delete();
         return back()->with('success','Endorsment has been deleted!');
     }
+
+
+    //update User Question
+    public function updateQuestion(Request $request,$id){
+
+        $this->validate($request, [
+            'category' => ['required'],
+            'question' => ['required','min:10','max:128'],
+            'situation' => ['required','min:40','max:1200'],
+            'county' => ['required'],
+           
+        ]);
+
+        //update Question
+        $advice= Question::findOrFail($id);
+        $advice->category = $request->input('category');
+        $advice->question = $request->input('question');
+        $advice->situation = $request->input('situation');
+        $advice->county = $request->input('county');
+        $advice->save();
+ 
+         return back()->with('success', 'The question has been updated!');
+
+    }
+
+    //delete user question
+    public function destroyQuestion($id){
+        $question=Question::find($id);
+        $question->delete();
+        return back()->with('success', 'The question has been deleted!');
+
+    }
+
+
+     //update Lawyer Answer
+     public function updateAnswer(Request $request,$id)
+     { 
+         $this->validate($request, [
+             'answer' => ['required', 'min:40','max:1200'],
+         ]);
+             
+         //Update answer
+         $answer= Answer::findOrFail($id);
+         $answer->answer = $request->input('answer');
+         $answer->save();
+ 
+         return back()->with('success',"The Answer has been updated!");
+     }
+ 
+     // delete lawyer answer
+     public function deleteAnswer($id){
+ 
+         $answer = Answer::findOrFail($id);
+         $answer->delete();
+         return back()->with('success',"The Answer has been permanetly deleted!");
+ 
+     }
   
 }

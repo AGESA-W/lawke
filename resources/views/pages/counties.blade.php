@@ -41,7 +41,19 @@
                 <hr>
             @endforeach
         @else
-            <p class="lead text-center">No Lawyers found in this Area </p>
+        <div class="county-search-user"  >
+            <div class="county-legalmeet py-4 " >
+                <div class="row text-center">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h2 class="h1 mt-0 pt-1 pl-5">No Lawyers found in this County</h2>
+                        <a href="/" class="btn bg-color"> <span class="fa fa-undo"> Back to Homepage</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:68px;">
+        </div>
+       
         @endif
     </div>
 @endsection

@@ -32,6 +32,9 @@ window.swal = swal;
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('review-form', require('./components/ReviewComponent.vue').default);
+Vue.component('search-component', require('./components/SearchComponent.vue').default);
+
+
 
 
 

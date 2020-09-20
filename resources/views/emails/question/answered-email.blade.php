@@ -3,7 +3,7 @@
 
 The question you asked on legalmeet has been answered.
 
-@component('mail::button', ['url' => ''])
+@component('mail::button', ['url' => '{{route('question.answer')}}'])
 View answer
 @endcomponent
 

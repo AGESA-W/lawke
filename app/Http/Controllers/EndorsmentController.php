@@ -50,7 +50,7 @@ class EndorsmentController extends Controller
         $endorsment->attorney_id = $request->input('attorney_id');
         $endorsment->save();
 
-        return back()->with('success',"You have successfully endorsed this lawyer!");
+        return redirect( route('profile',$request->attorney_id))->with('success',"You have successfully endorsed this lawyer!");
     }
     // update Endorsment
     public function update(Request $request)

@@ -15,7 +15,7 @@ class QuestionAskedJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    private $attorney;
+    public $attorney;
     /**
      * Create a new job instance.
      *

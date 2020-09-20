@@ -78,9 +78,9 @@
                 @enderror
           </div>
           <div class="form-group">
-              <input type="text" name="user_id" value="{{Auth::id()}}">
+              <input type="hidden" name="user_id" value="{{Auth::id()}}">
           </div>
-          <button type="submit" class="btn btn-sm px-4 py-2 bg-color">Submit Question</button>
+          <button type="submit" class="btn btn-sm px-4 py-2 bg-color">Submit Question <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
       </form>
   </div>
 @endsection

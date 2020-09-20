@@ -12,12 +12,15 @@
 
   <script src="{{ asset('js/app.js')}}"></script>
 
-{{-- datatables --}}
+<!-- datatables -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
 
-{{-- datepicker --}}
+<!-- datepicker -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
   <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -28,6 +31,7 @@
 
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
 
 </head>
 <body class="hold-transition sidebar-mini">
@@ -46,21 +50,21 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="#" class="brand-link">
-        <img src="" alt="" class="brand-image img-circle"
-            style="opacity: .8;width:40px;height:40px;">
-        <span class="brand-text font-weight-light">LEGALCARE</span>
+      <a href="/" class="brand-link text-center">
+        <span class="brand-text "><strong>LEGALMEET</strong> </span>
       </a>
 
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
-            <img src="" class="img-circle" alt="" style="width:40px;height:30px;">
-          </div>
+          <div class="user-image" style="height:80px;width:90px;background:blue;font-size:55px;">
+            <div class="user-image-text text-center text-white m-auto px-1">
+                <strong class="text-uppercase"> {{substr(Auth::user()->name,0,2)}}{{strlen(Auth::user()->name)>2 ?"":""}}</strong>
+            </div>
+        </div>
           <div class="info">
-            <a href="#" class="d-block text-center"> {{ Auth::user()->name }} </a>
+            <a href="#" class="d-block text-center"> <strong>{{ Auth::user()->name }}</strong>   </a>
           </div>
         </div>
 
@@ -141,8 +145,10 @@
   <!-- REQUIRED SCRIPT -->
   <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script src="/vendor/datatables/buttons.server-side.js"></script>
 
 </body>
+
   <script>
     $(document).ready(function (){
 

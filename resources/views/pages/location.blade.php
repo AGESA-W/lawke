@@ -16,7 +16,7 @@
                     @foreach ($practiceareachunk as $practicearea)
                     <div class="col-md-3">
                         <ul class="list-unstyled">
-                            <li> <a href="/practice-areas/{{$practicearea->area_practice}}/{{$location->county}}" class="attorney-card-link text-decoration-none">{{$practicearea->area_practice}}</a> </li>
+                            <li class="pt-2"> <a href="/practice-areas/{{$practicearea->area_practice}}/{{$location->county}}" class="attorney-card-link text-decoration-none">{{$practicearea->area_practice}}</a> </li>
                         </ul>
                     </div>
                     @endforeach

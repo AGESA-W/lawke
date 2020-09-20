@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Question;
-use App\Answer;
 use App\User;
-use App\Mail\QuestionAnswered;
+use App\Answer;
+use App\Question;
+use Illuminate\Http\Request;
 use App\Jobs\QuestionAnsweredJob;
 use Illuminate\Support\Facades\Mail;
-
-
-use App\Notifications\repliedToQuestion;
+use App\Notifications\QuestionAnswered;
 
 class AnswerController extends Controller
 {
@@ -21,8 +18,10 @@ class AnswerController extends Controller
 
     }
 
-    public function answer($question){
-        $questions=Question::where('question', $question)->get();
+    public function answer($id,$question){
+        $questions=Question::where('question', $question)
+                            ->where('id', $id)
+                            ->get();
         return view('add_answer')
         ->with('questions',$questions);
  
@@ -37,7 +36,7 @@ class AnswerController extends Controller
         $this->validate($request, [
             'attorney_id' => ['required'],
             'question_id' => ['required'],
-            'answer' => ['required','min:40','max:1200'],
+            'answer' => ['required','min:20','max:1200'],
             'need_lawyer' => ['required'],
         ]);
 
@@ -48,11 +47,13 @@ class AnswerController extends Controller
         $answer->user_id= $request->input('user_id');
         $answer->answer = $request->input('answer');
         $answer->need_lawyer = $request->input('need_lawyer');
-        // $user->notify(new repliedToQuestion($user));
         $answer->save();
          
+        $question =Question::where('id',$answer->question_id)->first();
+
         //trigger email
-        dispatch(new QuestionAnsweredJob($user));
+        $user->notify(new QuestionAnswered($question));
+        // dispatch(new QuestionAnsweredJob($user));
 
          return back()->with('success', 'Your answer has been shared');
     }

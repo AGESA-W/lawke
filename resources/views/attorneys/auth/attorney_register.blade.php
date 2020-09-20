@@ -330,6 +330,7 @@
                                 <div class="form-group">
                                     <label for="practice_area" class="col-form-label ">{{ ('Select your main practice area') }}</label>
                                     <select name="practice_area" id="practice_area" class="form-control">
+                                        <option value="">Please Select</option>
                                         @foreach ($practiceareas as $practicearea)
                                         <option value="{{$practicearea->area_practice}}">{{$practicearea->area_practice}}</option>
                                         @endforeach

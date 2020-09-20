@@ -14,7 +14,7 @@
                             <ul class="list-unstyled">
                                 <li class="list-item"><span class="fa fa-map-marker"style="font-size:16px;"> @foreach ($attorney->locations as $location) {{$location->location}}@endforeach</span> </li>
                                 <li class="list-item"><b class="text-color">Office:</b> @foreach ($attorney->locations as $location) {{$location->company_name}}@endforeach</li>
-                            <li class="list-item"><b class="text-color">Contact:</b>{{$attorney->mobile}}</li>
+                                <li class="list-item"><b class="text-color">Contact:</b>{{$attorney->mobile}}</li>
                             </ul>
                         </div>
                     </div>

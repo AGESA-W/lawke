@@ -8,7 +8,7 @@
             <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
             <li class="breadcrumb-item"><a href="/get-advice" class="text-decoration-none">Get Advice</a></li>
             <li class="breadcrumb-item"><a href="/topics/{{$question->category}}" class="text-decoration-none">{{$question->category}}</a></li>
-            <li class="breadcrumb-item"><a href="/legal-answers/{{$question->question}}" class="text-decoration-none">{{substr($question->question,0,45)}}{{strlen($question->question)>45 ?"...":""}}</a></li>
+            <li class="breadcrumb-item"><a href="/legal-answers/{{$question->id}}/{{$question->question}}" class="text-decoration-none">{{substr($question->question,0,45)}}{{strlen($question->question)>45 ?"...":""}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">Add an Answer</li>
         </ol>
     </nav>
@@ -29,16 +29,16 @@
                 <p>Do you think the questioner needs to hire a lawyer to address this issue?</p>
                 <div class="d-flex form-check">
                     <input class="form-check-input" type="radio"  name="need_lawyer" id="yes" value="yes" required>
-                    <label class= "form-check-label" for="male">Yes</label>
+                    <label class= "form-check-label" for="yes">Yes</label>
 
                     <div class="option2 pl-5">
                         <input class="form-check-input " type="radio" name="need_lawyer" id="no" value="no"required >
-                        <label class= "form-check-label" for="female">No</label>
+                        <label class= "form-check-label" for="no">No</label>
                     </div>
 
                     <div class="option2 pl-5">
                         <input class="form-check-input " type="radio" name="need_lawyer" id="notsure" value="not sure"required>
-                        <label class= "form-check-label" for="female">Not sure</label>
+                        <label class= "form-check-label" for="not sure">Not sure</label>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             <input type="hidden" class="form-control" value="{{$question->user_id}}" name="user_id">
 
 
-            <button type="submit" class="btn btn-sm btn-success">Continue</button>
+            <button type="submit" class="btn btn-sm btn-success"><span class="fa fa-send"></span> Continue</button>
         </form>
 
     </div>

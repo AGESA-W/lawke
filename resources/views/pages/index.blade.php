@@ -72,12 +72,12 @@
                                 @else
                                     <li class="nav-item dropdown">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                            {{ Auth::user()->name }} {{ Auth::user()->lastname }}<span class="caret"></span>
                                             {{ Auth::user()->firstname }} <span class="caret"></span>
                                         </a>
                 
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                            <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
                                                                 document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
@@ -137,7 +137,13 @@
                                                     <div class="card-body">
                                                         <ul class="list-unstyled mb-0"style="margin-top:-18px">
                                                             <li><a class="text-decoration-none home-card-name card-title pt-0" href="/profile/{{$attorney->id}}">{{$attorney->firstname}} {{$attorney->lastname}}</a></li>
-                                                            <li><star-rating :star-size="17" active-color="#fc9735" :rating="{{$attorney->getStarRating()}}"></star-rating> <a href="/profile/{{$attorney->id}}#review" class="text-decoration-none">{{$attorney->reviewCount()}} review(s)</a></li>
+                                                            <li><star-rating :star-size="17" active-color="#fc9735" :rating="{{$attorney->getStarRating()}}"></star-rating> <a href="/profile/{{$attorney->id}}#review" class="text-decoration-none">
+                                                                @if ($attorney->reviewCount()>1)
+                                                                    <span>{{$attorney->reviewCount()}} reviews</a></span>
+                                                                @else
+                                                                    <span>{{$attorney->reviewCount()}} review</a></span>
+                                                                @endif
+                                                            </li>
                                                         </ul>
                                                         <small class="text-muted mt-0"><b>LOCATION</b></small>
                                                         <p><span class="fa fa-map-marker text-secondary"style="font-size:16px;"> </span> {{$attorney->county}} County</p>
@@ -193,7 +199,7 @@
                                 @foreach ($practiceareachunk as $practicearea)
                                 <div class="col-md-3">
                                     <ul class="list-unstyled">
-                                         <li> <a href="/practice-areas/{{$practicearea->area_practice}}" class="attorney-card-link text-decoration-none">{{$practicearea->area_practice}}</a> </li>
+                                         <li class="pt-2"> <a href="/practice-areas/{{$practicearea->area_practice}}" class="attorney-card-link text-decoration-none">{{$practicearea->area_practice}}</a> </li>
                                     </ul>
                                 </div>
                                 @endforeach
@@ -207,7 +213,7 @@
                             @foreach ($locationchunk as $location)
                             <div class="col-md-3">
                                 <ul class="list-unstyled">
-                                    <li> <a href="/all-lawyers/{{$location->county}}" class="attorney-card-link text-decoration-none">{{$location->county}} Lawyers</a> </li>
+                                    <li class="pt-2"> <a href="/all-lawyers/{{$location->county}}" class="attorney-card-link text-decoration-none">{{$location->county}} Lawyers</a> </li>
                                 </ul>
                             </div>
                             @endforeach
@@ -218,7 +224,7 @@
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="tab_3">
                         @foreach ($letters as $letter)
-                            <a href="#" class="text-decoration-none pr-4">{{$letter}}</a>
+                            <a href="/lawyers-name/{{$letter}}" class="text-decoration-none pr-4">{{$letter}}</a>
                         @endforeach
                     </div>
                     <!-- /.tab-pane -->
@@ -298,7 +304,7 @@
             {{-- <h1 class="about-plain-jumbotron-text text-center" ><strong>What People Are Saying <br>About LegalCare</strong></h1> --}}
             
             <div id="CarouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background:#e9ecef;position: absolute;left:0;right:0;">
-            <h1 class="about-plain-jumbotron-text text-center" ><strong>What People Are Saying <br>About LegalCare</strong></h1>
+            <h1 class="about-plain-jumbotron-text text-center" ><strong>What People Are Saying <br>About LegalMeet</strong></h1>
 
                 <ol class="carousel-indicators mt-4">
                   <li data-target="#CarouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -308,7 +314,7 @@
                 <div class="carousel-inner">
                   <div class="carousel-item text-center active">
                         <span class="fa fa-quote-left fa-3x text-color"></span>
-                        <blockquote class="mb-5">I needed assistance with some legal matters and didn't know where to go <b>I found LegalCare</b> <p> and decided to give it a try <b>It was very helpful</b> am very satisfied.</p>
+                        <blockquote class="mb-5">I needed assistance with some legal matters and didn't know where to go <b>I found LegalMeet</b> <p> and decided to give it a try <b>It was very helpful</b> am very satisfied.</p>
                         <div class="text-muted ">– Small claims client</div> </blockquote>
                   </div>
                   <div class="carousel-item text-center">

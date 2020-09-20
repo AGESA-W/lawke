@@ -5,9 +5,11 @@
 <div class="for-lawyers">
     <div class="for-lawyer">
         <div class="for-lawyer-jumbotron">
-        <div class="for-lawyer text-center">
-            <h1 class="for-lawyer-jumbotron-text"><strong>Get the legal clients you <br> need now!</strong></h1>
-        </div>
+            <div class="for-lawyer text-center">
+                <h1 class="for-lawyer-jumbotron-text"><strong>Get the legal clients you <br> need now!</strong></h1>
+                {{-- <a href="/" class="btn bg-color mb-5"><span class="fa fa-undo"></span> Back to homepage</a> --}}
+
+            </div>
         </div>
     </div>
     {{-- <h4 class="mb-3" style="margin-top:216px;"> <b>Sign in to Legal<span class="text-color">Meet</span></b> </h4> --}}
@@ -78,7 +80,7 @@
                     </form> --}}
                     <div class="text-center">
                           <p class="pt-5">Already have an account</p>
-                          <a href="/attorney_login" class="text-decoration-none btn btn-sm btn-outline-primary px-3 py-2" style="border-radius: 15px;">Sign in</a>
+                          <a href="/attorney_login" class="text-decoration-none btn btn-sm btn-outline-primary px-3 py-2" style="border-radius: 15px;">Login</a>
                     </div>
                  
                 </div>
@@ -94,7 +96,7 @@
                 <div class="card-body">
                     <div class="text-center">
                             <p class="text-center pt-5">New to Legal<span class="text-color">meet</span>? Create an account.</p>
-                          <a href="/attorney_register" class="text-decoration-none btn btn-sm btn-outline-success px-3 py-2" style="border-radius: 15px;">Sign up</a>
+                          <a href="/attorney_register" class="text-decoration-none btn btn-sm btn-outline-success px-3 py-2" style="border-radius: 15px;">Register</a>
 
                     </div>
                 </div>
@@ -105,7 +107,7 @@
         <div class="why-legalmeet">
             <div class="row text-center">
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                    <h2 class="h1 mt-0">What does Legal<span class="text-color">Meet</span> offer?</h2>
+                    <h2 class="h1 mt-0 pt-1">What does Legal<span class="text-color">Meet</span> offer?</h2>
                 </div>
             </div>
             <div class="row" style="padding-left:350px;" >

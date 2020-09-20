@@ -35,7 +35,7 @@
                                             <option value="5">5</option>
                                         </select>
                                         
-                                        <button class="btn btn-md float-right btn-primary mt-2" name="fetch" id="fetch">Fetch</button>
+                                        <button class="btn btn-md float-right btn-primary mt-2" name="fetch" id="fetch"><span class="fa fa-send"></span> Fetch</button>
                                         {{-- <button type="button" name="refresh" id="refresh" class="btn btn-default">Refresh</button> --}}
                                     </div>
                                 </div> 
@@ -49,18 +49,18 @@
                                     <div class="card-body">
                                         <div class="table-responsive">
                                         <table class="table table-striped" id="rating-table">
-                                            {{-- <div class="exports-buttons float-right mb-3 mt-3"> --}}
-                                                {{-- <a href="{{route('rating.pdf')}}" class="text-decoration-none btn btn-sm btn-prima"><span class="fa fa-file"></span> Export Pdf</a> --}}
-                                                {{-- <button class="btn btn-sm btn-primary"> <span class="fa fa-file"></span> Export Pdf</button> --}}
-                                                {{-- <button class="btn btn-sm btn-success"> <span class="fa fa-file"></span> Export Excel</button> --}}
+                                             {{-- <div class="exports-buttons float-right mb-3 mt-3"> 
+                                                <a href="{{route('rating.pdf')}}" class="text-decoration-none btn btn-sm btn-primary"><span class="fa fa-file"></span> Export Pdf</a> 
+                                                 <button class="btn btn-sm btn-success"> <span class="fa fa-file"></span> Export Excel</button> 
                                                 
-                                            {{-- </div> --}}
+                                            </div> --}}
                                             <thead>
                                                 <tr>
                                                     <th>Lawyer ID</th>
-                                                    <th>Headline</th>
+                                                    <th>Firstname</th>
+                                                    <th>Lastname</th>
                                                     <th>Rating</th>
-                                                    <th>Date</th>
+                                                    <th  width="25%">Date</th>
                                                 </tr>
                                             </thead>
                                         </table>
@@ -83,7 +83,7 @@
                                         End Date: <input id="lastDate" name="lastDate" width="276" readonly/>
 
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6 rattt">
                                         {{-- Rating
                                         <select class="form-control" name="rating" id="rating" >
                                             <option value="1">1 </option>
@@ -192,18 +192,16 @@
             function open_data()
             {
                 $('#rating-table').DataTable({
-                    dom: 'Bfrtip',
-                    buttons: [
-                        'copy', 'excel', 'pdf'
-                    ]
+                   
                 });
             }
             function load_data(startDate = '', endDate = '', rating = ''){
-                $('#rating-table').DataTable({
-                    dom: 'Bfrtip',
+                var table= $('#rating-table').DataTable({
+                    dom: 'lBfrtip',
                     buttons: [
-                        'copy', 'excel', 'pdf'
+                        'csv', 'excel', 'pdf'
                     ],
+                   
                     serverSide: true,
                     ajax:{
                     url: '{{ route ("rating.report") }}',
@@ -215,8 +213,12 @@
                         name: 'attorney_id',
                     },
                     {
-                        data: 'headline',
-                        name: 'headline'
+                        data: 'firstname',
+                        name: 'firstname',
+                    },
+                    {
+                        data: 'lastname',
+                        name: 'lastname',
                     },
                     {
                         data: 'rating',
@@ -227,8 +229,12 @@
                         name: 'created_at'
                     }
                     ],
+                    
                 });
+               
             }
+            
+
             $('#fetch').click(function(){
                 var startDate = $('#startDate').val();
                 var endDate = $('#endDate').val();
@@ -245,16 +251,16 @@
 
 
             // registered lawyers
-            beginLawyers();
-            function beginLawyers()
-            {
-                $('#registeredLawyers-table').DataTable({
-                    dom: 'Bfrtip',
-                    buttons: [
-                        'copy', 'excel', 'pdf'
-                    ]
-                });
-            }
+            // beginLawyers();
+            // function beginLawyers()
+            // {
+            //     $('#registeredLawyers-table').DataTable({
+            //         dom: 'Bfrtip',
+            //         buttons: [
+            //             'copy', 'excel', 'pdf'
+            //         ]
+            //     });
+            // }
             function loadLawyersData(beginDate = '', lastDate = ''){
                 $('#registeredLawyers-table').DataTable({
                     serverSide: true,
@@ -298,16 +304,16 @@
 
 
              // registered users
-             beginUsers();
-            function beginUsers()
-            {
-                $('#registeredUsers-table').DataTable({
-                    dom: 'Bfrtip',
-                    buttons: [
-                        'copy', 'excel', 'pdf'
-                    ]
-                });
-            }
+            //  beginUsers();
+            // function beginUsers()
+            // {
+            //     $('#registeredUsers-table').DataTable({
+            //         dom: 'Bfrtip',
+            //         buttons: [
+            //             'copy', 'excel', 'pdf'
+            //         ]
+            //     });
+            // }
             function loadUsersData(firstDate = '', finalDate = ''){
                 $('#registeredUsers-table').DataTable({
                     serverSide: true,

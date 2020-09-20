@@ -22,7 +22,7 @@
                     <hr>
                     <div class="text-center">
                         @if(Auth::guard('attorney')->check())
-                       <a href="/legal-answers/{{$question->question}}/add-answer" class="text-decoration-none btn btn-primary btn-sm px-2 mb-1"> <span class="fa fa-pencil"></span>Answer this question</a>
+                       <a href="/legal-answers/{{$question->id}}/{{$question->question}}/add-answer" class="text-decoration-none btn btn-primary btn-sm px-2 mb-1"> <span class="fa fa-pencil"></span>Answer this question</a>
                         @endif
                     </div>
                 </div>

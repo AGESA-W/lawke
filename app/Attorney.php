@@ -87,10 +87,6 @@ class Attorney extends Authenticatable
         return $this->hasMany('App\AttorneyMessage');
     }
 
-    //relationship with user messages
-    public function usermessages(){
-        return $this->hasMany('App\UserMessage');
-    }
 
     //relationship with endorsment done
     public function doneEndorsments(){
@@ -101,6 +97,41 @@ class Attorney extends Authenticatable
     public function answers(){
         return $this->hasMany('App\Answer', 'attorney_id', 'id');
     }
+
+    
+    //relationship with attorney messages
+    public function attorneyMessages(){
+        return $this->hasMany('App\AttorneyMessages');
+    }
+
+    //relationship with user messages
+    public function usermessages(){
+        return $this->hasMany('App\UserMessages');
+    }
+
+    //messages that are inbox
+    public function countInbox(){
+
+        $test=DB::table('attorney_messages')
+        ->where('status',1)
+        ->where('attorney_id',Auth::id())
+        ->get();
+        $total=count($test);
+        
+        return $total;
+    }   
+
+    public function ror(){
+       
+
+        $update=DB::table('attorney_messages')
+        ->where('replied_id','=',$this->id)
+        ->get();
+      
+        return  $update;
+
+    }
+
 
   //get the rating
     public function getStarRating(){
@@ -125,18 +156,6 @@ class Attorney extends Authenticatable
     }
 
 
-    //messages that are inbox
-    public function countInbox(){
-
-        $test=DB::table('attorney_messages')
-        ->where('status',0)
-        ->where('attorney_id',Auth::id())
-        ->get();
-        $total=count($test);
-        
-        return $total;
-    }   
-
     //get the num of endorsments
     public function endorsmentCount(){
         $count = $this->endorsments()->count();
@@ -146,6 +165,22 @@ class Attorney extends Authenticatable
         return $count;
     }
 
+
+    public function rr(){
+        $count = $this->reviews()->count();
+        if(empty($count)){
+            $average = 0;
+        }
+        $starCountSum = $this->reviews()->sum('rating');
+        $average = $starCountSum/$count;
+
+
+        $mId= $this->id;
+        $update=DB::table('attorneys')
+        ->where('id',$mId)
+        ->update(['rating'=> $average]);
+      
+    }
 
     /**
      * 

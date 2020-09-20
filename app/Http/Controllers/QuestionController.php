@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use DB;
+use Auth;
 use App\Lsk;
-use App\PracticeArea;
-use App\Question;
 use App\Answer;
 use App\Attorney;
-use App\Jobs\QuestionAskedJob;
-use Illuminate\Support\Facades\Mail;
-// use App\Notifications\QuestionAsked;
+use App\Question;
+use App\PracticeArea;
+use Illuminate\Http\Request;
 
-use Auth;
-use DB;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\QuestionAsked;
+use Illuminate\Support\Facades\Mail;
 
 class QuestionController extends Controller
 
@@ -52,12 +53,12 @@ class QuestionController extends Controller
 
     public function clientQuestionStore(Request $request)
     {
-        $attorney=Attorney::where('practice_area',$request->category)->first();
+        $attorneys=Attorney::where('practice_area',$request->category)->get();
 
         $this->validate($request, [
             'category' => ['required'],
             'question' => ['required','min:10','max:128'],
-            'situation' => ['required','min:40','max:1200'],
+            'situation' => ['required','min:30','max:1200'],
             'county' => ['required'],
             'user_id' => ['required'],
             'anonymous' => ['required'],
@@ -65,19 +66,19 @@ class QuestionController extends Controller
         ]);
 
         //create new  Question
-        $advice= new Question;
-        $advice->category = $request->input('category');
-        $advice->question = $request->input('question');
-        $advice->situation = $request->input('situation');
-        $advice->county = $request->input('county');
-        $advice->user_id = $request->input('user_id');
-        $advice->anonymous = $request->input('anonymous');
-        $advice->save();
+        $question= new Question;
+        $question->category = $request->input('category');
+        $question->question = $request->input('question');
+        $question->situation = $request->input('situation');
+        $question->county = $request->input('county');
+        $question->user_id = $request->input('user_id');
+        $question->anonymous = $request->input('anonymous');
+        $question->save();
 
 
-        dispatch(new QuestionAskedJob($attorney));
+            // dd($attorney);
+            Notification::send($attorneys, new QuestionAsked($question));
 
-        // dd($attorney);
  
          return back()->with('success', 'Your question has been shared');
     }
@@ -114,9 +115,11 @@ class QuestionController extends Controller
  
     } 
 
-    public function answers($question){
+    public function answers($id,$swali){
 
-        $question=Question::where('question', $question)->first();
+        $question=Question::where('question', $swali)
+                            ->where('id', $id)
+        ->first();
         $answers = $question->answers->load('attorney');
             // dd($question, $answers->load('attorney'));
         return view('individual_question')
@@ -124,7 +127,7 @@ class QuestionController extends Controller
         ->with('question',$question);
  
     } 
-
-
+    
+  
 
 }

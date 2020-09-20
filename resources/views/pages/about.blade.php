@@ -4,10 +4,13 @@
         <div class="about-jumbotron">
             <div class="jumbotron text-center">
                 <h3 class="about-jumbotron-text"><strong>Changing how people <br> get legal help </strong></h3>
+                <a href="/" class="btn bg-color"><span class="fa fa-undo"></span> Back to homepage</a>
+
             </div>
         </div>
         <h1 class="text-center mt-2" ><strong>LEGALMEET</strong></h1>
         <p class="text-center well text-color" style="font-size:16px"><b>Legalmeet was founded in Kenya to aid in the process of obtainig legal services.<br> It connects clients with lawyers.</b> </p>
+
         
     </div>
     <div class="why"style="margin-top:530px;">
@@ -86,7 +89,7 @@
 
                     <p class="mt-3 mb-0 text-success font-weight-bold">Post your question for free, and experienced lawyers will respond. Or, find answers to previously asked questions.</p>
                     {{-- <button class="btn bg-color float-right"><b>Ask a lawyer</b> </button> --}}
-                    <a href="/ask-lawyer" class="text-decoration-none btn bg-success float-right font-weight-bold">Ask a lawyer</a>
+                    <a href="/ask-lawyer" class="text-decoration-none btn bg-success font-weight-bold">Ask a lawyer</a>
                 </div>
               
             </div>

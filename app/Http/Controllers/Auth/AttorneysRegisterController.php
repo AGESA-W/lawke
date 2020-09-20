@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Attorney;
 use App\PracticeArea;
-use App\Notifications\verifyEmail;
-
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+use App\Notifications\verifyEmail;
+use App\Jobs\LawyerRegistrationJob;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -46,6 +47,8 @@ class AttorneysRegisterController extends Controller
             'password' => ['required','string','min:8','confirmed'],
         ]);
 
+
+     
         //create new Attorney
         $attorney= new Attorney;
         $attorney->attorney_id = $request->input('attorney_id');
@@ -65,6 +68,7 @@ class AttorneysRegisterController extends Controller
         $attorney->save();
 
         $attorney->sendverificationEmail();
+
  
       return redirect('attorney_dashboard')->with('success', 'Account created Successfully');
 

@@ -22,7 +22,7 @@
         </div>
         <div class="col-12 col-md-8">
             <p class="text-dark mt-4" style="font-size:15px;">Provide some details about your situation, but remember not to include sensitive information. An attorney-client relationship is only formed once an attorney formally agrees to represent you.</p>
-            <form action="{{route('send.message')}}" method="post">
+            {{-- <form action="{{route('send.message')}}" method="post">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <textarea name="description" id="description" cols="30" rows="5" placeholder="Here's a brief description of my case" class="form-control @error('description') is-invalid @enderror" value="{{ old('description') }}"  required autocomplete="description" autofocus></textarea>
@@ -35,6 +35,33 @@
                 <input type="hidden" name="attorney_id" value="{{$attorney->id}}">
                 <input type="hidden" name="user_id" value="{{Auth::id()}}">
                 <button type="submit" class="btn bg-color px-4">Submit</button>
+            </form> --}}
+            <form action="{{route('attorney.message.send.profile')}}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <input type="hidden" class="form-control" value="{{$attorney->email}}" name="email" id="email" placeholder="Enter recipients email" required>
+                </div>
+                
+
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject of the message" required minlength="5" maxlength="200">
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea name="content"  class="form-control" id="content" cols="30" rows="6" placeholder="Write your message here........" required minlength="5" maxlength="4000"></textarea>
+                </div>
+                <input type="hidden" name="user_id" id="user_id" value="{{Auth::id()}}">
+                
+
+                <button type="submit" class="btn btn-primary px-3">Send <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
             </form>
 
         </div>

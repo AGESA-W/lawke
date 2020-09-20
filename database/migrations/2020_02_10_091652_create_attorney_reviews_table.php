@@ -21,7 +21,7 @@ class CreateAttorneyReviewsTable extends Migration
             $table->mediumText('description');
             $table->string('consultation');
             $table->string('recommend');
-            $table->string('rating')->nullable();
+            $table->integer('rating');
             $table->tinyInteger('approved')->nullable();
             $table->timestamps();
 

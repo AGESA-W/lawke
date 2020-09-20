@@ -5,55 +5,65 @@
             <div class="jumbotron text-center">
                 <h3 class="search-lawyer-heading">Experienced lawyers are ready to help.</h3>
                 <h4 class="search-lawyer-find">Find a lawyer</h4>
-                <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                    <input class="form-control form-control-sm mt-3 ml-3 w-75" type="text" name="search" id="search" placeholder="Search by name or county"
-                        aria-label="Search">
-                </form>
-                {{-- <input type="text" name="search" id="search" class="form-control"  placeholder="Search Customer Data" /> --}}
+               
+                <div class="mt-3">
+                    
+                    <form action="/se" method="POST" class="form-inline justify-content-center md-form form-sm mt-0">
+                        @csrf
+                        <input class="form-control my-0 py-1 w-75" type="text" placeholder="Search by name or county" aria-label="Search" name="q">
+                        <div class="input-group-append">
+                        <button  type="submit" class="input-group-text red lighten-3" id="basic-text1"><i class=" py-1 fa fa-search text-grey"
+                            aria-hidden="true"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+
             </div>
         </div>
     </div>
-    <div class="row" style="margin-top:250px;">
-        <div class="col-md-3">
-            <p class="mb-0"><strong>Filter by</strong></p>
-            <div class="text-muted">REVIEWS</div>
-            <input type="radio" name="lawyer-rating" id="rating-5" value="5">
-            @for ($i = 0; $i < 5; $i++)
-                <span class="fa fa-star"style="color:#ffe234"></span>
-            @endfor
-            <br>
+    <div style="margin-bottom:730px;">
+        <div class="search-user">
+        <div class="search-legalmeet">
+            <div class="row text-center">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <h2 class="h1 mt-0 pt-1 pl-5">Tips for effective searching on Legal<span class="text-color">Meet</span></h2>
+                </div>
+            </div>
+            <div class="row" style="padding-left:350px;" >
+                <div class="col-xs-12 col-sm-12 col-md-9">
+                    <ol class="ordered-list">
+                        <li>
+                            <h3 class="h2"> <span class="ordering">1</span> Use Specific Keywords</h3>
+                            <p class="pl-5"> Keywords are the terms that you use to find content. Making your keywords as specific as possible will help your search engine to track down the information that you want.
+                                <br>
+                                Say, for example, that you want to find a lawyer called Philip. If you type only "p" in the search engine, the results will include many pages about other types of lawyers, whereas typing Philip  will return a more concise range of lawyers.
+                                <br>
+                               Another example would be if you want to search for lawyers in a specific county, Say, for example, that you want to find a lawyers in Vihiga County. If you type only "V" in the search engine, the results will include many pages with other counties, whereas typing Vihiga  will return only lawyers in that county.
 
-            <input type="radio" name="lawyer-rating" id="rating-4">
-            @for ($i = 0; $i < 4; $i++)
-                <span class="fa fa-star" style="color:#ffe234"></span>
-            @endfor
-            <br>
+                            </p>
 
-            <input type="radio" name="lawyer-rating" id="rating-3">
-            @for ($i = 0; $i < 3; $i++)
-                <span class="fa fa-star"style="color:#ffe234"></span>
-            @endfor
-            <br>
-
-            <input type="radio" name="lawyer-rating" id="rating-2">
-            @for ($i = 0; $i < 2; $i++)
-                <span class="fa fa-star"style="color:#ffe234"></span>
-            @endfor
-            <br>
-
-            <input type="radio" name="lawyer-rating" id="rating-1">
-                <span class="fa fa-star"style="color:#ffe234"></span>
-        </div>
-        <div class="col-md-9">
-            <div class="hello">
-
+                        </li>
+                        <li>
+                            <h3 class="h2 pl-1"><span class="ordering">2</span>Remove Unhelpful Words</h3>
+                            <p class="pl-5"> Adding Unhelpful words may cause you to obatin wrong results or obtain no results at all.</p>
+                        </li>
+                        <li>
+                            <h3 class="h2 pl-1"><span class="ordering">3</span>Simplify your search terms</h3>
+                            <p class="pl-5">strip out unnecessary stop words and avoid suffixes.</p>
+                        </li>
+                        
+                        </li>
+                    </ol>
+                </div>
             </div>
         </div>
+    </div>
+       
     </div>
     
  
-   <script>
+   {{-- <script>
     $(document).ready(function(){
 
     
@@ -90,5 +100,5 @@
         });
 
     });
-   </script>
+   </script> --}}
 @endsection

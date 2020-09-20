@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\User;
-use App\Attorney;
-use App\AttorneyReview;
-use App\Message;
-use App\Lsk;
-use App\PracticeArea;
-
-
 use DB;
-use Illuminate\Support\Facades\Auth;
+use App\Lsk;
+use App\User;
+use App\Message;
+use App\Attorney;
+use App\Question;
 use Pusher\Pusher;
+
+
+use App\PracticeArea;
+use App\AttorneyReview;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -50,18 +51,41 @@ class HomeController extends Controller
 
         $locations=Lsk::orderBy('id','desc')->distinct()->select('county')->get();
         $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
+        $questions=Question::where('user_id',$user_id)->orderBy('id','desc')->paginate(5);
 
         return view('home')->with('user',$user)
         ->with('messages',$user->messages)
         ->with('usermessages',$user->usermessages)
         ->with('reviews',$user->reviews)
-        ->with('questions',$user->questions)
+        ->with('questions',$questions)
         ->with('locations',$locations)
         ->with('practiceareas',$practiceareas);
 
         
     } 
+    public function reviews(){
+        
+
+        $reviews=AttorneyReview::where('user_id',Auth::id())->paginate(5);
+        return view('users.reviews')
+        ->with('reviews',$reviews);
+    }
     
+    public function questions(){
+        
+        $user_id=auth()->user()->id;
+        $user=User::find($user_id);
+
+        $locations=Lsk::orderBy('id','desc')->distinct()->select('county')->get();
+        $questions=Question::where('user_id',$user_id)->orderBy('id','desc')->paginate(5);
+        $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
+
+        return view('users.questions')
+        ->with('questions',$questions)
+        ->with('practiceareas',$practiceareas)
+        ->with('locations',$locations);
+    }
+
     //deleting User
     public function destroy($id){
         $user=User::find($id);

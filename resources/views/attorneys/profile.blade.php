@@ -10,7 +10,14 @@
                     <div class="col-12  col-md-8"> 
                         <div class="card-body ml-4 p-0">
                             <h5 class="card-title" style="color:#333333;font-size:28px;">{{$attorney->firstname}} {{$attorney->lastname}}</h5>
-                            <p class="card-text"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$attorney->getStarRating()}}"></star-rating> <a href="#review" class="text-decoration-none">{{$attorney->reviewCount()}} review(s)</a></p>
+                            <p class="card-text"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$attorney->getStarRating()}}"></star-rating> <a href="#review" class="text-decoration-none">
+                                @if ($attorney->reviewCount()>1)
+                                    {{$attorney->reviewCount()}} reviews</a>
+                                    
+                                @else
+                                {{$attorney->reviewCount()}} review</a>
+                                @endif
+                            </p>
                             <ul class="list-unstyled">
                                 <li ><span class="fa fa-map-marker text-secondary"style="font-size:16px;"> </span> @foreach ($locations as $location){{$location->location}} @endforeach</li>
                                 <li class=" pt-1"> <img src="/images/verified.png" alt="" style="width:14px;height:14px">Free Consultation </li>
@@ -155,7 +162,7 @@
                 <section class="profile-content" id="review">
                     <h5 class="d-flex float-left">Reviews <span class="text-muted">({{$attorney->reviewCount()}})</span> <span class="pl-2" style="margin-top:-7px;"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$attorney->getStarRating()}}"></star-rating></span></h5>
                     <button class="btn  float-right " style="background:#2a5788">
-                    <a class="text-white text-decoration-none" href="/review/{{$attorney->id}}/write-review"> Review {{$attorney->firstname}} {{$attorney->lastname}}</a>
+                    <a class="text-white text-decoration-none" href="/review/{{$attorney->id}}/write-review"> <span class="fa fa-thumbs-up"></span> Review {{$attorney->firstname}} {{$attorney->lastname}}</a>
                     </button>
                     
                     <div class="clearfix"></div>
@@ -183,13 +190,16 @@
                                 <p>No Reviews found</p>
                             @endif
                         </ul>
+                        <div class="text-center mt-2">
+                            {{ $reviews->links() }}
+                        </div>
                         <div class="clearfix"></div>
                     </div>
                 </section>
                 <section class="profile-content" id="endorsment">
                     <h5 class="d-flex float-left">Lawyer endorsments<span class="text-muted">({{$attorney->endorsmentCount()}})</span></h5>
                     <button class="btn  float-right " style="background:#2a5788">
-                    <a class="text-white text-decoration-none" href="/attorney/{{$attorney->id}}/endorsment"> Are you a Lawyer? Endorse this lawyer</a>
+                    <a class="text-white text-decoration-none" href="/attorney/{{$attorney->id}}/endorsment"> <span class="fa fa-check"></span> Are you a Lawyer? Endorse this lawyer</a>
                     </button>
                     <div class="clearfix"></div>
                     <div class="wrapper mt-3">

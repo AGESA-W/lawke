@@ -2,23 +2,26 @@
 
 namespace App\Notifications;
 
+use App\Question;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class QuestionAsked extends Notification
+class QuestionAsked extends Notification implements ShouldQueue
+
 {
     use Queueable;
 
+    public $question;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Question $question)
     {
-        //
+        $this->question =$question;
     }
 
     /**
@@ -32,7 +35,7 @@ class QuestionAsked extends Notification
         return ['mail'];
     }
 
-    /**
+    /**php 
      * Get the mail representation of the notification.
      *
      * @param  mixed  $notifiable
@@ -40,10 +43,13 @@ class QuestionAsked extends Notification
      */
     public function toMail($notifiable)
     {
+        $url = url('legal-answers/' .$this->question->id. '/' . $this->question->question);
+
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->line('A question in your area of practice has been asked on our application.')
+                    ->line('Please click the button below to view the question.')
+                    ->action('View Question', $url)
+                    ->line('Answering client questions increases your chances of obtaining potential clients.');
     }
 
     /**

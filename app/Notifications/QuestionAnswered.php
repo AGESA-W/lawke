@@ -2,32 +2,28 @@
 
 namespace App\Notifications;
 
-use App\Answer;
+use App\Question;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class repliedToQuestion extends Notification
+class QuestionAnswered extends Notification implements ShouldQueue
+// class verifyEmail extends Notification 
+
 {
     use Queueable;
-    public $answer;
 
+    public $question;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-
-    public function __construct()
+    public function __construct(Question $question)
     {
-        // 
+        $this->question =$question;
     }
-
-    // public function __construct(Answer $answer)
-    // {
-    //     $this->answer = $answer;
-    // }
 
     /**
      * Get the notification's delivery channels.
@@ -40,7 +36,7 @@ class repliedToQuestion extends Notification
         return ['mail'];
     }
 
-    /**
+    /**php 
      * Get the mail representation of the notification.
      *
      * @param  mixed  $notifiable
@@ -48,11 +44,13 @@ class repliedToQuestion extends Notification
      */
     public function toMail($notifiable)
     {
+        $url = url('legal-answers/' .$this->question->id. '/' . $this->question->question);
+
         return (new MailMessage)
-                    ->line('The question you asked on legalmeet has been answered.')
-                    // ->line($this->answer->need_lawyer)
-                    ->action('View answer', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->line('A question you asked on our application has been answered.')
+                    ->line('Please click the button below to view the answer to your question.')
+                    ->action('View Answer', $url)
+                    ->line('If you did not ask the question, no further action is required.');
     }
 
     /**
@@ -68,10 +66,3 @@ class repliedToQuestion extends Notification
         ];
     }
 }
-
-
-
-
-
-
-

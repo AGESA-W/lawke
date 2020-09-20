@@ -22,9 +22,10 @@
                 @foreach ($topics as $topic)
                         <div class="show-questions-individual">
                             <small class="text-muted">Asked in  {{$topic->county}} | {{ date('d M Y', strtotime($topic->created_at)) }} </small>
-                            <a href="/legal-answers/{{$topic->question}}" class="float-right mt-3 text-dark"> <span class="fa fa-angle-right"></span> </a>
+                            <a href="/legal-answers/{{$topic->id}}/{{$topic->question}}" class="float-right mt-3 text-dark"> <span class="fa fa-angle-right"></span> </a>
+
                             <br>
-                            <small class="mt-3"> <a href="/legal-answers/{{$topic->question}}" class="text-dark text-decoration-none"> <b> {{$topic->question}}</b></a></small>
+                            <small class="mt-3"> <a href="/legal-answers/{{$topic->id}}/{{$topic->question}}" class="text-dark text-decoration-none"> <b> {{$topic->question}}</b></a></small>
                         </div>
                     @endforeach
                

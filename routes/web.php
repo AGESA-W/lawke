@@ -1,5 +1,8 @@
 <?php
 
+use App\Attorney;
+use Illuminate\Support\Facades\Input;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,13 +29,18 @@ Route::get('/for-lawyers','PagesController@forLawyers')->name('for-lawyers');
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('home')->group(function(){
+  Route::get('/', 'HomeController@index')->name('home');
+  Route::get('/reviews', 'HomeController@reviews')->name('user.reviews');
+  Route::get('/questions', 'HomeController@questions')->name('user.questions');
+
+
+});
 Route::get('/users/logout', 'Auth\LoginController@UserLogout')->name('users.logout');//remember to give users
 
 
 // Attorneys pages
 Route::get('/profile/{id}',"AttorneysController@profile")->name('profile');
-Route::get('/attorney_dashboard',"AttorneysController@dashboard")->name('attorney_dashboard')->middleware('verify');
 
 //about
 Route::put('/attor/{id}',"AttorneysController@aboutAttorney")->name('about.attorney');
@@ -47,7 +55,7 @@ Route::delete('/attorney_dashboard/{id}',"EndorsmentController@destroy")->name('
 
 Route::put('/attorneys/{id}',"AttorneysController@updateLocation")->name('location.update');
 Route::post('/attorney_dashboard',"AttorneysController@addEducation")->name('add.education');
-Route::put('/attorney_dashboard/{attorney_dashboard}',"AttorneysController@updateEducation")->name('edit.education');
+Route::put('/attorney_dashboard',"AttorneysController@updateEducation")->name('edit.education');
 
 Route::get('/attorney_register',"Auth\AttorneysRegisterController@showRegistrationForm")->name('attorney.register');
 Route::get('/attorney_login',"Auth\AttorneysLoginController@showLoginForm")->name('attorney.login');
@@ -77,6 +85,8 @@ Route::prefix('admin')->group(function(){
   Route::get('/reports/create/users', 'AdminController@userRegReport')->name('userReg.report');
   Route::get('/reports/create/pdf', 'AdminController@pdf')->name('rating.pdf');
 
+
+
   //users
   Route::get('/users', 'AdminController@usersData')->name('users.table');
   Route::put('/users/{id}', 'AdminController@update')->name('users.update');
@@ -86,6 +96,15 @@ Route::prefix('admin')->group(function(){
   // reviews
   Route::put('/users/details/{id}','AdminController@updateReview')->name('admin.reviews.update');
   Route::delete('/users/details/{id}','AdminController@destroyReview')->name('admin.reviews.destroy');
+
+  //question
+  Route::put('/question/{id}','AdminController@updateQuestion')->name('admin.question.update');
+  Route::delete('/quest/{id}','AdminController@destroyQuestion')->name('admin.question.destroy');
+
+  // answer
+  Route::put('/answer/{id}','AdminController@updateAnswer')->name('admin.answer.update');
+  Route::delete('/answ/{id}','AdminController@deleteAnswer')->name('admin.answer.destroy');
+
 
 
   /*********attorneys*******/
@@ -156,32 +175,31 @@ Route::get('/practice-areas/{praticearea}', "PagesController@areas")->name('prac
 Route::get('/practice-areas/{praticearea}/{county}', "PagesController@county")->name('practice.county');
 
 Route::get('/all-lawyers/{county}', "PagesController@AllLocations")->name('location.practicearea');
+Route::get('/lawyers-name/{letter}', "PagesController@name")->name('name.attorney');
+
 /********* END SLUG ROUTES */
 
 /*******SEARCH ROUTES********/
 Route::get('/search','SearchController@index')->name('search');
 Route::get('/search/action','SearchController@action')->name('search.action');
-
+Route::any('/se','SearchController@Search')->name('search.results');
+Route::get('/rating','SearchController@rating');
 //questions
 Route::get('/get-advice','QuestionController@getadvice')->name('get.advice');
 Route::get('/ask-lawyer','QuestionController@asklawyer')->name('ask.lawyer');
 Route::post('/ask','QuestionController@clientQuestionStore')->name('client.question');
 Route::get('/topics/{category}', "QuestionController@topic")->name('individual.topic');
-Route::get('/legal-answers/{question}', "QuestionController@answers")->name('question.answer');
+Route::get('/legal-answers/{id}/{swali}', "QuestionController@answers")->name('question.answer');
 Route::put('/question/{id}','QuestionController@updateQuestion')->name('question.update');
 
 
 
 // answer
-Route::get('/legal-answers/{question}/add-answer', "AnswerController@answer")->name('answer');
+Route::get('/legal-answers/{id}/{question}/add-answer', "AnswerController@answer")->name('answer');
 Route::post('/ask-lawyer','AnswerController@attorneyAnswerStore')->name('attorney.answer');
 Route::put('/answer/{id}','AnswerController@updateAnswer')->name('answer.update');
 Route::delete('/delete-answer/{id}','AnswerController@deleteAnswer')->name('answer.destroy');
 
-
-Route::get('/markAsRead',function(){
-  auth()->user()->unreadNotifications->markAsRead();
-});
 
 // verify attorney account
 Route::get('/verify-attorney/{token}','VerifyController@verify')->name('verify.attorney');
@@ -191,11 +209,78 @@ Route::get('/email/verify-attorney','VerifyController@verifyEmail')->name('verif
 
 Route::post('/email/verify-attorney','VerifyController@resendEmail')->name('verification.resend.attorney');
 
-//contact pages
-Route::get('/support/lawyers/How-to-contact-legalmeet','ContactController@contact');
+/****contact pages****/
+Route::get('/contact/support','ContactController@getSupport');
+Route::post('/contact/support','ContactController@postSupport')->name('new.request');
 
 //clients
 Route::get('/support/clients/How-to-contact-legalmeet','ContactController@contactClient');
 Route::get('/support/clients/How-do-I-search-for-lawyer','ContactController@search');
 Route::get('/support/clients/Where-is-my-review','ContactController@review');
 Route::get('/support/clients/How-do-I-view-and-send-message','ContactController@message');
+
+//lawyers
+Route::get('/support/lawyers/How-to-contact-legalmeet','ContactController@contact');
+Route::get('/support/lawyers/How-do-I-reset-my-password','ContactController@resetPassword');
+Route::get('/support/lawyers/How-does-legalmeet-get-information','ContactController@information');
+Route::get('/support/lawyers/How-do-I-know-the-reviews-are-real','ContactController@reviewContacts');
+
+
+Route::prefix('/attorney_dashboard')->group(function(){
+  Route::get('/',"AttorneysController@dashboard")->name('attorney_dashboard')->middleware('verify');
+  Route::get('/location','AttorneysController@location')->name('dashboard.location');
+  Route::get('/education','AttorneysController@education')->name('dashboard.education');
+  Route::get('/endorsments-done','AttorneysController@endorsmentDone')->name('dashboard.endorsmentDone');
+  Route::get('/endorsments-received','AttorneysController@endorsmentReceived')->name('dashboard.endorsmentReceived');
+  Route::get('/reviews','AttorneysController@review')->name('dashboard.review');
+  Route::get('/questions-answered','AttorneysController@questionsAnswered')->name('dashboard.questionsAnswered');
+
+
+
+
+  
+
+
+});
+
+//new messaging
+Route::prefix('/attorney_dashboard/messenger')->group(function(){
+  Route::get('/',"UserMessagesController@index")->name('message.index');
+  Route::get('/create',"UserMessagesController@createMessage")->name('user.message.form');
+  Route::post('/create',"UserMessagesController@storeMessage")->name('user.message.send');
+  Route::get('/inbox',"UserMessagesController@showInbox")->name('message.inbox');
+  Route::delete('/inbox/{id}',"UserMessagesController@destroy")->name('message.delete');
+  Route::get('/inbox/{id}',"UserMessagesController@showMessage")->name('message.show');
+  Route::get('/reply/{id}',"UserMessagesController@replyMessage")->name('message.reply');
+  Route::post('/reply',"UserMessagesController@storeReply")->name('message.reply.send');
+  Route::get('/outbox',"UserMessagesController@showOutbox")->name('message.outbox');
+  Route::get('/outbox/{id}',"UserMessagesController@showOutboxMessage")->name('message.show.outbox');
+
+});
+
+//update lawyer inbox
+Route::get('/updateLawyerInbox',"UpdateInboxController@updateLawyerInbox");
+
+
+//new messaging for user
+Route::prefix('/home/messenger')->group(function(){
+  Route::get('/',"AttorneyMessagesController@index")->name('usermessage.index');
+  Route::get('/create',"AttorneyMessagesController@createMessage")->name('attorney.message.form');
+  Route::post('/h',"AttorneyMessagesController@storeUserMessage")->name('attorney.message.send');
+  Route::get('/inbox',"AttorneyMessagesController@showUserInbox")->name('usermessage.inbox');
+  Route::delete('/inbox/{id}',"AttorneyMessagesController@destroy")->name('usermessage.delete');
+  Route::get('/inbox/{id}',"AttorneyMessagesController@showMessage")->name('usermessage.show');
+  Route::get('/reply/{id}',"AttorneyMessagesController@replyMessage")->name('usermessage.reply');
+  Route::post('/reply',"AttorneyMessagesController@storeReply")->name('usermessage.reply.send');
+  Route::get('/outbox',"AttorneyMessagesController@showOutbox")->name('usermessage.outbox');
+  Route::get('/outbox/{id}',"AttorneyMessagesController@showOutboxMessage")->name('usermessage.show.outbox');
+
+  //search lawyer email
+  Route::post('/create/fetch',"SearchController@fetch")->name('autocomplete.fetch');
+
+});
+// User sends message from the lawyers profile
+Route::post('/sear',"AttorneyMessagesController@storeMessageProfile")->name('attorney.message.send.profile');
+
+//update user inbox
+Route::get('/updateUserInbox',"UpdateInboxController@updateUserInbox");

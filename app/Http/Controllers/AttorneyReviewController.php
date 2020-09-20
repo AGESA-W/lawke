@@ -54,31 +54,34 @@ class AttorneyReviewController extends Controller
      */
     public function store(Request $request)
     {
-        auth()->user()->reviews()->create($request->all());
+        $attorney=Attorney::where('id',$request->attorney_id)->first();
+        // $attorney->rr();
+        // auth()->user()->reviews()->create($request->all());
 
-
-    //     $this->validate($request, [
-    //         'attorney_id' => ['required'],
-    //         'headline' => ['required'],
-    //         'description' => ['required'],
-    //         'rating' => ['required'],
-    //         'recommend' => ['required'],
-    //         'consultation' => ['required'],
+       
+        $this->validate($request, [
+            'attorney_id' => ['required'],
+            'headline' => ['required'],
+            'description' => ['required'],
+            'rating' => ['required'],
+            'recommend' => ['required'],
+            'consultation' => ['required'],
     
-    //     ]);
+        ]);
 
-    //     //create new Attorney
-    //     $review= new AttorneyReview;
-    //     $review->attorney_id = $request->input('attorney_id');
-    //     $review->user_id = auth()->user()->id;
-    //     $review->headline = $request->input('headline');
-    //     $review->description = $request->input('description');
-    //     $review->consultation = $request->input('consultation');
-    //     $review->recommend = $request->input('recommend');
-    //     $review->rating = $request->input('rating');
-    //     $review->save();
- 
-    //   return redirect('attorney_dashboard')->with('success', 'Account created Successfully');
+        //create new Attorney
+        $review= new AttorneyReview;
+        $review->attorney_id = $request->input('attorney_id');
+        $review->user_id = auth()->user()->id;
+        $review->headline = $request->input('headline');
+        $review->description = $request->input('description');
+        $review->consultation = $request->input('consultation');
+        $review->recommend = $request->input('recommend');
+        $review->rating = $request->input('rating');
+        $review->save();
+        $attorney->rr();
+
+      return redirect('/')->with('success', 'Account created Successfully');
     }
 
     /**

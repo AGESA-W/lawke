@@ -4,7 +4,7 @@
       <div class="col-md">
         <div class="footer-widget mb-4">
           <h2 class="logo"><a href="#">LEGALMEET <span>Justice.Innovation</span></a></h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <p>We believe that more information helps you make better decisions. At Legalmeet, we provide you with detailed information on lawyers so that you can make the choices that are right for you.</p>
           <ul class="footer-social list-unstyled float-left d-flex mt-5">
             <li class="pr-5"><a href="#"><span class="fa fa-twitter fa-2x"></span></a></li>
             <li><a href="#"><span class="fa fa-facebook fa-2x"></span></a></li>
@@ -16,14 +16,14 @@
         <div class="footer-widget mb-4 ml-md-5">
           <h2 class="heading-2">Practice Areas</h2>
           <ul class="list-unstyled">
-            <li><a href="#" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Family Law</a></li>
-            <li><a href="#" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Business Law</a></li>
-            <li><a href="#" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Insurance Law</a></li>
-            <li><a href="#" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Criminal Law</a></li>
-            <li><a href="#" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Drug Offenses</a></li>
-            <li><a href="#" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Fire Accident</a></li>
-            <li><a href="#" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Employment Law</a></li>
-            <li><a href="#" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Property Law</a></li>
+            <li><a href="/practice-areas/Family law" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Family Law</a></li>
+            <li><a href="/practice-areas/Business law" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Business Law</a></li>
+            <li><a href="/practice-areas/Insurance law" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Insurance Law</a></li>
+            <li><a href="/practice-areas/Criminal law" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Criminal Law</a></li>
+            <li><a href="/practice-areas/Drug%20control law" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Drug Offenses</a></li>
+            <li><a href="/practice-areas/Labour law" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Labour Law</a></li>
+            <li><a href="/practice-areas/Employment law" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Employment Law</a></li>
+            <li><a href="/practice-areas/Property law" class="py-1 d-block"><span class="fa fa-angle-right mr-3"></span>Property Law</a></li>
 
           </ul>
         </div>
@@ -35,7 +35,7 @@
               <ul class="list-unstyled">
                 <li><span class="fa fa-map-marker px-3"></span> <span class="text">13602 Hill Lane. off Mara <span class="pl-5">Road, UpperHill, Nairobi, <span class="pl-5">KENYA</span></span></span></li>
                 <li class="pt-4"><a href="#"><span class="fa fa-phone px-3"></span><span class="text">+254-792-685-127</span></a></li>
-                <li class="pt-4"><a href="#"><span class="fa fa-envelope px-3"></span><span class="text">info@legalcare.com</span></a></li>
+                <li class="pt-4"><a href="#"><span class="fa fa-envelope px-3"></span><span class="text">info@legalmeet.com</span></a></li>
               </ul>
             </div>
         </div>

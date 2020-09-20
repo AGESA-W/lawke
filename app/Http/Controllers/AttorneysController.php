@@ -29,6 +29,7 @@ class AttorneysController extends Controller
         $this->middleware('auth:attorney',['except'=>['profile','getattorneys']]);
 
     }
+    
 
     /**
      * Show the application dashboard.
@@ -38,15 +39,18 @@ class AttorneysController extends Controller
     public function profile($id){
  
         $attorney=Attorney::findOrFail($id);
+
+        $reviews=AttorneyReview::where('attorney_id',$attorney->id)->paginate(5);
         return view('attorneys.profile')
         ->with('attorney',$attorney)
         ->with('educations',$attorney->educations)
         ->with('works',$attorney->works)
         ->with('areas',$attorney->practiceareas)
         ->with('locations',$attorney->locations)
-        ->with('reviews',$attorney->reviews)
+        // ->with('reviews',$attorney->reviews)
+        ->with('reviews',$reviews)
+
         ->with('endorsments',$attorney->endorsments);
-        //  ->with('reviews',$user->reviews);
     
     }
 
@@ -70,10 +74,11 @@ class AttorneysController extends Controller
         ->with('educations',$attorney->educations)
         ->with('endorsments',$attorney->endorsments)
         ->with('endorsers',$attorney->doneEndorsments)
-        ->with('users',$users)
+        ->with('attorneyMessages',$attorney->attorneyMessages->load('user'))
         ->with('answers',$answers);
         
     }
+
     // about
     public function aboutAttorney(Request $request,$id){
 
@@ -90,6 +95,19 @@ class AttorneysController extends Controller
 
 
     }
+
+    //dashboard location
+    public function location(){
+        $attorney_id=Auth::id();
+        $attorney=Attorney::findOrFail($attorney_id);
+
+        $answers = $attorney->answers->load('question');
+
+        return view('attorneys.locationDashboard')
+
+        ->with('attorney',$attorney);
+    }
+
     //lawyer updates location
     public function updateLocation(Request $request, $id)
     { 
@@ -106,7 +124,21 @@ class AttorneysController extends Controller
         $location->address = $request->input('address');
         $location->save();
 
-        return redirect('/attorney_dashboard')->with('success',"Your location has been updated!");
+        return redirect('/attorney_dashboard/location')->with('success',"Your location has been updated!");
+    }
+
+     //dashboard education
+     public function education(){
+        $attorney_id=Auth::id();
+        $attorney=Attorney::findOrFail($attorney_id);
+
+
+        return view('attorneys.educationDashboard')
+
+
+        ->with('attorney',$attorney)
+        ->with('educations',$attorney->educations);
+        
     }
 
     public function updateEducation(Request $request)//update Education
@@ -154,6 +186,66 @@ class AttorneysController extends Controller
 
         return back()->with('success',"Your Education has been updated!");
     }
+
+    //dashboard endorsmentDone
+    public function endorsmentDone(){
+        $attorney_id=Auth::id();
+        $attorney=Attorney::findOrFail($attorney_id);
+
+
+        return view('attorneys.endorsmentDoneDashboard')
+        ->with('attorney',$attorney)
+        ->with('endorsments',$attorney->endorsments)
+        ->with('endorsers',$attorney->doneEndorsments);
+            
+    }
+
+     //dashboard endorsmentReceived
+     public function endorsmentReceived(){
+        $attorney_id=Auth::id();
+        $attorney=Attorney::findOrFail($attorney_id);
+
+
+        return view('attorneys.endorsmentReceivedDashboard')
+
+        ->with('attorney',$attorney)
+        ->with('endorsments',$attorney->endorsments)
+        ->with('endorsers',$attorney->doneEndorsments);
+            
+    }
+
+
+     //dashboard review
+     public function review(){
+        $attorney_id=Auth::id();
+        $attorney=Attorney::findOrFail($attorney_id);
+
+        $reviews=AttorneyReview::where('attorney_id',Auth::id())->paginate(5);
+
+        return view('attorneys.reviewDashboard')
+
+
+        ->with('attorney',$attorney)
+        ->with('reviews',$reviews);
+            
+    }
+
+     //dashboard questionsAnswered
+     public function questionsAnswered(){
+        $attorney_id=Auth::id();
+        $attorney=Attorney::findOrFail($attorney_id);
+
+        $answers = $attorney->answers->load('question');
+
+        return view('attorneys.questionsAnsweredDashboard')
+
+
+        ->with('attorney',$attorney)
+        ->with('answers',$answers);
+            
+    }
+
+
 
     public function getattorneys(Request $request){
         $query = $request->get('term','');

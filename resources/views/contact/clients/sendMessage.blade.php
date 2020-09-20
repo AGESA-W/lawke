@@ -33,7 +33,7 @@
                         <p>You must be signed in to your Legalmeet account to view or send messages. There is no cost to message or reply to a lawyer.&nbsp;</p>
                         <h6 class="text-color"><b>Viewing your messages</b> </h6>
                         <ol>
-                            <li><a href="/login" class="text-decoration-none">Sign in</a> to your Avvo.com account.</li>
+                            <li><a href="/login" class="text-decoration-none">Sign in</a> to your Legalmeet account.</li>
                             <li>Go to your messages. You'll see all of your message threads in your inbox.</li>
                             <li>Click on a thread to view the old messages or send a new message.</li>
                         </ol>
@@ -48,21 +48,17 @@
                         <h4>Related articles</h4>
                         <ul class="list-unstyled">
                             <li class="contact-list">
-                                <a href="" class="text-decoration-none" rel="nofollow">How do I contact Legalmeet? </a>
+                                <a href="/support/clients/How-to-contact-legalmeet" class="text-decoration-none" rel="nofollow">How do I contact Legalmeet? </a>
                             </li>
                             
                             <li  class="contact-list">
-                                <a href=""  class="text-decoration-none" rel="nofollow">Where is my review?</a>
+                                <a href="/support/clients/Where-is-my-review" class="text-decoration-none" rel="nofollow">Where is my review?</a>
                             </li>
                             
                             <li class="contact-list">
-                                <a href=""  class="text-decoration-none" rel="nofollow">How do I search for a lawyer?</a>
+                                <a href="/support/clients/How-do-I-search-for-lawyer" class="text-decoration-none" rel="nofollow">How do I search for a lawyer?</a>
                             </li>
-                            
-                            <li class="contact-list">
-                                <a href="" class="text-decoration-none" rel="nofollow">How do I search for an attorney?</a>
-                            </li>
-                            
+                                                    
                         </ul>
                     </section>
                 </aside>
@@ -70,7 +66,7 @@
                 <aside class="article-sidebar side-column pt-3">
                 <h4>Didn't find your answer?</h4>
                 <p>
-                    <a href="/hc/en-us/requests/new" class="text-decoration-none">Contact our support team</a> with your inquiry</p>
+                    <a href="/contact/support" class="text-decoration-none">Contact our support team</a> with your inquiry</p>
                 </aside>
             </div>
         </div> <!--.row-->

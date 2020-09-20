@@ -14,13 +14,15 @@ class CreateAttorneyMessagesTable extends Migration
     public function up()
     {
         Schema::create('attorney_messages', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('attoreny_id');
-            $table->integer('user_id');
-            // $table->integer('message_id');
-            $table->mediumText('description');
-            $table->tinyInteger('status')->default(0);
+            $table->Increments('id');
+            $table->integer('attorney_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->string('subject');
+            $table->string('content');
+            $table->boolean('status');
+            $table->integer('replied_id')->nullable();
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

@@ -560,7 +560,7 @@ footer{//footer
     background: url(/images/mission.jpg);
     background-size: cover;
     background-position: center;
-    height:430px;
+    height:350px;
 
     &-text{//text section
         font-size: 30px;
@@ -1312,3 +1312,60 @@ ol.ordered-list {
 
 }
 
+.search-user{
+    position: absolute;
+    left:0;
+    right:0;
+    top:49%;
+    border-radius: 0;
+}
+.search-legalmeet{
+    background-color: #eaeaea!important;
+     
+    .h1{
+        font-size: 1.75em;
+        line-height: 1.28571;
+        font-weight: 700;
+        color:#333;
+    }
+}
+
+//no data available on search
+.search-user{
+    position: absolute;
+    left:0;
+    right:0;
+    top:49%;
+    border-radius: 0;
+}
+.search-legalmeet{
+    background-color: #eaeaea!important;
+     
+    .h1{
+        font-size: 1.75em;
+        line-height: 1.28571;
+        font-weight: 700;
+        color:#333;
+    }
+}
+
+// no data available on county
+.county-search-user{
+    position: absolute;
+    left:0;
+    right:0;
+    top:7%;
+    border-radius: 0;
+}
+.county-legalmeet{
+    background-color: #eaeaea!important;
+    height:150px;
+    margin-bottom:500px;
+
+    .h1{
+        font-size: 1.75em;
+        line-height: 1.28571;
+        font-weight: 700;
+        color:#333;
+    }
+}

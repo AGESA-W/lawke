@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use DB;
-use App\Attorney;
 use App\User;
+use App\Attorney;
+use App\AttorneyReview;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+
 class SearchController extends Controller
 
 {
@@ -14,8 +17,42 @@ class SearchController extends Controller
     return view('search');
   }
 
+  public function Search(){
+    $q = Input::get('q');
+    if($q != ''){
+      $data = Attorney::where('firstname','LIKE','%'.$q.'%')
+                          ->OrWhere('lastname','LIKE','%'.$q.'%')
+                          ->OrWhere('county','LIKE','%'.$q.'%')
+                          ->paginate(10)
+                          ->setpath('');
+      $data->appends(array(
+        'q' => Input::get('q'),
+      ));
+      if(count($data)>0){
+        return view('LawyerSearch')->withData($data);
+      }
+      else{
+        // return redirect('/search')->with('error', "Missing data matching your search results !"); 
+        return view('noSearch'); 
 
-  function action(Request $request)
+      }
+    }
+
+  
+   
+    
+  }
+
+  public function rating(Request $request){
+ 
+  $q=Attorney::where('rating', $request->rating)->get();
+    return  $q;
+
+  }
+
+
+
+   function action($data)
   {
     if($request->ajax())
     {

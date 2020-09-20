@@ -14,9 +14,11 @@ class PagesController extends Controller
 
     public function index(){
         $letters = range('A', 'Z');
-        $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
-        $locations=Lsk::orderBy('id','desc')->distinct()->select('county')->get();
-        $attorneys=Attorney::orderBy('firstname','desc')->take(6)->get(); 
+        $practiceareas=PracticeArea::orderBy('area_practice','asc')->distinct()->select('area_practice')->get();
+        $locations=Lsk::orderBy('county','asc')->distinct()->select('county')->get();
+        // $attorneys=Attorney::orderBy('firstname','desc')->take(6)->get(); 
+        $attorneys=Attorney::whereIn('id',[3, 2,4,5,20,8])->get(); 
+
         return view('pages.index')->with('attorneys',$attorneys)
         ->with('practiceareas',$practiceareas)
         ->with('locations',$locations)
@@ -40,11 +42,21 @@ class PagesController extends Controller
 
     //get lawyers by practice area
     public function areas($practicearea){
-        $locations=Lsk::orderBy('id','desc')->distinct()->select('county')->get();
+        $locations=Lsk::orderBy('county','asc')->distinct()->select('county')->get();
         $practiceareas=PracticeArea::where('area_practice', $practicearea)->get();
 
         return view('pages.areas')->with('practiceareas',$practiceareas)
         ->with('locations',$locations);
+    } 
+    //get by name
+    public function name($letter){
+        $names= Attorney::where('firstname','LIKE','%'.$letter.'%')
+                        ->OrWhere('lastname','LIKE','%'.$letter.'%')
+                        ->paginate(20);
+            // dd( $names);
+        return view('pages.name')
+        ->with('letter',$letter)
+        ->with('names',$names);
     } 
 
     //get lawyers by county
@@ -61,7 +73,7 @@ class PagesController extends Controller
     //display practice area of county
     public function AllLocations($county){
         $locations=Lsk::where('county', $county)->get();
-        $practiceareas=PracticeArea::orderBy('id','asc')->distinct()->select('area_practice')->get();
+        $practiceareas=PracticeArea::orderBy('area_practice','asc')->distinct()->select('area_practice')->get();
        
         return view('pages.location')->with('locations',$locations)
         ->with('practiceareas',$practiceareas); 

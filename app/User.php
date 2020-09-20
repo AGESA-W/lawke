@@ -2,11 +2,12 @@
 
 namespace App;
 
+use DB;
+use Auth;
+use App\Notifications\QuestionAnswered;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use DB;
-use Auth;
 
 class User extends Authenticatable  implements MustVerifyEmail
 {
@@ -68,15 +69,24 @@ class User extends Authenticatable  implements MustVerifyEmail
         return $this->hasMany('App\Question', 'user_id', 'id');
     }
 
-    public function countUserInbox(){
+      //relationship with attorney messages
+      public function attorneyMessages(){
+        return $this->hasMany('App\AttorneyMessages');
+        }
 
-        $test=DB::table('user_messages')
-        ->where('status',0)
-        ->where('user_id',Auth::id())
-        ->get();
-        $total=count($test);
-        
-        return $total;
-    }   
+         //messages that are inbox
+         public function countUserInbox(){
+    
+            $test=DB::table('user_messages')
+            ->where('status',1)
+            ->where('user_id',Auth::id())
+            ->get();
+            $total=count($test);
+            
+            return $total;
+        } 
+    
+
+   
      
 }
