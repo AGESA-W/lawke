@@ -85,11 +85,11 @@
                                 <div class="sectionContent">
                                     <ul class="list-unstyled" style="margin:0">
                                         <li class="float-left">User Account</li>
-                                        <li class="float-right">
+                                        {{-- <li class="float-right">
                                             <button type="button" class="btn btn-primary  btn-sm" data-toggle="modal" data-target="#exampleModal">
                                                 <span class="fa fa-trash"></span> Close Account
                                             </button>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </div>

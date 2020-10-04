@@ -328,14 +328,9 @@
                                 <p class="register-para">Practice Details</p>
 
                                 <div class="form-group">
-                                    <label for="practice_area" class="col-form-label ">{{ ('Select your main practice area') }}</label>
-                                    <select name="practice_area" id="practice_area" class="form-control">
-                                        <option value="">Please Select</option>
-                                        @foreach ($practiceareas as $practicearea)
-                                        <option value="{{$practicearea->area_practice}}">{{$practicearea->area_practice}}</option>
-                                        @endforeach
+                                    <label for="practice_area" class="col-form-label ">{{ ('Main practice area') }}</label>
+                                    <input id="practice_area" type="text" class="form-control @error('practice_area') is-invalid @enderror" name="practice_area" value="{{ old('practice_area') }}" readonly="readonly" required autocomplete="practice_area">
 
-                                    </select>
                                     @error('practice_area')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -380,8 +375,12 @@
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                     </div>
                                 </div> 
-                                <input type="submit" class="btnRegister"  value="Register"/>
-                                {{-- <button type="reset" class="btn btn-danger" >cancel</button> --}}
+                                {{-- <input type="submit" class="btnRegister"  value="Register "/> --}}
+                                <div class="justify-content-center mt-2" style="margin-left:200px;">
+                                        <button type="submit" class="btn primary-button">Register <i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button>
+                                        <button type="reset" class="btn btn-outline-danger ml-4">Cancel <i class="fa fa-close"></i></button>
+                                </div>
+                                
                             </div>
                         </div>
                     </form>
@@ -428,6 +427,7 @@
                     $('#attorney_id').val(data.attorney_id);
                     $('#image').val(data.image); 
                     $('#county').val(data.county);
+                    $('#practice_area').val(data.practice_area);
                 }
             }); 
             });

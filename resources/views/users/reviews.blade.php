@@ -28,12 +28,12 @@
                                     </a>
                                 
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <button type="button" class="btn dropdown-item dropdown-item-user px-3 py-2 btn-sm" data-review_id="{{$review->id}}" data-title="{{$review->headline}}"  data-description="{{$review->description}}"  data-toggle="modal" data-target="#editReview">
-                                            Edit Review
+                                        <button type="button" class="btn dropdown-item dropdown-item-user px-4 py-2  btn-sm" data-review_id="{{$review->id}}" data-title="{{$review->headline}}"  data-description="{{$review->description}}"  data-toggle="modal" data-target="#editReview">
+                                           <span class="fa fa-pencil"></span> Edit Review
                                         </button>
                                         <div class="dropdown-divider"></div>
                                         <button type="button" class="btn  dropdown-item dropdown-item-user px-4 btn-sm" data-toggle="modal" data-target="#deleteModal">
-                                            Delete
+                                           <span class="fa fa-trash"></span> Delete
                                         </button>
                                     </div>
                                     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -52,9 +52,9 @@
                                                 <form action="{{route('reviews.destroy',$review->id)}}" method="post">
                                                     @method('DELETE')
                                                     {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-success px-4">Delete</button>
+                                                    <button type="submit" class="btn btn-success px-4"> <span class="fa fa-trash"></span> Delete</button>
                                             </form>
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel <span class="fa fa-times"></span></button>
                                             </div>
                                         </div>
                                         </div>
@@ -86,8 +86,8 @@
                                                     </div>
                                                     
                                                     <div class="modal-footer">
-                                                        <button class="btn btn-success px-3" type="submit">Edit</button>
-                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                        <button class="btn btn-success px-3" type="submit"><span class="fa fa-pencil"></span> Edit</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel <span class="fa fa-times"></span></button>
                                                     </div>
                                                 </form>
                                             </div>

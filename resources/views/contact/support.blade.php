@@ -30,7 +30,7 @@
                 <textarea name="description" class="form-control" id="description" cols="30" rows="4" placeholder="Write your message here..." required></textarea>
             </div>
             <p>Please enter the details of your request. A member of our support staff will respond as soon as possible.</p>
-            <button type="submit" class="btn bg-color px-4 py-2">Submit</button>
+            <button type="submit" class="btn bg-color px-4 py-2">Submit <span class="fa fa-send"></span> </button>
         </form>
     </div>
 </div>

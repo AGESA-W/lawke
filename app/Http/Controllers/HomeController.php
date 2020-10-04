@@ -82,7 +82,10 @@ class HomeController extends Controller
 
         return view('users.questions')
         ->with('questions',$questions)
+        ->with('user',$user)
+
         ->with('practiceareas',$practiceareas)
+        ->with('practiceareas',$user->questions)
         ->with('locations',$locations);
     }
 
@@ -90,7 +93,7 @@ class HomeController extends Controller
     public function destroy($id){
         $user=User::find($id);
         $user->delete();
-        return redirect('/admin/users')->with('success','Account deleted successfully');
+        return redirect('/')->with('success','Account deleted successfully');
     }
 
     // public function getMessage($user_id)

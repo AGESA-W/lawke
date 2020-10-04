@@ -53,7 +53,6 @@ class AnswerController extends Controller
 
         //trigger email
         $user->notify(new QuestionAnswered($question));
-        // dispatch(new QuestionAnsweredJob($user));
 
          return back()->with('success', 'Your answer has been shared');
     }

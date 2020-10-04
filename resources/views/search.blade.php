@@ -10,10 +10,33 @@
                     
                     <form action="/se" method="POST" class="form-inline justify-content-center md-form form-sm mt-0">
                         @csrf
-                        <input class="form-control my-0 py-1 w-75" type="text" placeholder="Search by name or county" aria-label="Search" name="q">
+                        <div class="row">
+                            {{-- <div class="col-md-5">
+                                <input class="form-control my-0" style="border-radius: 0;" type="text" placeholder="Lawyer name" aria-label="Search" name="q">
+
+                            </div> --}}
+
+                            <div class="form-control-with-icons"><svg aria-hidden="true" class="svg-inline--fa fa-search fa-w-16 icon" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg><!-- <span aria-hidden="true" class="icon fas fa-search"></span> --><input class="form-control string input_with_icon optional js-search-textfield" style="border-radius: 0" name="q" placeholder="Lawyer name" type="text" id="lg_global_search"></div>
+                           
+
+
+                            {{-- <div class="col-md-5"> --}}
+                                {{-- <div class="icons" >
+                                    <svg aria-hidden="true" style="height:15px;width:15px;" class="svg-inline--fa fa-map-marker-alt fa-w-12 icon" data-prefix="fas" data-icon="map-marker-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg>
+                                    <input class="form-control my-0 ml-1" style="border-radius: 0;" type="text"  placeholder=" County" aria-label="Search" name="l">
+                                </div> --}}
+                                
+
+                                <div class="form-control-with-icons "><svg aria-hidden="true"   class="svg-inline--fa fa-map-marker-alt fa-w-12 icon" data-prefix="fas" data-icon="map-marker-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg><!-- <span aria-hidden="true" class="icon fas fa-map-marker-alt"></span> --><input class="form-control string input_with_icon optional js-location-textfield" style="border-radius: 0" name="l" placeholder="County" type="text" id="lg_global_search_location"></div>
+                                
+                                
+                            {{-- </div> --}}
+                        </div>
+
                         <div class="input-group-append">
-                        <button  type="submit" class="input-group-text red lighten-3" id="basic-text1"><i class=" py-1 fa fa-search text-grey"
-                            aria-hidden="true"></i></button>
+                        <button  type="submit" class="px-4 btn bg-color ml-4">
+                           Search <span class="fa fa-search"></span>
+                        </button>
                         </div>
                     </form>
                 </div>
@@ -35,11 +58,11 @@
                     <ol class="ordered-list">
                         <li>
                             <h3 class="h2"> <span class="ordering">1</span> Use Specific Keywords</h3>
-                            <p class="pl-5"> Keywords are the terms that you use to find content. Making your keywords as specific as possible will help your search engine to track down the information that you want.
+                            <p class="pl-5"> Keywords are the terms that you use to find content. Making your keywords as specific as possible will help our search box to track down the information that you want.
                                 <br>
                                 Say, for example, that you want to find a lawyer called Philip. If you type only "p" in the search engine, the results will include many pages about other types of lawyers, whereas typing Philip  will return a more concise range of lawyers.
                                 <br>
-                               Another example would be if you want to search for lawyers in a specific county, Say, for example, that you want to find a lawyers in Vihiga County. If you type only "V" in the search engine, the results will include many pages with other counties, whereas typing Vihiga  will return only lawyers in that county.
+                               Another example would be if you want to search for lawyers in a specific county, Say, for example, that you want to find a lawyers in Vihiga County. If you type only "V" in the search box, the results will include many pages with other counties, whereas typing Vihiga  will return only lawyers in that county.
 
                             </p>
 

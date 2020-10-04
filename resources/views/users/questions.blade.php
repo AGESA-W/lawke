@@ -14,7 +14,13 @@
                         <div class="text-muted">
                             <small> <b>Q & A</b> </small>
                             <br>
-                            <small> <b>Asked in  {{$question->county}} | {{ date('d M Y', strtotime($question->created_at)) }}</b> </small>
+                            @if ($question->anonymous == "no")
+                                <small> <b>Asked in  {{$question->county}} by <span>{{$user->name}}</span> | {{ date('d M Y', strtotime($question->created_at)) }}</b> </small>
+                                
+                            @else
+                                <small> <b>Asked in  {{$question->county}} | {{ date('d M Y', strtotime($question->created_at)) }}</b> </small>
+                                
+                            @endif
                         </div>
                         <hr class="mt-1 mb-0">
                         <p class="mb-1"><b>  {{$question->question}} </b></p>

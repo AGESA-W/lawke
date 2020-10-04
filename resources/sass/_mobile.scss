@@ -1,0 +1,76 @@
+@media(max-width:700px){
+    .background-image{//setting background image
+        color:#fff;
+    
+    
+    
+        .txt-type > .txt {//type writer Cursor 
+            border-right: 0.2rem solid $primary-color;
+        }
+        .showcase{
+          
+            &-text h1{//show case display text
+                font-size: 36px;
+                line-height: 1.5;
+                font-weight: 600;
+            }
+            &-para{//showcase paragraph
+                font-size: 18px; 
+                line-height: 1.5;
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+        .showcase-btns{
+            justify-content: center;
+
+        }
+        .btn-1{//get started btn
+            background:$primary-color;
+            color:#fff;
+            font-size:15px;
+            font-weight: 400;
+
+        }
+       
+        .wrapper{
+            position: absolute;
+            margin-top:80px;
+        }
+        .navbar-home{//home navbar
+            position: relative;
+            top:3%;
+            padding-left:3rem;
+    
+            .navbar-brand{ //navbar-brand
+                font-weight: 700;
+                font-size: 22px;
+                line-height: 1;
+    
+                &-logotxt{
+                    font-size: 11px;
+                    font-weight: 100;
+                }
+            }
+            & a{//home nav link
+                color:#fff;
+                font-size:15px;
+    
+                transition: all .45s ease; 
+                border-bottom: 2px solid transparent;
+    
+                &:hover{//link hover
+                    // color:$primary-color;
+                     border-bottom:2px solid $primary-color;
+                
+                }
+    
+                &:active{//active link
+                    color:$primary-color;
+                }
+            }
+        }
+    }
+}
+.people-saying{
+    margin-bottom:40px;
+}

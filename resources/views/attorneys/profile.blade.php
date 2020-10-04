@@ -52,19 +52,25 @@
             <div class="mt-3">
                 <section class="profile-content" id="about">
                     <h5>About <span class="text-uppercase"> {{$attorney->firstname}} {{$attorney->lastname}}</span></h5>
-                    <p class="text-secondary">
-                        Lorem ipsum dolor sit amet consectetur Lorem, ipsum dolor sit amet consectetur 
-                        adipisicing elit. Modi illum omnis iste repellendus. Consectetur, quod et? Veritatis consequatur maiores sit. 
-                        adipisicing elit. Eveniet, amet. Ad iusto fuga iure nobis dolore earum qui esse omnis, modi accusantium natus 
-                        cumque aperiam in repellendus magnam culpa. <span id="dots"><b>.......</b></span> <span id="more">illo nemo quia,
-                        magni quidem at! Veniam, explicabo repellendus a consectetur minima possimus deserunt voluptate amet obcaecati 
-                        optio eligendi sunt, libero necessitatibus quae expedita exercitationem sit qui deleniti facilis. Delectus 
-                        explicabo pariatur adipisci, quod quisquam excepturi libero totam aut, soluta ratione hic perferendis beatae
-                        officia facilis ut veritatis iusto laudantium incidunt odio? Sit doloremque itaque tempore ad accusantium error
-                        cum reprehenderit blanditiis, est autem laboriosam. Itaque, fugiat non. Tempore, suscipit.</span>
-                    </p>
-                    <button class="text-color" type="button" id="read"onclick="read()">Read More</span></button>
+                    @if ($attorney->about != '')
+                      <p>{{$attorney->about}}</p>  
+                    @else
+                            <p class="text-secondary">
+                            Lorem ipsum dolor sit amet consectetur Lorem, ipsum dolor sit amet consectetur 
+                            adipisicing elit. Modi illum omnis iste repellendus. Consectetur, quod et? Veritatis consequatur maiores sit. 
+                            adipisicing elit. Eveniet, amet. Ad iusto fuga iure nobis dolore earum qui esse omnis, modi accusantium natus 
+                            cumque aperiam in repellendus magnam culpa. <span id="dots"><b>.......</b></span> <span id="more">illo nemo quia,
+                            magni quidem at! Veniam, explicabo repellendus a consectetur minima possimus deserunt voluptate amet obcaecati 
+                            optio eligendi sunt, libero necessitatibus quae expedita exercitationem sit qui deleniti facilis. Delectus 
+                            explicabo pariatur adipisci, quod quisquam excepturi libero totam aut, soluta ratione hic perferendis beatae
+                            officia facilis ut veritatis iusto laudantium incidunt odio? Sit doloremque itaque tempore ad accusantium error
+                            cum reprehenderit blanditiis, est autem laboriosam. Itaque, fugiat non. Tempore, suscipit.</span>
+                        </p>
+                        <button class="text-color" type="button" id="read"onclick="read()">Read More</span></button>
+                    @endif
+                   
                     <hr>
+
                     <h6 class="text-muted">PRACTICE AREAS</h6>
                     @foreach ($areas as $area)
                         <p>{{$area->area_practice}}</p>
@@ -145,8 +151,8 @@
                         <thead class="text-white element-background">
                             <tr>
                                 <td><b>School Name</b></td>
-                                <td><b>Degree</b></td>
-                                <td><b>Graduated</b></td>
+                                <td width="25%"><b>Degree</b></td>
+                                <td width="15%"><b>Graduated</b></td>
                             </tr>
                         </thead>
                         @foreach ($educations as $education)

@@ -12,17 +12,39 @@ use Illuminate\Support\Facades\Input;
 class SearchController extends Controller
 
 {
-  public function index(Request $request){
+  public function index(){
     
     return view('search');
   }
 
   public function Search(){
     $q = Input::get('q');
-    if($q != ''){
+    $l= Input::get('l');
+    
+
+
+    if($l != '' and $q != ''){
+      $data = Attorney:: where('firstname','LIKE','%'.$q.'%')
+                          ->where('county','LIKE','%'.$l.'%')
+                          ->paginate(10)
+                          ->setpath('');
+      $data->appends(array(
+        'l' => Input::get('l'),
+        'q' => Input::get('q'),
+      ));
+      if(count($data)>0){
+        return view('LawyerSearch')->withData($data);
+      }
+      else{
+        return view('noSearch'); 
+
+      }
+    }
+
+
+    elseif($q != ''){
       $data = Attorney::where('firstname','LIKE','%'.$q.'%')
                           ->OrWhere('lastname','LIKE','%'.$q.'%')
-                          ->OrWhere('county','LIKE','%'.$q.'%')
                           ->paginate(10)
                           ->setpath('');
       $data->appends(array(
@@ -32,11 +54,28 @@ class SearchController extends Controller
         return view('LawyerSearch')->withData($data);
       }
       else{
-        // return redirect('/search')->with('error', "Missing data matching your search results !"); 
         return view('noSearch'); 
 
       }
     }
+
+    elseif($l != ''){
+      $data = Attorney:: where('county','LIKE','%'.$l.'%')
+                          ->paginate(10)
+                          ->setpath('');
+      $data->appends(array(
+        'l' => Input::get('l'),
+      ));
+      if(count($data)>0){
+        return view('LawyerSearch')->withData($data);
+      }
+      else{
+        return view('noSearch'); 
+
+      }
+    }
+
+   
 
   
    

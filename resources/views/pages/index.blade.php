@@ -70,24 +70,46 @@
                                         </li>
                                     @endif
                                 @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }} {{ Auth::user()->lastname }}<span class="caret"></span>
-                                            {{ Auth::user()->firstname }} <span class="caret"></span>
-                                        </a>
-                
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item text-dark" href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                                                document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
+                                    @if(Auth::guard('attorney')->check())
+                                        <li class="nav-item dropdown">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->firstname }}  {{ Auth::user()->lastname }}<span class="caret"></span>
                                             </a>
-                
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    </li>
+                    
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                <a href="/attorney_dashboard" class="dropdown-item text-dark">Dashboard</a>
+                                                <a class="dropdown-item text-dark" href="{{ route('attorney.logout') }}"
+                                                    onclick="event.preventDefault();
+                                                                    document.getElementById('logout-lawyer-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+                    
+                                                <form id="logout-lawyer-form" action="{{ route('attorney.logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li>
+                                    @else
+                                        <li class="nav-item dropdown">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->name }} {{ Auth::user()->lastname }}<span class="caret"></span>
+                                            </a>
+                    
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                <a href="/home" class="dropdown-item text-dark">Dashboard</a>
+                                                <a class="dropdown-item text-dark" href="{{ route('users.logout') }}"
+                                                    onclick="event.preventDefault();
+                                                                    document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+                    
+                                                <form id="logout-form" action="{{ route('users.logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li>
+                                    @endif
+                                  
                                 @endguest
                             </ul>
                         </div>
@@ -109,8 +131,8 @@
                         </div>
                         <p class="showcase-para">We have help thousands of people to get relief from national wide fights wrongfull denials. Now they trust legalmeet lawyers</p>
                         <div class="showcase-btns">
-                            <a href="/search" class="text-decoration-none btn btn-1 d-inline-block px-4 py-2">Find your lawyer <span class="fa fa-angle-right"></span></a>
-                            <a href="/get-advice" class="text-decoration-none btn btn-1 d-inline-block px-4 py-2"style="margin-left:120px;">Get advice<span class="fa fa-angle-right ml-2"></span></a>
+                            <a href="/search" class="btn-1 text-decoration-none btn  d-inline-block px-4 py-2">Find your lawyer <span class="fa fa-angle-right"></span></a>
+                            <a href="/get-advice" class="btn-1 text-decoration-none btn btn-1 d-inline-block px-4  py-2"style="margin-left:120px;">Get advice<span class="fa fa-angle-right ml-2"></span></a>
 
                         </div>
                     </div>

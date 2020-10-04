@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use DB;
 use Auth;
 use App\Lsk;
+use App\User;
 use App\Answer;
 use App\Attorney;
 use App\Question;
 use App\PracticeArea;
-use Illuminate\Http\Request;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Notification;
+use Illuminate\Http\Request;
 use App\Notifications\QuestionAsked;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Notification;
 
 class QuestionController extends Controller
 
@@ -119,11 +120,14 @@ class QuestionController extends Controller
 
         $question=Question::where('question', $swali)
                             ->where('id', $id)
-        ->first();
+                            ->first();
         $answers = $question->answers->load('attorney');
-            // dd($question, $answers->load('attorney'));
+        $user = User::where('id', $question->user_id)->first();
+
+
         return view('individual_question')
         ->with('answers',$answers)
+        ->with('user',$user)
         ->with('question',$question);
  
     } 

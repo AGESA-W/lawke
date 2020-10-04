@@ -1,44 +1,25 @@
 @extends('layouts.app')
 @section('content')  
     <div class="row">
-        <div class="col-12 col-md-2">
-            <small>Find a lawyer</small>
-            @if (count($data)>1)
-                <p class="text-muted"><b> ({{count($data)}} results)</b></p>
-            @else
-                <p class="text-muted"><b> ({{count($data)}} result)</b></p>
-            @endif
-            <p class="mb-0"><b>Filter by</b></p>
-            <p class="mb-0 text-muted">RATING</p>
-            <input type="radio" name="lawyer-rating" id="rating-5" value="5">
-            @for ($i = 0; $i < 5; $i++)
-                <span class="fa fa-star"style="color:#ffe234"></span>
-            @endfor
-            <br>
-
-            <input type="radio" name="lawyer-rating" id="rating-4" value="4">
-            @for ($i = 0; $i < 4; $i++)
-                <span class="fa fa-star" style="color:#ffe234"></span>
-            @endfor
-            <br>
-
-            <input type="radio" name="lawyer-rating" id="rating-3" value="3">
-            @for ($i = 0; $i < 3; $i++)
-                <span class="fa fa-star"style="color:#ffe234"></span>
-            @endfor
-            <br>
-
-            <input type="radio" name="lawyer-rating" id="rating-2" value="2">
-            @for ($i = 0; $i < 2; $i++)
-                <span class="fa fa-star"style="color:#ffe234"></span>
-            @endfor
-            <br>
-
-            <input type="radio" name="lawyer-rating" id="rating-1" value="1">
-                <span class="fa fa-star"style="color:#ffe234"></span>
-            
+        <div class="people-saying mt-5">
+                <div  style="background:#e9ecef;position: absolute;left:0;right:0;top:7%;">
+                    <h1 class="about-plain-jumbotron-text text-center  "style="border-bottom:5px solid #afa939;display:inline;margin-left:560px;" ><strong>Find a lawyer</strong></h1>
+                    <div class="text-center mt-3">
+                        <a href="/search" class="btn btn-primary"> <span class="fa fa-undo"></span> Return Back to Search page</a> 
+                        @if (count($data)>1)
+                            <p class="text-muted"><b> ({{count($data)}} results)</b></p>
+                        @else
+                            <p class="text-muted"><b> ({{count($data)}} result)</b></p>
+                        @endif
+                    </div>
+                </div>
         </div>
-        <div class="col-12 col-md-10">
+            
+        <div class="col-12 col-md-10" style="margin-top:110px;">
+            <div class="text-center">
+              
+            </div>
+            
             @if(isset($data))
                 @foreach ($data as $attorney)
                     <div class="row mt-2 justify-content-center">

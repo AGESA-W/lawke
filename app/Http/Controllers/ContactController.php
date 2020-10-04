@@ -24,18 +24,19 @@ class ContactController extends Controller
         $data = array(
             'email' => $request->email,
             'subject' => $request->subject,
-            'description' => $request->description
+            'bodydescription' => $request->description
         );
 
-        // Mail::send('emails.contact',$data, function($message) use ($data){
-        //     $message->to('info@legalmeet.com');
-        //     $message->from( $data['email']);
-        //     $message->subject( $data['subject']);
-        // });
+        Mail::send('emails.contact',$data, function($message) use ($data){
+            $message->to('info@legalmeet.com');
+            $message->from( $data['email']);
+            $message->subject( $data['subject']);
+        });
 
-        dispatch(new ContactEmailJob ($data));
+        // dispatch(new ContactEmailJob ($data));
 
-        return redirect('/contact')->with('success','Your message has been sent');
+        // Session::flash('success','Mail Sent!!');
+        return back()->with('success','Your message has been sent');
         
     }
 

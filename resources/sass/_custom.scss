@@ -43,6 +43,15 @@ body{
     color:$primary-color;
 }
 
+.primary-button{
+    color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover{
+        background-color:darken($primary-color,10);
+        color:#fff;  
+    }
+}
 .bg-color{
     background-color:$primary-color;
     color:#fff;
@@ -337,7 +346,6 @@ body{
 
 /*********About Page*****/
 .about{
-    // margin: -16px -125px 0 -118px;
     position: absolute;
     left:0;
     right:0;
@@ -1234,6 +1242,31 @@ footer{//footer
 }
 
 // for-lawyers
+.for-lawyer{
+    position: absolute;
+    left:0;
+    right:0;
+    top:9%;
+    .jumbotron{
+        background: rgba(77, 55, 55, 0.5);
+        height:240px;
+
+    }
+    &-jumbotron{//background image
+        background: url("/images/about.jpg") bottom center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // background-position: center center;
+        height:240px;
+        color:#fff;
+
+        &-text{//Display text
+            font-size:48px;
+            padding-top:30px;
+        }
+    
+    }
+}
 .for-lawyers{
     .v-quotation-mark{
     font-size: 110px;
@@ -1241,31 +1274,7 @@ footer{//footer
     font-weight: 700;
     color:#afa939
     }
-    .for-lawyer{
-        position: absolute;
-        left:0;
-        right:0;
-        top:9%;
-        .jumbotron{
-            background: rgba(0, 0, 0, 0.8);
-            height:210px;
-
-        }
-        &-jumbotron{//background image
-            background: url("/images/hammer.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            height:210px;
-            color:#fff;
-
-            &-text{//Display text
-                font-size:48px;
-                padding-top:30px;
-            }
-        
-        }
-    }
+    
     .why{
         position: absolute;
         left:0;
@@ -1368,4 +1377,28 @@ ol.ordered-list {
         font-weight: 700;
         color:#333;
     }
+}
+.form-control-with-icons {
+    position: relative;
+}
+.form-control-with-icons .icon:first-child {
+    left: 0;
+}
+.form-control-with-icons .icon~.form-control {
+    padding-left: 1.5rem;
+}
+.form-control-with-icons .icon {
+    width: 25px;
+    height: 25px;
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    text-align: center;
+    color: #333;
+    font-size: 1.8rem;
+    line-height: 3.8rem;
+    pointer-events: none;
+    padding-top:6px;
+    // padding: .2rem 1.2rem;
 }

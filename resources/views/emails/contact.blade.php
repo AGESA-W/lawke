@@ -39,12 +39,12 @@
                             <!-- Body content -->
                             <tr>
                                 <td class="content-cell" style="box-sizing: border-box; padding: 35px;">
-                                    vdsn
-                                    {{-- <p><b>{{$subject}}</b></p> --}}
-                                    {{-- <p style="color: #3d4852; font-size: 16px; line-height: 1.5em;text-align: left;">{{$description}}</p>     
+                                  
+                                    <p><b>{{$subject}}</b></p>
+                                     <p style="color: #3d4852; font-size: 16px; line-height: 1.5em;text-align: left;">{{$bodydescription}}</p>     
                                     <span>Regards,</span> 
                                     <br> 
-                                    <span>{{$email}}.</span>                             --}}
+                                    <span>{{$email}}.</span>                    
                                 </td>
                             </tr>
                         </table>

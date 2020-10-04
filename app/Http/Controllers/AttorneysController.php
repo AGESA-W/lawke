@@ -268,7 +268,9 @@ class AttorneysController extends Controller
                 'license_no'=>$attorney->license_no,
                 'attorney_id'=>$attorney->id,
                 'image'=>$attorney->image,
-                'county'=>$attorney->county
+                'county'=>$attorney->county,
+                'practice_area'=>$attorney->practice_area
+
             );
         }
         if(count($data))

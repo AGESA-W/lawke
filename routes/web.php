@@ -36,7 +36,7 @@ Route::prefix('home')->group(function(){
 
 
 });
-Route::get('/users/logout', 'Auth\LoginController@UserLogout')->name('users.logout');//remember to give users
+Route::post('/users/logout', 'Auth\LoginController@UserLogout')->name('users.logout');//remember to give users
 
 
 // Attorneys pages
@@ -61,7 +61,7 @@ Route::get('/attorney_register',"Auth\AttorneysRegisterController@showRegistrati
 Route::get('/attorney_login',"Auth\AttorneysLoginController@showLoginForm")->name('attorney.login');
 Route::post('/attorneys',"Auth\AttorneysRegisterController@store")->name('attorneys.store');
 Route::post('/attorney_login',"Auth\AttorneysLoginController@Login")->name('attorney.login.submit');
-Route::get('/logout', 'Auth\AttorneysLoginController@logout')->name('attorney.logout');//remember to give attorneys
+Route::post('/logout-lawyer', 'Auth\AttorneysLoginController@logout')->name('attorney.logout');//remember to give attorneys
 Route::get('get-attorneys',"AttorneysController@getattorneys")->name('get.attorneys');
 
 //reset password routes for attorneys

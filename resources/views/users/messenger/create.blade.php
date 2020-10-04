@@ -61,7 +61,7 @@
                                 <input type="hidden" name="user_id" id="user_id" value="{{Auth::id()}}">
                                 
 
-                                <button type="submit" class="btn btn-primary px-3">Send</button>
+                                <button type="submit" class="btn btn-primary px-3">Send <span class="fa fa-send"></span></button>
                             </form>
                         </div>
                     </div>                                                                                                         
