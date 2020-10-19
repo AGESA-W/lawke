@@ -173,7 +173,7 @@ class AttorneyMessagesController extends Controller
     public function destroy( $id){
         $message = AttorneyMessages::findOrFail($id);
         $message->delete();
-        return redirect('/attorney_dashboard/messenger/inbox')->with('success','Messsage Deleted');       
+        return back()->with('success','Messsage Deleted');       
 
     }
 }

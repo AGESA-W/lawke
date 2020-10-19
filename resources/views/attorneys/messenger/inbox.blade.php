@@ -59,11 +59,11 @@
                                         <small class="text-secondary mt-0">{{ date('d M, h:i a', strtotime($attorneyMessage->created_at)) }}</small>
                                     </div>
                                     <div class="col-md-2">
-                                        <form action="{{route('message.delete',$attorneyMessage->id)}}" method="post">
+                                        {{-- <form action="{{route('message.delete',$attorneyMessage->id)}}" method="post">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-sm btn-danger mb-2"><span class="fa fa-trash"></span> Delete</button>
-                                        </form>
+                                        </form> --}}
                                         
                                     </div>
                                 </div> 

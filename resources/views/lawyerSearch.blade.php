@@ -30,7 +30,12 @@
                             <p class="mb-0"><b><a href="/profile/{{$attorney->id}}" class="text-decoration-none text-dark">{{$attorney->firstname}} {{$attorney->lastname}}</a></b></p>
                             <small class="text-muted mb-0">{{$attorney->county}} county</small>
                             <small class="card-text"><star-rating :star-size="20" active-color="#fc9735" :rating="{{$attorney->getStarRating()}}"></star-rating> </small>
-                            <p class="attorney-county-smalltext mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit nesciunt fuga laudantium veniam est. Quisquam, modi et! Nisi, cumque earum, sapiente ut ipsa expedita Excepturi et tenetur hic quam nemo molestiae nihil sequi assumenda harum...</p>
+                            @if ($attorney->about !='')
+                                <p class="attorney-county-smalltext mb-0">{{$attorney->about}} </p> 
+                            @else
+                                <p class="attorney-county-smalltext mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit nesciunt fuga laudantium veniam est. Quisquam, modi et! Nisi, cumque earum, sapiente ut ipsa expedita Excepturi et tenetur hic quam nemo molestiae nihil sequi assumenda harum...</p>   
+                            @endif
+                           
                             <div class="row text-center attorney-county-smalltext mt-2">
                                 <div class="col-md-4 text-primary"><span class="fa fa-phone"></span> {{$attorney->mobile}}</div>
                                 <div class="col-md-4 icon-center "><a class="text-decoration-none" href="/attorney-message/{{$attorney->id}}"><span class="fa fa-envelope"></span> Message</a></div>

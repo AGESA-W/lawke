@@ -28,7 +28,9 @@
                     <hr>
                     <div class="text-center">
                         @if(Auth::guard('attorney')->check())
-                       <a href="/legal-answers/{{$question->id}}/{{$question->question}}/add-answer" class="text-decoration-none btn btn-primary btn-sm px-2 mb-1"> <span class="fa fa-pencil"></span>Answer this question</a>
+                       {{-- <a href="/legal-answers/{{$question->id}}/{{$question->question}}/add-answer" class="text-decoration-none btn btn-primary btn-sm px-2 mb-1"> <span class="fa fa-pencil"></span>Answer this question</a> --}}
+                       <a href="/add-answer/{{$question->id}}/{{substr($question->question,0,45)}}{{strlen($question->question)>45 ?"...":""}}" class="text-decoration-none btn btn-primary btn-sm px-2 mb-1"> <span class="fa fa-pencil"></span>Answer this question</a>
+
                         @endif
                     </div>
                 </div>
@@ -59,13 +61,24 @@
                                     <img src="{{$answer->attorney->image}}" alt="" class="img-fluid" style="width:80px;">
                                 </div>
                                 <div class="col-md-3">
-                                    <p class="mb-0"><b>{{$answer->attorney->firstname}} {{$answer->attorney->lastname}}</b></p>
-                                    <small><star-rating :star-size="19" active-color="#fc9735" :rating="{{$answer->attorney->getStarRating()}}"></star-rating><a href="/profile/{{$answer->attorney->id}}#review" class="text-decoration-none">{{$answer->attorney->reviewCount()}} review(s)</a></small>
+                                    <p class="mb-0"><b><a href="/profile/{{$answer->attorney->id}}" class="text-dark text-decoration-none">{{$answer->attorney->firstname}} {{$answer->attorney->lastname}}</a> </b></p>
+                                    <small><star-rating :star-size="19" active-color="#fc9735" :rating="{{$answer->attorney->getStarRating()}}"></star-rating><a href="/profile/{{$answer->attorney->id}}#review" class="text-decoration-none">{{$answer->attorney->reviewCount()}} 
+                                        @if ($answer->attorney->reviewCount()>1)
+                                            reviews
+                                        @else
+                                         review
+                                            
+                                        @endif
+                                        </a>
+                                    </small>
                                 </div>
                                 <div class="col-md-4">
-                                    @foreach ($answer->attorney->practiceareas as $practice)
+                                    {{-- @foreach ($answer->attorney->practiceareas as $practice)
                                         <p class="mb-2 text-muted">{{$practice->area_practice}}</p>
-                                    @endforeach
+                                    @endforeach --}}
+
+                                    <p class="mb-2 text-muted">{{$answer->attorney->practice_area}}</p>
+
                                     <p class="mb-0 text-muted">{{$answer->attorney->county}} County</p>
                                 </div>
                                 <div class="col-md-3 col-sm-12 col-12">

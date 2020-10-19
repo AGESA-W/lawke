@@ -17,7 +17,7 @@ class PagesController extends Controller
         $practiceareas=PracticeArea::orderBy('area_practice','asc')->distinct()->select('area_practice')->get();
         $locations=Lsk::orderBy('county','asc')->distinct()->select('county')->get();
         // $attorneys=Attorney::orderBy('firstname','desc')->take(6)->get(); 
-        $attorneys=Attorney::whereIn('id',[3, 2,4,5,20,8])->get(); 
+        $attorneys=Attorney::whereIn('id',[3, 29,4,73,52,37])->get(); 
 
         return view('pages.index')->with('attorneys',$attorneys)
         ->with('practiceareas',$practiceareas)

@@ -81,7 +81,7 @@ class QuestionController extends Controller
             Notification::send($attorneys, new QuestionAsked($question));
 
  
-         return back()->with('success', 'Your question has been shared');
+         return back()->with('success', 'Your question has been shared and you will be emailed as soon as a lawyer answers.');
     }
 
     // update question
@@ -118,11 +118,12 @@ class QuestionController extends Controller
 
     public function answers($id,$swali){
 
-        $question=Question::where('question', $swali)
-                            ->where('id', $id)
+        $question=Question::where('id', $id)
+                            // ->where('question', $swali)
                             ->first();
         $answers = $question->answers->load('attorney');
         $user = User::where('id', $question->user_id)->first();
+        // dd(  $user);
 
 
         return view('individual_question')

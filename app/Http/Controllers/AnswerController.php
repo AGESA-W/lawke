@@ -19,8 +19,8 @@ class AnswerController extends Controller
     }
 
     public function answer($id,$question){
-        $questions=Question::where('question', $question)
-                            ->where('id', $id)
+        $questions=Question::where('id', $id)
+                            // ->where('question', $question)
                             ->get();
         return view('add_answer')
         ->with('questions',$questions);

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white navbar-default shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-white navbar-default shadow-sm mb-0">
     <div class="container">
         <a class="navbar-brand navbar-default-brand" href="{{ url('/') }}">
             {{ config('app.name', 'LEGALMEET') }}

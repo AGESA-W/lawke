@@ -75,9 +75,9 @@
                                     <div class="col-md-2">
                                         <small class="text-secondary mt-0">{{ date('d M, h:i a', strtotime($attorneyMessage->created_at)) }}</small>
                                     </div>
-                                    <div class="col-md-2">
+                                    {{-- <div class="col-md-2">
                                         <button class="btn-danger btn-sm btn mb-2">Delete</button>
-                                    </div>
+                                    </div> --}}
                                 </div> 
                             @endforeach
                         </div>

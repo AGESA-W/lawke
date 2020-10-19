@@ -195,7 +195,9 @@ Route::put('/question/{id}','QuestionController@updateQuestion')->name('question
 
 
 // answer
-Route::get('/legal-answers/{id}/{question}/add-answer', "AnswerController@answer")->name('answer');
+// Route::get('/legal-answers/{id}/{question}/add-answer', "AnswerController@answer")->name('answer');
+Route::get('/add-answer/{id}/{question}', "AnswerController@answer")->name('answer');
+
 Route::post('/ask-lawyer','AnswerController@attorneyAnswerStore')->name('attorney.answer');
 Route::put('/answer/{id}','AnswerController@updateAnswer')->name('answer.update');
 Route::delete('/delete-answer/{id}','AnswerController@deleteAnswer')->name('answer.destroy');
@@ -249,7 +251,7 @@ Route::prefix('/attorney_dashboard/messenger')->group(function(){
   Route::get('/create',"UserMessagesController@createMessage")->name('user.message.form');
   Route::post('/create',"UserMessagesController@storeMessage")->name('user.message.send');
   Route::get('/inbox',"UserMessagesController@showInbox")->name('message.inbox');
-  Route::delete('/inbox/{id}',"UserMessagesController@destroy")->name('message.delete');
+  Route::delete('/inbox/{id}',"UserMessagesController@destroy")->name('usermessage.delete');
   Route::get('/inbox/{id}',"UserMessagesController@showMessage")->name('message.show');
   Route::get('/reply/{id}',"UserMessagesController@replyMessage")->name('message.reply');
   Route::post('/reply',"UserMessagesController@storeReply")->name('message.reply.send');
@@ -268,7 +270,7 @@ Route::prefix('/home/messenger')->group(function(){
   Route::get('/create',"AttorneyMessagesController@createMessage")->name('attorney.message.form');
   Route::post('/h',"AttorneyMessagesController@storeUserMessage")->name('attorney.message.send');
   Route::get('/inbox',"AttorneyMessagesController@showUserInbox")->name('usermessage.inbox');
-  Route::delete('/inbox/{id}',"AttorneyMessagesController@destroy")->name('usermessage.delete');
+  Route::delete('/inbox/{id}',"AttorneyMessagesController@destroy")->name('message.delete');
   Route::get('/inbox/{id}',"AttorneyMessagesController@showMessage")->name('usermessage.show');
   Route::get('/reply/{id}',"AttorneyMessagesController@replyMessage")->name('usermessage.reply');
   Route::post('/reply',"AttorneyMessagesController@storeReply")->name('usermessage.reply.send');

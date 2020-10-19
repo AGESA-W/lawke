@@ -58,14 +58,14 @@
                                     <div class="col-md-2">
                                         <small class="text-secondary mt-0">{{ date('d M, h:i a', strtotime($userMessage->created_at)) }}</small>
                                     </div>
-                                    <div class="col-md-2">
+                                    {{-- <div class="col-md-2">
                                         <form action="{{route('usermessage.delete',$userMessage->id)}}" method="post">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-sm btn-danger mb-2">Delete</button>
                                         </form>
                                         
-                                    </div>
+                                    </div> --}}
                                 </div> 
                             @endforeach
                           

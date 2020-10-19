@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         
-                        <div class="sectionDetails">
+                        {{-- <div class="sectionDetails">
                             <div class="sectionWrapper">
                                 <div class="sectionTitle">Phone Number</div>
                                 <div class="sectionContent">
@@ -67,7 +67,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                        
                         <div class="sectionDetails">
                             <div class="sectionWrapper">
