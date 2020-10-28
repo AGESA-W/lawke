@@ -71,10 +71,14 @@
                    
                     <hr>
 
-                    <h6 class="text-muted">PRACTICE AREAS</h6>
+                    <h6 class="text-muted">PRACTICE AREA</h6>
+                    {{-- <h6 class="text-muted">MAIN PRACTICE AREA</h6> --}}
+                        <p>{{$attorney->practice_area}}</p>
+                    {{-- <h6 class="text-muted">OTHER PRACTICE AREAS</h6>
+
                     @foreach ($areas as $area)
                         <p>{{$area->area_practice}}</p>
-                    @endforeach
+                    @endforeach --}}
                 </section>
                
                 <section class="profile-content" id="contact">
@@ -240,11 +244,11 @@
                 </section>
                 <section class="profile-content " id="cost">
                     <h5 class="text-muted">COST</h5>
-                    <p>Hourly Rates ---------------------- <b>ksh3000-ksh4000/hour</b> </p>
-                    <p>Free Consultation ----------------- <b>45 minutes</b> </p>
-                    <h6 class="text-muted">OTHER BILLING TYPES</h6>
-                    <p>Contigency ------------------------ <b>30%-40%</b> </p>
-                    
+                    <p>Hourly Rates ---------------------- <b>Contact for prices</b> </p>
+                    <p>Free Consultation ----------------- <b>10 minutes</b> </p>
+                    {{-- <h6 class="text-muted">OTHER BILLING TYPES</h6> --}}
+                    {{-- <p>Contigency ------------------------ <b>30%-40%</b> </p>  --}}
+                  
                 </section>
             </div>
         </div> 

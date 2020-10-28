@@ -24893,7 +24893,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 9%;
+  top: 6%;
   border-radius: 0;
 }
 
@@ -24939,7 +24939,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 9%;
+  top: 6%;
   border-radius: 0;
 }
 
@@ -25018,7 +25018,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 9%;
+  top: 7%;
   border-radius: 0;
 }
 
@@ -25085,7 +25085,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 9%;
+  top: 7%;
 }
 
 .search .jumbotron {
@@ -25119,7 +25119,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 9%;
+  top: 6%;
 }
 
 .location .jumbotron {
@@ -25859,7 +25859,7 @@ footer-widget p {
   position: absolute;
   left: 0;
   right: 0;
-  top: 9%;
+  top: 6.8%;
 }
 
 .for-lawyer .jumbotron {
@@ -25928,11 +25928,11 @@ ol.ordered-list .h2 {
   color: #333;
 }
 
-.search-user {
+.search-user-data {
   position: absolute;
   left: 0;
   right: 0;
-  top: 49%;
+  top: 35.8%;
   border-radius: 0;
 }
 
@@ -25945,14 +25945,6 @@ ol.ordered-list .h2 {
   line-height: 1.28571;
   font-weight: 700;
   color: #333;
-}
-
-.search-user {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 49%;
-  border-radius: 0;
 }
 
 .search-legalmeet {

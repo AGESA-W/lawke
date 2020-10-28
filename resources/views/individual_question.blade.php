@@ -62,12 +62,15 @@
                                 </div>
                                 <div class="col-md-3">
                                     <p class="mb-0"><b><a href="/profile/{{$answer->attorney->id}}" class="text-dark text-decoration-none">{{$answer->attorney->firstname}} {{$answer->attorney->lastname}}</a> </b></p>
-                                    <small><star-rating :star-size="19" active-color="#fc9735" :rating="{{$answer->attorney->getStarRating()}}"></star-rating><a href="/profile/{{$answer->attorney->id}}#review" class="text-decoration-none">{{$answer->attorney->reviewCount()}} 
-                                        @if ($answer->attorney->reviewCount()>1)
-                                            reviews
+                                    <small><star-rating :star-size="19" active-color="#fc9735" :rating="{{$answer->attorney->getStarRating()}}"></star-rating><a href="/profile/{{$answer->attorney->id}}#review" class="text-decoration-none">
+                                       
+
+                                        @if ($answer->attorney->reviewCount() > 1)
+                                        {{$answer->attorney->reviewCount()}} reviews
+                                        @elseif ($answer->attorney->reviewCount() < 1)
+                                        no review
                                         @else
-                                         review
-                                            
+                                        {{$answer->attorney->reviewCount()}} review
                                         @endif
                                         </a>
                                     </small>

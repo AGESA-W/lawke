@@ -4,10 +4,10 @@
         <b>Account Details</b>
         <hr>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-12 col-lg-3 col-md-3">
                 <img src="{{$attorney->image}}" alt="" class="attorney-image" style="height:200px;width:200px;">
             </div>
-            <div class="col-md-3" style="margin-left:-45px;">
+            <div class="col-12 col-lg-3 col-md-3" style="margin-left:-115px;">
                 <ul class="list-unstyled">
                     <li class="mb-1"><h4 class="mb-0"><b>{{$attorney->firstname}} {{$attorney->lastname}}</b></h4></li>
                     <li class="mb-1">{{$attorney->email}}</li>
@@ -16,7 +16,8 @@
                     <li><small class="text-secondary">{{ date('d M,Y', strtotime($attorney->created_at)) }}</small></li>
                 </ul>
                 <div class="buttons mt-2"> 
-                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#u{{$attorney->id}}"><span class="fa fa-pencil"></span> Edit</button> <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#d{{$attorney->id}}"><span class="fa fa-trash"></span> Delete</button>
+                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#u{{$attorney->id}}"><span class="fa fa-pencil"></span> Edit</button> 
+                    {{-- <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#d{{$attorney->id}}"><span class="fa fa-trash"></span> Delete</button> --}}
                 </div>
                 <!-- edit Modal -->
                 <div class="modal fade" id="u{{$attorney->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -516,7 +517,7 @@
                             @endforeach
                             @else
                             <h6> <b>No endorsments yet.</b> </h6>
-                            <p>Endorsments from fellow lawyers are important consideration for many when selecting the right lawyer.None of you colleagues has endorsed you!</p>
+                            <p>Endorsments from fellow lawyers are important consideration for many when selecting the right lawyer.None colleagues has endorsed tis lawyer!</p>
                         @endif
                     </ul>
                     <div class="clearfix"></div>

@@ -110,7 +110,7 @@
                 </div>
             </div>
         </div>
-        <div class="why" style="margin-top:150px;">
+        <div class="why">
             <div class="why-legalmeet">
                 <div class="row text-center">
                     <div class="col-sm-12 col-md-12 col-lg-12">
@@ -146,7 +146,7 @@
             </div>
         </div>
         
-        <div class="text-center for-lawyers-container" style="margin-top:500px;">
+        <div class="text-center for-lawyers-container" style="margin-top:560px;">
             <div class="row justify-content-center">
                 <div class="col-xs-12">
                     <h3 class=""> <b>What Lawyers are saying</b> </h3>

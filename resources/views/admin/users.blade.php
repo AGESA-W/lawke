@@ -20,7 +20,7 @@
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
-                            <th>Phone Number</th>
+                            <th>Registered on</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -56,8 +56,8 @@
             name: 'email'
         },
         {
-            data: 'mobile',
-            name: 'mobile'
+            data: 'created_at',
+            name: 'created_at'
         },
         {
             data: 'action',

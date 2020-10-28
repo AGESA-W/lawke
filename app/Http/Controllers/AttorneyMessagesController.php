@@ -81,7 +81,7 @@ class AttorneyMessagesController extends Controller
         $attorneyMessage->user_id =  $request->input('user_id');
         $attorneyMessage->save();
         
-        return redirect( route('profile',$attorney->id))->with('success','Messsage sent');
+        return redirect( route('profile',$attorney->id))->with('success','Messsage sent,Response from the lawyer will be on your dashboard.');
     }
 
 

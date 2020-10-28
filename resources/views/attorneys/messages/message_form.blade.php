@@ -51,7 +51,7 @@
 
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject of the message" required minlength="5" maxlength="200">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject of the message e.g:Case update,Case inquiry,Case request." required minlength="5" maxlength="200">
                 </div>
 
                 <div class="form-group">

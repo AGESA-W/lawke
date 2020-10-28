@@ -74,7 +74,7 @@ class AdminController extends Controller
             ->get();
         }
         return datatables()->of($data)->make(true);
-    }   
+        }   
         return view('admin.reports');
     } 
 

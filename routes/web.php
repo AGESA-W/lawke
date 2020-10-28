@@ -286,3 +286,4 @@ Route::post('/sear',"AttorneyMessagesController@storeMessageProfile")->name('att
 
 //update user inbox
 Route::get('/updateUserInbox',"UpdateInboxController@updateUserInbox");
+

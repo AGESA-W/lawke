@@ -61,10 +61,11 @@ class PagesController extends Controller
 
     //get lawyers by county
     public function county($practicearea,$county){
-        $attorneys=Attorney::whereHas('practiceareas' , function ($builder) use($practicearea) {
-              return $builder->where('area_practice', $practicearea);
-            }
-        )
+        // $attorneys=Attorney::whereHas('practiceareas' , function ($builder) use($practicearea) {
+        //       return $builder->where('area_practice', $practicearea);
+        //     }
+        // )
+        $attorneys=Attorney::where('practice_area', $practicearea)
         ->where('county', $county)
         ->get();
         return view('pages.counties')->with('attorneys',$attorneys);

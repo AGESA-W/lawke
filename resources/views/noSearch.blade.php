@@ -13,8 +13,8 @@
             </div>
         </div>
     </div>
-    <div style="margin-bottom:730px;">
-        <div class="search-user">
+    <div style="margin-bottom:680px;">
+        <div class="search-user-data">
         <div class="search-legalmeet">
             <div class="row text-center">
                 <div class="col-sm-12 col-md-12 col-lg-12">
@@ -23,10 +23,10 @@
             </div>
             <div class="row" style="padding-left:350px;" >
                 <div class="col-xs-12 col-sm-12 col-md-9">
-                    <ol class="ordered-list">
+                    <ol class="ordered-list" >
                         <li>
                             <h3 class="h2"> <span class="ordering">1</span> Use Specific Keywords</h3>
-                            <p class="pl-5"> Keywords are the terms that you use to find content. Making your keywords as specific as possible will help your search engine to track down the information that you want.
+                            <p class="pl-5" style="line-spacing:4.5em;"> Keywords are the terms that you use to find content. Making your keywords as specific as possible will help your search engine to track down the information that you want.
                                 <br>
                                 Say, for example, that you want to find a lawyer called Philip. If you type only "p" in the search engine, the results will include many pages about other types of lawyers, whereas typing Philip  will return a more concise range of lawyers.
                                 <br>
